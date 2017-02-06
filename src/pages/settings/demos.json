@@ -1,0 +1,302 @@
+[
+  {
+    "male": [
+      {
+        "checked": false,
+        "group": "M12+"
+      },
+      {
+        "checked": false,
+        "group": "M12-17"
+      },
+      {
+        "checked": false,
+        "group": "M12-20"
+      },
+      {
+        "checked": false,
+        "group": "M18+"
+      },
+      {
+        "checked": false,
+        "group": "M18-24"
+      },
+      {
+        "checked": false,
+        "group": "M18-34"
+      },
+      {
+        "checked": false,
+        "group": "M18-49"
+      },
+      {
+        "checked": false,
+        "group": "M18-54"
+      },
+      {
+        "checked": false,
+        "group": "M18-64"
+      },
+      {
+        "checked": false,
+        "group": "M21+"
+      },
+      {
+        "checked": false,
+        "group": "M21-24"
+      },
+      {
+        "checked": false,
+        "group": "M21-34"
+      },
+      {
+        "checked": false,
+        "group": "M21-49"
+      },
+      {
+        "checked": false,
+        "group": "M21-54"
+      },
+      {
+        "checked": false,
+        "group": "M21-64"
+      },
+      {
+        "checked": false,
+        "group": "M25-49"
+      },
+      {
+        "checked": true,
+        "group": "M25-54"
+      },
+      {
+        "checked": false,
+        "group": "M25-64"
+      },
+      {
+        "checked": false,
+        "group": "M35+"
+      },
+      {
+        "checked": false,
+        "group": "M35-54"
+      },
+      {
+        "checked": false,
+        "group": "M35-64"
+      },
+      {
+        "checked": false,
+        "group": "M50+"
+      },
+      {
+        "checked": false,
+        "group": "M55+"
+      },
+      {
+        "checked": false,
+        "group": "M65+"
+      }
+    ]
+  },
+  {
+    "female": [
+      {
+        "checked": false,
+        "group": "F12+"
+      },
+      {
+        "checked": false,
+        "group": "F12-17"
+      },
+      {
+        "checked": false,
+        "group": "F12-20"
+      },
+      {
+        "checked": false,
+        "group": "F18+"
+      },
+      {
+        "checked": false,
+        "group": "F18-24"
+      },
+      {
+        "checked": false,
+        "group": "F18-34"
+      },
+      {
+        "checked": false,
+        "group": "F18-49"
+      },
+      {
+        "checked": false,
+        "group": "F18-54"
+      },
+      {
+        "checked": false,
+        "group": "F18-64"
+      },
+      {
+        "checked": false,
+        "group": "F21+"
+      },
+      {
+        "checked": false,
+        "group": "F21-24"
+      },
+      {
+        "checked": false,
+        "group": "F21-34"
+      },
+      {
+        "checked": false,
+        "group": "F21-49"
+      },
+      {
+        "checked": false,
+        "group": "F21-54"
+      },
+      {
+        "checked": false,
+        "group": "F21-64"
+      },
+      {
+        "checked": false,
+        "group": "F25-49"
+      },
+      {
+        "checked": true,
+        "group": "F25-54"
+      },
+      {
+        "checked": false,
+        "group": "F25-64"
+      },
+      {
+        "checked": false,
+        "group": "F35+"
+      },
+      {
+        "checked": false,
+        "group": "F35-54"
+      },
+      {
+        "checked": false,
+        "group": "F35-64"
+      },
+      {
+        "checked": false,
+        "group": "F50+"
+      },
+      {
+        "checked": false,
+        "group": "F55+"
+      },
+      {
+        "checked": false,
+        "group": "F65+"
+      }
+    ]
+  },
+  {
+    "adult": [
+      {
+        "checked": false,
+        "group": "A12+"
+      },
+      {
+        "checked": false,
+        "group": "A12-17"
+      },
+      {
+        "checked": false,
+        "group": "A12-20"
+      },
+      {
+        "checked": false,
+        "group": "A18+"
+      },
+      {
+        "checked": false,
+        "group": "A18-24"
+      },
+      {
+        "checked": true,
+        "group": "A18-34"
+      },
+      {
+        "checked": true,
+        "group": "A18-49"
+      },
+      {
+        "checked": false,
+        "group": "A18-54"
+      },
+      {
+        "checked": false,
+        "group": "A18-64"
+      },
+      {
+        "checked": false,
+        "group": "A21+"
+      },
+      {
+        "checked": false,
+        "group": "A21-24"
+      },
+      {
+        "checked": false,
+        "group": "A21-34"
+      },
+      {
+        "checked": false,
+        "group": "A21-49"
+      },
+      {
+        "checked": false,
+        "group": "A21-54"
+      },
+      {
+        "checked": false,
+        "group": "A21-64"
+      },
+      {
+        "checked": true,
+        "group": "A25-49"
+      },
+      {
+        "checked": true,
+        "group": "A25-54"
+      },
+      {
+        "checked": false,
+        "group": "A25-64"
+      },
+      {
+        "checked": false,
+        "group": "A35+"
+      },
+      {
+        "checked": false,
+        "group": "A35-54"
+      },
+      {
+        "checked": false,
+        "group": "A35-64"
+      },
+      {
+        "checked": false,
+        "group": "A50+"
+      },
+      {
+        "checked": false,
+        "group": "A55+"
+      },
+      {
+        "checked": false,
+        "group": "A65+"
+      }
+    ]
+  }
+]

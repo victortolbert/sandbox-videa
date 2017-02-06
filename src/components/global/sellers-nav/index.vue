@@ -14,6 +14,18 @@
           router-link(
             v-bind:to = '{ name: "sellers-campaign-performance" }'
           ) Campaign Performance
+      ul.actions.vui-align-middle
+        li
+          router-link.vui-button.vui-button--brand(
+            v-bind:to = '{ name: "settings-user" }'
+            style = 'color: white !important; white-space: nowrap'
+            tag = 'button'
+          )
+            vui-icon.vui-m-right--x-small(
+              name = 'cog'
+            )
+            span Settings
+            span.vui-assistive-text Settings
 </template>
 
 <script>

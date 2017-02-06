@@ -43,5 +43,38 @@ module.exports = [
     path: '/sellers/campaign-performance/:id',
     name: 'sellers-campaign-performance-id',
     component: require('pages/sellers/campaign-performance/_id')
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: require('pages/settings'),
+    children: [
+      {
+        path: '/user',
+        name: 'settings-user',
+        component: require('pages/settings/user')
+      },
+      {
+        path: '/specials',
+        name: 'settings-specials',
+        component: require('pages/settings/specials')
+      },
+      {
+        path: '/premium-advertisers',
+        name: 'settings-premium-advertisers',
+        component: require('pages/settings/premium-advertisers')
+      },
+      {
+        path: '/reps',
+        name: 'settings-reps',
+        component: require('pages/settings/reps')
+      },
+      {
+        path: '/display',
+        name: 'settings-display',
+        component: require('pages/settings/display')
+      }
+    ]
   }
+
 ]
