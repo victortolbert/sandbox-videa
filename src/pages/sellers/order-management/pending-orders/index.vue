@@ -1,7 +1,7 @@
 <template lang="pug">
   .order-management-view
-    ui-title Pending Orders
-    ui-subtitle.
+    vui-title Pending Orders
+    vui-subtitle.
       Click an Order Number below to accept/reject new orders, modify orders,
       and update share information. Note that sales representatives can only
       view orders and update share information.
@@ -18,12 +18,11 @@
 
 <script>
   import axios from '~plugins/axios'
-
   import PendingOrdersGrid from '~components/pending-orders/pending-orders-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Pending Orders'
     },
 
     components: {
@@ -37,10 +36,9 @@
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get('/orders')
+    data () {
       return {
-        orders: data,
+        orders: [],
         gridColumns: [
           { field: 'advertiser', title: 'Advertiser' },
           { field: 'agency', title: 'Agency' },
@@ -53,6 +51,26 @@
           { field: 'orderDate', title: 'Order Date' }
         ]
       }
+    },
+
+    methods: {
+      fetchOrders() {
+        axios.get('/orders')
+          .then((response) => {
+            this.orders = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp == 'sellers'
+    },
+
+    created () {
+      this.fetchOrders()
     }
   }
 </script>

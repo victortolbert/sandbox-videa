@@ -3,6 +3,11 @@
       ul.vui-grid.vui-grow
         li
           vui-dropdown(
+            v-bind:items = 'orderManagementMenuItems'
+            text = 'Order Management'
+          )
+        li
+          vui-dropdown(
             v-bind:items = 'reportingMenuItems'
             text = 'Reporting'
           )
@@ -33,7 +38,7 @@
     data () {
       return {
         orderManagementMenuItems: [
-          // { name: 'Pending Orders', route: 'sellers-order-management-pending-orders' },
+          { name: 'Pending Orders', route: 'sellers-order-management-pending-orders' },
           // { name: 'Pending Makegoods', route: 'sellers-order-management-pending-makegoods' },
           // { name: 'Open Pre-Empts', route: 'sellers-order-management-open-preempts' },
           // { name: 'Order Search', route: 'sellers-order-management-order-search' }

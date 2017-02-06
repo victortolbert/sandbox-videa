@@ -1,11 +1,11 @@
 <template lang="pug">
   .order-management-show-view
-    ui-title Pending Order Details
+    vui-title Pending Order Details
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
       a(
         @click.prevent = 'showSummary'
       )
-        icon.vui-align-middle(
+        vui-icon.vui-align-middle(
           name = 'arrow-circle-left'
         )
         span.vui-align-middle Back to Pending Orders
@@ -171,14 +171,11 @@
 
 <script>
   import axios from '~plugins/axios'
-
   import AcceptOrderModal from '~components/pending-orders/accept-order-modal'
   import RejectOrderModal from '~components/pending-orders/reject-order-modal'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
+
 
     components: {
       AcceptOrderModal,
@@ -200,10 +197,9 @@
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get(`/orderManagement/${params.id}`)
+    data () {
       return {
-        order: data,
+        order: {},
         showAcceptOrderModal: false,
         showRejectOrderModal: false,
         offer: {
@@ -213,6 +209,16 @@
     },
 
     methods: {
+      fetchOrder (id) {
+        axios.get(`/orders/${id}`)
+          .then((response) => {
+            this.order = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
       showSummary () {
         this.$router.push({
           name: this.summaryRoute
@@ -239,6 +245,15 @@
 
         this.$router.push(routeInfo)
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchOrder(this.$route.params.id)
     }
+
   }
 </script>

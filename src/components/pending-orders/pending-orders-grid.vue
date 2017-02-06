@@ -24,7 +24,7 @@
               v-if = 'order.versions.length !== 1'
               href = '#'
             )
-              icon(
+              vui-icon(
                 v-bind:name = 'expanded ? "caret-lower-right" : "caret-right"'
                 style = 'margin-left: -1rem'
               )

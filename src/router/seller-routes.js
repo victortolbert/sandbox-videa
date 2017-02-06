@@ -1,5 +1,15 @@
 module.exports = [
   {
+    path: '/sellers/order-management/pending-orders',
+    name: 'sellers-order-management-pending-orders',
+    component: require('pages/sellers/order-management/pending-orders')
+  },
+  {
+    path: '/sellers/order-management/pending-orders/:id',
+    name: 'sellers-order-management-pending-orders-id',
+    component: require('pages/sellers/order-management/pending-orders/_id')
+  },
+  {
     path: '/sellers/reporting/program-revenue',
     name: 'sellers-reporting-program-revenue',
     component: require('pages/sellers/reporting/program-revenue')
