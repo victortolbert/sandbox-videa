@@ -1,0 +1,99 @@
+<template>
+  <div class="mosaic">
+    <div class="photo photo1 photo--small">1</div>
+    <div class="photo photo2 photo--medium">2</div>
+    <div class="photo photo3 photo--large">3</div>
+    <div class="photo photo4 photo--small">4</div>
+    <div class="photo photo5 photo--large">5</div>
+    <div class="photo photo6 photo--small">6</div>
+    <div class="photo photo7 photo--large">7</div>
+    <div class="photo photo8 photo--medium">8</div>
+    <div class="photo photo9 photo--medium">9</div>
+    <div class="photo photo10 photo--small">10</div>
+    <div class="photo photo11 photo--large">11</div>
+    <div class="photo photo12 photo--medium">12</div>
+    <div class="photo photo13 photo--large">13</div>
+    <div class="photo photo14 photo--medium">14</div>
+  </div>
+</template>
+
+<style>
+  .mosaic {
+    /**
+     * Lay out the children of this container with
+     * flexbox, which is horizontal by default.
+     */
+    display: flex;
+
+    /**
+     * Set the main axis to be vertical instead of
+     * horizontal, so now the children are laid out
+     * vertically, from top to bottom.
+     */
+    flex-direction: column;
+
+    /**
+     * Now when the children wrap, they'll wrap to the
+     * next "column".
+     */
+    flex-wrap: wrap;
+
+    width: 478px;
+    height: 370px;
+    padding: 6px;
+    border: 1px solid #D7DBDD;
+    overflow: auto;
+  }
+
+  .photo:last-child {
+    /**
+     * This is the first part of a flexbox hack.
+     * It addresses a problem flexbox has with scrolling
+     * content. Without this hack, the children on the
+     * far right of the container will be flush against
+     * the container's right edge.
+     */
+    position: relative;
+  }
+
+  .photo:last-child::after {
+    /**
+     * This is the second part of the hack. It creates
+     * an invisible element on the last child that
+     * forces a space between the child and the right
+     * edge of the container.
+     */
+    display: block;
+    width: 11px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    visibility: hidden;
+    content: "";
+  }
+
+  .photo--small {
+    height: 70px;
+  }
+
+  .photo--medium {
+    height: 90px;
+  }
+
+  .photo11 {
+    background-image: url('../images/dog_1.jpg');
+  }
+
+  .photo12 {
+    background-image: url('../images/dog_2.jpg');
+  }
+
+  .photo13 {
+    background-image: url('../images/dog_3.jpg');
+  }
+
+  .photo14 {
+    background-image: url('../images/dog_4.jpg');
+  }
+</style>

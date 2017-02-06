@@ -1,0 +1,15 @@
+stationOrderNumber: 876542
+videaOrderNumber: 131542
+agency: The Media Masters Group
+flightStartDate: always starts 2 weeks earlier (Mon start)
+flightEndDate: always ends 3 weeks after today's date (Sun end)
+revenue: 41000
+totalPurchased: 78.8
+demo: A18-49
+weeksRemaining: 3
+total:
+  purchasedGrpsImps: 78.8
+  purchasedToDate: 31.5
+  deliveredToDate: 25.3
+  percentage: .80
+  plusMinus: -6.2

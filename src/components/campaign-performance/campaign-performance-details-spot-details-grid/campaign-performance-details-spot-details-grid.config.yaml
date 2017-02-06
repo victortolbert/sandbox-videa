@@ -1,0 +1,252 @@
+- buyLine: 1
+  program: 7am News
+  airDate: week1
+  day: Tuesday
+  airTime: 7:07:39 AM
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week1
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 2.5
+  actualRtgImp: 1.3
+  purchasedRtgImp: 1.5
+  plusMinus: -0.2
+  Ad ID: GIFW29755H
+- buyLine: 1
+  program: 7am News
+  airDate: week1
+  day: Thursday
+  airTime: 7:57:57 AM
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week1
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 1.9
+  actualRtgImp: 1
+  purchasedRtgImp: 1.5
+  plusMinus: -0.5
+  adId: GIFW29755H
+- buyLine: 1
+  program: 7am News
+  airDate: week1
+  day: Friday
+  airTime: 6:59:08 AM
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week1
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 2.7
+  actualRtgImp: 1.4
+  purchasedRtgImp: 1.5
+  plusMinus: -0.1
+  adId: GIFW29755H
+- buyLine: 2
+  program: 7am News
+  airDate: week2
+  day: Monday
+  airTime: 7:27:58 AM
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week2
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 2.3
+  actualRtgImp: 1.2
+  purchasedRtgImp: 1.5
+  plusMinus: -0.3
+  adId: GIFW29755H
+- buyLine: 2
+  program: 7am News
+  airDate: week2
+  day: Wednesday
+  airTime: 7:32:08 AM
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week2
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 2.5
+  actualRtgImp: 1.3
+  purchasedRtgImp: 1.5
+  plusMinus: -0.2
+  adId: GIFW29755H
+- buyLine: 2
+  program: 7am News
+  airDate: week2
+  day: Thursday
+  airTime: 7:28:51 AM
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week2
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 1.7
+  actualRtgImp: 0.9
+  purchasedRtgImp: 1.5
+  plusMinus: -0.6
+  adId: GIFW29755H
+- buyLine: 8
+  program: 7am News
+  airDate: week3
+  day: Tuesday
+  airTime: 8:07:20 AM
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week3
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 2.1
+  actualRtgImp: 1.1
+  purchasedRtgImp: 1.5
+  plusMinus: -0.4
+  adId: GIFW29755H
+- buyLine: 8
+  program: 7am News
+  airDate: week3
+  day: Thursday
+  airTime: ''
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week3
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.5
+  plusMinus:
+  adId: ''
+- buyLine: 8
+  program: 7am News
+  airDate: week4
+  day: Monday
+  airTime: ''
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week4
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.5
+  plusMinus:
+  adId: ''
+- buyLine: 8
+  program: 7am News
+  airDate: week4
+  day: Friday
+  airTime: ''
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week4
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.5
+  plusMinus:
+  adId: ''
+- buyLine: 13
+  program: 7am News
+  airDate: week5
+  day: Tuesday
+  airTime: ''
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week5
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.5
+  plusMinus:
+  adId: ''
+- buyLine: 13
+  program: 7am News
+  airDate: week5
+  day: Wednesday
+  airTime: ''
+  orderedTimePeriod: M-F 07:00 AM - 08:00 AM
+  orderedDates: week5
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.5
+  plusMinus:
+  adId: ''
+- buyLine: 23
+  program: 8am News
+  airDate: week1
+  day: Monday
+  airTime: 8:55:30 AM
+  orderedTimePeriod: M-F 08:00 AM - 09:00 AM
+  orderedDates: week1
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 2.1
+  actualRtgImp: 1.1
+  purchasedRtgImp: 1.7
+  plusMinus: -0.6
+  Ad ID: GIFW29755H
+- buyLine: 23
+  program: 8am News
+  airDate: week2
+  day: Wednesday
+  airTime: 8:44:59 AM
+  orderedTimePeriod: M-F 08:00 AM - 09:00 AM
+  orderedDates: week2
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP: 2.5
+  actualRtgImp: 1.3
+  purchasedRtgImp: 1.7
+  plusMinus: -0.4
+  Ad ID: GIFW29755H
+- buyLine: 24
+  program: 8am News
+  airDate: week3
+  day: Tuesday
+  airTime: ''
+  orderedTimePeriod: M-F 08:00 AM - 09:00 AM
+  orderedDates: week3
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.7
+  plusMinus:
+  Ad ID: ''
+- buyLine: 24
+  program: 8am News
+  airDate: week4
+  day: Thursday
+  airTime: ''
+  orderedTimePeriod: M-F 08:00 AM - 09:00 AM
+  orderedDates: week4
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.7
+  plusMinus:
+  Ad ID: ''
+- buyLine: 24
+  program: 8am News
+  airDate: week4
+  day: Wednesday
+  airTime: ''
+  orderedTimePeriod: M-F 08:00 AM - 09:00 AM
+  orderedDates: week4
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.7
+  plusMinus:
+  Ad ID: ''
+- buyLine: 24
+  program: 8am News
+  airDate: week5
+  day: Friday
+  airTime: ''
+  orderedTimePeriod: M-F 08:00 AM - 09:00 AM
+  orderedDates: week5
+  spotLength: ':30'
+  rate: 350
+  HH RTG/IMP:
+  actualRtgImp:
+  purchasedRtgImp: 1.7
+  plusMinus:
+  Ad ID: ''

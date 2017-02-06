@@ -1,0 +1,1 @@
+Campaign Performance allows station and rep users to review the ratings deliveries of multiple Videa schedules at once.  When Nielsen data becomes available, Videa automatically reports schedule deliveries without the User having to pull individual posts.  In addition, Videa provides spot-level and graphical details for each schedule.

@@ -1,0 +1,1 @@
+When I click on order search I will see order listings where I can fill in criteria about an order and click the search button and get information back about an order. Each row represent an order and I can click on any row to open up an order and view details.

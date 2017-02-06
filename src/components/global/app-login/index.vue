@@ -54,7 +54,7 @@
           this.$store.state.user.name = 'Seller User'
           this.$store.state.activeApp = 'sellers'
           this.$router.push({
-            name: 'campaign-performance'
+            name: 'sellers-campaign-performance'
           })
         }
         // else if (this.$store.state.user.email.toLowerCase().includes('buy')) {

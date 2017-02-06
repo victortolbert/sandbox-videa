@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <h2 data-sassdoc="page-title">
+    {{ groups[data.currentGroup] }}
+  </h2>
+
+  {% for type, items in data.byGroupAndType[data.currentGroup] %}
+    {% if items.length > 0 %}
+      {% for item in items %}
+        {% include 'item/_item.html' %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}

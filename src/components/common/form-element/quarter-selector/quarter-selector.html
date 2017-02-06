@@ -1,0 +1,35 @@
+<fieldset class="quarter-selector vui-form-element vui-m-right--small">
+  <div class="vui-grid">
+    <div class="vui-form-element">
+      <label class="vui-form-element__label">Quarter</label>
+      <div class="vui-form-element__control vui-grid">
+        <label for="q1" class="vui-radio">
+          <input id="q1" type="radio" name="when"/><span class="vui-radio--faux vui-m-right--x-small"></span><span class="vui-form-element__label">Q1</span>
+        </label>
+        <label for="q2" class="vui-radio">
+          <input id="q2" type="radio" name="when" checked="true"/><span class="vui-radio--faux vui-m-right--x-small"></span><span class="vui-form-element__label">Q2</span>
+        </label>
+        <label for="q3" class="vui-radio">
+          <input id="q3" type="radio" name="when"/><span class="vui-radio--faux vui-m-right--x-small"></span><span class="vui-form-element__label">Q3</span>
+        </label>
+        <label for="q4" class="vui-radio">
+          <input id="q4" type="radio" name="when"/><span class="vui-radio--faux vui-m-right--x-small"></span><span class="vui-form-element__label">Q4</span>
+        </label>
+        <label for="all" class="vui-radio vui-m-right--large">
+          <input id="all" type="radio" name="when"/><span class="vui-radio--faux vui-m-right--x-small"></span><span class="vui-form-element__label">All</span>
+        </label>
+      </div>
+    </div>
+    <div class="vui-form-element">
+      <label class="vui-form-element__label">Year</label>
+      <div class="vui-form-element__control">
+        <div class="vui-select_container">
+          <select v-model="selectedQuarter" class="vui-select">
+            <option value="">Select Quarter</option>
+            <option v-for="quarter in quarters">{{ quarter }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>

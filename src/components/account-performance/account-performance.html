@@ -1,0 +1,34 @@
+{% for account in accounts %}
+  {{ account }}
+{% endfor %}
+
+<form action="" class="vui-grid vui-grid--vertical-align-end">
+  <fieldset class="vui-form-element">
+    <label class="vui-form-element__label">Search</label>
+    <div class="vui-form-element__control vui-m-right--small">
+      <input v-model="searchKey" name="searchText" placeholder="Advertiser or Agency" ref="searchKey" style="width: 24rem" type="text" class="vui-input"/>
+    </div>
+  </fieldset>
+  <ui-quarter-selector></ui-quarter-selector>
+  <div style="align-self: center" class="vui-m-right--x-small"><strong><br/> or</strong></div>
+  <fieldset class="vui-form-element">
+    <label for="fromDate" class="vui-form-element__label vui-m-right--x-small">Start Date</label>
+    <div class="vui-form-element__control vui-m-right--small">
+      <datepicker id="fromDate" v-model="fromDate" name="fromDate"></datepicker>
+    </div>
+  </fieldset>
+  <fieldset class="vui-form-element">
+    <label for="fromDate" class="vui-form-element__label vui-m-right--x-small">End Date</label>
+    <div class="vui-form-element__control vui-m-right--small">
+      <datepicker id="toDate" v-model="toDate" name="toDate"></datepicker>
+    </div>
+  </fieldset>
+  <button class="vui-button vui-button--brand vui-m-right--large">Search</button>
+  <fieldset class="vui-form-element vui-m-right--small">
+    <div style="margin-top: -2rem" class="vui-form-element__control">
+      <label class="vui-checkbox">
+        <input id="checkbox-01" type="checkbox" name="options"/><span class="vui-checkbox--faux"></span><span class="vui-form-element__label">Exclude $0 Spots</span>
+      </label>
+    </div>
+  </fieldset>
+</form>

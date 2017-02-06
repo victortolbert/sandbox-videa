@@ -1,0 +1,37 @@
+{% import 'item/macros.html' as code %}
+{% import 'item/preview.macros.html' as preview %}
+
+{% set slug = item.context.name|urlencode|replace("'", '') %}
+{% set id = [type, slug]|join('--') %}
+
+<section data-sassdoc-item='{{ type }}' id="{{ id }}">
+  {% set item_name = [item.context.name, '()']|join('') if (type == 'mixin' or type == 'function') else item.context.name %}
+  {% set item_name = ['$', item_name]|join('') if type == 'variable' else item_name %}
+  <h3 data-sassdoc="item-title">
+    <span data-sassdoc="item-name">{{ item_name }}</span>
+    <span data-sassdoc="item-type">{{ type }}</span>
+  </h3>
+
+  {% if item.description %}
+    <div data-sassdoc="item-description">
+      <p>{{ item.description|safe }}</p>
+    </div>
+  {% endif %}
+
+  {{ code.source(item, type) }}
+  {{ code.link(item) }}
+  {{ code.see(item) }}
+  {{ code.parameter(item) }}
+  {{ code.property(item) }}
+  {{ code.require(item) }}
+
+  {{ code.examples(item.example, id) }}
+
+  {{ preview.show_previews(
+    data=sassjson,
+    name=item.context.name,
+    args=item.preview
+    ) }}
+
+  {{ preview.icons(item.icons) }}
+</section>

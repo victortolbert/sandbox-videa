@@ -1,0 +1,16 @@
+{% macro tint_stack(colors-[]) %}
+  <div class="tint-stack">
+    {% for color in colors %}
+      {{ tint(color) }}
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+{% macro tint(color={}) %}
+  {% for name, hex in color %}
+    <div class="tint" style="background-color: {{hex}}">
+      <span class="tint__variable-name">{{name}}</span>
+      <span class="tint__value">{{hex}}</span>
+    </div>
+  {% endfor %}
+{% endmacro %}

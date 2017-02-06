@@ -1,0 +1,111 @@
+<div class="app">
+  <header role="banner" class="vui-site-header vui-site-header--app">
+    <div class="vui-site-header--app__container vui-grid vui-grid--align-spread">
+      <a class="vui-align-middle">
+        <img alt="Videa" src="/vectors/videa-logo--white.svg" style="height:2rem" class="vui-site-header__logo"/>
+      </a>
+      <div class="vui-medium-show vui-action">
+        <span class="vui-m-right--xx-small">
+          Welcome Back,
+        </span>
+        <div class="vui-dropdown-trigger vui-dropdown-trigger--site-nav vui-dropdown-trigger--click dropdown dropdown-left vui-m-right--x-small">
+          <a aria-haspopup="true" aria-live="assertive" style="margin-right:0">
+            <span style="color:white" class="vui-m-right--xx-small">
+              Seller User
+            </span>
+            <svg
+              style="color:#4296b4; margin-right:0"
+              class="vui-icon vui-align-middle vui-icon--x-small"
+            >
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="{{ '/icons.svg' | path }}#icon-caret-down"
+              ></use>
+            </svg>
+          </a>
+          <div class="vui-dropdown vui-dropdown--site-nav">
+            <ul role="menu" class="dropdown-menu dropdown__list vui-dropdown__list"></ul>
+          </div>
+        </div>
+        <button id="stationSelector" class="vui-button vui-button--inverse vui-button--small vui-m-right--x-small">
+          <span>WVVV</span>
+          <svg class="vui-icon vui-align-middle vui-icon--x-small">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="{{ '/icons.svg' | path }}#icon-caret-down"
+            ></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="vui-site-navigation">
+    <div class="vui-container vui-grid vui-grid--align-spread vui-grid-vertical-align-center">
+      <form class="vui-form--compound vui-align-middle">
+        <fieldset class="vui-form--compound">
+          <div class="form-element__group">
+            <div style="margin-bottom: 1rem;" class="vui-form-element__row">
+              <div class="vui-form-element vui-size--1-of-3 vui-align-bottom">
+                <label for="input-01" style="color: white;" class="vui-form-element__label">
+                  Username
+                </label>
+                <div class="vui-form-element__control vui-input-has-icon vui-input-has-icon--left">
+                  <svg style="color: rgb(29, 79, 144);" class="vui-icon vui-align-middle vui-input__icon vui-icon--x-small">
+                    <use
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xlink:href="{{ '/icons.svg' | path }}#icon-envelope"
+                    ></use>
+                  </svg>
+                  <input placeholder="john.doe@email.com" type="email" style="min-width: 14rem;" class="vui-input"/>
+                </div>
+              </div>
+              <div class="vui-form-element vui-size--1-of-3 vui-align-bottom">
+                <label for="input-01" style="color: white;" class="vui-form-element__label">
+                  Password
+                </label>
+                <div class="vui-form-element__control vui-input-has-icon vui-input-has-icon--left">
+                  <svg style="color: rgb(29, 79, 144);" class="vui-icon vui-align-middle vui-input__icon vui-icon--x-small">
+                    <use
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xlink:href="{{ '/icons.svg' | path }}#icon-lock"
+                    ></use>
+                  </svg>
+                  <input placeholder="Password" type="password" style="min-width: 14rem;" class="vui-input"/>
+                </div>
+              </div>
+              <div class="vui-form-element vui-size--1-of-3 vui-align-bottom">
+                <button class="vui-button vui-button--secondary vui-m-right--x-small">
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </nav>
+  <main class="vui-main">
+    <div>
+      <div class="home"></div>
+    </div>
+  </main>
+  <footer role="contentinfo" class="vui-site-footer">
+    <div class="vui-container">
+      <nav class="vui-navigation--footer vui-grid vui-grid--align-center">
+        <ul class="vui-list--horizontal vui-has-dividers--right">
+          <li class="vui-list__item">
+            <a href="/privacy">
+              Privacy Policy
+            </a>
+          </li>
+          <li class="vui-list__item">
+            <a href="/terms">
+              Terms &amp; Conditions
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <p>3390 Peachtree Road, NE, Suite 400 Atlanta, GA 30326 <br/>Copyright © 2014–2017 Videa. All rights reserved.</p>
+    </div>
+  </footer>
+</div>

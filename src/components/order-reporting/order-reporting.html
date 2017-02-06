@@ -1,0 +1,52 @@
+<div v-show="!loading" class="order-summary-grid vui-scrollable--x">
+  <table border="0" cellpadding="0" cellspacing="0" class="vui-table vui-no-row-hover">
+    <thead>
+      <tr>
+        <th v-for="column in gridColumns">
+          <a
+            @click.prevent="sortBy(column.field)"
+            v-bind:class="{ active: sortKey == column.field }"
+            class="vui-grid vui-grid--align-spread">
+              <span>
+                {{column.title}}
+              </span>
+            <icon
+              name="sort-asc"
+              class="vui-icon--sort-arrow"
+            ></icon>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody v-for=" order in orders">
+      <tr>
+        <td>
+          <a @click.prevent="toggleDetail(order)">
+            <icon
+              v-bind:name="order.expanded ? &quot;caret-lower-right&quot; : &quot;caret-right&quot;"
+              class="vui-align-middle"
+            ></icon>
+          </a>
+          <span>
+            {{ order.advertiser }}
+          </span>
+        </td>
+        <td>{{ order.agency }}</td>
+        <td>{{ order.cpe }}</td>
+        <td>{{ order.flightStartDate }}</td>
+        <td>{{ order.flightEndDate }}</td>
+        <td class="vui-text-align--right">{{ order.revenue | numberWithCommas | formatMoney }}</td>
+        <td class="vui-text-align--right">{{ $store.state['share'+order.id] | decimalToPercent }}</td>
+        <td>{{ order.stationOrderNumber }}</td>
+        <td class="vui-text-align--center">
+          <router-link
+            v-bind:to="{ name: &quot;sellers-order-management-pending-makegoods-id&quot;, params: { id: order.id } }"
+          > Manage Schedule
+          </router-link>
+        </td>
+        <td>{{ order.id }}</td>
+        <td>{{ order.id == 135001 ? orderDate : order.orderDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

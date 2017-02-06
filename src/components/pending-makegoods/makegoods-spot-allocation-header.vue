@@ -1,0 +1,228 @@
+<template lang="pug">
+  .spot-allocation-row
+    .spot-allocation-nav-section.pointer.vui-align-middle
+      icon.vui-align-middle(
+        @click = 'scrollLeft'
+        name = 'caret-square-o-left'
+        size = 'medium'
+      )
+    .spot-allocation-container(
+      v-bind:style = '{ "width": spotsWidth }'
+    )
+      ul.spot-allocation(
+        style = 'left: 0'
+      )
+        li(
+          v-for = 'spot in spots'
+        )
+          div.vui-truncate
+            span(
+              v-bind:title = 'spot.week'
+              v-html = 'spot.week'
+            )
+    .spot-allocation-nav-section.pointer.vui-align-middle
+      icon.vui-align-middle(
+        @click = 'scrollRight'
+        name = 'caret-square-o-right'
+        size = 'medium'
+      )
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        spotsWidth: '455px',
+        spots: [
+          { week: '06<br>27' },
+          { week: '07<br>04' },
+          { week: '07<br>11' },
+          { week: '07<br>18' },
+          { week: '07<br>25' },
+          { week: '08<br>01' },
+          { week: '08<br>08' },
+          { week: '08<br>15' },
+          { week: '08<br>22' },
+          { week: '08<br>29' },
+          { week: '09<br>05' },
+          { week: '09<br>12' },
+          { week: '09<br>19' }
+        ]
+      }
+    },
+    methods: {
+      scrollLeft () {},
+      scrollRight () {}
+    }
+  }
+</script>
+
+<style lang="stylus">
+  spot-allocation-width = 35px
+  spot-allocation-height = 30px
+  spotallocation-editable-height = 40px
+  hiatus-color = #add8e6
+  navigation-section-background-color = #51545D
+  spot-item-color = white
+  spot-item-border-color = #999
+  spot-item-disabled = rgb(235, 235, 228)
+  spot-allocation-cell-background-color = #D8E0E3
+
+  .spot-allocation-cell
+    background-color spot-allocation-cell-background-color
+  .spot-allocation-cell > *, .spot-allocation-column > *
+    display block
+    height 100%
+    .spot-allocation-row
+      height 100%
+      display flex
+      flex-direction row
+      justify-content flex-start
+      align-items center
+      & > div
+        float left
+      & > div:last-child
+        right 2px
+      .spot-allocation-nav-section
+        width 24px
+        height 100%
+        position relative
+        background-color navigation-section-background-color
+        display inherit
+        flex-direction inherit
+        align-items inherit
+      .spot-allocation-container
+        overflow hidden
+      .spot-allocation
+        width 100%
+        list-style none
+        display flex
+        padding 0
+        margin 0
+        position relative
+        transition left 0.5s
+        &.spot-allocation-headers
+          & > li:last-child
+            div
+              border-right none
+        & > li
+          width auto
+        li > div
+          width spot-allocation-width
+          text-align center
+          border-right 2px solid spot-item-color
+        li.hiatus-spot > div, li.hiatus-spot > div.spot-item-disabled
+          background-color hiatus-color
+          input
+            background-color hiatus-color
+        li > div.spot-item-disabled
+          background-color spot-item-disabled
+        li > div.editable-spot-value
+          input
+            border none
+            height 100%
+            text-align center
+      .spot-allocation-data
+        margin-left 24px
+        li > div
+          height spot-allocation-height
+          border 1px solid spot-item-border-color
+          margin-right 2px
+          width 33px
+          background-color spot-item-color
+          overflow hidden
+          white-space nowrap
+          text-overflow ellipsis
+          & > span
+            line-height spot-allocation-height
+            letter-spacing -0.03em
+      &.has-quantity .table-row
+        &.value
+          height 0.625*spotallocation-editable-height
+        &.quantity
+          height 0.375*spotallocation-editable-height
+          line-height 1.2
+          text-decoration underline
+          border none
+          background spot-allocation-cell-background-color
+
+  .spot-allocation-cell.editable-spot-allocation-cell
+    .spot-allocation-data
+      li > div
+        height spotallocation-editable-height
+        background-color transparent
+        input
+          text-align center
+      li > div > span.text-underline
+        line-height spotallocation-editable-height
+        letter-spacing 0em
+      li div.table-row span
+        line-height 0
+</style>
+
+<style lang="stylus">
+  /* Spot Allocation Column */
+  .spot-allocation-column
+    white-space normal !important
+  .edit-spot-allocation input, .editable-spot-value input
+    text-align center
+    height 100%
+    width 100%
+  div.spot-item-disabled
+    background-color rgb(235, 235, 228) !important
+  th.spot-allocation-column,
+  td.spot-allocation-cell
+    padding 1px
+  .spot-allocation-cell
+    background-color #D8E0E3
+  .spot-allocation-row > div
+    float left
+  .spot-allocation-row .spot-allocation-nav-section
+    width 22px
+    margin-top 7px
+  .spot-allocation-row .spot-allocation-container
+    overflow hidden
+  .spot-allocation-row .spot-allocation
+    display flex
+    position relative
+    width 100%
+    padding 0
+    margin 0
+    list-style none
+    transition left 0.5s
+  .spot-allocation-row .spot-allocation > li
+    width auto
+  .spot-allocation-row .spot-allocation li > div
+    width 35px
+    text-align center
+  .spot-allocation-row .spot-allocation li:not(:only-of-type) > div
+    border-right 2px solid white
+  .spot-allocation-row .spot-allocation-data
+    margin-left 23px
+  .spot-allocation-row .spot-allocation-data li > div
+    width 33px
+    height 30px
+    border 1px solid silver
+    margin-right 2px
+    background-color #FFF
+    font-size 0.7rem
+  .spot-allocation-row .spot-allocation-data li > div span
+    line-height 30px
+  .spot-allocation-row .spot-allocation-data li > div span .highlight
+    color #c5203e
+  // .left-icon
+  //   background-image url(/Content/Images/left-arrow.png)
+  .button-icon
+    display block
+    width 100%
+    height 21px
+    padding 0
+    margin 0
+    background-repeat no-repeat
+    background-position center
+    cursor pointer
+  .right-icon
+    background-image url(/Content/Images/right-arrow.png)
+  .button-icon[disabled]
+    opacity 0.5
+</style>

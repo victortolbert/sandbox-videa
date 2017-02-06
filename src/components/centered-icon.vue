@@ -1,0 +1,45 @@
+<template>
+  <div class="centeredIcon">
+    <div class="icon fa fa-phone"></div>
+  </div>
+</template>
+
+<style>
+  .centeredIcon {
+    /**
+     * Lay out the children of this container with
+     * flexbox.
+     */
+    display: flex;
+
+    /**
+     * As in the above "Centered prmopt" example,
+     * we'll rotate the main axis so that the children
+     * are ordered vertically.
+     */
+    flex-direction: column;
+
+    /**
+     * Same thing here as before: group the children
+     * together in the center of their container.
+     */
+    justify-content: center;
+
+    /**
+     * Just like in the "Centered prmopt" example,
+     * align the children in the center, along the
+     * main axis.
+     */
+    align-items: center;
+
+    border: 1px solid #D7DBDD;
+    font-size: 40px;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    box-shadow:
+      0 2px 1px rgba(0, 0, 0, 0.05),
+      0 2px 3px rgba(0, 0, 0, 0.05),
+      0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+</style>

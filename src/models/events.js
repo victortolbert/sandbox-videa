@@ -1,0 +1,18 @@
+name
+start
+end
+location
+  street_address
+  extended_address
+  post_office_box
+  locality
+  region
+  postal_code
+  country_name
+  latitude
+  longitude
+summary
+duration
+description
+url
+category

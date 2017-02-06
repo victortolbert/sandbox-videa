@@ -6,6 +6,9 @@ import router from './router'
 import store from './store'
 
 require('~plugins/global-components')
+require('~plugins/global-directives')
+require('~plugins/global-event-bus')
+require('~plugins/global-filters')
 
 /* eslint-disable no-new */
 new Vue({

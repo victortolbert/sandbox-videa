@@ -1,0 +1,40 @@
+/* =====================================================
+   Fractal UI styles
+   ===================================================== */
+
+@import 'config/**/*.css';
+@import 'docs/**/*.css';
+
+/* Theme overrides */
+a {
+  color: $color-link;
+
+  &:hover {
+    color: $color-link--hover;
+  }
+
+  &:active {
+    color: $color-link--active;
+  }
+}
+
+.Pen-previewLink svg {
+  fill: currentColor;
+}
+
+.Header {
+  background-color: map(colors, primary, dark);
+  color: map(colors, primary, light);
+}
+
+.Prose {
+  tr td:first-child {
+    min-width: 12em;
+    padding-right: 1em;
+    white-space: nowrap;
+  }
+
+  tr td:last-child {
+    width: 100%;
+  }
+}
