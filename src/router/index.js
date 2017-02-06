@@ -12,6 +12,11 @@ const routes = [
     component: require('pages')
   },
   {
+    path: '/chart',
+    name: 'chart',
+    component: require('pages/chart')
+  },
+  {
     path: '/sellers/reporting/program-revenue',
     name: 'sellers-reporting-program-revenue',
     component: require('pages/sellers/reporting/program-revenue')

@@ -10,6 +10,9 @@ require('~plugins/global-directives')
 require('~plugins/global-event-bus')
 require('~plugins/global-filters')
 
+// third party plugins
+require('~plugins/vue-highcharts')
+
 /* eslint-disable no-new */
 new Vue({
   router,
