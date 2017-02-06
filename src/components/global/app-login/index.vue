@@ -50,7 +50,6 @@
   export default {
     methods: {
       login () {
-
         if (this.$store.state.user.email.toLowerCase().includes('sell')) {
           this.$store.state.user.name = 'Seller User'
           this.$store.state.activeApp = 'sellers'
