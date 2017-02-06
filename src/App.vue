@@ -1,8 +1,7 @@
 <template lang="pug">
   #app.app
     app-header
-    nav.vui-site-navigation
-      app-login
+    app-navigation
     main.vui-main(
       v-bind:class = '{ "vui-main--login": $store.state.activeApp == "login" }'
     )
@@ -11,9 +10,9 @@
 </template>
 
 <script>
+  import AppNavigation from '~components/global/app-navigation'
   import AppHeader from '~components/global/app-header'
   import AppFooter from '~components/global/app-footer'
-  import AppLogin from '~components/global/app-login'
 
   export default {
     name: 'App',
@@ -23,7 +22,12 @@
       // all titles will be injected into this template
       titleTemplate: '%s | Videa Demo'
     },
-    components: { AppHeader, AppFooter, AppLogin }
+
+    components: {
+      AppNavigation,
+      AppHeader,
+      AppFooter
+    }
   }
 </script>
 
