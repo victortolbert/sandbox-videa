@@ -1,0 +1,27 @@
+.c-search {
+  .c-field__input {
+    width: 100%;
+    background-color: $navigation-color--offset;
+    padding-left: 3rem;
+
+    &:not(:focus) {
+      box-shadow: none;
+    }
+
+    @media (--from-medium-screen) {
+      height: $banner-height--large;
+    }
+  }
+
+  .c-field__button {
+    @apply --focusable;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: map(spaces, xsmall);
+
+    @media (--from-medium-screen) {
+      padding: map(spaces, medium) map(spaces, xsmall);
+    }
+  }
+}

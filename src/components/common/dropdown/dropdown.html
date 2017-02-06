@@ -1,0 +1,47 @@
+<div
+  v-bind:aria-expanded="show"
+  v-bind:class="{ 'vui-is-open': show }"
+  class="vui-dropdown-trigger vui-dropdown-trigger--site-nav vui-dropdown-trigger--click dropdown"
+>
+  <a
+    @click.prevent="click"
+    aria-haspopup="true"
+    aria-live="assertive"
+    style="margin-right: 0"
+  >
+    <span
+      style="color: white"
+      class="vui-m-right--xx-small"
+    >
+      {{ text }}
+    </span>
+    <icon
+      name="caret-down"
+      style="color: #4296b4; margin-right: 0"
+    >
+    </icon>
+  </a>
+  <div
+    class="vui-dropdown vui-dropdown--site-nav"
+  >
+    <ul
+      class="dropdown-menu dropdown__list vui-dropdown__list"
+      role="menu"
+    >
+      <li
+        class="dropdown-item vui-dropdown__item"
+        v-for="(item, index) in items"
+      >
+        <a
+          @click.prevent="select(item)"
+          role="menuitem"
+        >
+          <p
+            class="vui-truncate"
+          > {{ item.name}}
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

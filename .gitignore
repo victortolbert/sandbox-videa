@@ -1,0 +1,10 @@
+*.sublime-*
+.DS_Store
+.nuxt/
+node_modules/
+dist/
+www/
+npm-debug.log
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log

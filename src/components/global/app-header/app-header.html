@@ -1,0 +1,39 @@
+<header class="vui-site-header vui-site-header--app" role="banner">
+    <div class="vui-site-header--app__container vui-grid vui-grid--align-spread">
+        <a class="vui-align-middle">
+            <img alt="Videa" class="vui-site-header__logo" src="/vectors/videa-logo--white.svg" style="height:2rem">
+        </a>
+        <div class="vui-medium-show vui-action">
+            <span class="vui-m-right--xx-small">
+                Welcome Back,
+            </span>
+            <div class="vui-dropdown-trigger vui-dropdown-trigger--site-nav vui-dropdown-trigger--click dropdown dropdown-left vui-m-right--x-small">
+                <a aria-haspopup="true" aria-live="assertive" style="margin-right:0">
+                    <span class="vui-m-right--xx-small" style="color:white">
+                        Seller User
+                    </span>
+
+                    {% render '@icon', {name: 'caret-down',  classes: 'vui-align-middle vui-icon--x-small'} %}
+
+                </a>
+                <div class="vui-dropdown vui-dropdown--site-nav">
+                    <ul class="dropdown-menu dropdown__list vui-dropdown__list" role="menu">
+                    </ul>
+                </div>
+            </div>
+            <button class="vui-button vui-button--inverse vui-button--small vui-m-right--x-small" id="stationSelector">
+                <span>
+                    WVVV
+                </span>
+                <svg
+                    class="vui-icon vui-align-middle vui-icon--x-small"
+                >
+                    <use
+                        xlink:href="{{ '/icons.svg' | path }}#icon-caret-down"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                    ></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,34 @@
+.c-contentinfo {
+  @apply --typeset-label;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: map(spaces, small) map(spaces, large);
+
+  @media (--from-medium-screen) {
+    margin-right: $navigation-width--large;
+  }
+
+  @media (--from-large-screen) {
+    padding-left: map(spaces, medium);
+    padding-right: map(spaces, medium);
+  }
+
+  a {
+    white-space: nowrap;
+
+    @media print {
+      display: none;
+    }
+  }
+
+  > * {
+    @media (--upto-large-screen) {
+      line-height: 2;
+    }
+  }
+}
+
+.c-contentinfo__social a {
+  margin-right: map(spaces, medium);
+}
