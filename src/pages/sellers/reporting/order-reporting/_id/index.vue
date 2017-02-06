@@ -1,7 +1,7 @@
 <template lang="pug">
   .orders-show-detail
     .vui-grid.vui-grid--align-spread
-        h1.vui-text-heading--large Order Reporting Detail
+        vui-title Order Reporting Detail
         h2.vui-text-heading--medium.vui-text-align--right.vui-align-middle
           | {{ order.advertiser }}
           | &mdash;Order #
@@ -10,7 +10,7 @@
         a(
           @click.prevent = 'showOrders'
         )
-          icon.vui-align-middle(
+          vui-icon.vui-align-middle(
             name = 'arrow-circle-left'
           )
           span.vui-align-middle Back to Order Reporting
@@ -19,11 +19,15 @@
         #excelExporter.vui-hint-parent.hint-parent-demo.vui-align-middle.vui-container--right
           | Export to Excel
           button.vui-button.vui-button--icon-border-filled.vui-m-left--x-small
-            icon(
+            vui-icon(
               name = 'download'
               style = 'width: 1.5rem; height: 1.5rem; color: #0177a2'
             )
           span.vui-assistive-text Export to Excel
+      //- order-reporting-details-grid(
+      //-   v-bind:orders = 'order'
+      //- )
+
       table.vui-table.vui-no-row-hover.vui-table--nested-rows.vui-m-bottom--large
         thead
           tr
@@ -46,7 +50,7 @@
                   @click.prevent = 'daypart.expanded = !daypart.expanded'
                   href = '#'
                 )
-                  icon.vui-align-middle(
+                  vui-icon.vui-align-middle(
                     v-bind:name = 'daypart.expanded ? "caret-lower-right" : "caret-right"'
                   )
                 span {{ daypart.name }}
@@ -72,7 +76,7 @@
                     @click.prevent = 'show.expanded = !show.expanded'
                     href = '#'
                   )
-                    icon.vui-align-middle(
+                    vui-icon.vui-align-middle(
                       v-bind:name = 'show.expanded ? "caret-lower-right" : "caret-right"'
                     )
                   span.vui-align-middle {{ show.name }}
@@ -101,17 +105,21 @@
                   td.vui-text-align--right {{ date.revenue | numberWithCommas | formatMoney }}
                   td.vui-text-align--right {{ date.grps | formatRating }}
                   td.vui-text-align--right {{ Math.round(date.cpp) | numberWithCommas | formatMoney }}
-    p.vui-text-body--small
-      sup.vui-m-right--xx-small 1
-      span Nielsen source or data derived from Nielsen
+    vui-footnote
 </template>
 
 <script>
   import axios from '~plugins/axios'
+  // import OrderReportingDetailsGrid from '~components/order-reporting/order-reporting-details-grid'
 
   export default {
+    // components: { OrderReportingListGrid },
     beforeCreate () {
       this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchOrder(this.$route.params.id)
     },
 
     props: {
@@ -121,10 +129,9 @@
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get(`/orders/${params.id}`)
+    data () {
       return {
-        order: data,
+        order: {},
         editing: false,
         loading: false,
         error: false,
@@ -133,12 +140,19 @@
     },
 
     methods: {
-      handleDaypartExpansion (daypart, event) {
-        // var $element = $(event.target).closest('tr')
+      fetchOrder (id) {
+        axios.get(`/orders/${id}`)
+          .then((response) => {
+            this.order = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
 
+      handleDaypartExpansion (daypart, event) {
         if (daypart.expanded === true) {
           daypart.expanded = false
-          // $element.siblings().css('display', 'none')
         } else {
           daypart.expanded = true
         }

@@ -17,7 +17,7 @@
               v-bind:class='{ active: sortKey == column.field }'
             )
               span {{column.title}}
-              icon.vui-icon--sort-arrow(
+              vui-icon.vui-icon--sort-arrow(
                 name = 'sort-asc'
               )
       tbody(
@@ -28,7 +28,7 @@
             a(
               @click.prevent = 'toggleDetail(order)'
             )
-              icon.vui-align-middle(
+              vui-icon.vui-align-middle(
                 v-bind:name = 'order.expanded ? "caret-lower-right" : "caret-right"'
               )
             span {{ order.advertiser }}
@@ -40,9 +40,10 @@
           //- td.vui-text-align--right {{ order.share | decimalToPercent }}
           td.vui-text-align--right {{ $store.state['share'+order.id] | decimalToPercent }}
           td {{ order.stationOrderNumber }}
-          td.vui-text-align--center:  router-link(
-            v-bind:to = '{ name: "sellers-order-management-pending-makegoods-id", params: { id: order.id } }'
-          ) Manage Schedule
+          td.vui-text-align--center
+            //- router-link(
+            //-   v-bind:to = '{ name: "sellers-order-management-pending-makegoods-id", params: { id: order.id } }'
+            //- ) Manage Schedule
           td {{ order.id }}
           td {{ order.id == 135001 ? orderDate : order.orderDate }}
         tr.animated(
@@ -118,7 +119,7 @@
                         @click.prevent = 'showOrder(order.id)'
                       )
                         span.vui-align-middle.vui-m-right--xx-small View Detail
-                        icon.vui-align-middle(
+                        vui-icon.vui-align-middle(
                           name = 'arrow-circle-right'
                         )
 </template>

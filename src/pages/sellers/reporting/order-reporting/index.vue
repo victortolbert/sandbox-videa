@@ -1,13 +1,12 @@
 <template lang="pug">
   .orders-view
-    ui-title Order Reporting
-    ui-subtitle.
+    vui-title Order Reporting
+    vui-subtitle.
       The order information below reflects the data from your station's
       traffic system. Videa updates traffic information once each day;
       as a result, data may not be current.
-    ui-panel
+    vui-panel
       order-reporting-filter
-    ui-loader
     order-reporting-grid(
       v-bind:grid-columns = 'gridColumns'
       v-bind:orders = 'orders'
@@ -15,9 +14,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import axios from '~plugins/axios'
-
   import OrderReportingFilter from '~components/order-reporting/order-reporting-filter'
   import OrderReportingGrid from '~components/order-reporting/order-reporting-grid'
 
@@ -26,15 +23,13 @@
       this.$store.state.activeApp = 'sellers'
     },
 
-    components: {
-      OrderReportingFilter,
-      OrderReportingGrid
+    created () {
+      this.fetchOrders()
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get('/orders')
+    data () {
       return {
-        orders: data,
+        orders: [],
         gridColumns: [
           { field: 'advertiser', title: 'Advertiser' },
           { field: 'agency', title: 'Agency' },
@@ -51,9 +46,19 @@
       }
     },
 
-    computed: {
-      ...mapState(['apiHost', 'activeApp'])
-    }
+    methods: {
+      fetchOrders () {
+        axios.get('/orders')
+          .then((res) => {
+            this.orders = res.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+    },
+
+    components: { OrderReportingFilter, OrderReportingGrid }
   }
 </script>
 

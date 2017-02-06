@@ -2,8 +2,8 @@
   .campaign-performance-details-view
     vui-title(style = 'margin-bottom: 0') Campaign Performance Details
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
-      a(
-        @click.prevent = 'showCampaigns'
+      router-link(
+        v-bind:to = '{ name: "sellers-campaign-performance" }'
       )
         vui-icon.vui-align-middle(
           name = 'arrow-circle-left'
@@ -15,6 +15,7 @@
     //- campaign-performance-details-info(
     //-   v-bind:campaign = 'campaign'
     //- )
+
     campaign-performance-details-daypart-summary(
       v-bind:campaign = 'campaign'
     )
@@ -41,19 +42,13 @@
   import CampaignPerformanceDetailsInfo from '~components/campaign-performance/campaign-performance-details-info'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
-
-    created () {
-      this.fetchCampaign(this.$route.params.id)
-    },
-
-    props: {
-      campaignsRoute: {
-        type: String,
-        default: 'sellers-campaign-performance'
-      }
+    components: {
+      CampaignPerformanceDetailsSpotDetailsGridControls,
+      CampaignPerformanceDetailsSpotDetailsGridFooter,
+      CampaignPerformanceDetailsSpotDetailsGrid,
+      CampaignPerformanceDetailsDaypartSummary,
+      CampaignPerformanceDetailsFilter,
+      CampaignPerformanceDetailsInfo
     },
 
     data () {
@@ -71,22 +66,15 @@
           .catch((error) => {
             console.log(error)
           })
-      },
-
-      showCampaigns () {
-        this.$router.push({
-          name: this.campaignsRoute
-        })
       }
     },
 
-    components: {
-      CampaignPerformanceDetailsSpotDetailsGridControls,
-      CampaignPerformanceDetailsSpotDetailsGridFooter,
-      CampaignPerformanceDetailsSpotDetailsGrid,
-      CampaignPerformanceDetailsDaypartSummary,
-      CampaignPerformanceDetailsFilter,
-      CampaignPerformanceDetailsInfo
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchCampaign(this.$route.params.id)
     }
   }
 </script>

@@ -14,7 +14,7 @@
           type = 'text'
         )
 
-    ui-quarter-selector
+    vui-quarter-selector
 
     .vui-m-right--x-small(
       style = 'align-self: center'
