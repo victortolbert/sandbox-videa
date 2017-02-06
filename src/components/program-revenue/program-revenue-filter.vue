@@ -2,7 +2,7 @@
   form.vui-grid.vui-grid--vertical-align-end(
     action = ''
   )
-    ui-quarter-selector
+    vui-quarter-selector
 
     .vui-m-right--x-small(
       style = 'align-self: center'
@@ -11,7 +11,7 @@
     fieldset.vui-form-element
       label.vui-form-element__label Start Date
       .vui-form-element__control.vui-m-right--small
-        datepicker(
+        vui-datepicker(
           v-model = 'startDate'
           name = 'startDate'
           placeholder = 'MM/dd/yyyy'
@@ -19,13 +19,15 @@
     fieldset.vui-form-element
       label.vui-form-element__label End Date
       .vui-form-element__control.vui-m-right--small
-        datepicker(
+        vui-datepicker(
           v-model = 'endDate'
           name = 'endDate'
           placeholder = 'MM/dd/yyyy'
         )
     fieldset.vui-form-element
-      button.vui-button.vui-button--brand Search
+      button.vui-button.vui-button--brand(
+        @click.prevent = ''
+      ) Search
 </template>
 
 <script>

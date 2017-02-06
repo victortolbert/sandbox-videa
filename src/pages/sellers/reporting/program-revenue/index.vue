@@ -12,14 +12,13 @@
 
 <script>
   import axios from '~plugins/axios'
-
   import ProgramRevenueMetrics from '~components/program-revenue/program-revenue-metrics'
   import ProgramRevenueFilter from '~components/program-revenue/program-revenue-filter'
   import ProgramRevenueGrid from '~components/program-revenue/program-revenue-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Account Performance'
     },
 
     components: {
@@ -28,9 +27,30 @@
       ProgramRevenueGrid
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get('/programs')
-      return { programs: data }
+    data () {
+      return {
+        programs: []
+      }
+    },
+
+    methods: {
+      fetchPrograms () {
+        axios.get(`/programs`)
+          .then((response) => {
+            this.programs = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchPrograms()
     }
   }
 </script>

@@ -29,8 +29,8 @@
     campaign-performance-details-spot-details-grid-controls
     //- campaign-performance-details-spot-details-grid
     campaign-performance-details-spot-details-grid-footer
-
 </template>
+
 <script>
   import axios from '~plugins/axios'
   import CampaignPerformanceDetailsSpotDetailsGridControls from '~components/campaign-performance/campaign-performance-details-spot-details-grid-controls'
@@ -44,6 +44,7 @@
     metaInfo: {
       title: 'Campaign Performance Details'
     },
+
     components: {
       CampaignPerformanceDetailsSpotDetailsGridControls,
       CampaignPerformanceDetailsSpotDetailsGridFooter,

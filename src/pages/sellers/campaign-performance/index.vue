@@ -2,17 +2,11 @@
   .campaign-performance-view
     vui-title Campaign Performance
     vui-panel
-      campaign-performance-list-filter(
-        apply-filter = 'applyFilter(filter)'
-        filter = 'queryParams'
-      )
+      campaign-performance-list-filter
     campaign-performance-list-grid-controls
     .vui-scrollable--x.vui-m-bottom--small
       campaign-performance-list-grid(
-        current-sorting = 'currentSorting'
-        grid-columns = 'gridColumns'
         campaigns = 'campaigns'
-        sorting-changed = 'sortingChanged'
       )
     vui-footnote
 

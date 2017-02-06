@@ -1,5 +1,5 @@
 <template lang="pug">
-  modal(
+  vui-modal(
     v-bind:on-close = 'close'
     v-bind:show = 'show'
     size = 'large'
@@ -25,9 +25,7 @@
               td.u-width-small {{ spot.intendedAirDate }}
               td.u-width-small.vui-text-align--right {{ spot.unitRate | numberWithCommas | formatMoney }}
               td.u-width-small.vui-text-align--right {{ spot.cpp | numberWithCommas | formatMoney }}
-      p.vui-text-body--small
-        sup 1
-        span Nielsen source or data derived from Nielsen
+      vui-footnote
 </template>
 
 <script>

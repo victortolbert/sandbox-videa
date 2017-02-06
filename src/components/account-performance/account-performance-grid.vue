@@ -53,8 +53,12 @@
   import AccountDetailModal from '~components/account-detail-modal'
 
   export default {
-    components: { AccountDetailModal },
-    props: ['accounts'],
+    components: {
+      AccountDetailModal
+    },
+
+    props: [ 'accounts' ],
+
     data () {
       return {
         showAccountDetailModal: false,
@@ -74,6 +78,7 @@
         accountPerformance: {}
       }
     },
+
     computed: {
       totalRevenueTy () {
         // return this.accountPerformance.rows
@@ -96,6 +101,7 @@
         }, 0)
       }
     },
+
     methods: {
       showAccountDetail (account) {
         this.showAccountDetailModal = true
