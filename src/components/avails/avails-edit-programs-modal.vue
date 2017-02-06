@@ -1,5 +1,9 @@
 <template lang="pug">
-  modal(:show='show', :on-close='close', size='large')
+  vui-modal(
+    v-bind:show = 'show',
+    v-bind:on-close = 'close'
+    size = 'large'
+  )
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium  Add Program
     .modal-body
@@ -9,8 +13,12 @@
           label.vui-form-element__label Select Daypart
           .vui-form-element__control
             .vui-select_container
-              select.vui-select(v-model='selectedDaypart')
-                option(v-for='daypart in dayparts') {{ daypart }}
+              select.vui-select(
+                v-model = 'selectedDaypart'
+              )
+                option(
+                  v-for = 'daypart in dayparts'
+                ) {{ daypart }}
       .vui-scrollable--x
         table.vui-table.vui-m-bottom--medium
           thead
@@ -18,16 +26,26 @@
               th Program
               th Time
               th.vui-text-align--center
-                input(type='checkbox')
+                input(
+                  type = 'checkbox'
+                )
           tbody
-            tr(v-for='program in programs')
+            tr(
+              v-for = 'program in programs'
+            )
               td {{program.name}}
               td {{program.time}}
               td.vui-text-align--center
-                input(type='checkbox')
+                input(
+                  type = 'checkbox'
+                )
         .vui-text-align--right
-          button.vui-button.vui-button--brand.vui-m-right--x-small(@click.prevent='close()') Submit
-          button.vui-button.vui-button--neutral(@click.prevent='close()') Cancel
+          button.vui-button.vui-button--brand.vui-m-right--x-small(
+            @click.prevent = 'close'
+          ) Submit
+          button.vui-button.vui-button--neutral(
+            @click.prevent = 'close'
+          ) Cancel
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template lang="pug">
-  modal(
+  vui-modal(
     v-bind:on-close = 'close'
     v-bind:show = 'show'
     size = 'large'

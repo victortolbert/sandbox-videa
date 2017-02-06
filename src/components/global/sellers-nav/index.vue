@@ -8,6 +8,10 @@
           )
         li
           router-link(
+            v-bind:to = '{ name: "sellers-avails" }'
+          ) Avails
+        li
+          router-link(
             v-bind:to = '{ name: "sellers-campaign-performance" }'
           ) Campaign Performance
 </template>

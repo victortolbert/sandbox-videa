@@ -8,7 +8,7 @@
     button.vui-button.vui-button--icon-container(
       aria-haspopup = 'true'
     )
-      icon(
+      vui-icon(
         name = 'calendar-plus-o'
         style = 'margin-right: 0; color: hsla(196, 99%, 32%, 1)'
       )

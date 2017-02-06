@@ -1,6 +1,6 @@
 <template lang="pug">
   .avails-edit-view
-    ui-title Avail ID {{ avail.id }} &mdash; Edit
+    vui-title Avail ID {{ avail.id }} &mdash; Edit
 
     .vui-box.vui-grid.vui-grid--align-spread.vui-m-bottom--large.vui-wrap.vui-theme--default
       fieldset.vui-form-element
@@ -128,7 +128,7 @@
             @click.prevent = 'showAvail(avail.id)'
             href = '#'
           )
-            icon.vui-m-right--xx-small(
+            vui-icon.vui-m-right--xx-small(
               name = 'arrow-circle-left'
             )
             | Back to Avail
@@ -173,7 +173,7 @@
                 )
                   span.vui-align-middle Program
                   span.vui-align-middle
-                    icon(
+                    vui-icon(
                       name = 'sort'
                       style = 'color: hsla(192, 9%, 89%, .5)'
                     )
@@ -198,7 +198,7 @@
             @click.prevent = 'setActiveTab("market-competitive")'
             href = '#'
           )
-            icon.vui-m-right--xx-small(
+            vui-icon.vui-m-right--xx-small(
               name = 'arrow-circle-left'
             )
             | Back to Market Competitive
@@ -234,7 +234,7 @@
             @click.prevent = 'showEditProgramsModal = true'
             href = '#'
           )
-            icon.vui-m-right--xx-small(
+            vui-icon.vui-m-right--xx-small(
               name = 'edit'
             )
             | Add Programs
@@ -298,7 +298,7 @@
                     @click.prevent = 'program.expanded = !program.expanded'
                     href='#'
                   )
-                    icon.vui-align-middle.vui-m-right--x-small(
+                    vui-icon.vui-align-middle.vui-m-right--x-small(
                       v-bind:name = '(program.expanded) ? "caret-lower-right" : "caret-right"'
                       v-if = 'program.months'
                     )
@@ -445,7 +445,7 @@
                         @click.prevent = 'week.expanded = false'
                         href = '#'
                       )
-                        icon.vui-m-right--x-small(
+                        vui-icon.vui-m-right--x-small(
                           name = 'times-circle'
                         )
                       span.vui-align-middle {{ week.week }}
@@ -498,7 +498,7 @@
           @click.prevent = 'setActiveTab("buyer-ratings")'
           href = '#'
         )
-          icon.vui-m-right--xx-small(
+          vui-icon.vui-m-right--xx-small(
             name = 'arrow-circle-left'
           )
           | Back to Buyer Ratings
@@ -527,20 +527,14 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import axios from '~plugins/axios'
-
   import AvailsEditProgramsModal from '~components/avails/avails-edit-programs-modal'
   import AddWeekDropdown from '~components/common/add-week-dropdown'
   import StepWizard from '~components/avails/step-wizard'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
-
-    mounted () {
-      this.fetchDayparts()
+    metaInfo: {
+      title: 'Avails'
     },
 
     components: {
@@ -559,10 +553,9 @@
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get(`/avails/${params.id}`)
+    data () {
       return {
-        avail: data,
+        avail: {},
         showEditProgramsModal: false,
         activeTab: 'market-competitive',
         application: 'reps',
@@ -628,17 +621,24 @@
       }
     },
 
-    computed: {
-      ...mapState(['apiHost', 'activeApp'])
-    },
-
     methods: {
+      fetchAvail (id) {
+        axios.get(`/avails/${id}`)
+          .then((response) => {
+            this.avail = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
       fetchDayparts () {
         axios.get('/dayparts')
           .then((response) => {
             this.dayparts = response.data
-          }, (response) => {
-            // error callback
+          })
+          .catch((error) => {
+            console.log(error)
           })
       },
 
@@ -686,6 +686,15 @@
       'selected-daypart' (daypart) {
         this.selectedDaypart = this.avail.dayparts[daypart.id - 1]
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchAvail(this.$route.params.id)
+      this.fetchDayparts()
     }
   }
 </script>

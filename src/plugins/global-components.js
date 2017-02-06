@@ -25,3 +25,6 @@ Vue.component('vui-items-per-page-selector', require('~components/common/datagri
 Vue.component('vui-sorting-column', require('~components/common/datagrid/sorting-column'))
 Vue.component('vui-datagrid-heading', require('~components/common/datagrid/datagrid-heading'))
 Vue.component('vui-datagrid-tools', require('~components/common/datagrid/datagrid-tools'))
+
+Vue.component('cpm', require('~components/common/cpm'))
+Vue.component('cpp', require('~components/common/cpp'))

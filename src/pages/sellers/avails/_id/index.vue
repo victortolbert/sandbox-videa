@@ -14,7 +14,7 @@
           v-if = '!editing'
           href = '#'
         )
-          icon.vui-m-right--xx-small(
+          vui-icon.vui-m-right--xx-small(
             name = 'edit'
           )
           | Edit Buyer Specs and Daypart Goals
@@ -191,7 +191,7 @@
             v-if = '!editing'
             href = '#'
           )
-            icon.vui-m-right--xx-small(
+            vui-icon.vui-m-right--xx-small(
               name = 'edit'
             )
             | Edit Buyer Specs and Daypart Goals
@@ -216,7 +216,7 @@
               )
                 span.vui-align-middle Daypart
                 span.vui-align-middle
-                  icon(
+                  vui-icon(
                     name = 'sort-asc'
                     style = 'color: hsla(192, 9%, 89%, 1)'
                   )
@@ -233,7 +233,7 @@
               )
                 span.vui-align-middle CPP
                 span.vui-align-middle
-                  icon(
+                  vui-icon(
                     name = 'sort'
                     style = 'color: hsla(192, 9%, 89%, .5)'
                   )
@@ -244,7 +244,7 @@
               )
                 span.vui-align-middle GRPs
                 span.vui-align-middle
-                  icon(
+                  vui-icon(
                     name = 'sort'
                     style = 'color: hsla(192, 9%, 89%, .5)'
                   )
@@ -255,7 +255,7 @@
               )
                 span.vui-align-middle Mix
                 span.vui-align-middle
-                  icon(
+                  vui-icon(
                     name = 'sort'
                     style = 'color: hsla(192, 9%, 89%, .5)'
                   )
@@ -335,7 +335,7 @@
                   @click.prevent = 'program.expanded = !program.expanded'
                   href = '#'
                 )
-                  icon.vui-align-middle.vui-m-right--x-small(
+                  vui-icon.vui-align-middle.vui-m-right--x-small(
                     v-bind:name = 'program.expanded ? "caret-lower-right" : "caret-right"'
                     v-if = 'program.months'
                   )
@@ -369,7 +369,7 @@
                     @click.prevent = 'month.expanded = !month.expanded'
                     href = '#'
                   )
-                    icon.vui-align-middle.vui-m-right--x-small(
+                    vui-icon.vui-align-middle.vui-m-right--x-small(
                       v-bind:name = 'month.expanded ? "caret-lower-right" : "caret-right"'
                       v-if = 'month.weeks'
                     )
@@ -422,19 +422,13 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import axios from '~plugins/axios'
   import moment from 'moment'
-
   import AvailsReleaseToBuyerModal from '~components/avails/avails-release-to-buyer-modal'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
-
-    mounted () {
-      this.fetchDayparts()
+    metaInfo: {
+      title: 'Avails'
     },
 
     components: { AvailsReleaseToBuyerModal },
@@ -444,16 +438,16 @@
         type: String,
         default: 'sellers-avails'
       },
+
       editAvailRoute: {
         type: String,
         default: 'sellers-avails-id-edit'
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get(`/avails/${params.id}`)
+    data () {
       return {
-        avail: data,
+        avail: {},
         expirationDate: new Date(moment().add(14, 'days').toISOString()),
         dueDate: new Date(moment().add(5, 'days').toISOString()),
         showReleaseToBuyerModal: false,
@@ -520,13 +514,15 @@
       }
     },
 
-    computed: {
-      ...mapState(['apiHost', 'activeApp'])
-    },
-
     methods: {
-      setEditMode () {
-        this.editing = true
+      fetchAvail (id) {
+        axios.get(`/avails/${id}`)
+          .then((response) => {
+            this.avail = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
       },
 
       fetchDayparts () {
@@ -536,6 +532,10 @@
           }, (response) => {
             // error callback
           })
+      },
+
+      setEditMode () {
+        this.editing = true
       },
 
       selectDaypart (daypart) {
@@ -568,6 +568,15 @@
       'selected-daypart' (daypart) {
         this.selectedDaypart = this.avail.dayparts[daypart.id - 1]
       }
-    }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchAvail(this.$route.params.id)
+      this.fetchDayparts()
+    },
   }
 </script>

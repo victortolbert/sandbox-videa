@@ -1,7 +1,7 @@
 <template lang="pug">
   .avails-view
-    ui-title Avails
-    ui-panel
+    vui-title Avails
+    vui-panel
       avails-filter
     avails-grid(
       v-bind:avails = 'avails'
@@ -10,19 +10,19 @@
 
 <script>
   import axios from '~plugins/axios'
-
   import AvailsFilter from '~components/avails/avails-filter'
   import AvailsGrid from '~components/avails/avails-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Avails'
     },
 
     components: {
       AvailsFilter,
       AvailsGrid
     },
+
     props: {
       availRoute: {
         type: String,
@@ -30,10 +30,9 @@
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get('/avails')
+    data () {
       return {
-        avails: data,
+        avails: [],
         gridColumns: [
           { field: 'advertiser', title: 'Advertiser' },
           { field: 'agency', title: 'Agency' },
@@ -48,6 +47,26 @@
           { field: 'orderDate', title: 'Order Date' }
         ]
       }
+    },
+
+    methods: {
+      fetchAvails () {
+        axios.get('/avails')
+          .then((response) => {
+            this.avails = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchAvails()
     }
   }
 </script>

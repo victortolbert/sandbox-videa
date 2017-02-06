@@ -20,6 +20,21 @@ module.exports = [
     component: require('pages/sellers/reporting/order-reporting/_id')
   },
   {
+    path: '/sellers/avails',
+    name: 'sellers-avails',
+    component: require('pages/sellers/avails')
+  },
+  {
+    path: '/sellers/avails/:id',
+    name: 'sellers-avails-id',
+    component: require('pages/sellers/avails/_id')
+  },
+  {
+    path: '/sellers/avails/:id/edit',
+    name: 'sellers-avails-id-edit',
+    component: require('pages/sellers/avails/_id/edit')
+  },
+  {
     path: '/sellers/campaign-performance',
     name: 'sellers-campaign-performance',
     component: require('pages/sellers/campaign-performance')
