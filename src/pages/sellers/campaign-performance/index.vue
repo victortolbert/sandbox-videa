@@ -25,6 +25,9 @@
   import CampaignPerformanceListGrid from '~components/campaign-performance/campaign-performance-list-grid'
 
   export default {
+    metaInfo: {
+      title: 'Campaign Performance'
+    },
     components: {
       CampaignPerformanceListGridControls,
       CampaignPerformanceListFilter,

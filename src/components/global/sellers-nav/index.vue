@@ -8,7 +8,7 @@
           )
         li
           router-link(
-            v-bind:to='{ name: "sellers-campaign-performance" }'
+            v-bind:to = '{ name: "sellers-campaign-performance" }'
           ) Campaign Performance
 </template>
 
@@ -23,7 +23,7 @@
           // { name: 'Order Search', route: 'sellers-order-management-order-search' }
         ],
         reportingMenuItems: [
-          // { name: 'Account Performance', route: 'sellers-reporting-account-performance' },
+          { name: 'Account Performance', route: 'sellers-reporting-account-performance' },
           // { name: 'Program Revenue', route: 'sellers-reporting-program-revenue' },
           { name: 'Order Reporting', route: 'sellers-reporting-order-reporting' }
         ]

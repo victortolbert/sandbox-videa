@@ -3,10 +3,12 @@ import Vue from 'vue'
 Vue.component('vui-daypart-selector', require('~components/common/daypart-selector'))
 
 Vue.component('vui-back-to-top', require('~components/common/back-to-top'))
+Vue.component('vui-media', require('~components/common/media-object'))
 Vue.component('vui-footnote', require('~components/common/footnote'))
 Vue.component('vui-subtitle', require('~components/common/subtitle'))
 Vue.component('vui-dropdown', require('~components/common/dropdown'))
 Vue.component('vui-button', require('~components/common/button'))
+Vue.component('vui-modal', require('~components/common/modal'))
 Vue.component('vui-pager', require('~components/common/pager'))
 Vue.component('vui-title', require('~components/common/title'))
 Vue.component('vui-panel', require('~components/common/panel'))

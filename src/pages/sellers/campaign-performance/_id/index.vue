@@ -33,7 +33,6 @@
 </template>
 <script>
   import axios from '~plugins/axios'
-
   import CampaignPerformanceDetailsSpotDetailsGridControls from '~components/campaign-performance/campaign-performance-details-spot-details-grid-controls'
   import CampaignPerformanceDetailsSpotDetailsGridFooter from '~components/campaign-performance/campaign-performance-details-spot-details-grid-footer'
   import CampaignPerformanceDetailsSpotDetailsGrid from '~components/campaign-performance/campaign-performance-details-spot-details-grid'
@@ -42,6 +41,9 @@
   import CampaignPerformanceDetailsInfo from '~components/campaign-performance/campaign-performance-details-info'
 
   export default {
+    metaInfo: {
+      title: 'Campaign Performance Details'
+    },
     components: {
       CampaignPerformanceDetailsSpotDetailsGridControls,
       CampaignPerformanceDetailsSpotDetailsGridFooter,

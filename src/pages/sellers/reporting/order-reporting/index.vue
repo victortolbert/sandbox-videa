@@ -19,12 +19,13 @@
   import OrderReportingGrid from '~components/order-reporting/order-reporting-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Order Reporting'
     },
 
-    created () {
-      this.fetchOrders()
+    components: {
+      OrderReportingFilter,
+      OrderReportingGrid
     },
 
     data () {
@@ -49,8 +50,8 @@
     methods: {
       fetchOrders () {
         axios.get('/orders')
-          .then((res) => {
-            this.orders = res.data
+          .then((response) => {
+            this.orders = response.data
           })
           .catch((error) => {
             console.log(error)
@@ -58,7 +59,13 @@
       }
     },
 
-    components: { OrderReportingFilter, OrderReportingGrid }
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchOrders()
+    }
   }
 </script>
 

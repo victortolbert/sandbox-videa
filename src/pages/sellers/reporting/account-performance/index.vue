@@ -1,7 +1,7 @@
 <template lang="pug">
   .account-performance-view
-    ui-title Account Performance
-    ui-panel
+    vui-title Account Performance
+    vui-panel
       account-performance-filter
     account-performance-metrics
     account-performance-grid(
@@ -11,14 +11,13 @@
 
 <script>
   import axios from '~plugins/axios'
-
   import AccountPerformanceMetrics from '~components/account-performance/account-performance-metrics'
   import AccountPerformanceFilter from '~components/account-performance/account-performance-filter'
   import AccountPerformanceGrid from '~components/account-performance/account-performance-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Account Performance'
     },
 
     components: {
@@ -27,9 +26,30 @@
       AccountPerformanceGrid
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get('/accounts')
-      return { accounts: data }
+    data () {
+      return {
+        accounts: []
+      }
+    },
+
+    methods: {
+      fetchAccounts () {
+        axios.get(`/accounts`)
+          .then((response) => {
+            this.accounts = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchAccounts()
     }
   }
 </script>

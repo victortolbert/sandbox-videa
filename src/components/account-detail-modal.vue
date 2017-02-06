@@ -1,5 +1,5 @@
 <template lang="pug">
-  modal(
+  vui-modal(
     v-bind:on-close = 'close'
     v-bind:show = 'show'
     size = 'large'
@@ -30,7 +30,7 @@
 
 <script>
   export default {
-    props: ['show', 'account'],
+    props: [ 'show', 'account' ],
 
     data () {
       return {
