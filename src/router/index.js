@@ -10,8 +10,8 @@ const routes = [
   { path: '/chart', name: 'chart', component: require('pages/chart') },
   { path: '/privacy', name: 'privacy', component: require('pages/privacy') },
   { path: '/terms', name: 'terms', component: require('pages/terms') },
+  ...require('./seller-routes'),
   { path: '*', component: require('pages/error') },
-  ...require('./seller-routes')
 ]
 
 export default new VueRouter({
