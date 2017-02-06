@@ -11,7 +11,7 @@ const routes = [
   { path: '/privacy', name: 'privacy', component: require('pages/privacy') },
   { path: '/terms', name: 'terms', component: require('pages/terms') },
   ...require('./seller-routes'),
-  { path: '*', component: require('pages/error') },
+  { path: '*', component: require('pages/error') }
 ]
 
 export default new VueRouter({
