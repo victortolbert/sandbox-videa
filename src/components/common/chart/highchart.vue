@@ -3,58 +3,63 @@
 </template>
 
 <script>
-var Highcharts = require('highcharts');
-export default {
-    name : "Chart",
-    props : {
-      series : {
+  const Highcharts = require('highcharts')
+
+  export default {
+    name: 'Chart',
+    props: {
+      series: {
         type: Array,
         required: true
       }
-  },
-    data : function() {
+    },
+
+    data () {
       return {
         target: undefined
       }
     },
-    mounted : function() {
+
+    mounted () {
       this.target = Highcharts.chart(this.$el, {
         title: {
           text: 'Monthly Average Temperature',
-          x: -20 // center
+          x: -20
         },
         subtitle: {
           text: 'Source: WorldClimate.com',
           x: -20
         },
         xAxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         },
         yAxis: {
           title: {
-          text: 'Temperature (°C)'
+            text: 'Temperature (°C)'
+          },
+          plotLines: [
+            {
+              value: 0,
+              width: 1,
+              color: '#808080'
+            }
+          ]
         },
-        plotLines: [{
-          value: 0,
-          width: 1,
-          color: '#808080'
-        }]
-      },
-      tooltip: {
-        valueSuffix: '°C'
-      },
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle',
-            borderWidth: 0
-      },
-      series: this.series
-    });
-  },
-  beforeDestroy: function() {
-    this.target.destroy();
-  },
+        tooltip: {
+          valueSuffix: '°C'
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle',
+          borderWidth: 0
+        },
+        series: this.series
+      })
+    },
+
+    beforeDestroy () {
+      this.target.destroy()
+    }
 }
 </script>
