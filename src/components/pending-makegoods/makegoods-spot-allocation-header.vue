@@ -1,7 +1,7 @@
 <template lang="pug">
   .spot-allocation-row
     .spot-allocation-nav-section.pointer.vui-align-middle
-      icon.vui-align-middle(
+      vui-icon.vui-align-middle(
         @click = 'scrollLeft'
         name = 'caret-square-o-left'
         size = 'medium'
@@ -21,7 +21,7 @@
               v-html = 'spot.week'
             )
     .spot-allocation-nav-section.pointer.vui-align-middle
-      icon.vui-align-middle(
+      vui-icon.vui-align-middle(
         @click = 'scrollRight'
         name = 'caret-square-o-right'
         size = 'medium'

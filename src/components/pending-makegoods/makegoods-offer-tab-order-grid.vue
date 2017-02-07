@@ -180,7 +180,7 @@
                 v-show = 'item.firstSentMakegood'
                 title = 'Click to open the Offer which has been sent and is awaiting approval'
               )
-                icon(
+                vui-icon(
                   name = 'medicine-bottle'
                 )
             td.vui-text-align--center(
@@ -191,7 +191,7 @@
                 v-show = 'item.firstDraftMakegood'
                 title = 'Indicates this Buy Line has DRAFT Offers'
               )
-                icon(
+                vui-icon(
                   name ='pencil-square'
                 )
             td.vui-text-align--center.overflow-visible(
@@ -247,7 +247,7 @@
                 @click = 'showCurrentInfo(item)'
                 title = 'Click to see current rates & ratings and matched Avails'
               )
-                icon(
+                vui-icon(
                   name = 'popout'
                 )
             td.spot-allocation-cell(

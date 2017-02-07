@@ -188,7 +188,7 @@
               a.pointer.current-info.popup(
                 @click = 'showCurrentInfo(item)'
               )
-                icon.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
+                vui-icon.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
                   name = 'popout'
                 )
             td.spot-allocation-cell(
@@ -302,7 +302,7 @@
               a.pointer.current-info.popup(
                 @click = 'showCurrentInfo(item)'
               )
-                icon.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
+                vui-icon.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
                   name = 'popout'
                 )
             td.spot-allocation-cell(

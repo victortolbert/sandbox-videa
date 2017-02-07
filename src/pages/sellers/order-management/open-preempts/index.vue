@@ -1,7 +1,7 @@
 <template lang="pug">
   .open-preempts-view
-    ui-title Open Pre-Empts
-    ui-panel
+    vui-title Open Pre-Empts
+    vui-panel
       open-preempts-filter(
         apply-filter = 'listCtrl.filterApply'
         clear-filter = 'listCtrl.filterClear'
@@ -29,7 +29,7 @@
           style = 'cursor: pointer; visibility: visible;'
         )
           | Back to Top
-          icon(
+          vui-icon(
             name = 'arrow-circle-up'
           )
 </template>
@@ -40,10 +40,6 @@
   import OpenPreemptsGrid from '~components/open-preempts/open-preempts-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
-
     components: {
       OpenPreemptsEditTextFieldPopup,
       OpenPreemptsFilter,
@@ -54,6 +50,10 @@
       return {
         show: false
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
     }
   }
 </script>

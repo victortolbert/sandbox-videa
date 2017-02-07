@@ -8,7 +8,7 @@
             h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
               div Open Preempt Note
               span.pointer.vui-icon_container.vui-m-right--x-small(@click='hideDialog')
-                icon(name='close')
+                vui-icon(name='close')
           .modal-body
             form(novalidate='', @submit='')
               .filter-validation.vui-theme--shade.error

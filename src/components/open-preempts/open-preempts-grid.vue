@@ -104,7 +104,7 @@
                 target = '_blank'
                 title = 'Click to create a MG Offer'
               )
-                icon.vui-icon--small(
+                vui-icon.vui-icon--small(
                   name = 'medicine-bottle'
                 )
             td.vui-text-align--center(
@@ -116,7 +116,7 @@
                 v-bind:class = '{"exists": item.customerCareNotes, "notExists": !item.customerCareNotes}'
                 title = 'Click to update Customer Care notes'
               )
-                icon(
+                vui-icon(
                   name = 'sticky-note-o'
                 )
             td(

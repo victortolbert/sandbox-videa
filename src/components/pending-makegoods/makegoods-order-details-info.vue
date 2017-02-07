@@ -12,7 +12,7 @@
       )
         .vui-grid.vui-grid--vertical-align-center
 
-          icon.vui-m-right--x-small(
+          vui-icon.vui-m-right--x-small(
             v-bind:name = 'shouldShowInfo ? "caret-right" : "caret-down"'
             size = 'medium'
             style = 'color: #0177a2'
@@ -21,7 +21,7 @@
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Status
             br
-            badge {{ orderInfo.offerStatus }}
+            vui-badge {{ orderInfo.offerStatus }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Advertiser
@@ -151,7 +151,7 @@
           )
             label.vui-form-element__label.black-text.disabled Buyer Avail Request Notes
             .vui-form-element__control
-              resizable-textarea(
+              vui-resizable-textarea(
                 v-bind:text = 'orderInfo.buyerAvailRequestNotes'
                 initial-height = '60'
                 is-readonly = 'true'
@@ -161,7 +161,7 @@
           fieldset.vui-form-element.vui-m-bottom--small
             label.vui-form-element__label.black-text.disabled Buyer Order Comment
             .vui-form-element__control
-              resizable-textarea(
+              vui-resizable-textarea(
                 v-bind:text = 'orderInfo.buyerOrderComment'
                 initial-height = '60'
                 is-readonly = 'true'
@@ -171,7 +171,7 @@
           fieldset.vui-form-element.vui-m-bottom--small
             label.vui-form-element__label.black-text.disabled Customer Care Comment To Station
             .vui-form-element__control
-              resizable-textarea(
+              vui-resizable-textarea(
                 v-bind:text = 'orderInfo.customerCareCommentToStation'
                 initial-height = '60'
                 is-readonly = 'isCommentReadonly'

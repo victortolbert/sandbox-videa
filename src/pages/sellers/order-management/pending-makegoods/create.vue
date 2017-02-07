@@ -112,8 +112,8 @@
 
 <script>
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Pending Makegoods -- Create'
     },
 
     data () {
@@ -136,6 +136,10 @@
       save () {},
       transfer () {},
       viewGuidlines () {}
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
     }
   }
 </script>

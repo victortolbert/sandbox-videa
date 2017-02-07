@@ -20,7 +20,7 @@
           span(
             style = 'border-left: none'
           ) Unknown
-          icon(
+          vui-icon(
             name = 'angle-down'
             v-bind:style = '{ "margin-left" : styleDownIconLeftMargin }'
           )

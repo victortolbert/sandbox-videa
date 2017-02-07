@@ -39,9 +39,9 @@
       return {
         orderManagementMenuItems: [
           { name: 'Pending Orders', route: 'sellers-order-management-pending-orders' },
-          // { name: 'Pending Makegoods', route: 'sellers-order-management-pending-makegoods' },
-          // { name: 'Open Pre-Empts', route: 'sellers-order-management-open-preempts' },
-          // { name: 'Order Search', route: 'sellers-order-management-order-search' }
+          { name: 'Pending Makegoods', route: 'sellers-order-management-pending-makegoods' },
+          { name: 'Open Pre-Empts', route: 'sellers-order-management-open-preempts' },
+          { name: 'Order Search', route: 'sellers-order-management-order-search' }
         ],
         reportingMenuItems: [
           { name: 'Account Performance', route: 'sellers-reporting-account-performance' },

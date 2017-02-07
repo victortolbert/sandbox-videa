@@ -10,6 +10,26 @@ module.exports = [
     component: require('pages/sellers/order-management/pending-orders/_id')
   },
   {
+    path: '/sellers/order-management/pending-makegoods',
+    name: 'sellers-order-management-pending-makegoods',
+    component: require('pages/sellers/order-management/pending-makegoods')
+  },
+  {
+    path: '/sellers/order-management/pending-makegoods/:id',
+    name: 'sellers-order-management-pending-makegoods-id',
+    component: require('pages/sellers/order-management/pending-makegoods/_id')
+  },
+  {
+    path: '/sellers/order-management/open-preempts',
+    name: 'sellers-order-management-open-preempts',
+    component: require('pages/sellers/order-management/open-preempts')
+  },
+  {
+    path: '/sellers/order-management/order-search',
+    name: 'sellers-order-management-order-search',
+    component: require('pages/sellers/order-management/order-search')
+  },
+  {
     path: '/sellers/reporting/program-revenue',
     name: 'sellers-reporting-program-revenue',
     component: require('pages/sellers/reporting/program-revenue')

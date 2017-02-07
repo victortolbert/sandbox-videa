@@ -44,13 +44,13 @@
                   @click.prevent = 'showOfferDialog("item.makegoodId")'
                   title = 'Click to open the Offer which has been sent and is awaiting approval'
                 )
-                  icon(
+                  vui-icon(
                     name = 'medicine-bottle'
                   )
                 span Pending MG
               li.row-padding
                 span.vui-text-link
-                  icon.vui-m-bottom--xxx-small.vui-m-left--xx-small.vui-m-right--xx-small(
+                  vui-icon.vui-m-bottom--xxx-small.vui-m-left--xx-small.vui-m-right--xx-small(
                     name = 'pencil-square'
                   )
                 span.graft-mg-text Draft MG

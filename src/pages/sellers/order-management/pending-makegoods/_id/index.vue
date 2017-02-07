@@ -1,7 +1,7 @@
 <template lang="pug">
   .makegoods-details-view
-    ui-title {{ $store.state.stationCallLetters }} {{ offer.flightStartDate }} - {{ offer.flightEndDate }}
-    ui-subtitle Order Information - Offers
+    vui-title {{ $store.state.stationCallLetters }} {{ offer.flightStartDate }} - {{ offer.flightEndDate }}
+    vui-subtitle Order Information - Offers
     makegoods-order-details-info(
       order-info = 'offer.orderId'
     )
@@ -64,16 +64,13 @@
   import moment from 'moment'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Pending Makegood'
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get(`/offers/${params.id}`)
-      // let { ordersData } = await axios.get(`${ env.API_URL }/orders`)
+    data () {
       return {
-        offer: data,
-        // orders: ordersData,
+        offer: {},
         searchKey: '',
         fromDate: new Date('2016-04-25T12:24:00'),
         toDate: new Date('2016-06-05T12:24:00'),
@@ -83,7 +80,27 @@
     },
 
     methods: {
+      fetchOffers(id) {
+        axios.get(`/offers/${id}`)
+          .then((response) => {
+            this.offer = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
       save () {}
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchOffers(this.$route.params.id)
     }
   }
+
+
 </script>

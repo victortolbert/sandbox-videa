@@ -41,24 +41,18 @@
 
 <script>
   import axios from '~plugins/axios'
-
   import OrderSearchFilter from '~components/order-search/order-search-filter'
   import OrderSearchGrid from '~components/order-search/order-search-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
-
     components: {
       OrderSearchFilter,
       OrderSearchGrid
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get('/orders')
+    data () {
       return {
-        orders: data,
+        orders: [],
         currentPage: 1,
         directionLinks: true,
         hasChangedCompletionOrders: false,
@@ -70,8 +64,26 @@
     },
 
     methods: {
+      fetchOrders () {
+        axios.get('/orders')
+          .then((response) => {
+            this.orders = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
       changeFunction () {},
       complete () {}
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchOrders()
     }
   }
 </script>

@@ -1,24 +1,22 @@
 <template lang="pug">
   .makegoods-view
-    ui-title Pending Makegoods
-    ui-panel
+    vui-title Pending Makegoods
+    vui-panel
       pending-makegoods-filter
     pending-makegoods-grid(
       v-bind:offers = 'offers'
     )
 
 </template>
-
 <script>
   import axios from '~plugins/axios'
   import moment from 'moment'
-
   import PendingMakegoodsFilter from '~components/pending-makegoods/pending-makegoods-filter'
   import PendingMakegoodsGrid from '~components/pending-makegoods/pending-makegoods-grid'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    metaInfo: {
+      title: 'Pending Makegoods'
     },
 
     components: {
@@ -33,10 +31,9 @@
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get('/offers')
+    data () {
       return {
-        offers: data,
+        offers: [],
         searchKey: '',
         fromDate: new Date('2016-04-25T12:24:00'),
         toDate: new Date('2016-06-05T12:24:00'),
@@ -46,6 +43,16 @@
     },
 
     methods: {
+      fetchOffers () {
+        axios.get('/offers')
+          .then((response) => {
+            this.offers = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
       showOffer (id, version = '') {
         let routeInfo = {
           name: this.offerRoute,
@@ -60,6 +67,14 @@
 
         this.$router.push(routeInfo)
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp == 'sellers'
+    },
+
+    created () {
+      this.fetchOffers()
     }
   }
 </script>

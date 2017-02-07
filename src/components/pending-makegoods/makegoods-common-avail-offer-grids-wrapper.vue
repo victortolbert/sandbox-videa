@@ -9,7 +9,7 @@
             @click = 'addSpotsColumn'
             type = 'button'
           )
-            icon(
+            vui-icon(
               name = 'plus-circle'
             )
             span {{ addSpotsLabel }}
@@ -17,7 +17,7 @@
             @click = 'removeSpots'
             type = 'button'
           )
-            icon(
+            vui-icon(
               name = 'minus-circle'
             )
             | Delete Spot(s)
@@ -38,7 +38,7 @@
             @click = 'createSpots'
             type = 'button'
           )
-            icon(
+            vui-icon(
               name = 'plus-circle'
             )
             | Create Spots
@@ -46,7 +46,7 @@
             @click = 'addSpots'
             type = 'button'
           )
-            icon(
+            vui-icon(
               name = 'plus-circle'
             )
             | Add Spot(s)

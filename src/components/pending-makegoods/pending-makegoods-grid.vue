@@ -58,7 +58,7 @@
             a(
               @click.prevent = 'showOffer(offer.makegoodNumber)'
             )
-              icon(
+              vui-icon(
                 name = 'medicine-bottle'
               )
               span {{ offer.makegoodNumber }}
@@ -74,7 +74,7 @@
             a(
               @click.prevent = 'showOffer(offer.makegoodNumber)'
             )
-              icon(
+              vui-icon(
                 name = 'medicine-bottle'
               )
               span {{ offer.makegoodNumber }}
@@ -96,7 +96,7 @@
             a(
               @click.prevent = ''
             )
-              icon(
+              vui-icon(
                 name = 'sticky-note-o'
               )
           td.vui-text-align--center {{ offer.stationAction }}
@@ -109,7 +109,7 @@
             a(
               @click.prevent = ''
             )
-              icon(
+              vui-icon(
                 name = 'sticky-note-o'
               )
 </template>

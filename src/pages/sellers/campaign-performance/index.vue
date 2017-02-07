@@ -22,6 +22,7 @@
     metaInfo: {
       title: 'Campaign Performance'
     },
+
     components: {
       CampaignPerformanceListGridControls,
       CampaignPerformanceListFilter,
