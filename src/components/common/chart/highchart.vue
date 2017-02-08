@@ -22,37 +22,52 @@
 
     mounted () {
       this.target = Highcharts.chart(this.$el, {
-        title: {
-          text: 'Monthly Average Temperature',
-          x: -20
+        chart: {
+          type: 'column'
         },
-        subtitle: {
-          text: 'Source: WorldClimate.com',
-          x: -20
+        title: {
+          text: 'Daypart Summary'
+        },
+        legend: {
+          itemMarginTop: 30
         },
         xAxis: {
+          tickWidth: 0,
+          title: {
+            text: null
+          },
+          labels:
+          {
+            enabled: true,
+            style: {
+              fontWeight: 'bold'
+            }
+          },
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         },
         yAxis: {
-          title: {
-            text: 'Temperature (°C)'
-          },
           plotLines: [
             {
-              value: 0,
-              width: 1,
-              color: '#808080'
+              color: '#cccccc',
+              dashStyle: 'shortdash',
+              width: 2,
+              value: 360,
+              zIndex: 5
             }
-          ]
+          ],
+          title: {
+            text: '',
+            align: 'middle'
+          },
+          labels: {
+            overflow: 'justify'
+          }
         },
         tooltip: {
           valueSuffix: '°C'
         },
-        legend: {
-          layout: 'vertical',
-          align: 'right',
-          verticalAlign: 'middle',
-          borderWidth: 0
+        credits: {
+          enabled: false
         },
         series: this.series
       })
