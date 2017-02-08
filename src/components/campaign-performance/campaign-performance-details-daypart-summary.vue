@@ -1,13 +1,12 @@
 <template lang="pug">
   .vui-grid.vui-grid--align-spread.vui-theme--default.vui-m-bottom--xx-large.vui-p-around--large(
     v-if = 'campaign.daypartSummary'
-    style = 'height: 479px'
   )
-    .vui-col.vui-large-size--1-of-3
+    .vui-align-top.vui-size--1-of-6.vui-text-align--center.vui-m-right--large
       campaign-performance-details-daypart-summary-totals(
         v-bind:campaign = 'campaign'
       )
-    .vui-col.vui-large-size--1-of-3
+    .vui-align-top.vui-size--4-of-6
       campaign-performance-details-daypart-summary-grid(
         v-if='section === "table"'
         v-bind:campaign = 'campaign'
@@ -19,7 +18,7 @@
       campaign-performance-details-daypart-summary-legend.vui-text-align--center(
         v-bind:campaign = 'campaign'
       )
-    .vui-col.vui-large-size--1-of-3
+    .vui-align-top.vui-size--1-of-6
       .view-selector.vui-text-align--right
         label.vui-form-element__label View:
         button.vui-button--neutral(

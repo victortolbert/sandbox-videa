@@ -1,30 +1,30 @@
 <template lang="pug">
-  .daypart-summary-totals
-    h3.vui-text-heading--medium.vui-m-bottom--small.vui-text-align--left Total
-    .vui-m-bottom--x-small.vui-grid
-      .vui-col
+  .daypart-summary-totals.vui-text-align--center
+    h3.vui-text-heading--medium.vui-m-bottom--small Total
+    .vui-m-bottom--x-small
+      .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label Purchased GRPs/IMPs
-      .vui-col
+        br
         //- b.vui-form-element__helper {{ order.totalPurchased }}
     .vui-m-bottom--x-small
-      .vui-col
+      .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label Purchased To Date
-      .vui-col
+        br
         b.vui-form-element__helper {{ total.orderedToDate }}
-    .vui-m-bottom--x-small.vui-grid
-      .vui-col
+    .vui-m-bottom--x-small
+      .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label Delivered To Date #[sup 1]
-      .vui-col
+        br
         b.vui-form-element__helper {{ total.deliveredToDate }}
-    .vui-m-bottom--x-small.vui-grid
-      .vui-col
+    .vui-m-bottom--x-small
+      .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label %
-      .vui-col
+        br
         b.vui-form-element__helper {{ total.percentage }}
-    .vui-m-bottom--x-small.vui-grid
-      .vui-col
+    .vui-m-bottom--x-small
+      .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label +/-
-      .vui-col
+        br
         b.vui-form-element__helper(
           style='color: rgb(197, 32, 62)'
         ) {{ total.difference }}
