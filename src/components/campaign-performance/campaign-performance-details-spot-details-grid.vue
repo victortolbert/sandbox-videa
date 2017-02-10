@@ -128,10 +128,10 @@
                   )
             td.vui-truncate(
               data-column-name = 'orderedTimePeriod'
-            )
+            ) {{ item.orderedTimePeriod }}
             td.vui-truncate(
               data-column-name = 'orderedDates'
-            )
+            ) {{ item.orderedDates }}
             td.vui-truncate(
               v-bind:title = 'item.formattedSpotLength'
               data-column-name = 'spotLength'
@@ -202,18 +202,20 @@
         itemsPresented: true,
         items: [
           {
-            isRunNotOrdered: null,
-            buyLineNumber: null,
-            purchasedProgram: null,
-            formattedAirDate: null,
-            formattedAirDay: null,
-            formattedAirTime: null,
-            formattedSpotLength: null,
-            rate: null,
-            hhRatingsIMPs: null,
-            actualRating: null,
-            purchasedRating: null,
-            isciCode1: null
+            buyLineNumber: 1,
+            purchasedProgram: '7am News',
+            formattedAirDate: 'week1',
+            formattedAirDay: 'Tuesday',
+            formattedAirTime: '7:07:39 AM',
+            orderedTimePeriod: 'M-F 07:00 AM - 08:00 AM',
+            orderedDates: 'week1',
+            formattedSpotLength: ':30',
+            rate: 350,
+            hhRatingsIMPs: 2.5,
+            actualRating: 1.3,
+            purchasedRating: 1.5,
+            plusMinus: -0.2,
+            isciCode1: 'GIFW29755H'
           }
         ],
         footer: {
