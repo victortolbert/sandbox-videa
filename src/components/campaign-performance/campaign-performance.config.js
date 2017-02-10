@@ -22,6 +22,22 @@ module.exports = {
         demoName: 'A18-49',
         orderLastUpdated: moment().subtract(2, 'weeks').format('MM/DD/YY'),
         weeksRemaining: 3,
+        series: [
+          {
+            name: 'Purchased To Date',
+            data: [52, 18, 35, 29, 11],
+            color: '#6CB9BD'
+          }, {
+            name: 'Delivered To Date',
+            data: [70, 45, 25, 20, 20],
+            color: '#80D9BA'
+          },
+          {
+            name: '+/-',
+            data: [-20, -10, -19, -20, -25],
+            color: '#533873'
+          }
+        ],
         daypartSummary: {
           total: {
             purchasedGrpsImps: 78.8,
@@ -32,42 +48,42 @@ module.exports = {
           },
           items: [
             {
-              dayparts: 'EM',
+              daypart: 'EM',
               purchasedToDate: 12.4,
               deliveredToDate: 9.5,
               percentage: 0.77,
               difference: -2.9
             },
             {
-              dayparts: 'EN',
+              daypart: 'EN',
               purchasedToDate: 5.8,
               deliveredToDate: 6,
               percentage: 1.03,
               difference: 0.2
             },
             {
-              dayparts: 'PR',
+              daypart: 'PR',
               purchasedToDate: 9,
               deliveredToDate: 7.7,
               percentage: 0.86,
               difference: -1.3
             },
             {
-              dayparts: 'LN',
+              daypart: 'LN',
               purchasedToDate: 0,
               deliveredToDate: 0,
               percentage: 0,
               difference: 0
             },
             {
-              dayparts: 'LF',
+              daypart: 'LF',
               purchasedToDate: 4.3,
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
             },
             {
-              dayparts: 'Total',
+              daypart: 'Total',
               purchasedToDate: 31.5,
               deliveredToDate: 25.3,
               percentage: 0.8,
@@ -95,6 +111,22 @@ module.exports = {
         demoName: 'A25-54',
         orderLastUpdated: moment().subtract(1, 'weeks').format('MM/DD/YY'),
         weeksRemaining: 6,
+        series: [
+          {
+            name: 'Purchased To Date',
+            data: [52, 18, 35, 29, 11],
+            color: '#6CB9BD'
+          }, {
+            name: 'Delivered To Date',
+            data: [70, 45, 25, 20, 20],
+            color: '#80D9BA'
+          },
+          {
+            name: '+/-',
+            data: [-20, -10, -19, -20, -25],
+            color: '#533873'
+          }
+        ],
         daypartSummary: {
           total: {
             purchasedGrpsImps: 78.8,
@@ -105,42 +137,42 @@ module.exports = {
           },
           items: [
             {
-              dayparts: 'EM',
+              daypart: 'EM',
               purchasedToDate: 12.4,
               deliveredToDate: 9.5,
               percentage: 0.77,
               difference: -2.9
             },
             {
-              dayparts: 'EN',
+              daypart: 'EN',
               purchasedToDate: 5.8,
               deliveredToDate: 6,
               percentage: 1.03,
               difference: 0.2
             },
             {
-              dayparts: 'PR',
+              daypart: 'PR',
               purchasedToDate: 9,
               deliveredToDate: 7.7,
               percentage: 0.86,
               difference: -1.3
             },
             {
-              dayparts: 'LN',
+              daypart: 'LN',
               purchasedToDate: 0,
               deliveredToDate: 0,
               percentage: 0,
               difference: 0
             },
             {
-              dayparts: 'LF',
+              daypart: 'LF',
               purchasedToDate: 4.3,
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
             },
             {
-              dayparts: 'Total',
+              daypart: 'Total',
               purchasedToDate: 31.5,
               deliveredToDate: 25.3,
               percentage: 0.8,
@@ -168,6 +200,22 @@ module.exports = {
         demoName: 'A18-49',
         orderLastUpdated: moment().subtract(2, 'month').format('MM/DD/YY'),
         weeksRemaining: 0,
+        series: [
+          {
+            name: 'Purchased To Date',
+            data: [52, 18, 35, 29, 11],
+            color: '#6CB9BD'
+          }, {
+            name: 'Delivered To Date',
+            data: [70, 45, 25, 20, 20],
+            color: '#80D9BA'
+          },
+          {
+            name: '+/-',
+            data: [-20, -10, -19, -20, -25],
+            color: '#533873'
+          }
+        ],
         daypartSummary: {
           total: {
             purchasedGrpsImps: 78.8,
@@ -178,42 +226,42 @@ module.exports = {
           },
           items: [
             {
-              dayparts: 'EM',
+              daypart: 'EM',
               purchasedToDate: 12.4,
               deliveredToDate: 9.5,
               percentage: 0.77,
               difference: -2.9
             },
             {
-              dayparts: 'EN',
+              daypart: 'EN',
               purchasedToDate: 5.8,
               deliveredToDate: 6,
               percentage: 1.03,
               difference: 0.2
             },
             {
-              dayparts: 'PR',
+              daypart: 'PR',
               purchasedToDate: 9,
               deliveredToDate: 7.7,
               percentage: 0.86,
               difference: -1.3
             },
             {
-              dayparts: 'LN',
+              daypart: 'LN',
               purchasedToDate: 0,
               deliveredToDate: 0,
               percentage: 0,
               difference: 0
             },
             {
-              dayparts: 'LF',
+              daypart: 'LF',
               purchasedToDate: 4.3,
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
             },
             {
-              dayparts: 'Total',
+              daypart: 'Total',
               purchasedToDate: 31.5,
               deliveredToDate: 25.3,
               percentage: 0.8,
@@ -241,6 +289,22 @@ module.exports = {
         demoName: 'A25-54',
         orderLastUpdated: moment().subtract(1, 'month').format('MM/DD/YY'),
         weeksRemaining: 0,
+        series: [
+          {
+            name: 'Purchased To Date',
+            data: [52, 18, 35, 29, 11],
+            color: '#6CB9BD'
+          }, {
+            name: 'Delivered To Date',
+            data: [70, 45, 25, 20, 20],
+            color: '#80D9BA'
+          },
+          {
+            name: '+/-',
+            data: [-20, -10, -19, -20, -25],
+            color: '#533873'
+          }
+        ],
         daypartSummary: {
           total: {
             purchasedGrpsImps: 78.8,
@@ -251,42 +315,42 @@ module.exports = {
           },
           items: [
             {
-              dayparts: 'EM',
+              daypart: 'EM',
               purchasedToDate: 12.4,
               deliveredToDate: 9.5,
               percentage: 0.77,
               difference: -2.9
             },
             {
-              dayparts: 'EN',
+              daypart: 'EN',
               purchasedToDate: 5.8,
               deliveredToDate: 6,
               percentage: 1.03,
               difference: 0.2
             },
             {
-              dayparts: 'PR',
+              daypart: 'PR',
               purchasedToDate: 9,
               deliveredToDate: 7.7,
               percentage: 0.86,
               difference: -1.3
             },
             {
-              dayparts: 'LN',
+              daypart: 'LN',
               purchasedToDate: 0,
               deliveredToDate: 0,
               percentage: 0,
               difference: 0
             },
             {
-              dayparts: 'LF',
+              daypart: 'LF',
               purchasedToDate: 4.3,
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
             },
             {
-              dayparts: 'Total',
+              daypart: 'Total',
               purchasedToDate: 31.5,
               deliveredToDate: 25.3,
               percentage: 0.8,
@@ -315,6 +379,22 @@ module.exports = {
         demoName: 'A25-54',
         orderLastUpdated: moment().subtract(3, 'weeks').format('MM/DD/YY'),
         weeksRemaining: 1,
+        series: [
+          {
+            name: 'Purchased To Date',
+            data: [52, 18, 35, 29, 11],
+            color: '#6CB9BD'
+          }, {
+            name: 'Delivered To Date',
+            data: [70, 45, 25, 20, 20],
+            color: '#80D9BA'
+          },
+          {
+            name: '+/-',
+            data: [-20, -10, -19, -20, -25],
+            color: '#533873'
+          }
+        ],
         daypartSummary: {
           total: {
             purchasedGrpsImps: 78.8,
@@ -325,42 +405,42 @@ module.exports = {
           },
           items: [
             {
-              dayparts: 'EM',
+              daypart: 'EM',
               purchasedToDate: 12.4,
               deliveredToDate: 9.5,
               percentage: 0.77,
               difference: -2.9
             },
             {
-              dayparts: 'EN',
+              daypart: 'EN',
               purchasedToDate: 5.8,
               deliveredToDate: 6,
               percentage: 1.03,
               difference: 0.2
             },
             {
-              dayparts: 'PR',
+              daypart: 'PR',
               purchasedToDate: 9,
               deliveredToDate: 7.7,
               percentage: 0.86,
               difference: -1.3
             },
             {
-              dayparts: 'LN',
+              daypart: 'LN',
               purchasedToDate: 0,
               deliveredToDate: 0,
               percentage: 0,
               difference: 0
             },
             {
-              dayparts: 'LF',
+              daypart: 'LF',
               purchasedToDate: 4.3,
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
             },
             {
-              dayparts: 'Total',
+              daypart: 'Total',
               purchasedToDate: 31.5,
               deliveredToDate: 25.3,
               percentage: 0.8,
@@ -388,6 +468,22 @@ module.exports = {
         demoName: 'A25-54',
         orderLastUpdated: moment().subtract(1, 'month').format('MM/DD/YY'),
         weeksRemaining: 8,
+        series: [
+          {
+            name: 'Purchased To Date',
+            data: [52, 18, 35, 29, 11],
+            color: '#6CB9BD'
+          }, {
+            name: 'Delivered To Date',
+            data: [70, 45, 25, 20, 20],
+            color: '#80D9BA'
+          },
+          {
+            name: '+/-',
+            data: [-20, -10, -19, -20, -25],
+            color: '#533873'
+          }
+        ],
         daypartSummary: {
           total: {
             purchasedGrpsImps: 78.8,
@@ -398,42 +494,42 @@ module.exports = {
           },
           items: [
             {
-              dayparts: 'EM',
+              daypart: 'EM',
               purchasedToDate: 12.4,
               deliveredToDate: 9.5,
               percentage: 0.77,
               difference: -2.9
             },
             {
-              dayparts: 'EN',
+              daypart: 'EN',
               purchasedToDate: 5.8,
               deliveredToDate: 6,
               percentage: 1.03,
               difference: 0.2
             },
             {
-              dayparts: 'PR',
+              daypart: 'PR',
               purchasedToDate: 9,
               deliveredToDate: 7.7,
               percentage: 0.86,
               difference: -1.3
             },
             {
-              dayparts: 'LN',
+              daypart: 'LN',
               purchasedToDate: 0,
               deliveredToDate: 0,
               percentage: 0,
               difference: 0
             },
             {
-              dayparts: 'LF',
+              daypart: 'LF',
               purchasedToDate: 4.3,
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
             },
             {
-              dayparts: 'Total',
+              daypart: 'Total',
               purchasedToDate: 31.5,
               deliveredToDate: 25.3,
               percentage: 0.80,
