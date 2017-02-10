@@ -1,6 +1,7 @@
 const moment = require('moment')
 
 module.exports = {
+  hidden: true,
   context: {
     campaigns: [
       {
