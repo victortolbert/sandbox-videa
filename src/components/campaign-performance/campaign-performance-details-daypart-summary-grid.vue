@@ -17,11 +17,11 @@
             v-for='item in campaign.daypartSummary.items'
           )
             td.vui-truncate(
-              v-bind:title = 'item.daypartCode'
-            ) {{ item.daypartCode }}
+              v-bind:title = 'item.dayparts'
+            ) {{ item.dayparts }}
             td.vui-truncate(
-              v-bind:title = 'item.orderedToDate'
-            ) {{ item.orderedToDate }}
+              v-bind:title = 'item.purchasedToDate'
+            ) {{ item.purchasedToDate }}
             td.vui-truncate(
               v-bind:title = 'item.deliveredToDate'
             ) {{ item.deliveredToDate  }}
