@@ -27,7 +27,7 @@
     vui-daypart-selector
 
     campaign-performance-details-spot-details-grid-controls
-    //- campaign-performance-details-spot-details-grid
+    campaign-performance-details-spot-details-grid
     campaign-performance-details-spot-details-grid-footer
 </template>
 

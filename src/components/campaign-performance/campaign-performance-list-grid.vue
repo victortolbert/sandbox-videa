@@ -64,11 +64,12 @@
             v-show = 'columns.flightEnd.isVisible'
           ) {{ campaign.flightEndDate }}
           td.vui-truncate(
+            v-bind:title = 'campaign.campaignDelivery'
             v-show = 'columns.campaignDelivery.isVisible'
-          )
-            //- campaign-delivery-indicator(value='campaign.campaignDelivery', ahead-threshold='90', target-threshold='80')
-            //-   div(v-if='value == null')
-            //-     span.vui-float--left N/A
+          ) {{ campaign.campaignDeliveryPercent }}
+            <!--campaign-delivery-indicator(value='campaign.campaignDeliveryPercent', ahead-threshold='90', target-threshold='80')-->
+            div(v-if='campaign.campaignDeliveryPercent == null')
+              pan.vui-float--left N/A
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'campaign.currentGrpsImps'
             v-show = 'columns.currentRtgsImps.isVisible'
@@ -93,6 +94,10 @@
             v-bind:title = 'campaign.demoName'
             v-show = 'columns.demo.isVisible'
           ) {{ campaign.demoName }}
+          td.vui-truncate.vui-text-align--right(
+            v-bind:title = 'campaign.orderLastUpdated'
+            v-show = 'columns.orderLastUpdated.isVisible'
+          ) {{ campaign.orderLastUpdated }}
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'campaign.weeksRemaining'
             v-show = 'columns.weeksRemaining.isVisible'
@@ -120,6 +125,7 @@
           { isVisible: true, width: '115px', field: 'currentHhGrpsImps', label: 'Current HH GRPs/IMPs', currentSorting: '', sortable: true },
           { isVisible: true, width: '130px', field: 'totalPurchasedGrpsImps', label: 'Total Purchased GRPs/ IMPs', currentSorting: '', sortable: true },
           { isVisible: true, width: '100px', field: 'demo', label: 'Demo', currentSorting: '', sortable: true },
+          { isVisible: true, field: 'orderLastUpdated', label: 'Order Last Updated', currentSorting: '', sortable: true },
           { isVisible: true, width: '120px', field: 'weeksRemaining', label: 'Weeks Remainining', currentSorting: '', sortable: true }
         ],
         columns: {
@@ -139,6 +145,7 @@
           currentHhGrpsImps: { isVisible: true, width: '100px', label: '', field: '', currentSorting: '', sortable: true },
           totalPurchasedGrpsImps: { isVisible: true, width: '100px', label: '', field: '', currentSorting: '', sortable: true },
           demo: { isVisible: true, width: '100px', label: '', field: '', currentSorting: '', sortable: true },
+          orderLastUpdated: { isVisible: true, width: '100px', label: '', field: '', currentSorting: '', sortable: true },
           weeksRemaining: { isVisible: true, width: '100px', label: '', field: '', currentSorting: '', sortable: true }
         },
         campaigns: require('./campaign-performance.config').context.campaigns
