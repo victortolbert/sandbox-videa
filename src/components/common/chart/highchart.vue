@@ -11,6 +11,21 @@
       series: {
         type: Array,
         required: true
+      },
+      title: {
+        type: String,
+        default: 'The Chart Title'
+      },
+      categories: {
+        type: Array,
+        default () {
+          return [
+            'Jan', 'Feb', 'Mar',
+            'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sep',
+            'Oct', 'Nov', 'Dec'
+          ]
+        }
       }
     },
 
@@ -26,7 +41,7 @@
           type: 'column'
         },
         title: {
-          text: 'Daypart Summary'
+          text: this.title
         },
         legend: {
           itemMarginTop: 30
@@ -43,7 +58,7 @@
               fontWeight: 'bold'
             }
           },
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+          categories: this.categories
         },
         yAxis: {
           plotLines: [
@@ -64,7 +79,7 @@
           }
         },
         tooltip: {
-          valueSuffix: '°C'
+          valueSuffix: ''
         },
         credits: {
           enabled: false
