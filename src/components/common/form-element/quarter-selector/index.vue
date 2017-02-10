@@ -1,6 +1,6 @@
 <template lang="pug">
   fieldset.quarter-selector.vui-form-element.vui-m-right--small
-    .vui-grid
+    .vui-grid.vui-grid--vertical-align-end
       .vui-form-element
         label.vui-form-element__label Quarter
         .vui-form-element__control.vui-grid

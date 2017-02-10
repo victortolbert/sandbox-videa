@@ -5,7 +5,7 @@
     .vui-align-middle
       .vui-dropdown-trigger
         | Show:
-        .vui-dropdown-trigger.vui-m-right--small
+        .vui-dropdown-trigger.vui-m-right--small.vui-m-left--x-small
           .vui-select_container
             vui-items-per-page-selector(
               items-per-page = 'listCtrl.queryParams.pageSize'
