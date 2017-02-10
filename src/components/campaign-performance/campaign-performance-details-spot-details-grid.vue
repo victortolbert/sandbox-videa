@@ -204,11 +204,11 @@
           {
             buyLineNumber: 1,
             purchasedProgram: '7am News',
-            formattedAirDate: 'week1',
+            formattedAirDate: '08/09/16',
             formattedAirDay: 'Tuesday',
             formattedAirTime: '7:07:39 AM',
             orderedTimePeriod: 'M-F 07:00 AM - 08:00 AM',
-            orderedDates: 'week1',
+            orderedDates: '08/08/2016 - 08/28/2016',
             formattedSpotLength: ':30',
             rate: 350,
             hhRatingsIMPs: 2.5,
@@ -219,11 +219,11 @@
           }
         ],
         footer: {
-          rate: null,
-          hhRatingsIMPs: null,
-          actualRating: null,
-          purchasedRating: null,
-          plusMinus: null
+          rate: 350,
+          hhRatingsIMPs: 2.5,
+          actualRating: 1.3,
+          purchasedRating: 1.5,
+          plusMinus: -0.2
         }
       }
     }
