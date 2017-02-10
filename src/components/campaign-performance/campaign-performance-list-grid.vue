@@ -95,8 +95,8 @@
             v-show = 'columns.demo.isVisible'
           ) {{ campaign.demoName }}
           td.vui-truncate.vui-text-align--right(
-            v-bind:title = 'campaign.orderLastUpdated'
-            v-show = 'columns.orderLastUpdated.isVisible'
+            v-bind:title = 'campaign.weeksRemaining'
+            v-show = 'columns.weeksRemaining.isVisible'
           ) {{ campaign.orderLastUpdated }}
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'campaign.weeksRemaining'
