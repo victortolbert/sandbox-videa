@@ -4,7 +4,7 @@
         thead
           tr
             th(
-              style = 'width: 60px'
+              style = 'width: 80px'
             ) View #[br] Order
             th(
               style = 'width: 60px'
@@ -89,7 +89,7 @@
             v-for = 'item in items'
           )
             td.vui-text-align--center(
-              style = 'width: 60px'
+              style = 'width: 80px'
             )
               a.pointer.text-underline(
                 v-show = 'item.videaOrderNumber'
@@ -132,13 +132,13 @@
               style = 'width: 130px'
             ) {{ item.programSpotUnitRate }}
             td.vui-truncate(
-              v-bind:title = 'item.airDateTime'
+              v-bind:title = 'item.airDate'
               style = 'width: 110px'
-            ) {{ item.airDateTime }}
+            ) {{ item.airDate }}
             td.vui-truncate(
-              v-bind:title = 'item.airDateTime'
+              v-bind:title = 'item.airTime'
               style = 'width: 110px'
-            ) {{ item.airDateTime }}
+            ) {{ item.airTime }}
             td(
               v-bind:title = 'item.currentStateDescription'
               style = 'width: 120px'
@@ -168,9 +168,9 @@
               style = 'width: 110px'
             ) {{ item.orderEndDate }}
             td(
-              v-bind:title = 'item.demo'
+              v-bind:title = 'item.demoName'
               style = 'width: 90px'
-            ) {{ item.demo }}
+            ) {{ item.demoName }}
             td(
               v-bind:title = 'item.buyerName'
               style = 'width: 200px'
@@ -201,7 +201,8 @@
             demoName: ' P18-49',
             weeksRemaining: 2,
             programSpotUnitRate: '400',
-            airDateTime: '10/22/2016 12:00 am',
+            airDate: '10/22/2016',
+            airTime: '12:00 am',
             buyerName: 'Kathy Waldman',
             customerCareNotes: 'MARK kelley\'s note as a test. I also updated the open preempt note via the EOM screen.',
             orderStartDate: '06/27/2016',
