@@ -1,6 +1,6 @@
 <template lang="pug">
   .page.privacy
-    ui-title Privacy Policy
+    vui-title Privacy Policy
     p
       b General:
       br

@@ -1,5 +1,5 @@
 <template lang="pug">
-  modal(
+  vui-modal(
     v-bind:on-close = 'close'
     v-bind:show = 'show'
     size = 'large'
@@ -96,7 +96,7 @@
                 label.vui-form-element__label(
                   for = 'from-date'
                 ) Start Date
-                datepicker#from-date(
+                vui-datepicker#from-date(
                   v-bind:value = 'fromDate'
                   name = 'fromDate'
                 )
@@ -104,7 +104,7 @@
                 label.vui-form-element__label(
                   for = 'to-date'
                 ) End Date
-                datepicker#to-date(
+                vui-datepicker#to-date(
                   v-bind:value = 'toDate'
                   name = 'toDate'
                 )

@@ -31,12 +31,11 @@ module.exports = [
     stationNotes: '',
     agency: 'The Media Masters Group',
     advertiser: 'Metro Wireless',
-    campaignName: 'WASHI WVVV MEW-GEN-23 Q1’17',
+    campaignName: 'WASHI WVVV MEW-GEN-23 Q1 17',
     cpe: 'MEW-GEN-23',
     videaOrderDetail: 'V00012543',
     videaOrderNumber: 131542,
-    preempts: [
-      {
+    preempts: [{
         buyLine: 4,
         spotNumber: 1,
         programPlaced: 'Network 23 News @ 5',
@@ -45,12 +44,11 @@ module.exports = [
         airDay: 'Tuesday',
         airDate: '01/10/17',
         airTime: '05:00 PM',
-        'spotLength: :30',
+        spotLength: ':30',
         spotRate: 550,
         buyerRating: 1.8,
         comment: 'Technical Difficulties'
-      },
-      {
+    }, {
         buyLine: 6,
         spotNumber: 1,
         programPlaced: 'Network 23 News @ 5',
@@ -59,28 +57,24 @@ module.exports = [
         airDay: 'Thursday',
         airDate: '01/12/17',
         airTime: '05:00 PM',
-        'spotLength: :30',
+        spotLength: ':30',
         spotRate: 550,
         buyerRating: 1.8,
         comment: 'Weather'
-      }
-    ],
-    makegoods: [
-      {
+    }],
+    makegoods: [{
         lineNumber: 1,
         program: 'Network 23 News @ 5',
         startTime: '05:00 PM',
         endTime: '06:00 PM',
         days: 'M-F',
-        'spotLength: :30',
+        spotLength: ':30',
         offeredSpots: 2,
         spotRate: 550,
         stationRating: 1.8,
         comment: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 12389,
     orderId: 131642,
     stationOrderNumber: 178269,
@@ -112,12 +106,11 @@ module.exports = [
     stationNotes: '',
     agency: 'Auto Advertising Partners',
     advertiser: 'Southeast Ford',
-    campaignName: 'WASHI WVVV FSE-END-22 Q1’17',
+    campaignName: 'WASHI WVVV FSE-END-22 Q1 17',
     cpe: 'FSE-END-22',
     videaOrderDetail: 'V00012321',
     videaOrderNumber: 131642
-  },
-  {
+}, {
     id: 12674,
     orderId: 131542,
     stationOrderNumber: 154703,
@@ -149,12 +142,11 @@ module.exports = [
     stationNotes: '',
     agency: 'The Media Masters Group',
     advertiser: 'Metro Wireless',
-    campaignName: 'WASHI WVVV MEW-GEN-23 Q1’17',
+    campaignName: 'WASHI WVVV MEW-GEN-23 Q1 17',
     cpe: 'MEW-GEN-23',
     videaOrderDetail: 'V00012543',
     videaOrderNumber: 131542
-  },
-  {
+}, {
     id: 12375,
     orderId: 133529,
     stationOrderNumber: 193847,
@@ -186,9 +178,8 @@ module.exports = [
     stationNotes: '',
     agency: 'Zone Group Advertising',
     advertiser: 'Papa John’s Pizza',
-    campaignName: 'WASHI WVVV PJP-HOL-8 Q1’17',
+    campaignName: 'WASHI WVVV PJP-HOL-8 Q1 17',
     cpe: 'PJP-HOL-8',
     videaOrderDetail: 'V00012341',
     videaOrderNumber: 133529
-  }
-]
+}]

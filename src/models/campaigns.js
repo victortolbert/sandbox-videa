@@ -1,4 +1,4 @@
-const campaigns = [
+module.exports = [
   {
     id: 876542,
     stationOrderNumber: 876542,
@@ -18,61 +18,78 @@ const campaigns = [
     demoName: 'A18-49',
     orderLastUpdated: '2017-01-17T09:43:40.365Z',
     weeksRemaining: 3,
+    series: [{
+        name: 'Purchased To Date',
+        data: [
+            52,
+            18,
+            35,
+            29,
+            11
+        ],
+        color: '#6CB9BD'
+    }, {
+        name: 'Delivered To Date',
+        data: [
+            70,
+            45,
+            25,
+            20,
+            20
+        ],
+        color: '#80D9BA'
+    }, {
+        name: '+/-',
+        data: [-20, -10, -19, -20, -25],
+        color: '#533873'
+    }],
     daypartSummary: {
-      total: {
-        purchasedGrpsImps: 78.8,
-        purchasedToDate: 31.5,
-        deliveredToDate: 25.3,
-        percentage: 0.8,
-        difference: -6.2
-      },
-      items: [
-        {
-          dayparts: 'EM',
-          purchasedToDate: 12.4,
-          deliveredToDate: 9.5,
-          percentage: 0.77,
-          difference: -2.9
+        total: {
+            purchasedGrpsImps: 78.8,
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
         },
-        {
-          dayparts: 'EN',
-          purchasedToDate: 5.8,
-          deliveredToDate: 6,
-          percentage: 1.03,
-          difference: 0.2
-        },
-        {
-          dayparts: 'PR',
-          purchasedToDate: 9,
-          deliveredToDate: 7.7,
-          percentage: 0.86,
-          difference: -1.3
-        },
-        {
-          dayparts: 'LN',
-          purchasedToDate: 0,
-          deliveredToDate: 0,
-          percentage: 0,
-          difference: 0
-        },
-        {
-          dayparts: 'LF',
-          purchasedToDate: 4.3,
-          deliveredToDate: 2.1,
-          percentage: 0.49,
-          difference: -2.2
-        },
-        {
-          dayparts: 'Total',
-          purchasedToDate: 31.5,
-          deliveredToDate: 25.3,
-          percentage: 0.8,
-          difference: -6.2
-        }
-      ]
+        items: [{
+            daypart: 'EM',
+            purchasedToDate: 12.4,
+            deliveredToDate: 9.5,
+            percentage: 0.77,
+            difference: -2.9
+        }, {
+            daypart: 'EN',
+            purchasedToDate: 5.8,
+            deliveredToDate: 6,
+            percentage: 1.03,
+            difference: 0.2
+        }, {
+            daypart: 'PR',
+            purchasedToDate: 9,
+            deliveredToDate: 7.7,
+            percentage: 0.86,
+            difference: -1.3
+        }, {
+            daypart: 'LN',
+            purchasedToDate: 0,
+            deliveredToDate: 0,
+            percentage: 0,
+            difference: 0
+        }, {
+            daypart: 'LF',
+            purchasedToDate: 4.3,
+            deliveredToDate: 2.1,
+            percentage: 0.49,
+            difference: -2.2
+        }, {
+            daypart: 'Total',
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
+        }]
     }
-  },
-  {
+}, {
     id: 876498,
     stationOrderNumber: 876498,
     videaOrderNumber: 135001,
@@ -91,61 +108,78 @@ const campaigns = [
     demoName: 'A25-54',
     orderLastUpdated: '1 week earlier than today’s date',
     weeksRemaining: 6,
+    series: [{
+        name: 'Purchased To Date',
+        data: [
+            52,
+            18,
+            35,
+            29,
+            11
+        ],
+        color: '#6CB9BD'
+    }, {
+        name: 'Delivered To Date',
+        data: [
+            70,
+            45,
+            25,
+            20,
+            20
+        ],
+        color: '#80D9BA'
+    }, {
+        name: '+/-',
+        data: [-20, -10, -19, -20, -25],
+        color: '#533873'
+    }],
     daypartSummary: {
-      total: {
-        purchasedGrpsImps: 78.8,
-        purchasedToDate: 31.5,
-        deliveredToDate: 25.3,
-        percentage: 0.8,
-        difference: -6.2
-      },
-      items: [
-        {
-          dayparts: 'EM',
-          purchasedToDate: 12.4,
-          deliveredToDate: 9.5,
-          percentage: 0.77,
-          difference: -2.9
+        total: {
+            purchasedGrpsImps: 78.8,
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
         },
-        {
-          dayparts: 'EN',
-          purchasedToDate: 5.8,
-          deliveredToDate: 6,
-          percentage: 1.03,
-          difference: 0.2
-        },
-        {
-          dayparts: 'PR',
-          purchasedToDate: 9,
-          deliveredToDate: 7.7,
-          percentage: 0.86,
-          difference: -1.3
-        },
-        {
-          dayparts: 'LN',
-          purchasedToDate: 0,
-          deliveredToDate: 0,
-          percentage: 0,
-          difference: 0
-        },
-        {
-          dayparts: 'LF',
-          purchasedToDate: 4.3,
-          deliveredToDate: 2.1,
-          percentage: 0.49,
-          difference: -2.2
-        },
-        {
-          dayparts: 'Total',
-          purchasedToDate: 31.5,
-          deliveredToDate: 25.3,
-          percentage: 0.8,
-          difference: -6.2
-        }
-      ]
+        items: [{
+            daypart: 'EM',
+            purchasedToDate: 12.4,
+            deliveredToDate: 9.5,
+            percentage: 0.77,
+            difference: -2.9
+        }, {
+            daypart: 'EN',
+            purchasedToDate: 5.8,
+            deliveredToDate: 6,
+            percentage: 1.03,
+            difference: 0.2
+        }, {
+            daypart: 'PR',
+            purchasedToDate: 9,
+            deliveredToDate: 7.7,
+            percentage: 0.86,
+            difference: -1.3
+        }, {
+            daypart: 'LN',
+            purchasedToDate: 0,
+            deliveredToDate: 0,
+            percentage: 0,
+            difference: 0
+        }, {
+            daypart: 'LF',
+            purchasedToDate: 4.3,
+            deliveredToDate: 2.1,
+            percentage: 0.49,
+            difference: -2.2
+        }, {
+            daypart: 'Total',
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
+        }]
     }
-  },
-  {
+}, {
     id: 876599,
     stationOrderNumber: 876599,
     videaOrderNumber: 133529,
@@ -164,61 +198,78 @@ const campaigns = [
     demoName: 'A18-49',
     orderLastUpdated: '2 months earlier than today’s date',
     weeksRemaining: 0,
+    series: [{
+        name: 'Purchased To Date',
+        data: [
+            52,
+            18,
+            35,
+            29,
+            11
+        ],
+        color: '#6CB9BD'
+    }, {
+        name: 'Delivered To Date',
+        data: [
+            70,
+            45,
+            25,
+            20,
+            20
+        ],
+        color: '#80D9BA'
+    }, {
+        name: '+/-',
+        data: [-20, -10, -19, -20, -25],
+        color: '#533873'
+    }],
     daypartSummary: {
-      total: {
-        purchasedGrpsImps: 78.8,
-        purchasedToDate: 31.5,
-        deliveredToDate: 25.3,
-        percentage: 0.8,
-        difference: -6.2
-      },
-      items: [
-        {
-          dayparts: 'EM',
-          purchasedToDate: 12.4,
-          deliveredToDate: 9.5,
-          percentage: 0.77,
-          difference: -2.9
+        total: {
+            purchasedGrpsImps: 78.8,
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
         },
-        {
-          dayparts: 'EN',
-          purchasedToDate: 5.8,
-          deliveredToDate: 6,
-          percentage: 1.03,
-          difference: 0.2
-        },
-        {
-          dayparts: 'PR',
-          purchasedToDate: 9,
-          deliveredToDate: 7.7,
-          percentage: 0.86,
-          difference: -1.3
-        },
-        {
-          dayparts: 'LN',
-          purchasedToDate: 0,
-          deliveredToDate: 0,
-          percentage: 0,
-          difference: 0
-        },
-        {
-          dayparts: 'LF',
-          purchasedToDate: 4.3,
-          deliveredToDate: 2.1,
-          percentage: 0.49,
-          difference: -2.2
-        },
-        {
-          dayparts: 'Total',
-          purchasedToDate: 31.5,
-          deliveredToDate: 25.3,
-          percentage: 0.8,
-          difference: -6.2
-        }
-      ]
+        items: [{
+            daypart: 'EM',
+            purchasedToDate: 12.4,
+            deliveredToDate: 9.5,
+            percentage: 0.77,
+            difference: -2.9
+        }, {
+            daypart: 'EN',
+            purchasedToDate: 5.8,
+            deliveredToDate: 6,
+            percentage: 1.03,
+            difference: 0.2
+        }, {
+            daypart: 'PR',
+            purchasedToDate: 9,
+            deliveredToDate: 7.7,
+            percentage: 0.86,
+            difference: -1.3
+        }, {
+            daypart: 'LN',
+            purchasedToDate: 0,
+            deliveredToDate: 0,
+            percentage: 0,
+            difference: 0
+        }, {
+            daypart: 'LF',
+            purchasedToDate: 4.3,
+            deliveredToDate: 2.1,
+            percentage: 0.49,
+            difference: -2.2
+        }, {
+            daypart: 'Total',
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
+        }]
     }
-  },
-  {
+}, {
     id: 875912,
     stationOrderNumber: 875912,
     videaOrderNumber: 131642,
@@ -237,61 +288,78 @@ const campaigns = [
     demoName: 'A25-54',
     orderLastUpdated: '1 month’s earlier than today’s date',
     weeksRemaining: 0,
+    series: [{
+        name: 'Purchased To Date',
+        data: [
+            52,
+            18,
+            35,
+            29,
+            11
+        ],
+        color: '#6CB9BD'
+    }, {
+        name: 'Delivered To Date',
+        data: [
+            70,
+            45,
+            25,
+            20,
+            20
+        ],
+        color: '#80D9BA'
+    }, {
+        name: '+/-',
+        data: [-20, -10, -19, -20, -25],
+        color: '#533873'
+    }],
     daypartSummary: {
-      total: {
-        purchasedGrpsImps: 78.8,
-        purchasedToDate: 31.5,
-        deliveredToDate: 25.3,
-        percentage: 0.8,
-        difference: -6.2
-      },
-      items: [
-        {
-          dayparts: 'EM',
-          purchasedToDate: 12.4,
-          deliveredToDate: 9.5,
-          percentage: 0.77,
-          difference: -2.9
+        total: {
+            purchasedGrpsImps: 78.8,
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
         },
-        {
-          dayparts: 'EN',
-          purchasedToDate: 5.8,
-          deliveredToDate: 6,
-          percentage: 1.03,
-          difference: 0.2
-        },
-        {
-          dayparts: 'PR',
-          purchasedToDate: 9,
-          deliveredToDate: 7.7,
-          percentage: 0.86,
-          difference: -1.3
-        },
-        {
-          dayparts: 'LN',
-          purchasedToDate: 0,
-          deliveredToDate: 0,
-          percentage: 0,
-          difference: 0
-        },
-        {
-          dayparts: 'LF',
-          purchasedToDate: 4.3,
-          deliveredToDate: 2.1,
-          percentage: 0.49,
-          difference: -2.2
-        },
-        {
-          dayparts: 'Total',
-          purchasedToDate: 31.5,
-          deliveredToDate: 25.3,
-          percentage: 0.8,
-          difference: -6.2
-        }
-      ]
+        items: [{
+            daypart: 'EM',
+            purchasedToDate: 12.4,
+            deliveredToDate: 9.5,
+            percentage: 0.77,
+            difference: -2.9
+        }, {
+            daypart: 'EN',
+            purchasedToDate: 5.8,
+            deliveredToDate: 6,
+            percentage: 1.03,
+            difference: 0.2
+        }, {
+            daypart: 'PR',
+            purchasedToDate: 9,
+            deliveredToDate: 7.7,
+            percentage: 0.86,
+            difference: -1.3
+        }, {
+            daypart: 'LN',
+            purchasedToDate: 0,
+            deliveredToDate: 0,
+            percentage: 0,
+            difference: 0
+        }, {
+            daypart: 'LF',
+            purchasedToDate: 4.3,
+            deliveredToDate: 2.1,
+            percentage: 0.49,
+            difference: -2.2
+        }, {
+            daypart: 'Total',
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
+        }]
     }
-  },
-  {
+}, {
     id: 875888,
     stationOrderNumber: 875888,
     videaOrderNumber: 131634,
@@ -310,61 +378,78 @@ const campaigns = [
     demoName: 'A25-54',
     orderLastUpdated: '3 weeks earlier than today’s date',
     weeksRemaining: 1,
+    series: [{
+        name: 'Purchased To Date',
+        data: [
+            52,
+            18,
+            35,
+            29,
+            11
+        ],
+        color: '#6CB9BD'
+    }, {
+        name: 'Delivered To Date',
+        data: [
+            70,
+            45,
+            25,
+            20,
+            20
+        ],
+        color: '#80D9BA'
+    }, {
+        name: '+/-',
+        data: [-20, -10, -19, -20, -25],
+        color: '#533873'
+    }],
     daypartSummary: {
-      total: {
-        purchasedGrpsImps: 78.8,
-        purchasedToDate: 31.5,
-        deliveredToDate: 25.3,
-        percentage: 0.8,
-        difference: -6.2
-      },
-      items: [
-        {
-          dayparts: 'EM',
-          purchasedToDate: 12.4,
-          deliveredToDate: 9.5,
-          percentage: 0.77,
-          difference: -2.9
+        total: {
+            purchasedGrpsImps: 78.8,
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
         },
-        {
-          dayparts: 'EN',
-          purchasedToDate: 5.8,
-          deliveredToDate: 6,
-          percentage: 1.03,
-          difference: 0.2
-        },
-        {
-          dayparts: 'PR',
-          purchasedToDate: 9,
-          deliveredToDate: 7.7,
-          percentage: 0.86,
-          difference: -1.3
-        },
-        {
-          dayparts: 'LN',
-          purchasedToDate: 0,
-          deliveredToDate: 0,
-          percentage: 0,
-          difference: 0
-        },
-        {
-          dayparts: 'LF',
-          purchasedToDate: 4.3,
-          deliveredToDate: 2.1,
-          percentage: 0.49,
-          difference: -2.2
-        },
-        {
-          dayparts: 'Total',
-          purchasedToDate: 31.5,
-          deliveredToDate: 25.3,
-          percentage: 0.8,
-          difference: -6.2
-        }
-      ]
+        items: [{
+            daypart: 'EM',
+            purchasedToDate: 12.4,
+            deliveredToDate: 9.5,
+            percentage: 0.77,
+            difference: -2.9
+        }, {
+            daypart: 'EN',
+            purchasedToDate: 5.8,
+            deliveredToDate: 6,
+            percentage: 1.03,
+            difference: 0.2
+        }, {
+            daypart: 'PR',
+            purchasedToDate: 9,
+            deliveredToDate: 7.7,
+            percentage: 0.86,
+            difference: -1.3
+        }, {
+            daypart: 'LN',
+            purchasedToDate: 0,
+            deliveredToDate: 0,
+            percentage: 0,
+            difference: 0
+        }, {
+            daypart: 'LF',
+            purchasedToDate: 4.3,
+            deliveredToDate: 2.1,
+            percentage: 0.49,
+            difference: -2.2
+        }, {
+            daypart: 'Total',
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
+        }]
     }
-  },
-  {
+}, {
     id: 871211,
     stationOrderNumber: 871211,
     videaOrderNumber: 134787,
@@ -383,58 +468,75 @@ const campaigns = [
     demoName: 'A25-54',
     orderLastUpdated: '1 month earlier than today’s date',
     weeksRemaining: 8,
+    series: [{
+        name: 'Purchased To Date',
+        data: [
+            52,
+            18,
+            35,
+            29,
+            11
+        ],
+        color: '#6CB9BD'
+    }, {
+        name: 'Delivered To Date',
+        data: [
+            70,
+            45,
+            25,
+            20,
+            20
+        ],
+        color: '#80D9BA'
+    }, {
+        name: '+/-',
+        data: [-20, -10, -19, -20, -25],
+        color: '#533873'
+    }],
     daypartSummary: {
-      total: {
-        purchasedGrpsImps: 78.8,
-        purchasedToDate: 31.5,
-        deliveredToDate: 25.3,
-        percentage: 0.8,
-        difference: -6.2
-      },
-      items: [
-        {
-          dayparts: 'EM',
-          purchasedToDate: 12.4,
-          deliveredToDate: 9.5,
-          percentage: 0.77,
-          difference: -2.9
+        total: {
+            purchasedGrpsImps: 78.8,
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
         },
-        {
-          dayparts: 'EN',
-          purchasedToDate: 5.8,
-          deliveredToDate: 6,
-          percentage: 1.03,
-          difference: 0.2
-        },
-        {
-          dayparts: 'PR',
-          purchasedToDate: 9,
-          deliveredToDate: 7.7,
-          percentage: 0.86,
-          difference: -1.3
-        },
-        {
-          dayparts: 'LN',
-          purchasedToDate: 0,
-          deliveredToDate: 0,
-          percentage: 0,
-          difference: 0
-        },
-        {
-          dayparts: 'LF',
-          purchasedToDate: 4.3,
-          deliveredToDate: 2.1,
-          percentage: 0.49,
-          difference: -2.2
-        },
-        {
-          dayparts: 'Total',
-          purchasedToDate: 31.5,
-          deliveredToDate: 25.3,
-          percentage: 0.8,
-          difference: -6.2
-        }
-      ]
+        items: [{
+            daypart: 'EM',
+            purchasedToDate: 12.4,
+            deliveredToDate: 9.5,
+            percentage: 0.77,
+            difference: -2.9
+        }, {
+            daypart: 'EN',
+            purchasedToDate: 5.8,
+            deliveredToDate: 6,
+            percentage: 1.03,
+            difference: 0.2
+        }, {
+            daypart: 'PR',
+            purchasedToDate: 9,
+            deliveredToDate: 7.7,
+            percentage: 0.86,
+            difference: -1.3
+        }, {
+            daypart: 'LN',
+            purchasedToDate: 0,
+            deliveredToDate: 0,
+            percentage: 0,
+            difference: 0
+        }, {
+            daypart: 'LF',
+            purchasedToDate: 4.3,
+            deliveredToDate: 2.1,
+            percentage: 0.49,
+            difference: -2.2
+        }, {
+            daypart: 'Total',
+            purchasedToDate: 31.5,
+            deliveredToDate: 25.3,
+            percentage: 0.8,
+            difference: -6.2
+        }]
     }
-  }
-]
+}]

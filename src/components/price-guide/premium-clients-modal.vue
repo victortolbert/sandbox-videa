@@ -1,5 +1,5 @@
 <template lang="pug">
-  modal(
+  vui-modal(
     v-bind:on-close = 'close'
     v-bind:show = 'show'
     size = 'large'
@@ -12,7 +12,7 @@
         Manage your premium advertisers. Premium clients will be affected by the premium
         pricing on the price guide.
 
-      ui-panel
+      vui-panel
         form.vui-form--inline
           fieldset.vui-form-element
             label.vui-form-element__label(

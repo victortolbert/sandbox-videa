@@ -1,34 +1,77 @@
 import Vue from 'vue'
 
-Vue.component('vui-daypart-selector', require('~components/common/daypart-selector'))
-
-Vue.component('vui-back-to-top', require('~components/common/back-to-top'))
-Vue.component('vui-media', require('~components/common/media-object'))
-Vue.component('vui-footnote', require('~components/common/footnote'))
-Vue.component('vui-subtitle', require('~components/common/subtitle'))
+Vue.component('vui-datepicker', require('~components/common/datepicker'))
+Vue.component('vui-checkbox', require('~components/common/checkbox'))
 Vue.component('vui-dropdown', require('~components/common/dropdown'))
+Vue.component('vui-subtitle', require('~components/common/subtitle'))
+Vue.component('vui-textarea', require('~components/common/textarea'))
+Vue.component('vui-avatar', require('~components/common/avatar'))
 Vue.component('vui-button', require('~components/common/button'))
+Vue.component('vui-select', require('~components/common/select'))
+Vue.component('vui-input', require('~components/common/input'))
 Vue.component('vui-modal', require('~components/common/modal'))
-Vue.component('vui-pager', require('~components/common/pager'))
+Vue.component('vui-table', require('~components/common/table'))
 Vue.component('vui-title', require('~components/common/title'))
-Vue.component('vui-panel', require('~components/common/panel'))
-Vue.component('vui-badge', require('~components/common/badge'))
 Vue.component('vui-icon', require('~components/common/icon'))
 
-Vue.component('vui-resizable-textarea', require('~components/common/form-element/resizable-textarea'))
-Vue.component('vui-quarter-selector', require('~components/common/form-element/quarter-selector'))
-Vue.component('vui-checkbox-list', require('~components/common/form-element/checkbox-list'))
-Vue.component('vui-datepicker', require('~components/common/form-element/datepicker'))
-Vue.component('vui-password', require('~components/common/form-element/password'))
-Vue.component('vui-input', require('~components/common/form-element/input'))
+Vue.component('vui-container', require('~components/container'))
+Vue.component('vui-section', require('~components/section'))
+Vue.component('vui-article', require('~components/article'))
+Vue.component('vui-widget', require('~components/widget'))
+Vue.component('vui-well', require('~components/well'))
 
-Vue.component('vui-items-per-page-selector', require('~components/common/datagrid/items-per-page-selector'))
-Vue.component('vui-sorting-column', require('~components/common/datagrid/sorting-column'))
-Vue.component('vui-datagrid-heading', require('~components/common/datagrid/datagrid-heading'))
-Vue.component('vui-datagrid-tools', require('~components/common/datagrid/datagrid-tools'))
+Vue.component('vui-debug', require('~components/utilities/debug'))
 
+Vue.component('vui-audio-player', require('~components/_media/audio-player'))
+Vue.component('vui-device', require('~components/scopes/device'))
+
+Vue.component('vui-navigation-handler', require('~components/common/nav/navigation-handler'))
+Vue.component('vui-dropdown-wrapper', require('~components/common/nav/dropdown-wrapper'))
+Vue.component('vui-navigation', require('~components/common/nav/navigation'))
+
+
+
+
+
+
+
+
+Vue.component('daypart-selector', require('~components/common/daypart-selector'))
+Vue.component('close-button', require('~components/common/close-button'))
+Vue.component('back-to-top', require('~components/common/back-to-top'))
+Vue.component('button-link', require('~components/common/button-link'))
+Vue.component('ui-media', require('~components/common/media-object'))
+Vue.component('ui-footnote', require('~components/common/footnote'))
+Vue.component('ui-subtitle', require('~components/common/subtitle'))
+Vue.component('dropdown', require('~components/common/dropdown'))
+Vue.component('vui-button', require('~components/common/button'))
+Vue.component('spinner', require('~components/common/spinner'))
+Vue.component('ui-title', require('~components/common/title'))
+Vue.component('ui-panel', require('~components/common/panel'))
+Vue.component('badge', require('~components/common/badge'))
+Vue.component('modal', require('~components/common/modal'))
+Vue.component('icon', require('~components/common/icon'))
 Vue.component('cpm', require('~components/common/cpm'))
 Vue.component('cpp', require('~components/common/cpp'))
+
+Vue.component('resizable-textarea', require('~components/common/form-element/resizable-textarea'))
+Vue.component('ui-quarter-selector', require('~components/common/form-element/quarter-selector'))
+Vue.component('checkbox-list', require('~components/common/form-element/checkbox-list'))
+Vue.component('datepicker', require('~components/common/form-element/datepicker'))
+Vue.component('password', require('~components/common/form-element/password'))
+Vue.component('vui-input', require('~components/common/form-element/input'))
+
+Vue.component('items-per-page-selector', require('~components/common/datagrid/items-per-page-selector'))
+Vue.component('vui-sorting-column', require('~components/common/datagrid/sorting-column'))
+Vue.component('datagrid-heading', require('~components/common/datagrid/datagrid-heading'))
+Vue.component('datagrid-tools', require('~components/common/datagrid/datagrid-tools'))
+Vue.component('vui-pager', require('~components/common/datagrid/datagrid-pager'))
+
+Vue.component('ui-button', require('~components/shared/ui-button'))
+Vue.component('ui-loader', require('~components/shared/ui-loader'))
+Vue.component('ui-modal', require('~components/shared/ui-modal'))
+Vue.component('ui-form', require('~components/shared/ui-form'))
+Vue.component('ui-box', require('~components/shared/ui-box'))
 
 Vue.component('makegoods-nested-order-line-invoice-details-grid', require('~components/pending-makegoods/makegoods-nested-order-line-invoice-details-grid'))
 Vue.component('makegoods-order-line-curr-info-rate-rating-grid', require('~components/pending-makegoods/makegoods-order-line-curr-info-rate-rating-grid'))

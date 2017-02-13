@@ -18,7 +18,7 @@ const mandelbrot = require('@frctl/mandelbrot')({
 })
 
 // Project config
-fractal.set('project.title', 'videa.design/sandbox')
+fractal.set('project.title', 'Videa Design')
 fractal.set('project.version', '0.1.0')
 fractal.set('project.lastUpdated', new Date())
 
@@ -54,6 +54,7 @@ const nunjucks = require('@frctl/nunjucks')({
 // Components config
 fractal.components.engine(nunjucks)
 fractal.components.set('ext', '.html')
+fractal.components.set('default.preview', '@preview')
 fractal.components.set('path', path.join(__dirname, 'src/components'))
 fractal.components.set('label', 'Components')
 
@@ -65,5 +66,6 @@ fractal.docs.set('path', path.join(__dirname, 'src/docs'))
 // Web UI config
 fractal.web.theme(mandelbrot)
 fractal.web.set('static.path', path.join(__dirname, 'static'))
-fractal.web.set('builder.dest', path.join(__dirname, 'www'))
+// fractal.web.set('builder.dest', path.join(__dirname, 'www'))
+fractal.web.set('builder.dest', '/Users/vtolbert/videa/design')
 // fractal.web.set('builder.urls.ext', null)

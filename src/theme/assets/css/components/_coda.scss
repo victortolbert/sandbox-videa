@@ -1,0 +1,59 @@
+.Coda {
+    color: #777;
+    display: flex;
+    a {
+        color: #444;
+        text-decoration: none;
+    }
+    @media all and (max-width: 500px) {
+        flex-wrap: wrap;
+    }
+}
+
+.Coda-credit {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.Coda-copyright {
+    font-size: 12px;
+    color: #888;
+    a {
+        color: #888;
+        // text-decoration: underline;
+    }
+}
+
+.Coda-logo {
+    position: relative;
+    top: 3px;
+}
+
+.Coda-section {
+    width: 100%;
+    @media all and (max-width: 499px) {
+        text-align: center;
+        & + .Coda-section {
+            margin-top: 10px;
+        }
+    }
+    @media all and (min-width: 500px) {
+        width: auto;
+        flex-shrink: 1;
+        & + .Coda-section {
+            margin-left: 16px;
+        }
+        // &:last-child {
+        //     padding-left: 30px;
+        //     margin-left: auto;
+        //     text-align: right;
+        // }
+    }
+}
+
+// .Coda-section--badges {
+//     a {
+//         display: block;
+//     }
+// }

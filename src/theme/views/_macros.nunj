@@ -1,0 +1,44 @@
+{% macro tree(root, current, request, toc) %}
+<div class="Tree" data-behaviour="tree" id="tree-{{ root.name }}">
+    <ul class="Tree-items Tree-depth-1">
+        {{ leaves(root.filter('isHidden', false).items(), root, current, 2, request, toc) }}
+    </ul>
+</div>
+{% endmacro %}
+
+{% macro leaves(items, root, current, depth, request, toc) %}
+    {% for item in items %}
+        {% set children = item.filter('isHidden', false).items() if item.isCollection else null %}
+        {% if children and (children | length > 1 or children[0].isIndex != true) %}
+        <li class="Tree-item Tree-collection Tree-depth-{{ depth }}" data-behaviour="collection" id="tree-{{ root.name }}-collection-{{ item.handle }}">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>{{ item.label }}</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            {{ leaves(children, root, current, (depth + 1), request, toc) }}
+            </ul>
+        </li>
+        {% else %}
+        {% set isCurrent = true if (current and (current.id == item.id)) else false %}
+        <li class="Tree-item Tree-entity{% if isCurrent %} is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">
+            <a class="Tree-entityLink" href="{{ path( (item | url), request) }}" data-pjax>
+                <span>{{ item.label }}</span>
+            </a>
+            {% if isCurrent %}
+                <ul class="Tree-toc">
+                    {% for heading in toc %}
+                    <li class="Tree-tocItem"><a  class="Tree-tocLink" href="{{ path( (item | url), request) }}#{{ heading.id }}" data-toclink><span>{{ heading.text }}</span></a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro svg(name, width, height, fill) %}
+{% set svgWidth = width %}
+{% set svgHeight = height %}
+{% set svgFill = fill %}
+{% include "_svg/" + name + ".svg" %}
+{% endmacro %}

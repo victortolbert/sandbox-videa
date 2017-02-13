@@ -11,17 +11,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 207,
     spotCount: 38,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 2,
     name: 'Network 23 News This Morning',
     day: 'M-F',
@@ -33,17 +30,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 218,
     spotCount: 54,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 3,
     name: 'Network 23 News This Morning',
     day: 'M-F',
@@ -55,17 +49,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 216,
     spotCount: 37,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 4,
     name: 'Network 23 Weekend News—Sat',
     day: 'Sat',
@@ -77,17 +68,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 217,
     spotCount: 5,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 5,
     name: 'Network 23 Weekend News—Sun',
     day: 'Sun',
@@ -99,45 +87,38 @@ module.exports = [
     revenueLy: 0,
     cpp: 170,
     spotCount: 3,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: 'Metro Wireless',
         intendedAirDate: '04/30/16',
         unitRate: '515',
         cpp: '245'
-      },
-      {
+    }, {
         id: 2,
         advertiser: 'Piedmont Healthcare',
         intendedAirDate: '04/23/16',
         unitRate: '500',
         cpp: '238'
-      },
-      {
+    }, {
         id: 3,
         advertiser: 'Southeast Ford',
         intendedAirDate: '04/23/16',
         unitRate: '490',
         cpp: '233'
-      },
-      {
+    }, {
         id: 4,
         advertiser: 'Southeast Ford',
         intendedAirDate: '05/07/16',
         unitRate: '510',
         cpp: '243'
-      },
-      {
+    }, {
         id: 5,
         advertiser: 'Papa John’s',
         intendedAirDate: '05/21/16',
         unitRate: '500',
         cpp: '238'
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 6,
     name: 'People’s Court',
     day: 'M-F',
@@ -149,17 +130,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 200,
     spotCount: 13,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 7,
     name: 'Maury',
     day: 'M-F',
@@ -171,17 +149,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 200,
     spotCount: 16,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 8,
     name: 'The Doctor’s',
     day: 'M-F',
@@ -193,17 +168,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 200,
     spotCount: 17,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 9,
     name: 'Network 23 News @ 12',
     day: 'M-F',
@@ -215,17 +187,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 250,
     spotCount: 7,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 10,
     name: 'Judge Judy',
     day: 'M-F',
@@ -237,17 +206,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 208,
     spotCount: 7,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 11,
     name: 'Judge Judy',
     day: 'M-F',
@@ -259,17 +225,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 200,
     spotCount: 8,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 12,
     name: 'Steve Harvey',
     day: 'M-F',
@@ -281,17 +244,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 227,
     spotCount: 16,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 13,
     name: 'Dr. Phil',
     day: 'M-F',
@@ -303,17 +263,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 229,
     spotCount: 21,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 14,
     name: 'Network 23 News @ 5',
     day: 'M-F',
@@ -325,17 +282,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 248,
     spotCount: 10,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 15,
     name: 'Network 23 News @ 6',
     day: 'M-F',
@@ -347,17 +301,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 262,
     spotCount: 14,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 16,
     name: 'Network 23 News Sat @ 5',
     day: 'Sat',
@@ -369,17 +320,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 216,
     spotCount: 7,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 17,
     name: 'Network 23 News Sun @ 6',
     day: 'Sun',
@@ -391,17 +339,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 209,
     spotCount: 9,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 18,
     name: 'Access Hollywood',
     day: 'M-F',
@@ -413,17 +358,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 300,
     spotCount: 47,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 19,
     name: 'Entertainment Tonight',
     day: 'M-F',
@@ -435,17 +377,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 300,
     spotCount: 20,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 20,
     name: 'Access Hollywood',
     day: 'Sat',
@@ -457,17 +396,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 300,
     spotCount: 13,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 21,
     name: 'Entertainment Tonight',
     day: 'Sun',
@@ -479,17 +415,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 300,
     spotCount: 20,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 33,
     name: 'Gotham',
     day: 'Mon',
@@ -501,17 +434,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 833,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 33,
     name: 'Gotham Season Finale',
     day: 'Mon',
@@ -523,17 +453,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 600,
     spotCount: 1,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 33,
     name: 'Electronic Music Awards Show',
     day: 'Mon',
@@ -545,17 +472,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 500,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 33,
     name: 'Empire Finale',
     day: 'Mon',
@@ -567,17 +491,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 617,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 34,
     name: 'Grandfathered/ Grinder',
     day: 'Tue',
@@ -589,17 +510,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 500,
     spotCount: 3,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 35,
     name: 'Bklyn 99/ Grinder',
     day: 'Tue',
@@ -611,17 +529,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 518,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 36,
     name: 'MasterChef',
     day: 'Wed',
@@ -633,17 +548,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 893,
     spotCount: 1,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 37,
     name: 'American Idol Season Premiere',
     day: 'Wed',
@@ -655,17 +567,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 748,
     spotCount: 3,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 38,
     name: 'American Idol — Wed',
     day: 'Wed',
@@ -677,17 +586,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 555,
     spotCount: 3,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 39,
     name: 'American Idol Series Finale Night 1',
     day: 'Thu',
@@ -699,17 +605,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 814,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 39,
     name: 'American Idol Series Finale Night 2',
     day: 'Thu',
@@ -721,17 +624,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 862,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 39,
     name: 'American Idol Series Finale Night 3',
     day: 'Thu',
@@ -743,17 +643,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 842,
     spotCount: 3,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 40,
     name: 'Hell’s Kitchen',
     day: 'Wed',
@@ -765,17 +662,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 500,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 41,
     name: 'Bones',
     day: 'Thu',
@@ -787,17 +681,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 533,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 42,
     name: 'Sleepy Hollow',
     day: 'Thu',
@@ -809,17 +700,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 825,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 43,
     name: 'MasterChef',
     day: 'Fri',
@@ -831,17 +719,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 500,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 44,
     name: 'Simpsons',
     day: 'Sun',
@@ -853,17 +738,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 833,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 45,
     name: 'Family Guy',
     day: 'Sun',
@@ -875,17 +757,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 767,
     spotCount: 2,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 22,
     name: 'Network 23 News @ 10',
     day: 'M-F',
@@ -897,17 +776,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 494,
     spotCount: 9,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 23,
     name: 'Network 23 News @ 10 Sat',
     day: 'Sat',
@@ -919,17 +795,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 497,
     spotCount: 5,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 24,
     name: 'Network 23 News @ 10 Sun',
     day: 'Sun',
@@ -941,17 +814,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 453,
     spotCount: 4,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 25,
     name: 'Seinfeld',
     day: 'M-F',
@@ -963,17 +833,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 111,
     spotCount: 29,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 26,
     name: 'Seinfeld',
     day: 'M-F',
@@ -985,17 +852,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 135,
     spotCount: 15,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 27,
     name: 'Anger Management',
     day: 'M-F',
@@ -1007,17 +871,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 125,
     spotCount: 14,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 28,
     name: 'Anger Management',
     day: 'M-F',
@@ -1029,17 +890,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 106,
     spotCount: 7,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 29,
     name: 'Family Guy',
     day: 'M-F',
@@ -1051,17 +909,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 160,
     spotCount: 5,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 30,
     name: 'Family Guy',
     day: 'M-F',
@@ -1073,17 +928,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 110,
     spotCount: 5,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 31,
     name: 'Anger Management',
     day: 'Sat',
@@ -1095,17 +947,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 160,
     spotCount: 6,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 32,
     name: 'Anger Management',
     day: 'Sat',
@@ -1117,17 +966,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 160,
     spotCount: 5,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 46,
     name: 'Nascar: Charlotte',
     day: 'Sun',
@@ -1139,17 +985,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 250,
     spotCount: 3,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 47,
     name: 'MLB: Braves v Nationals',
     day: 'Sun',
@@ -1161,17 +1004,14 @@ module.exports = [
     revenueLy: 0,
     cpp: 225,
     spotCount: 1,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  },
-  {
+    }]
+}, {
     id: 48,
     name: 'Fox Premiere Boxing',
     day: 'Sun',
@@ -1183,14 +1023,11 @@ module.exports = [
     revenueLy: 0,
     cpp: 363,
     spotCount: 4,
-    spots: [
-      {
+    spots: [{
         id: 1,
         advertiser: '',
         intendedAirDate: '',
         unitRate: '',
         cpp: ''
-      }
-    ]
-  }
-]
+    }]
+}]

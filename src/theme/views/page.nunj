@@ -1,0 +1,51 @@
+{% extends "_layouts/standard.nunj" %}
+{% import "_macros.nunj" as nav %}
+
+{% set pagePath = request.segments[0] if request.segments | length == 1 else request.params.path %}
+{% set doc = frctl.docs.find('path', pagePath) %}
+
+{% if not doc %}{{ throw(404, 'Page not found') }}{% endif %}
+
+{% set page = {
+    title: doc.title
+} %}
+
+{% block navigation %}
+{% if request.segments | length == 1 %}
+{% set toc = [] %}
+{% else %}
+{% set toc = doc.toc(2) | async %}
+{% endif %}
+
+{{ nav.tree(frctl.docs.findCollection('name', request.segments[0]), doc, request, toc) }}
+{% endblock %}
+
+{% block main %}
+
+<div class="Page">
+
+    <div class="Page-header">
+        <h1 class="Page-title">{{ page.title }}</h1>
+    </div>
+
+    <div class="Page-content Prose">
+
+    {% block pageContent %}
+    {% if doc %}
+        {% set contents = doc.render(null, renderEnv) | async(true) %}
+        {% if contents | isError %}
+        <p>{{ contents.message }}</p>
+        {% else %}
+        {% if contents == '' %}
+        <p class="Page-placeholder">Documentation coming soon.</p>
+        {% endif %}
+        {{ contents }}
+        {% endif %}
+    {% endif %}
+    {% endblock %}
+
+    </div>
+
+</div>
+
+{% endblock %}

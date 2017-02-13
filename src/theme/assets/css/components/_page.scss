@@ -1,0 +1,27 @@
+.Page {
+    padding-bottom: 30px;
+    max-width: calc(#{$max-page-width} - #{$sidebar-width} - 60px);
+}
+
+.Page-title {
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 0.9em 0;
+    padding-bottom: 0.4em;
+    @media all and (max-width: 460px) {
+        font-size: 1.4rem;
+    }
+}
+
+.Page-content {
+    // max-width: 800px;
+    position: relative;
+}
+
+.Page-placeholder {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+.Page-badges {
+    margin: 25px 0;
+}

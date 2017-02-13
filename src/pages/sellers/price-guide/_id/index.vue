@@ -90,7 +90,7 @@
                   @click.prevent = 'program.expanded = !program.expanded'
                   href = '#'
                 )
-                  icon.vui-align-middle.vui-m-right--x-small(
+                  vui-icon.vui-align-middle.vui-m-right--x-small(
                     v-bind:name = "program.expanded ? 'caret-lower-right' : 'caret-right'"
                   )
                 .vui-align-middle
@@ -156,6 +156,7 @@
                 .vui-form-element__control
                   label.vui-checkbox
                     input.vui-input(
+                      @change = 'acceptVideaRate(program)'
                       v-bind:disabled = '$store.state.activeApp == "reps"'
                       v-bind:value = 'program.acceptRate'
                       v-model = 'program.acceptRate'
@@ -238,7 +239,7 @@
                   v-show = '$store.state.activeApp == "reps"'
                 ) {{ month.station.rate | numberWithCommas | formatMoney }}
                 input.vui-input(
-                  @click = 'selectContents'
+                  @click.prevent = 'selectContents'
                   @keypress = 'onKeypress'
                   v-bind:value = 'month.station.rate'
                   v-model = 'month.station.rate'
@@ -257,7 +258,7 @@
                   style = 'text-decoration: underline'
                 ) {{ month.station.rating | formatRating }}
                 input.vui-text-align--right.vui-input(
-                  @click = 'selectContents'
+                  @click.prevent = 'selectContents'
                   @keypress = 'onKeypress'
                   v-model = 'month.station.rating'
                   v-show = 'false'
@@ -297,7 +298,7 @@
                 fieldset.vui-form-element
                   .vui-form-element__control.vui-input-icon
                     input.vui-input.vui-text-align--center(
-                      @click = 'selectContents'
+                      @click.prevent = 'selectContents'
                       @input = 'month.station.premium.rate = setPremiumRate(month.station.rate, month.station.premium.percent)'
                       @keypress = 'onKeypress'
                       v-bind:value = 'month.station.premium.percent'
@@ -422,7 +423,7 @@
                       @click.prevent = 'week.expanded = false'
                       href = '#'
                     )
-                      icon.vui-m-right--x-small(
+                      vui-icon.vui-m-right--x-small(
                         name = 'times-circle'
                       )
                     span.vui-align-middle Week of {{ week.week }}
@@ -432,7 +433,7 @@
                   v-bind:style = '$store.state.activeApp == "reps" ? "" : ""'
                 )
                   input.vui-input.vui-text-align--right(
-                    @click = 'selectContents'
+                    @click.prevent = 'selectContents'
                     @keypress = 'onKeypress'
                     v-show = '$store.state.activeApp == "sellers"'
                     type = 'text'
@@ -447,7 +448,7 @@
                   v-show = 'cppOrCpm == "cpp"'
                 )
                   input.vui-input.vui-text-align--right(
-                    @click = 'selectContents'
+                    @click.prevent = 'selectContents'
                     @keypress = 'onKeypress'
                     v-model = 'week.station.rating'
                     v-show = 'false'
@@ -485,7 +486,7 @@
                 // Station Premium -- Percent (week)
                 td.station.premium.percent.vui-text-align--center.vui-hide
                   input.vui-input.vui-text-align--center(
-                    @click = 'selectContents'
+                    @click.prevent = 'selectContents'
                     @input = 'week.station.premium.rate = setPremiumRate(week.station.rate, week.station.premium.percent)'
                     @keypress = 'onKeypress'
                     v-bind:value = 'week.station.premium.percent'
@@ -502,7 +503,7 @@
                   v-bind:style = '$store.state.activeApp == "reps" ? "" : ""'
                 )
                   input.vui-text-align--right.vui-input(
-                    @click = 'selectContents'
+                    @click.prevent = 'selectContents'
                     @input = 'week.station.premium.percent = week.station.premium.rate / week.station.rate'
                     @keypress = 'onKeypress'
                     v-bind:value = 'Math.round(week.station.premium.rate)'
@@ -648,22 +649,23 @@
     //-       )
     //-     | Your rates and ratings are now saved in the Videa platform
 
-    //- premium-clients-modal(
-    //-   v-bind:account = 'account'
-    //-   v-bind:show = 'showPremiumClientsModal'
-    //- )
-    //- edit-ratings-modal(
-    //-   v-bind:data = 'context'
-    //-   v-bind:heading = 'heading'
-    //-   v-bind:show = 'showEditRatingsModal'
-    //- )
-    //- add-program-modal(
-    //-   v-bind:show = 'showAddProgramModal'
-    //- )
+    premium-clients-modal(
+      v-bind:account = 'account'
+      v-bind:show = 'showPremiumClientsModal'
+    )
+    edit-ratings-modal(
+      v-bind:data = 'context'
+      v-bind:heading = 'heading'
+      v-bind:show = 'showEditRatingsModal'
+    )
+    add-program-modal(
+      v-bind:show = 'showAddProgramModal'
+    )
 </template>
 
 <script>
   import axios from '~plugins/axios'
+  import { EventBus } from '~plugins/event-bus'
 
   import PremiumPercentDropdown from '~components/price-guide/apply-premium-percent-dropdown'
   import PremiumClientsModal from '~components/price-guide/premium-clients-modal'
@@ -672,10 +674,6 @@
   import AddWeekDropdown from '~components/common/add-week-dropdown'
 
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
-
     components: {
       PremiumPercentDropdown,
       PremiumClientsModal,
@@ -691,10 +689,9 @@
       }
     },
 
-    async data ({ env, params }) {
-      let { data } = await axios.get(`/priceGuide/${params.id}`)
+    data () {
       return {
-        priceGuide: data,
+        priceGuide: {},
         // dayparts: [
         //   { id: 'early-morning', name: 'Early Morning' },
         //   { id: 'early-morning', name: 'Daytime' },
@@ -772,6 +769,16 @@
     },
 
     methods: {
+      fetchPriceGuide (id) {
+        axios.get(`/priceGuide/${id}`)
+          .then((response) => {
+            this.priceGuide = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
       submitted () {
         this.submitAccepted = true
         setTimeout(() => {
@@ -829,8 +836,10 @@
       },
 
       displayEditRatingsModal (context) {
+        console.log(context)
         this.showEditRatingsModal = true
         this.context = context
+        EventBus.fire('display-edit-ratings-modal', this.context)
       },
 
       highlightModifiedRow () {
@@ -917,6 +926,14 @@
         context.acceptVideaRate = true
         context.station.rate = context.videa.rate
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchPriceGuide(this.$route.params.id)
     }
   }
 </script>

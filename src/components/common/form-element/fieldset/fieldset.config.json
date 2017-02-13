@@ -1,4 +1,5 @@
 {
+  "hidden":  true,
   "context": {
     "legendContext": {
       "legendText": "Legend within a fieldset"

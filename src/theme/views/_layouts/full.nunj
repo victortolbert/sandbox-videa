@@ -1,0 +1,9 @@
+{% extends "_layouts/skeleton.nunj" %}
+
+{% set frameType = 'full' %}
+
+{% block body %}
+
+{% block main %}{% endblock %}
+
+{% endblock %}

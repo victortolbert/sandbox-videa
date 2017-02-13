@@ -1,0 +1,4 @@
+hidden: true
+context:
+  name: cog
+  classes: 'vui-icon vui-align-middle'

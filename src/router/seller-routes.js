@@ -50,6 +50,17 @@ module.exports = [
     component: require('pages/sellers/reporting/order-reporting/_id')
   },
   {
+    path: '/sellers/price-guide/:id',
+    component: require('pages/sellers/price-guide'),
+    children: [
+      {
+        path: '',
+        name: 'sellers-price-guide-id',
+        component: require('pages/sellers/price-guide/_id')
+      }
+    ]
+  },
+  {
     path: '/sellers/avails',
     name: 'sellers-avails',
     component: require('pages/sellers/avails')

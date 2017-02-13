@@ -1,0 +1,21 @@
+{% extends "_layouts/skeleton.nunj" %}
+
+{% set frameType = 'sidebar' %}
+
+{% block body %}
+
+<div class="Frame-sidebar">
+
+    <nav class="SectionNav is-sticky" id="menu">
+        <h2 class="SectionNav-heading">Navigation</h2>
+    {% block navigation %}{% endblock %}
+    </nav>
+
+</div>
+
+<main class="Frame-main" data-pjax>
+    <a href="#menu" class="Frame-navJump">Jump to navigation</a>
+    {% block main %}{% endblock %}
+</main>
+
+{% endblock %}

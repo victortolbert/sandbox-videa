@@ -1,0 +1,70 @@
+$comment-avatar--small: map(sizes, large);
+$comment-avatar--large: map(sizes, xlarge);
+
+.c-comment {
+  position: relative;
+  margin-bottom: map(spaces, large);
+  padding: map(spaces, large);
+  padding-left: $comment-avatar--small;
+  background-color: white;
+  box-shadow: 1px 1px 0 $prose-color--shadow;
+
+  @media (--from-medium-screen) {
+    padding-left: $comment-avatar--large;
+  }
+
+  @media (--upto-large-screen) {
+    margin-left: calc(calc(map(spaces, large) - map(spaces, xsmall)) * -1);
+    margin-right: calc(calc(map(spaces, large) - map(spaces, xsmall)) * -1);
+  }
+
+  &.c-comment--unhelpful {
+    background-color: transparent;
+    box-shadow: 0 0 0 1px $prose-color--shadow;
+  }
+
+  .c-avatar {
+    position: absolute;
+    top: 0;
+    left: calc(map(spaces, large) * -1);
+    width: map(sizes, large);
+
+    @media (--from-medium-screen) {
+      width: map(sizes, xlarge);
+    }
+  }
+}
+
+.c-comment__header {
+  margin-bottom: map(spaces, large);
+
+  @media print {
+    border-top: 1px solid black;
+    padding-top: map(spaces, small);
+  }
+}
+
+.c-comment__title {
+  @apply --typeset-summary-title;
+}
+
+.c-comment__meta {
+  @apply --typeset-label;
+
+  @media (--from-small-screen) {
+    position: absolute;
+    top: 1.75rem;
+    right: map(spaces, large);
+  }
+}
+
+.c-comment__main {
+  margin-bottom: map(spaces, large);
+}
+
+.c-comment__footer {
+  @apply --typeset-label;
+  border-top: 1px solid $prose-color--shadow;
+  padding-top: map(spaces, medium);
+  text-align: right;
+}

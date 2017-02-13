@@ -1,0 +1,14 @@
+.c-continue {
+  @apply --typeset-ui;
+  font-weight: 700;
+
+  &::after {
+    content: ' \203A';
+  }
+}
+
+.c-continue--ajax {
+  &::after {
+    content: ' \2026';
+  }
+}

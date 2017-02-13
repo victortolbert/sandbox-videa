@@ -1,0 +1,75 @@
+@import 'variables'
+@import 'functions'
+@import 'base'
+@import 'debug'
+
+.app
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  height: 100%  // Avoid the IE 10-11 `min-height` bug.
+  background-color: #f4f6f9
+  color: #000000
+  position: relative
+
+html
+  color: $color-black
+  background-color: $color-white
+  font-family: $font-stack
+
+fieldset
+  margin-bottom: $spacing-medium
+
+.test
+  background-color: tint($color-primary, 90%)
+
+.swatch
+  padding: $spacing-small $spacing-medium
+  background-color: #ddd
+  color: #fff
+  margin-bottom: $spacing-medium
+
+  &.x-small
+    padding: $spacing-x-small $spacing-medium
+  &.small
+    padding: $spacing-small $spacing-medium
+  &.medium
+    padding:  $spacing-medium $spacing-medium
+  &.large
+    padding: $spacing-large $spacing-medium
+  &.x-large
+    padding: $spacing-x-large $spacing-medium
+  &.xx-large
+    padding: $spacing-xx-large $spacing-medium
+
+  &.primary
+    color: $color-white
+    background-color: $color-primary
+  &.secondary
+    background-color: $color-secondary
+
+
+  &.tint
+    background-color: tint($color-primary, 10%)
+  &.shade
+    background-color: shade($color-primary, 10%)
+  &.mix
+    background-color: mix($color-primary, $color-secondary, 70%)
+  &.saturate
+    background-color: saturate($color-primary, 10%)
+  &.desaturate
+    background-color: desaturate($color-primary, 10%)
+  &.grayscale
+    background-color: grayscale($color-primary)
+  &.complement
+    background-color: complement($color-primary)
+  &.adjust-hue
+    background-color: adjust-hue($color-primary, 60deg)
+  &.invert
+    background-color: invert($color-primary)
+
+.page
+  margin-top: $spacing-large
+
+.vui-form-element
+  margin-bottom: $spacing-medium

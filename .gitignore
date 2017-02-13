@@ -3,6 +3,7 @@
 .nuxt/
 node_modules/
 dist/
+tmp/
 www/
 npm-debug.log
 test/unit/coverage

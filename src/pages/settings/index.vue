@@ -71,34 +71,10 @@
 </template>
 
 <script>
-  import store from 'store'
-
   export default {
     data () {
       return {
-        sharedState: store.state,
         newpassword: ''
-      }
-    },
-
-    validators: {
-      confirm (val) {
-        return this.newpassword === val
-      }
-    },
-
-    methods: {
-      onKeyup () {
-        alert('on keyup')
-      },
-
-      onSubmit (e) {
-        // validate manually
-        this.$validate(true)
-
-        if (this.$validation.invalid) {
-          e.preventDefault()
-        }
       }
     }
   }

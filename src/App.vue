@@ -14,6 +14,8 @@
   import AppHeader from '~components/global/app-header'
   import AppFooter from '~components/global/app-footer'
 
+  import { EventBus } from '~plugins/event-bus'
+
   export default {
     name: 'App',
     metaInfo: {
@@ -27,6 +29,10 @@
       AppNavigation,
       AppHeader,
       AppFooter
+    },
+
+    mounted () {
+      document.body.addEventListener('click', event => EventBus.fire('body-clicked', event))
     }
   }
 </script>
@@ -60,4 +66,21 @@
     background-color #f4f6f9
     color #000000
     position relative
+</style>
+
+<style>
+ .debug * { background-color: rgba(255, 0 , 0, 0.2) }
+ .debug * * { background-color: rgba(0, 255, 0, 0.2) }
+ .debug * * * { background-color: rgba(0, 0, 255, 0.2) }
+ .debug * * * * { background-color: rgba(255, 0, 255, 0.2) }
+ .debug * * * * * { background-color: rgba(0, 255, 255, 0.2) }
+ .debug * * * * * * { background-color: rgba(255, 255, 0, 0.2) }
+</style>
+
+<style lang="scss">
+  @import './assets/sass/app'
+</style>
+
+<style lang="stylus">
+  // @import './stylus/main'
 </style>

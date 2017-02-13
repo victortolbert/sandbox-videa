@@ -1,0 +1,105 @@
+.c-article {
+  position: relative;
+  overflow-x: hidden;
+  background-color: $color-day--light;
+  background-color: var(--color-day--light, $color-day--light);
+
+  @media (--from-large-screen) {
+    padding-top: 9rem;
+    padding-bottom: map(spaces, large);
+  }
+
+  a {
+    color: $color-day--dark;
+    color: var(--color-day--dark, $color-day--dark);
+
+    &:hover {
+      color: $color-day;
+      color: var(--color-day, $color-day);
+    }
+  }
+}
+
+.c-article__header {
+  padding: map(spaces, medium) map(spaces, large) map(spaces, large);
+  position: relative;
+
+  @media (--from-large-screen) {
+    min-height: 16rem;
+    padding-right: 5%;
+    padding-bottom: map(spaces, xxlarge);
+    padding-left: 25%;
+    box-shadow: 0 -1px 0 0 $prose-color--rule;
+  }
+
+  @media (--from-xlarge-screen) {
+    padding-right: 15%;
+  }
+}
+
+.c-article__title {
+  @apply --typeset-title;
+  position: relative;
+  margin-bottom: map(spaces, small);
+  z-index: map(layers, overlay);
+}
+
+.c-article__byline {
+  @apply --typescale-prose;
+
+  .c-avatar {
+    position: absolute;
+    margin: 0;
+
+    @media (--upto-large-screen) {
+      top: -25%;
+      right: -12.5%;
+      width: 50%;
+      opacity: 0.1;
+      filter: saturate(0) contrast(2);
+      mix-blend-mode: multiply;
+    }
+
+    @media (--from-large-screen) {
+      top: -40%;
+      right: 80%;
+      width: 27.5%;
+      margin-right: calc(map(spaces, medium) * -1);
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+}
+
+.c-article__main {
+  padding: 0 map(spaces, large) map(spaces, large);
+
+  @media (--from-large-screen) {
+    width: 75%;
+    margin-left: 25%;
+    padding-left: 0;
+    padding-right: 5%;
+  }
+
+  @media (--from-xlarge-screen) {
+    padding-right: 15%;
+  }
+
+  @media (--from-max-screen) {
+    padding-right: 25%;
+  }
+}
+
+.c-article__footer {
+  position: relative;
+  z-index: map(layers, default);
+  padding: 0 map(spaces, large);
+
+  @media (--from-large-screen) {
+    float: left;
+    width: 20%;
+    padding: 0;
+  }
+}

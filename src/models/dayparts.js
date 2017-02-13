@@ -1,4 +1,4 @@
-const dayparts = [
+module.exports = [
   {
     id: 1,
     name: 'Early Morning',

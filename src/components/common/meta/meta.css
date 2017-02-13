@@ -1,0 +1,46 @@
+.c-meta {
+  @apply --typeset-caption;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: map(spaces, medium);
+  border-top: 1px solid $prose-color--rule;
+  padding: map(spaces, small) 0 map(spaces, large);
+
+  @media (--from-large-screen) {
+    flex-flow: column nowrap;
+    border: 0;
+    padding: 0;
+  }
+}
+
+.c-meta__item {
+  flex: 0 0 auto;
+
+  @media screen and (max-width: 24.9375em) {
+    .dt-published span {
+      display: none;
+    }
+  }
+
+  @media (--upto-large-screen) {
+    &:not(:last-child)::after {
+      content: '•';
+      margin: 0 map(spaces, small);
+      opacity: 0.5;
+    }
+  }
+
+  @media (--from-large-screen) {
+    display: block;
+    border-top: 1px solid $prose-color--rule;
+    padding: map(spaces, small) 0 map(spaces, large);
+    text-align: right;
+  }
+
+  @media print {
+    &:not(:last-child)::after {
+      content: '•';
+      margin: 0 map(spaces, small);
+    }
+  }
+}

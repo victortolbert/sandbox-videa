@@ -1,13 +1,17 @@
 <template lang="pug">
-  modal(
+  vui-modal(
     v-bind:on-close = 'close'
-    v-bind:show = 'show',
+    v-bind:show = 'show'
     size = 'large'
   )
 
     .modal-header.vui-m-bottom--large
-      h3.vui-text-heading--medium Edit Ratings
-
+      h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
+        span Edit Ratings
+        a.vui-text-align--right(@click.prevent = 'close')
+          vui-icon(
+            name = 'close'
+          )
     .modal-body
 
       .vui-grid.vui-grid--align-spread.vui-p-around--small(
@@ -72,9 +76,9 @@
         button.vui-button.vui-button--neutral.vui-m-right--x-small(
           @click.prevent = 'close'
         ) Cancel
-        button.vui-button.vui-button--brand(
-          @click.prevent = 'saveEditedRatings(data)'
-        ) Save
+        //- button.vui-button.vui-button--brand(
+        //-   @click.prevent = 'saveEditedRatings(data)'
+        //- ) Save
 </template>
 
 <script>
@@ -120,6 +124,7 @@
 
     methods: {
       close () {
+        console.log('modal close')
         this.show = false
         this.comment = ''
       },

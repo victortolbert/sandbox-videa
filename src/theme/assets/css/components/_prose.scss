@@ -1,0 +1,154 @@
+.Prose {
+
+    font-feature-settings: "liga", "dlig", "kern", "onum";
+    hanging-punctuation: first;
+
+    > * {
+        margin-bottom: 0.75em;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.25em;
+    }
+
+    li,
+    li > ul,
+    li > ol {
+        margin-bottom: 0.25em;
+    }
+
+    ul > li {
+        list-style-type: square;
+    }
+
+    ol > li {
+        list-style-type: decimal;
+    }
+
+    h1 {
+        @include font(title);
+    }
+
+    h2 {
+        @include font(heading);
+        margin-bottom: 1em;
+        color: $color-heading;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.5em;
+    }
+
+    *:not(hr) + h2 {
+        margin-top: 2em;
+    }
+
+    h3 {
+        @include font(subHeading);
+        margin-bottom: 0.75em;
+    }
+
+    * + h3 {
+        margin-top: 2em;
+    }
+
+    hr {
+        height: 0;
+        border: 0;
+        border-top: 0.125rem solid $color-border;
+        margin: 2em 0;
+    }
+
+    abbr {
+        font-feature-settings: "c2sc";
+    }
+
+    .lede {
+        font-size: 1.2em;
+    }
+
+    code,
+    code pre {
+        background-color: #fff;
+    }
+
+    code pre {
+        border: 1px solid #ddd;
+        padding: 0.7rem 0.8rem;
+        margin: 1rem 0;
+        overflow: auto;
+    }
+
+    .lang-tree *,
+    .lang-plain * {
+        font-weight: normal !important;
+        color: #555 !important;
+        font-style: normal !important;
+    }
+
+    p code,
+    li code {
+        padding: 0.125rem;
+        // padding: 0.125rem 0.3rem;
+        // border-bottom: 1px solid #ddd;
+        // border-right: 1px solid #ddd;
+    }
+
+    table {
+        width: 100%;
+        margin: 1rem -0.5rem;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+        font-feature-settings: "lnum" 1, "tnum" 1;
+    }
+
+    caption {
+        @include font(navigation);
+        padding: 0 0.5rem;
+        font-style: italic;
+        text-align: start;
+        color: rgba($color-text, 0.75);
+        opacity: 0.8;
+    }
+
+    .Note {
+        margin: 1.5rem 0;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        > * {
+            margin-bottom: 0.75em;
+        }
+    }
+
+    td,
+    th {
+        padding: 0.75em 0.5rem;
+        text-align: start;
+
+        // text-align: start isn't fully supported for th elements
+        [dir="ltr"] & { text-align: left; }
+        [dir="rtl"] & { text-align: right; }
+    }
+
+    tr:nth-child(even) {
+        background-color: rgba($color-text, 0.05);
+    }
+
+    th {
+        background-color: rgba($color-text, 0.075);
+        border-bottom: 1px solid rgba($color-text, 0.1);
+    }
+
+    blockquote {
+        p {
+            color: rgba($color-text, 0.6);
+            font-style: italic;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .Browser {
+        margin: 30px 0;
+    }
+}

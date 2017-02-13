@@ -1,0 +1,67 @@
+[data-tooltip]
+  position: relative
+  
+  &:after
+    background: $theme.secondary
+    border-radius: .2rem
+    color: #FFFFFF
+    content: attr(data-tooltip)
+    font-size: .8rem
+    line-height: 1.2rem
+    opacity: 0
+    padding: .8rem
+    position: absolute
+    pointer-events: none
+    transition: $secondary-transition
+    visibility: hidden
+    width: auto
+    white-space: pre
+    z-index: 99
+    @extend .z-depth-1
+  
+  &:hover
+    &:after
+      opacity: 1
+      visibility: visible
+    
+  &[data-tooltip-location='bottom']
+    &:after
+      top: 100%
+      left: 50%
+      transform: translate(-50%, -10px) scale(0.1)
+      transform-origin: center top
+      
+    &:hover
+      &:after
+        transform: translate(-50%, 10px)
+      
+  &[data-tooltip-location='top']
+    &:after
+      top: -100%
+      left: 50%
+      transform: translate(-50%, 10px) scale(0.1)
+      transform-origin: center bottom
+      
+    &:hover
+      &:after
+        transform: translate(-50%, -10px)
+
+  &[data-tooltip-location='left']
+    &:after
+      left: -100%
+      transform: translate(10px, 0%) scale(0.1)
+      transform-origin: center right
+      
+    &:hover
+      &:after
+        transform: translate(-10px, 0)
+      
+  &[data-tooltip-location='right']
+    &:after
+      left: 100%
+      transform: translate(-10px, 0%) scale(0.1)
+      transform-origin: center left
+      
+    &:hover
+      &:after
+        transform: translate(10px, 0)

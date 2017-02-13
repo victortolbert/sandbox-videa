@@ -1,0 +1,33 @@
+.c-author {
+  display: block;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.c-author__meta {
+  @apply --typeset-label;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: map(spaces, small);
+  background-color: color(map(colors, neutral, darkest) a(75%));
+  color: white;
+
+  @media print {
+    color: white !important;
+    background-color: black !important;
+  }
+}
+
+.c-author__image {
+  display: block;
+  height: auto;
+  width: 100%;
+  transition: transform $author-duration ease-out;
+}
+
+.c-author:hover .c-author__image {
+  transform: scale(1.1);
+}

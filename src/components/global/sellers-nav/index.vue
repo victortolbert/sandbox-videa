@@ -13,6 +13,10 @@
           )
         li
           router-link(
+            v-bind:to = '{ name: "sellers-price-guide-id", params: { id: "early-morning" } }'
+          ) Price Guide
+        li
+          router-link(
             v-bind:to = '{ name: "sellers-avails" }'
           ) Avails
         li

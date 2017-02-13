@@ -1,3 +1,3 @@
 import Vue from 'vue'
 
-Vue.directive('highlight', require('src/directives/highlight'))
+Vue.directive('highlight', require('~/directives/highlight'))
