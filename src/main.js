@@ -44,11 +44,11 @@ Vue.use(FetchData)
 // require('./stylus/main.styl')
 
 import Components from '~components'
-import Directives from '~directives'
+// import Directives from '~directives'
 import Filters from '~filters'
 
 Components.registerAllGlobalComponents()
-Directives.registerAllGlobalDirectives()
+// Directives.registerAllGlobalDirectives()
 Filters.registerAllGlobalFilters()
 
 /* eslint-disable no-new */
