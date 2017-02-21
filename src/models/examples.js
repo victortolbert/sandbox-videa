@@ -11,6 +11,7 @@ module.exports = [
   // { name: 'Scoped Slots', path: '/examples/scoped-slots', route: 'sc-example' },
   { name: 'Banner', path: '/examples/banner', route: 'banner-example' },
   { name: 'Select', path: '/examples/select', route: 'select-example' },
+  { name: 'Selectize', path: '/examples/selectize', route: 'selectize-example' },
   { name: 'Table', path: '/examples/table', route: 'table-example' },
   { name: 'Toast', path: '/examples/toast', route: 'toast-example' },
   { name: 'Multiselect', path: '/examples/multiselect', route: 'multiselect-example' },
