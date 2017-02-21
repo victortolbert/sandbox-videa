@@ -15,6 +15,7 @@ module.exports = [
   { name: 'Toast', path: '/examples/toast', route: 'toast-example' },
   { name: 'Multiselect', path: '/examples/multiselect', route: 'multiselect-example' },
   { name: 'Order By', path: '/examples/order-by', route: 'order-by-example' },
-  { name: 'Morehouse 1987', path: '/morehouse1987', route: 'morehouse1987' }
+  { name: 'Windows', path: '/examples/windows', route: 'windows-example' },
+  { name: 'Morehouse 1987', path: '/morehouse1987', route: 'morehouse1987' },
   // { name: 'Youtube Embed', path: '/examples/youtube-embed', route: 'toast-example' }
 ]
