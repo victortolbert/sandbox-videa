@@ -47,6 +47,10 @@
       button.vui-button.vui-button--brand.vui-m-right--x-small(
         @click.prevent = ''
       ) Search
+    fieldset.vui-form-element
+      button.vui-button.vui-button--neutral.vui-m-right--x-small(
+        @click.prevent = ''
+      ) Clear
 </template>
 
 <script>

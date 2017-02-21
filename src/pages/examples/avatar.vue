@@ -7,8 +7,13 @@
 <script>
   export default {
     name: 'avatar-example',
+
     metaInfo: {
       title: 'Example / Avatar',
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

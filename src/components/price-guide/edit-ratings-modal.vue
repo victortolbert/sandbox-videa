@@ -1,14 +1,14 @@
 <template lang="pug">
   vui-modal(
-    v-bind:on-close = 'close'
-    v-bind:show = 'show'
     size = 'large'
   )
 
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
         span Edit Ratings
-        a.vui-text-align--right(@click.prevent = 'close')
+        a.vui-text-align--right(
+          @click.prevent = '$emit("close")'
+        )
           vui-icon(
             name = 'close'
           )
@@ -21,67 +21,69 @@
         .vui-media
           .vui-media__body
             p.vui-align-middle
-              span.vui-m-right--xx-small Station Rate
-              span.vui-text-heading--medium  ${{ data.station.rate }}
+              span.vui-m-right--xx-small Station Rate {{ context }}
+      //-         span.vui-text-heading--medium  ${{ data.station.rate }}
 
-      .vui-scrollable--x.vui-m-bottom--large(
-        style = 'height: 20rem; overflow-x: hidden; overflow-y: scroll'
-      )
+      //- .vui-scrollable--x.vui-m-bottom--large(
+      //-   style = 'height: 20rem; overflow-x: hidden; overflow-y: scroll'
+      //- )
 
-        table.vui-table.vui-no-row-hover
-          thead
-            tr
-              th Demo
-              th.u-width-medium Station Rating
-              th.u-width-small
-                | CPP
-                sup 1
-              th.u-width-small
-                | Premium CPP
-                sup 1
-              th.u-width-medium Videa Rating
-              th.u-width-small
-                | CPP
-                sup 1
+      //-   table.vui-table.vui-no-row-hover
+      //-     thead
+      //-       tr
+      //-         th Demo
+      //-         th.u-width-medium Station Rating
+      //-         th.u-width-small
+      //-           | CPP
+      //-           sup 1
+      //-         th.u-width-small
+      //-           | Premium CPP
+      //-           sup 1
+      //-         th.u-width-medium Videa Rating
+      //-         th.u-width-small
+      //-           | CPP
+      //-           sup 1
 
-          tbody
-            tr(
-              v-bind:class = '(index % 2 === 0) ? "vui-highlight" : ""'
-              v-for = '(demo, index) in data.station.demos',
-            )
-              td {{ demo.name }}
-              td
-                input.vui-input.vui-text-align--right(
-                  v-bind:value = 'demo.rating | formatRating'
-                  v-model = 'demo.rating'
-                )
-              td.vui-text-align--right
-                cpp(
-                  v-bind:rate = 'data.station.rate'
-                  v-bind:rating = 'demo.rating'
-                )
-              td.vui-text-align--right
-                cpp(
-                  v-bind:rate = 'data.station.premium.rate'
-                  v-bind:rating = 'demo.rating'
-                )
-              td.vui-text-align--right {{demo.rating | formatRating}}
-              td.vui-text-align--right
-                cpp(
-                  v-bind:rate = 'data.station.rate'
-                  v-bind:rating = 'demo.rating'
-                )
+      //-     tbody
+      //-       tr(
+      //-         v-bind:class = '(index % 2 === 0) ? "vui-highlight" : ""'
+      //-         v-for = '(demo, index) in data.station.demos',
+      //-       )
+      //-         td {{ demo.name }}
+      //-         td
+      //-           input.vui-input.vui-text-align--right(
+      //-             v-bind:value = 'demo.rating | formatRating'
+      //-             v-model = 'demo.rating'
+      //-           )
+      //-         td.vui-text-align--right
+      //-           cpp(
+      //-             v-bind:rate = 'data.station.rate'
+      //-             v-bind:rating = 'demo.rating'
+      //-           )
+      //-         td.vui-text-align--right
+      //-           cpp(
+      //-             v-bind:rate = 'data.station.premium.rate'
+      //-             v-bind:rating = 'demo.rating'
+      //-           )
+      //-         td.vui-text-align--right {{demo.rating | formatRating}}
+      //-         td.vui-text-align--right
+      //-           cpp(
+      //-             v-bind:rate = 'data.station.rate'
+      //-             v-bind:rating = 'demo.rating'
+      //-           )
 
-      .vui-grid.vui-grid--align-end
-        button.vui-button.vui-button--neutral.vui-m-right--x-small(
-          @click.prevent = 'close'
-        ) Cancel
-        //- button.vui-button.vui-button--brand(
-        //-   @click.prevent = 'saveEditedRatings(data)'
-        //- ) Save
+      //- .vui-grid.vui-grid--align-end
+      //-   button.vui-button.vui-button--neutral.vui-m-right--x-small(
+      //-     @click.prevent = 'close'
+      //-   ) Cancel
+      //-   //- button.vui-button.vui-button--brand(
+      //-   //-   @click.prevent = 'saveEditedRatings(data)'
+      //-   //- ) Save
 </template>
 
 <script>
+  import { EventBus } from '~plugins/event-bus'
+
   export default {
     props: {
       show: Boolean,
@@ -91,6 +93,7 @@
 
     data () {
       return {
+        context: null,
         comment: '',
         reps: [
           {
@@ -136,6 +139,13 @@
       saveEditedRatings (context) {
         this.close()
       }
+    },
+
+    mounted () {
+      EventBus.listen('display-edit-ratings-modal', (context) => {
+        this.show = true
+        this.context = context
+      })
     }
   }
 </script>

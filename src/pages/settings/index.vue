@@ -72,6 +72,12 @@
 
 <script>
   export default {
+    name: 'settings',
+
+    metaInfo: {
+      title: 'Settings'
+    },
+
     data () {
       return {
         newpassword: ''

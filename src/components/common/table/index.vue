@@ -16,6 +16,13 @@
 
 <script>
   export default {
-    props: ['columns', 'items']
+    props: {
+      columns: {
+        type: Array
+      },
+      items: {
+        type: Array
+      }
+    }
   }
 </script>

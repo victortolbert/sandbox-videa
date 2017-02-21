@@ -2,6 +2,9 @@ import Vue from 'vue'
 
 export default {
   registerAllGlobalComponents () {
+    Vue.component('the-button', require('~components/_the-button'))
+    Vue.component('the-box', require('~components/_the-box'))
+
     Vue.component('vui-items-per-page-selector', require('~components/common/datagrid/items-per-page-selector'))
     Vue.component('vui-resizable-textarea', require('~components/common/form-element/resizable-textarea'))
     Vue.component('vui-quarter-selector', require('~components/common/form-element/quarter-selector'))
@@ -26,6 +29,7 @@ export default {
     Vue.component('vui-textarea', require('~components/common/textarea'))
     Vue.component('vui-avatar', require('~components/common/avatar'))
     Vue.component('vui-button', require('~components/common/button'))
+    Vue.component('vui-footer', require('~components/common/footer'))
     Vue.component('vui-select', require('~components/common/select'))
     Vue.component('vui-badge', require('~components/common/badge'))
     Vue.component('vui-input', require('~components/common/input'))
@@ -50,6 +54,7 @@ export default {
     Vue.component('makegoods-nested-order-line-invoice-details-grid', require('~components/pending-makegoods/makegoods-nested-order-line-invoice-details-grid'))
     Vue.component('makegoods-order-line-curr-info-rate-rating-grid', require('~components/pending-makegoods/makegoods-order-line-curr-info-rate-rating-grid'))
     Vue.component('makegoods-spot-allocation-with-missed-spots', require('~components/pending-makegoods/makegoods-spot-allocation-with-missed-spots'))
+    Vue.component('makegoods-spot-allocation-with-traffic-spots', require('~components/pending-makegoods/makegoods-spot-allocation-with-traffic-spots'))
     Vue.component('makegoods-common-avail-offer-grids-wrapper', require('~components/pending-makegoods/makegoods-common-avail-offer-grids-wrapper'))
     Vue.component('makegoods-nested-order-line-makegoods-grid', require('~components/pending-makegoods/makegoods-nested-order-line-makegoods-grid'))
     Vue.component('makegoods-program-name-change-lines-grid', require('~components/pending-makegoods/makegoods-program-name-change-lines-grid'))

@@ -13,20 +13,26 @@ import router from './router'
 //   toast: Toast
 // }
 
-import VueYouTubeEmbed from 'vue-youtube-embed'
-Vue.use(VueYouTubeEmbed)
+import Carousel3d from 'vue-carousel-3d'
+Vue.use(Carousel3d)
 
-import VueSweetAlert from 'vue-sweetalert'
-Vue.use(VueSweetAlert)
+import VueAsyncComputed from 'vue-async-computed'
+Vue.use(VueAsyncComputed)
 
-import AsyncComputed from 'vue-async-computed'
-Vue.use(AsyncComputed)
+import VueFetchData from 'vue-fetch-data'
+Vue.use(VueFetchData)
+
+import VueFlexboxgrid from 'vue-flexboxgrid'
+Vue.use(VueFlexboxgrid)
 
 import VueHighcharts from 'vue-highcharts'
 Vue.use(VueHighcharts)
 
-import FetchData from 'vue-fetch-data'
-Vue.use(FetchData)
+import VueSweetalert from 'vue-sweetalert'
+Vue.use(VueSweetalert)
+
+import VueYouTubeEmbed from 'vue-youtube-embed'
+Vue.use(VueYouTubeEmbed)
 
 // require('~plugins/ga')
 // require('~plugins/global-event-bus')

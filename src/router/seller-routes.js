@@ -30,6 +30,11 @@ module.exports = [
     component: require('pages/sellers/order-management/order-search')
   },
   {
+    path: '/sellers/order-management/order-search/:id',
+    name: 'sellers-order-management-order-search-id',
+    component: require('pages/sellers/order-management/order-search/_id')
+  },
+  {
     path: '/sellers/reporting/program-revenue',
     name: 'sellers-reporting-program-revenue',
     component: require('pages/sellers/reporting/program-revenue')
@@ -91,27 +96,27 @@ module.exports = [
     component: require('pages/settings'),
     children: [
       {
-        path: '/user',
+        path: 'user',
         name: 'settings-user',
         component: require('pages/settings/user')
       },
       {
-        path: '/specials',
+        path: 'specials',
         name: 'settings-specials',
         component: require('pages/settings/specials')
       },
       {
-        path: '/premium-advertisers',
+        path: 'premium-advertisers',
         name: 'settings-premium-advertisers',
         component: require('pages/settings/premium-advertisers')
       },
       {
-        path: '/reps',
+        path: 'reps',
         name: 'settings-reps',
         component: require('pages/settings/reps')
       },
       {
-        path: '/display',
+        path: 'display',
         name: 'settings-display',
         component: require('pages/settings/display')
       }

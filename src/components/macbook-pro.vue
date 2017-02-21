@@ -25,5 +25,5 @@
 </script>
 
 <style lang="stylus">
- 
+  @import '~assets/variables'
 </style>

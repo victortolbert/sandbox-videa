@@ -1,31 +1,22 @@
 <template lang="pug">
   .spot-allocation-row
-    .spot-allocation-nav-section.pointer.vui-align-middle
-      vui-icon.vui-align-middle(
-        @click = 'scrollLeft'
-        name = 'caret-square-o-left'
-        size = 'medium'
-      )
-    .spot-allocation-container(
-      v-bind:style = '{ "width": spotsWidth }'
-    )
-      ul.spot-allocation(
-        style = 'left: 0'
-      )
-        li(
-          v-for = 'spot in spots'
-        )
+    //- .spot-allocation-nav-section.pointer.vui-align-middle
+    //-   vui-icon.vui-icon--small.vui-align-middle(
+    //-     v-on:click = 'scrollLeft'
+    //-     name = 'arrow-circle-left'
+    //-     size = 'medium'
+    //-   )
+    .spot-allocation-container(v-bind:style='{ "width": spotsWidth }')
+      ul.spot-allocation(style='left: 0')
+        li(v-for='spot in spots')
           div.vui-truncate
-            span(
-              v-bind:title = 'spot.week'
-              v-html = 'spot.week'
-            )
-    .spot-allocation-nav-section.pointer.vui-align-middle
-      vui-icon.vui-align-middle(
-        @click = 'scrollRight'
-        name = 'caret-square-o-right'
-        size = 'medium'
-      )
+            span(v-bind:title='spot.week', v-html='spot.week')
+    //- .spot-allocation-nav-section.pointer.vui-align-middle
+    //-   vui-icon.vui-icon--small.vui-align-middle(
+    //-     v-on:click = 'scrollRight'
+    //-     name = 'arrow-circle-right'
+    //-     size = 'medium'
+    //-   )
 </template>
 
 <script>
@@ -58,6 +49,8 @@
 </script>
 
 <style lang="stylus">
+  @import '~assets/variables'
+
   spot-allocation-width = 35px
   spot-allocation-height = 30px
   spotallocation-editable-height = 40px
@@ -161,6 +154,7 @@
 </style>
 
 <style lang="stylus">
+  @import '~assets/variables'
   /* Spot Allocation Column */
   .spot-allocation-column
     white-space normal !important
@@ -210,8 +204,8 @@
     line-height 30px
   .spot-allocation-row .spot-allocation-data li > div span .highlight
     color #c5203e
-  // .left-icon
-  //   background-image url(/Content/Images/left-arrow.png)
+  .left-icon
+    background-image url('/shared/static/img/left-arrow.png')
   .button-icon
     display block
     width 100%
@@ -222,7 +216,7 @@
     background-position center
     cursor pointer
   .right-icon
-    background-image url(/Content/Images/right-arrow.png)
+    background-image url('/static/shared/img/right-arrow.png')
   .button-icon[disabled]
     opacity 0.5
 </style>

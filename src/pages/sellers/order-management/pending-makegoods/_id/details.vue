@@ -9,7 +9,7 @@
           //-   | Back to Makegoods Dashboard
       .vui-col.vui-align-middle
         fieldset.vui-form-element.vui-m-bottom--large.vui-text-align--right(
-          v-if = '$store.state.activeApp !== "reps"'
+          v-if = '$store.state.user.name !== "Rep User"'
         )
           button.vui-button.vui-button--neutral.vui-m-right--xx-small(
             @click.prevent = 'showRejectOfferModal = true'
@@ -151,74 +151,74 @@
             td.vui-text-align--center {{ preempt.spotLength }}
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
                 value = '1'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
@@ -318,75 +318,75 @@
             td.vui-text-align--center  {{ makegood.offeredSpots }}
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
-                style = 'width: 50px'
-                type = 'text'
-                value = '1'
-              )
-            td.vui-text-align--center.vui-highlight
-              input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
                 value = '1'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
+                style = 'width: 50px'
+                type = 'text'
+                value = '1'
+              )
+            td.vui-text-align--center.vui-highlight
+              input.vui-input.vui-text-align--center(
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
             td.vui-text-align--center.vui-highlight
               input.vui-input.vui-text-align--center(
-                v-bind:disabled = '$store.state.activeApp == "reps"'
+                v-bind:disabled = '$store.state.user.name == "Rep User"'
                 style = 'width: 50px'
                 type = 'text'
               )
@@ -433,7 +433,7 @@
               td.vui-text-align--right 3.6
 
     fieldset.vui-form-element.vui-m-bottom--large.vui-text-align--right(
-      v-if = '$store.state.activeApp !== "reps"'
+      v-if = '$store.state.user.name !== "Rep User"'
     )
       button.vui-button.vui-button--neutral.vui-m-right--xx-small(
         @click.prevent = 'showRejectOfferModal = true'

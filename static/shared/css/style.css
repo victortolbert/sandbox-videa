@@ -1,12 +1,43 @@
-.primary-button {
-  border: 0;
-  padding: 10px;
-  background: blue;
+.flash {
+  align-items: center;
+  background: #ccc;
+  display: flex;
+  padding: 0.25rem 1rem; }
+
+.flash--success {
+  background: #04864b;
   color: white; }
 
-.primary-button[data-theme="dark"] {
-  background: #eee;
-  color: blue; }
+.flash--warn {
+  background: #ffb65c; }
 
-.button {
-  color: #eee; }
+.flash--error {
+  background: #c13833;
+  color: white; }
+
+.flash__text {
+  flex: 1; }
+
+.flash__remove {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem; }
+
+.flash-messages > * {
+  margin-bottom: 1rem; }
+ }
+
+.flash__text {
+  flex: 1; }
+
+.flash__remove {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem; }
+
+.flash-messages > * {
+  margin-bottom: 1rem; }

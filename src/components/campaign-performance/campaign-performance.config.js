@@ -15,7 +15,7 @@ module.exports = {
         revenue: 41000,
         flightStartDate: moment().subtract(2, 'weeks').weekday(1).format('MM/DD/YY'),
         flightEndDate: moment().add(3, 'weeks').weekday(7).format('MM/DD/YY'),
-        campaignDeliveryPercent: '80%',
+        campaignDeliveryPercent: 0.80,
         currentGrpsImps: 25.3,
         purchasedGrpsImps: 31.5,
         difference: -6.2,
@@ -82,13 +82,6 @@ module.exports = {
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
-            },
-            {
-              daypart: 'Total',
-              purchasedToDate: 31.5,
-              deliveredToDate: 25.3,
-              percentage: 0.8,
-              difference: -6.2
             }
           ]
         }
@@ -104,7 +97,7 @@ module.exports = {
         revenue: 37189,
         flightStartDate: '05/15/17',
         flightEndDate: '06/25/17',
-        campaignDeliveryPercent: 'N/A',
+        campaignDeliveryPercent: null,
         currentGrpsImps: 0.0,
         purchasedGrpsImps: 0.0,
         difference: null,
@@ -171,13 +164,6 @@ module.exports = {
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
-            },
-            {
-              daypart: 'Total',
-              purchasedToDate: 31.5,
-              deliveredToDate: 25.3,
-              percentage: 0.8,
-              difference: -6.2
             }
           ]
         }
@@ -193,7 +179,7 @@ module.exports = {
         revenue: 10650,
         flightStartDate: moment().subtract(6, 'weeks').weekday(1).format('MM/DD/YY'),
         flightEndDate: moment().subtract(1, 'weeks').weekday(7).format('MM/DD/YY'),
-        campaignDeliveryPercent: '104%',
+        campaignDeliveryPercent: 1.04,
         currentGrpsImps: 36,
         purchasedGrpsImps: 34.5,
         difference: 1.5,
@@ -260,13 +246,6 @@ module.exports = {
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
-            },
-            {
-              daypart: 'Total',
-              purchasedToDate: 31.5,
-              deliveredToDate: 25.3,
-              percentage: 0.8,
-              difference: -6.2
             }
           ]
         }
@@ -282,7 +261,7 @@ module.exports = {
         revenue: 41450,
         flightStartDate: moment().subtract(8, 'weeks').weekday(1).format('MM/DD/YY'),
         flightEndDate: moment().subtract(2, 'weeks').weekday(7).format('MM/DD/YY'),
-        campaignDeliveryPercent: '91%',
+        campaignDeliveryPercent: 0.91,
         currentGrpsImps: 87,
         purchasedGrpsImps: 96,
         difference: -9,
@@ -349,13 +328,6 @@ module.exports = {
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
-            },
-            {
-              daypart: 'Total',
-              purchasedToDate: 31.5,
-              deliveredToDate: 25.3,
-              percentage: 0.8,
-              difference: -6.2
             }
           ]
 
@@ -372,7 +344,7 @@ module.exports = {
         revenue: 19100,
         flightStartDate: moment().subtract(3, 'weeks').weekday(1).format('MM/DD/YY'),
         flightEndDate: moment().add(1, 'weeks').weekday(7).format('MM/DD/YY'),
-        campaignDeliveryPercent: '96%',
+        campaignDeliveryPercent: 0.96,
         currentGrpsImps: 51.9,
         purchasedGrpsImps: 54,
         difference: -2.1,
@@ -439,13 +411,6 @@ module.exports = {
               deliveredToDate: 2.1,
               percentage: 0.49,
               difference: -2.2
-            },
-            {
-              daypart: 'Total',
-              purchasedToDate: 31.5,
-              deliveredToDate: 25.3,
-              percentage: 0.8,
-              difference: -6.2
             }
           ]
         }
@@ -461,7 +426,7 @@ module.exports = {
         revenue: 52215,
         flightStartDate: moment().add(2, 'weeks').weekday(1).format('MM/DD/YY'),
         flightEndDate: moment().add(10, 'weeks').weekday(7).format('MM/DD/YY'),
-        campaignDeliveryPercent: 'N/A',
+        campaignDeliveryPercent: null,
         currentGrpsImps: 0.0,
         purchasedGrpsImps: 0.0,
         difference: null,

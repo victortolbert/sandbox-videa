@@ -1,0 +1,102 @@
+// mixins
+border-radius(val)
+  -webkit-border-radius val
+  -moz-border-radius val
+  border-radius val
+
+button
+  border-radius(5px)
+
+// Transparent mixins
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+button
+  border-radius 5px 10px
+
+// Variables
+#prompt
+  position absolute
+  top 150px
+  left 50%
+  width w = 200px
+  margin-left -(w / 2)
+
+// Block property access
+#prompt
+  position absolute
+  top 150px
+  left 50%
+  width 200px
+  margin-left -(@width / 2)
+
+// Robust feature-rich language
+-pos(type, args)
+  i = 0
+  position: unquote(type)
+  {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+  {args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+
+absolute()
+  -pos('absolute', arguments)
+
+fixed()
+  -pos('fixed', arguments)
+
+#prompt
+  absolute top 150px left 5px
+  width 200px
+  margin-left -(@width / 2)
+
+#logo
+  fixed top left
+
+// Iteration
+table
+  for row in 1 2 3 4 5
+    tr:nth-child({row})
+      height 10px * row
+
+// Interpolation
+vendors = webkit moz o ms official
+
+border-radius()
+  for vendor in vendors
+    if vendor == official
+      border-radius arguments
+    else
+      -{vendor}-border-radius arguments
+#content
+  border-radius 5px
+
+// Keyword arguments
+fade-out(color, amount = 50%)
+  color - rgba(0,0,0,amount)
+
+body
+  foo fade-out(#eee)
+  foo fade-out(#eee, 20%)
+  foo fade-out(#eee, amount: 50%)
+  foo fade-out(color: #eee, amount: 50%)
+  foo fade-out(amount: 50%, #eee)
+  foo fade-out(amount: 50%, color: #eee)
+
+// Built-in functions
+body
+  foo red(#fc0)
+  foo green(#fc0)
+  foo blue(#fc0)
+  foo alpha(#fff)
+  foo alpha(rgba(#fff, .5))
+
+// Color built-in functions
+body
+  foo light(#eee)
+  foo dark(#eee)
+  foo dark(#333)
+  foo darken(#eee, 50%)
+  foo lighten(black, 50%)
+  foo #eee - 50%
+  foo black + 50%

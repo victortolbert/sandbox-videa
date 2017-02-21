@@ -710,7 +710,7 @@ export default {
 </script>
 
 <style lang="stylus">
-
+  @import '~assets/variables'
 $width = 300px
 
 *

@@ -16,6 +16,7 @@
 
   export default {
     name: 'async-computed-example',
+
     metaInfo: {
       title: 'Example / Async Computed',
     },
@@ -40,6 +41,10 @@
 
         default: 'No fanciness'
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

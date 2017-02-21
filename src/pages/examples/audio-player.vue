@@ -8,6 +8,7 @@
 <script>
   export default {
     name: 'audio-player-example',
+
     metaInfo: {
       title: 'Example / Audio Player',
     },
@@ -19,6 +20,10 @@
           "/static/shared/audio/rock-yo-hips.mp3"
         ]
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

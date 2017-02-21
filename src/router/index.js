@@ -7,12 +7,13 @@ Vue.use(Meta)
 
 const routes = [
   { path: '/', name: 'index', component: require('pages') },
-  { path: '/chart', name: 'chart', component: require('pages/chart') },
   { path: '/privacy', name: 'privacy', component: require('pages/privacy') },
   { path: '/terms', name: 'terms', component: require('pages/terms') },
-  ...require('./cases-routes'),
+  ...require('./morehouse1987-routes'),
   ...require('./example-routes'),
   ...require('./seller-routes'),
+  ...require('./buyer-routes'),
+  ...require('./cases-routes'),
   { path: '*', component: require('pages/error') }
 ]
 

@@ -51,6 +51,10 @@
       onSubmit () {
         console.log('submit!')
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

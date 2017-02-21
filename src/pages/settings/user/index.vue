@@ -103,8 +103,10 @@
 
 <script>
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    name: 'user-settings',
+
+    metaInfo: {
+      title: 'User Settings'
     },
 
     data () {
@@ -115,11 +117,6 @@
       }
     },
 
-    validators: {
-      confirm (val) {
-        return this.newpassword === val
-      }
-    },
 
     methods: {
       onKeyup () {
@@ -134,6 +131,10 @@
           e.preventDefault()
         }
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
     }
   }
 </script>

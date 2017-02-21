@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1184.000000, -32.000000)">
+            <g id="Hero">
+                <g id="Right-Side" transform="translate(376.000000, 0.000000)">
+                    <g id="Social-Media" transform="translate(808.000000, 32.000000)">
+                        <g id="facebook">
+                            <circle id="icon-backgroud" fill="#4C5E71" fill-rule="nonzero" cx="32" cy="32" r="32"></circle>
+                            <path d="M46.234,16 L17.766,16 C16.79,16 16,16.79 16,17.766 L16,46.234 C16,47.21 16.79,48 17.766,48 L33.092,48 L33.092,35.608 L28.92,35.608 L28.92,30.78 L33.092,30.78 L33.092,27.214 C33.092,23.082 35.616,20.834 39.304,20.834 C41.07,20.834 42.588,20.962 43.03,21.022 L43.03,25.342 L40.47,25.342 C38.47,25.342 38.08,26.294 38.08,27.694 L38.08,30.774 L42.86,30.774 L42.24,35.606 L38.08,35.606 L38.08,48 L46.234,48 C47.21,48 48,47.21 48,46.234 L48,17.766 C48,16.79 47.21,16 46.234,16" id="facebook-icon" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

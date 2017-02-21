@@ -1,10 +1,6 @@
 <template lang="pug">
-  svg.vui-icon.vui-align-middle(
-    v-bind:class = 'classes'
-  )
-    use(
-      v-bind:xlink:href = '"/static/shared/icons.svg#icon-" + name'
-    )
+  svg.vui-icon.vui-align-middle(v-bind:class='classes')
+    use(v-bind:xlink:href='"/static/shared/icons.svg#icon-" + name')
 </template>
 
 <script>

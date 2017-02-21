@@ -45,6 +45,12 @@
   import OrderSearchGrid from '~components/order-search/order-search-grid'
 
   export default {
+    name: 'order-search',
+
+    metaInfo: {
+      title: 'Order Search'
+    },
+
     components: {
       OrderSearchFilter,
       OrderSearchGrid

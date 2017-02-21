@@ -11,6 +11,7 @@ const store = new Vuex.Store({
     visibleHeader: false,
     visibleAffix: false,
     activeApp: null,
+    hasError: false,
     orderManagementRoute: false,
     reportingRoute: false,
     user: {

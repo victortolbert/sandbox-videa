@@ -4,7 +4,7 @@
   )
     fieldset.vui-form-element
       label.vui-form-element__label Search
-      .vui-form-element__control.vui-m-right--small
+      .vui-form-element__control
         input.vui-input(
           v-model = 'searchKey'
           name = 'searchText'
@@ -13,6 +13,23 @@
           style = 'width: 24rem'
           type = 'text'
         )
+    fieldset.vui-form-element
+      .vui-form-element__control.vui-m-right--large
+        .vui-select_container(
+          style = 'margin-left: -1px'
+        )
+          select#searchType.vui-select(
+            @change = ''
+          )
+            option(
+              label = 'Advertiser'
+              selected = 'selected'
+              value = 'number: 0'
+            ) Advertiser
+            option(
+              label = 'Agency'
+              value = 'number: 1'
+            ) Agency
 
     vui-quarter-selector
 

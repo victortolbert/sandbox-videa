@@ -59,6 +59,8 @@
 </script>
 
 <style lang="stylus" scoped>
+  @import '~assets/variables'
+
   #countdown
     list-style none
     padding-left 0

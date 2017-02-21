@@ -66,10 +66,21 @@
           td.vui-truncate(
             v-bind:title = 'campaign.campaignDelivery'
             v-show = 'columns.campaignDelivery.isVisible'
-          ) {{ campaign.campaignDeliveryPercent }}
-            <!--campaign-delivery-indicator(value='campaign.campaignDeliveryPercent', ahead-threshold='90', target-threshold='80')-->
-            div(v-if='campaign.campaignDeliveryPercent == null')
-              pan.vui-float--left N/A
+          )
+            .vui-grid.vui-grid--align-spread
+              span(v-if="campaign.campaignDeliveryPercent") {{ campaign.campaignDeliveryPercent | decimalToPercent }}
+              span(v-if="!campaign.campaignDeliveryPercent") N/A
+              span(v-else-if="campaign.campaignDeliveryPercent > 0.89")
+                vui-icon.vui-m-left--x-small(
+                  name = 'stop'
+                  style = 'color: #3B7F36'
+                )
+              span(v-if="campaign.campaignDeliveryPercent < 0.90")
+                vui-icon.vui-m-left--x-small(
+                  name = 'stop'
+                  style = 'color: #F58220'
+                )
+
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'campaign.currentGrpsImps'
             v-show = 'columns.currentRtgsImps.isVisible'

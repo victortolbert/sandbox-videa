@@ -10,23 +10,27 @@
       thead
         tr
           th(
-            v-for = 'column in gridColumns'
+            v-for = 'column in columns'
           )
             a.vui-grid.vui-grid--align-spread(
-              @click.prevent = 'sortBy(column.field)'
               v-bind:class='{ active: sortKey == column.field }'
+              v-on:click.prevent = 'sortBy(column.field)'
+              v-if = 'column.isSortable'
             )
-              span {{column.title}}
+              span {{ column.title }}
               vui-icon.vui-icon--sort-arrow(
                 name = 'sort-asc'
               )
+            span(
+              v-else
+            ) {{ column.title }}
       tbody(
         v-for =' order in orders'
       )
         tr
           td
             a(
-              @click.prevent = 'toggleDetail(order)'
+              v-on:click.prevent = 'toggleDetail(order)'
             )
               vui-icon.vui-align-middle(
                 v-bind:name = 'order.expanded ? "caret-lower-right" : "caret-right"'
@@ -41,16 +45,17 @@
           td.vui-text-align--right {{ $store.state['share'+order.id] | decimalToPercent }}
           td {{ order.stationOrderNumber }}
           td.vui-text-align--center
-            //- router-link(
-            //-   v-bind:to = '{ name: "sellers-order-management-pending-makegoods-id", params: { id: order.id } }'
-            //- ) Manage Schedule
+            a.vui-m-right--xx-small(
+              v-bind:href = '`/sellers/order-management/pending-makegoods/${order.id}`'
+              target = '_blank'
+            ) Manage Schedule
           td {{ order.id }}
           td {{ order.id == 135001 ? orderDate : order.orderDate }}
         tr.animated(
           v-show = 'order.expanded'
         )
           td.expanded(
-            v-bind:colspan = 'gridColumns.length'
+            v-bind:colspan = 'columns.length'
           )
             .vui-box.vui-theme--shade.vui-grid.vui-grid--align-spread.vui-m-top--medium
               span
@@ -82,15 +87,15 @@
                   th.vui-text-align--right.u-width-small # of Spots
                   th.vui-text-align--right.u-width-medium Revenue
                   th.vui-text-align--right.u-width-small
-                    | CPP
-                    sup 1
-                  th.vui-text-align--right.u-width-small
-                    | Rating
+                    | RTGs/IMPs
                     sup 1
                   th.vui-text-align--right.u-width-small(
                     style = 'padding-right: 1rem'
                   )
-                    | GRPs
+                    | GRPs/IMPs
+                    sup 1
+                  th.vui-text-align--right.u-width-small
+                    | CPP/CPM
                     sup 1
               tbody(
                 v-for = 'daypart in order.dayparts'
@@ -100,23 +105,19 @@
                   td.vui-text-align--right {{ daypart.aur | numberWithCommas | formatMoney }}
                   td.vui-text-align--right {{ daypart.spots }}
                   td.vui-text-align--right {{ daypart.revenue | numberWithCommas | formatMoney }}
-                  td.vui-text-align--right {{ Math.round((daypart.aur / daypart.rating)) | numberWithCommas | formatMoney  }}
                   td.vui-text-align--right {{ daypart.rating | formatRating }}
                   td.vui-text-align--right {{ (daypart.spots * daypart.rating) | formatRating  }}
+                  td.vui-text-align--right {{ Math.round((daypart.aur / daypart.rating)) | numberWithCommas | formatMoney  }}
               tfoot
                 tr
                   td(
                     colspan = '7'
                   )
                     .vui-grid.vui-grid--align-spread
-                      .vui-align-middle
-                        sup.vui-m-right--xx-small 1
-                        span(
-                          style = 'font-weight: normal'
-                        ) Nielsen source or data derived from Nielsen
+                      vui-footnote
 
                       a.vui-align-middle(
-                        @click.prevent = 'showOrder(order.id)'
+                        v-on:click.prevent = 'showOrder(order.id)'
                       )
                         span.vui-align-middle.vui-m-right--xx-small View Detail
                         vui-icon.vui-align-middle(
@@ -140,13 +141,14 @@
       orders: {
         type: Array
       },
-      gridColumns: {
+      columns: {
         type: Array
       },
       sortKey: {
         type: String
       }
     },
+
     data () {
       return {
         orderDate: moment().format('MM/DD/YY')
@@ -182,6 +184,8 @@
 </script>
 
 <style lang="stylus" scoped>
+  @import '~assets/variables'
+
   tbody:nth-child(odd) tr
      background-color: #eee
 </style>

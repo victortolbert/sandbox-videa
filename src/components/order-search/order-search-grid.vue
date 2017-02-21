@@ -1,11 +1,9 @@
+ <!-- v-on:click = 'showOrder(order.id)' -->
 <template lang="pug">
   .vui-scrollable--x.vui-m-bottom--large
-    table.vui-table.vui-table--striped.vui-no-row-hover.vui-table--fixed-layout
+    table.vui-table.vui-table--striped
       thead
         tr
-          th(
-            style = 'width: 90px'
-          ) Order #[br] Completed
           th(
             style = 'width: 80px'
           ) Stations
@@ -76,7 +74,7 @@
             style = 'width: 100px'
           )
             vui-sorting-column(
-              title = 'Spots<br>Missed'
+              title = 'Open<br>Preempts'
             )
           th(
             style = 'width: 100px'
@@ -85,6 +83,16 @@
               title = 'Missed<br>Value'
             )
           th(
+            style = 'width: 100px'
+          )
+            vui-sorting-column(
+              title = 'Traffic Spots'
+            )
+          th(
+            style = 'width: 90px'
+          ) Order #[br] Completed
+
+          th(
             style = 'width: 150px'
           ) Date/Time Order #[br] Completed
           th(
@@ -92,27 +100,20 @@
           ) Order #[br] Completed By
       tbody
         tr(
+
           v-for = 'order in orders'
+          style = 'cursor: pointer'
         )
-          td.vui-text-align--center(
-            style = 'width: 90px'
-          )
-            label.vui-checkbox
-              input(
-                type = 'checkbox'
-                v-model = 'order.isVideaArchived'
-              )
-              span.vui-checkbox--faux
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.stationCallLetters'
             style = 'width: 70px'
           ) {{ $store.state.stationCallLetters }}
           td.vui-truncate(
-            @click = 'clickRow(order)'
-            v-bind:title = 'order.externalTrafficOrderNumber'
+            @click = 'showOrder(order.id)'
+            v-bind:title = 'order.stationOrderNumber'
             style = 'width: 100px'
-          ) {{ order.externalTrafficOrderNumber }}
+          ) {{ order.stationOrderNumber }}
           td.vui-truncate(
             @click.prevent = 'updateBuyMakegoods(order)'
             v-bind:title = '"Update Buy/Makegoods"'
@@ -123,70 +124,86 @@
             //- ) Manage
             a.vui-align-middle.vui-m-right--small(
               target = '_blank'
-              @click.prevent = 'showOffer(offer.makegoodNumber)'
+              @click.prevent = 'showOffer(order.offers[0].id)'
             ) Manage
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.agencyOrderNumber'
             style = 'width: 110px'
           ) {{ order.agencyOrderNumber }}
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.id'
             style = 'width: 110px'
           ) {{ order.id }}
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.advertiser'
             style = 'width: 280px'
           ) {{ order.advertiser }}
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.agency'
             style = 'width: 110px'
           )  {{ order.agency }}
           td.vui-text-align--right.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.estimate'
             style = 'width: 90px'
           ) {{ order.estimate }}
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.flightStartDate'
             style = 'width: 100px'
           ) {{ order.flightStartDate }}
           td.vui-truncate(
-            @click = 'clickRow(order)'
-            v-bind:title = 'order.endDate'
+            @click = 'showOrder(order.id)'
+            v-bind:title = 'order.flightEndDate'
             style = 'width: 90px'
-          ) {{ order.endDate }}
+          ) {{ order.flightEndDate }}
           td.vui-text-align--right.vui-truncate(
-            @click = 'clickRow(order)'
-            v-bind:title = 'order.totalCost'
+            @click = 'showOrder(order.id)'
+            v-bind:title = 'order.revenue'
             style = 'width: 100px'
-          ) {{ order.totalCost }}
+          ) {{ order.revenue | numberWithCommas | formatMoney }}
           td.vui-text-align--right.vui-truncate(
-            @click = 'clickRow(order)'
-            v-bind:title = 'order.totalSpotsNumber'
+            @click = 'showOrder(order.id)'
+            v-bind:title = 'order.spotsOrdered'
             style = 'width: 100px'
-          ) {{ order.totalSpotsNumber }}
+          ) {{ order.spotsOrdered }}
           td.vui-text-align--right.vui-truncate(
-            @click = 'clickRow(order)'
-            v-bind:title = 'order.totalMissedSpots'
+            @click = 'showOrder(order.id)'
+            v-bind:title = 'order.spotsMissed'
             style = 'width: 100px'
-          ) {{ order.totalMissedSpots }}
+          ) {{ order.spotsMissed }}
           td.vui-text-align--right.vui-truncate(
-            @click = 'clickRow(order)'
-            v-bind:title = 'order.totalMissedSpotCost'
+            @click = 'showOrder(order.id)'
+            v-bind:title = 'order.missedValue'
             style = 'width: 100px'
-          ) {{ order.totalMissedSpotCost }}
+          ) {{ order.missedValue ? order.missedValue : '' | numberWithCommas | formatMoney}}
+          td.vui-text-align--right.vui-truncate(
+            @click = 'showOrder(order.id)'
+            v-bind:title = 'order.trafficSpots'
+            style = 'width: 100px'
+          ) {{ order.trafficSpots }}
+
+          td.vui-text-align--center(
+            style = 'width: 90px'
+          )
+            label.vui-checkbox
+              input(
+                type = 'checkbox'
+                v-model = 'order.isVideaArchived'
+              )
+              span.vui-checkbox--faux
+
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.videaArchivedDateTime'
             style = 'width: 150px'
           ) {{ order.videaArchivedDateTime }}
           td.vui-truncate(
-            @click = 'clickRow(order)'
+            @click = 'showOrder(order.id)'
             v-bind:title = 'order.videaArchivedByName'
             style = 'width: 120px'
           ) {{ order.videaArchivedByName }}
@@ -198,11 +215,18 @@
       orders: {
         type: Array
       },
+
+      orderRoute: {
+        type: String,
+        default: 'sellers-order-management-order-search-id'
+      },
+
       offerRoute: {
         type: String,
         default: 'sellers-order-management-pending-makegoods-id'
       }
     },
+
     data () {
       return {
         offer: {
@@ -216,7 +240,7 @@
     //       // {
     //       //   isVideaArchived: true,
     //       //   stationCallLetters: 'KMYT',
-    //       //   externalTrafficOrderNumber: '133661',
+    //       //   stationOrderNumber: '133661',
     //       //   agencyOrderNumber: '00791791',
     //       //   videaOrderNumber: 'V0005009',
     //       //   advertiserName: 'CARL KARCHER ENT INC',
@@ -235,6 +259,21 @@
     //   }
     // },
     methods: {
+      showOrder (id, version = '') {
+        let routeInfo = {
+          name: this.orderRoute,
+          params: {
+            id: id
+          }
+        }
+
+        if (version) {
+          routeInfo.query = { version: version }
+        }
+
+        this.$router.push(routeInfo)
+      },
+
       showOffer (id, version = '') {
         let routeInfo = {
           name: this.offerRoute,
@@ -248,10 +287,6 @@
         }
 
         this.$router.push(routeInfo)
-      },
-
-      clickRow (item) {
-
       },
 
       updateBuyMakegoods (item) {

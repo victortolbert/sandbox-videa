@@ -78,6 +78,10 @@
       return {
         username: ''
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

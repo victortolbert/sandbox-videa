@@ -17,6 +17,7 @@ module.exports = function () {
     specials: require('../models/specials'),
     offers: require('../models/offers'),
     orders: require('../models/orders'),
+    class87: require('../models/class-of-87'),
     avails: require('../models/avails')
   }
 }

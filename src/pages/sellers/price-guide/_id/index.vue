@@ -18,7 +18,7 @@
               colspan = '4'
             ) Videa
             th(
-              colspan = '3'
+              colspan = '5'
             ) On the Books
           tr
             // Station
@@ -52,10 +52,10 @@
             ) CPM #[sup 1]
 
             // Videa
-            th.u-width-small Accept #[br] Rate
             th.u-width-medium(
               style = 'min-width: 5rem'
             ) Rate
+            th.u-width-small Accept #[br] Rate
             th.u-width-medium(
               v-show = 'cppOrCpm == "cpp"'
               style = 'min-width: 5rem'
@@ -71,9 +71,11 @@
             ) CPM #[sup 1]
 
             // On the Books
-            th.u-width-small Min/Max Rate
-            th.u-width-small AUR/LY AUR
-            th.u-width-small Sellout %
+            th.u-width-small Min
+            th.u-width-small Max
+            th.u-width-small AUR
+            th.u-width-small LY AUR
+            th.u-width-small Sell Out %
 
         // Programs
         tbody(
@@ -99,7 +101,7 @@
 
             // Station -- Rate (Program)
             td.station.rate.vui-text-align--right(
-              v-bind:style = '$store.state.activeApp == "reps" ? "" : "padding-right: 1.5rem"'
+              v-bind:style = '$store.state.user.name == "Rep User" ? "" : "padding-right: 1.5rem"'
             ) {{ avg(program.months, 'station', 'rate').toFixed(0) | numberWithCommas | formatMoney }}
 
 
@@ -137,7 +139,7 @@
 
             // Station Premium -- Rate (Program)
             td.station.premium.rate.vui-text-align--right.vui-hide(
-              v-bind:style = '$store.state.activeApp == "reps" ? "" : "padding-right: 1.5rem"'
+              v-bind:style = '$store.state.user.name == "Rep User" ? "" : "padding-right: 1.5rem"'
             ) {{ Math.round(avg(program.months, 'station', 'premium_rate')) | numberWithCommas | formatMoney }}
 
             // Station Premium -- CPP (Program)
@@ -150,6 +152,10 @@
               v-show = 'cppOrCpm == "cpm"'
             ) {{ Math.round(averageMonthlyStationPremiumCpm(program.months)) | numberWithCommas | formatMoney }}
 
+            // Videa -- Rate (Program)
+            td.videa.rate.vui-text-align--right.vui-highlight
+              | {{ Math.round(avg(program.months, 'videa', 'rate')) | numberWithCommas | formatMoney }}
+
             // Videa -- Accept Videa Rate (Program)
             td.videa.accept-rate.vui-text-align--center.vui-highlight
               .vui-form-element
@@ -157,16 +163,12 @@
                   label.vui-checkbox
                     input.vui-input(
                       @change = 'acceptVideaRate(program)'
-                      v-bind:disabled = '$store.state.activeApp == "reps"'
+                      v-bind:disabled = '$store.state.user.name == "Rep User"'
                       v-bind:value = 'program.acceptRate'
                       v-model = 'program.acceptRate'
                       type = 'checkbox'
                     )
                     span.vui-checkbox--faux
-
-            // Videa -- Rate (Program)
-            td.videa.rate.vui-text-align--right.vui-highlight
-              | {{ Math.round(avg(program.months, 'videa', 'rate')) | numberWithCommas | formatMoney }}
 
             // Videa -- Rating (Program)
             td.videa.rating.vui-text-align--right.vui-highlight(
@@ -193,15 +195,15 @@
             ) {{ Math.round(averageMonthlyVideaCpm(program.months)) | numberWithCommas | formatMoney }}
 
             // On The Books -- (Program)
-            td.on-the-books.rate.min-max.vui-text-align--right
+            td.on-the-books.rate.min.vui-text-align--right
               | {{ Math.round(avg(program.months, 'onTheBooks', 'minRate')) | numberWithCommas | formatMoney }}
-              | /
+            td.on-the-books.rate.max.vui-text-align--right
               | {{ Math.round(avg(program.months, 'onTheBooks', 'maxRate')) | numberWithCommas | formatMoney }}
 
             // On The Books -- (Program)
-            td.on-the-books.rate.vui-text-align--right
+            td.on-the-books.aur.vui-text-align--right
               | {{ Math.round(avg(program.months, 'onTheBooks', 'aur')) | numberWithCommas | formatMoney }}
-              | /
+            td.on-the-books.aur-ly.vui-text-align--right
               | {{ Math.round(avg(program.months, 'onTheBooks', 'lyAur')) | numberWithCommas | formatMoney }}
 
             // On The Books -- (Program)
@@ -232,21 +234,43 @@
                   )
 
               // Station -- Rate (month)
-              td.station.rate.vui-text-align--right(
-                v-bind:style = '$store.state.activeApp == "reps" ? "" : ""'
-              )
-                span(
-                  v-show = '$store.state.activeApp == "reps"'
-                ) {{ month.station.rate | numberWithCommas | formatMoney }}
-                input.vui-input(
-                  @click.prevent = 'selectContents'
-                  @keypress = 'onKeypress'
-                  v-bind:value = 'month.station.rate'
-                  v-model = 'month.station.rate'
-                  v-show = '$store.state.activeApp == "sellers"'
-                  style = 'text-align: right'
+
+              td.u-width-medium
+                input.vui-input.vui-text-align--right.u-width-medium(
+                  ng-disabled = 'isRepUser || pgpt.allWeeksSelected(month)'
                   type = 'text'
+                  number-format = ''
+                  decimals = '0'
+                  ng-model = 'month.stationRate.value'
+                  ng-change = 'pgpt.detailRateChanged(month)'
+                  maxlength = '10'
+                  vui-select-on-focus = ''
                 )
+                button.vui-button.vui-button--can-be-focused.vui-button--icon-container(
+                  title = 'Copy To Quarter'
+                  aria-haspopup = 'true'
+                  ng-click = 'pgpt.copyStationRate(program.details, month)'
+                  ng-show = '!isRepUser && (!pgpt.allWeeksSelected(month)) && $index==0 '
+                )
+                  vui-icon(name='copy')
+                  span.vui-assistive-text Add weeks
+
+
+              //- td.station.rate.vui-text-align--right(
+              //-   v-bind:style = '$store.state.user.name == "Rep User" ? "" : ""'
+              //- )
+              //-   span(
+              //-     v-show = '$store.state.user.name == "Rep User"'
+              //-   ) {{ month.station.rate | numberWithCommas | formatMoney }}
+              //-   input.vui-input(
+              //-     @click.prevent = 'selectContents'
+              //-     @keypress = 'onKeypress'
+              //-     v-bind:value = 'month.station.rate'
+              //-     v-model = 'month.station.rate'
+              //-     v-show = '$store.state.activeApp == "sellers"'
+              //-     style = 'text-align: right'
+              //-     type = 'text'
+              //-   )
 
               // Station -- Rating (month)
               td.station.rating.vui-text-align--right(
@@ -312,7 +336,7 @@
 
               // Station Premium -- Rate (month)
               td.station.premium.rate.vui-text-align--right.vui-hide(
-                v-bind:style = '$store.state.activeApp == "reps" ? "" : ""'
+                v-bind:style = '$store.state.user.name == "Rep User" ? "" : ""'
               )
                 input.vui-text-align--right.vui-input(
                   @input = 'month.station.premium.percent = setPremiumPercent(month.station.premium.rate, month.station.rate)'
@@ -321,7 +345,7 @@
                   v-model = 'month.station.premium.rate'
                 )
                 span(
-                  v-show = '$store.state.activeApp == "reps"'
+                  v-show = '$store.state.user.name == "Rep User"'
                 ) {{ month.station.premium.rate | numberWithCommas | formatMoney }}
 
               // Station Premium -- CPP (month)
@@ -342,6 +366,10 @@
                   v-bind:rate = 'month.station.premium.rate'
                 )
 
+              // Videa -- Rate (month)
+              td.videa.rate.vui-text-align--right.vui-highlight
+                | {{ month.videa.rate | numberWithCommas | formatMoney }}
+
               // Videa -- Accept Videa Rate (month)
               td.videa.accept-rate.vui-text-align--center.vui-highlight
                 .vui-form-element
@@ -350,16 +378,12 @@
                       input.vui-input(
                         @change = 'acceptVideaRate(month)'
                         v-bind:checked = 'month.station.rate == month.videa.rate'
-                        v-bind:disabled = '$store.state.activeApp == "reps"'
+                        v-bind:disabled = '$store.state.user.name == "Rep User"'
                         v-bind:value = 'month.acceptRate'
                         v-model = 'month.acceptRate'
                         type = 'checkbox'
                       )
                       span.vui-checkbox--faux
-
-              // Videa -- Rate (month)
-              td.videa.rate.vui-text-align--right.vui-highlight
-                | {{ month.videa.rate | numberWithCommas | formatMoney }}
 
               // Videa -- Rating (month)
               td.videa.rating.vui-text-align--right.vui-highlight(
@@ -390,15 +414,15 @@
                 )
 
               // On The Books -- (month)
-              td.on-the-books.rate.min-max.vui-text-align--right
+              td.on-the-books.rate.min.vui-text-align--right
                 | {{ month.onTheBooks.minRate | numberWithCommas | formatMoney }}
-                | /
+              td.on-the-books.rate.max.vui-text-align--right
                 | {{ month.onTheBooks.maxRate | numberWithCommas | formatMoney }}
 
               // On The Books -- (month)
-              td.on-the-books.rate.vui-text-align--right
+              td.on-the-books.aur.vui-text-align--right
                 | {{ month.onTheBooks.aur | numberWithCommas | formatMoney }}
-                | /
+              td.on-the-books.aur-ly.vui-text-align--right
                 |  {{ month.onTheBooks.lyAur | numberWithCommas | formatMoney }}
 
               // On The Books -- (month)
@@ -429,10 +453,10 @@
                     span.vui-align-middle Week of {{ week.week }}
 
                 // Station -- Rate (week)
-                td.station.rate.vui-text-align--right(
-                  v-bind:style = '$store.state.activeApp == "reps" ? "" : ""'
+                td.station.rate.u-width-medium(
+                  v-bind:style = '$store.state.user.name == "Rep User" ? "" : ""'
                 )
-                  input.vui-input.vui-text-align--right(
+                  input.vui-input.vui-text-align--right.u-width-medium(
                     @click.prevent = 'selectContents'
                     @keypress = 'onKeypress'
                     v-show = '$store.state.activeApp == "sellers"'
@@ -440,7 +464,7 @@
                     v-model = 'week.station.rate'
                   )
                   span(
-                    v-show = '$store.state.activeApp == "reps"'
+                    v-show = '$store.state.user.name == "Rep User"'
                   ) {{ week.station.rate | numberWithCommas | formatMoney }}
 
                 // Station -- Rating (week)
@@ -500,7 +524,7 @@
 
                 // Station Premium -- Rate (week)
                 td.station.premium.rate.vui-text-align--right.vui-hide(
-                  v-bind:style = '$store.state.activeApp == "reps" ? "" : ""'
+                  v-bind:style = '$store.state.user.name == "Rep User" ? "" : ""'
                 )
                   input.vui-text-align--right.vui-input(
                     @click.prevent = 'selectContents'
@@ -511,7 +535,7 @@
                     v-show = '$store.state.activeApp == "sellers"'
                   )
                   span(
-                    v-show = '$store.state.activeApp == "reps"'
+                    v-show = '$store.state.user.name == "Rep User"'
                   ) {{ week.station.premium.rate | numberWithCommas | formatMoney }}
 
                 // Station Premium -- CPP (week)
@@ -532,6 +556,10 @@
                     v-bind:rate = 'week.station.premium.rate'
                   )
 
+                // Videa -- Rate (week)
+                td.videa.rate.vui-text-align--right.vui-highlight
+                  | {{ week.videa.rate | numberWithCommas | formatMoney }}
+
                 // Videa -- Accept Videa Rate (week)
                 td.videa.accept-rate.vui-text-align--center.vui-highlight
                   .vui-form-element
@@ -540,16 +568,12 @@
                         input.vui-input(
                           @change = 'acceptVideaRate(week)'
                           v-bind:checked ='week.station.rate == week.videa.rate'
-                          v-bind:disabled = '$store.state.activeApp == "reps"'
+                          v-bind:disabled = '$store.state.user.name == "Rep User"'
                           v-bind:value = 'week.acceptRate'
                           v-model = 'week.acceptRate'
                           type = 'checkbox'
                         )
                         span.vui-checkbox--faux
-
-                // Videa -- Rate (week)
-                td.videa.rate.vui-text-align--right.vui-highlight
-                  | {{ week.videa.rate | numberWithCommas | formatMoney }}
 
                 // Videa -- Rating (week)
                 td.videa.rating.vui-text-align--right.vui-highlight(
@@ -580,84 +604,92 @@
                   )
 
                 // On The Books -- (week)
-                td.on-the-books.rate.min-max.vui-text-align--right
+                td.on-the-books.rate.min.vui-text-align--right
                   | {{ week.onTheBooks.minRate | numberWithCommas | formatMoney }}
-                  | /
+                td.on-the-books.rate.max.vui-text-align--right
                   | {{ week.onTheBooks.maxRate | numberWithCommas | formatMoney }}
 
                 // On The Books -- (week)
-                td.on-the-books.rate.vui-text-align--right
+                td.on-the-books.aur.vui-text-align--right
                   | {{ week.onTheBooks.aur | numberWithCommas | formatMoney }}
-                  | /
+                td.on-the-books.aur-ly.vui-text-align--right
                   | {{ week.onTheBooks.lyAur | numberWithCommas | formatMoney }}
 
                 // On The Books -- (week)
                 td.on-the-books.sell-out-percent.vui-text-align--right
                   | {{ week.onTheBooks.sellOutPercent | decimalToPercent }}
-    //- // Table Footer Flex Container
-    //- .vui-grid.vui-grid--align-spread.vui-m-bottom--medium
+    // Table Footer Flex Container
+    .vui-grid.vui-grid--align-spread.vui-m-bottom--medium
 
-    //-   // Flex Item
-    //-   p.vui-text-body--small
-    //-     sup.vui-m-right--xx-small 1
-    //-     span Nielsen source or data derived from Nielsen
+      // Flex Item
+      p.vui-text-body--small
+        sup.vui-m-right--xx-small 1
+        span Nielsen source or data derived from Nielsen
 
-    //-   // Flex Item
-    //-   div.vui-text-align--right(
-    //-     v-show = '$store.state.activeApp !== "reps"'
-    //-   )
+      // Flex Item
+      div.vui-text-align--right(
+        v-show = '$store.state.user.name !== "Rep User"'
+      )
 
-    //-     // Accept Rates and Ratings Confirmation
-    //-     fieldset.vui-form-element.vui-align-middle.vui-m-bottom--small
-    //-       .vui-form-element__control
-    //-         label.vui-checkbox
-    //-           input.vui-input(
-    //-             type = 'checkbox'
-    //-             name = 'acceptedRatesAndRatings'
-    //-             v-model = 'acceptedRatesAndRatings'
-    //-           )
-    //-           span.vui-form-element__label I have reviewed and accepted all rates and ratings
-    //-           span.vui-checkbox--faux
+        // Accept Rates and Ratings Confirmation
+        fieldset.vui-form-element.vui-align-middle.vui-m-bottom--small
+          .vui-form-element__control
+            label.vui-checkbox
+              input.vui-input(
+                type = 'checkbox'
+                name = 'acceptedRatesAndRatings'
+                v-model = 'acceptedRatesAndRatings'
+              )
+              span.vui-form-element__label I have reviewed and accepted all rates and ratings
+              span.vui-checkbox--faux
 
-    //-     // Submit Button
-    //-     fieldset.vui-form-element
-    //-       .vui-form-element__control
-    //-         button.vui-button.vui-button--brand(
-    //-           @click = 'submitted'
-    //-           v-bind:disabled = '!acceptedRatesAndRatings'
-    //-         ) Submit
+        // Submit Button
+        fieldset.vui-form-element
+          .vui-form-element__control
+            button.vui-button.vui-button--brand(
+              @click = 'submitted'
+              v-bind:disabled = '!acceptedRatesAndRatings'
+            ) Submit
 
-    //- .vui-notify.vui-notify--alert.vui-theme--success(
-    //-   v-show = 'submitAccepted'
-    //-   role = 'alert'
-    //- )
-    //-   button.vui-button.vui-button--icon-inverse.vui-notify__close
-    //-     svg.vui-button__icon(
-    //-       aria-hidden = 'true'
-    //-     )
-    //-       use(
-    //-         xlink:href = 'assets/icons/utility-sprite/svg/symbols.svg#close'
-    //-       )
-    //-     span.vui-assistive-text Close
-    //-   span.vui-assistive-text Success
-    //-   h2
-    //-     svg.vui-icon.icon-text-email.vui-icon--small.vui-m-right--x-small(
-    //-       aria-hidden = 'true'
-    //-     )
-    //-       use(
-    //-         xlink:href = 'assets/icons/custom-sprite/svg/symbols.svg#custom19'
-    //-       )
-    //-     | Your rates and ratings are now saved in the Videa platform
+    .vui-notify.vui-notify--alert.vui-theme--success(
+      v-show = 'submitAccepted'
+      role = 'alert'
+    )
+      h2 Your rates and ratings are now saved in the Videa platform
 
     premium-clients-modal(
       v-bind:account = 'account'
       v-bind:show = 'showPremiumClientsModal'
     )
-    edit-ratings-modal(
-      v-bind:data = 'context'
-      v-bind:heading = 'heading'
-      v-bind:show = 'showEditRatingsModal'
-    )
+    //- edit-ratings-modal(
+    //-   v-bind:data = 'context'
+    //-   v-bind:heading = 'heading'
+    //-   v-show = 'showEditRatingsModal'
+    //-   v-on:close = 'showEditRatingsModal = false'
+    //- )
+
+    button(@click = 'showEditRatingsModal = true') show modal
+
+    //- edit-ratings-modal(
+    //-   v-bind:ratings = 'ratings'
+    //-   v-on:close = 'showEditRatingsModal = false'
+    //-   v-show = 'showEditRatingsModal'
+    //- ) Inside the Modal main slot
+
+    //- bootstrap-modal(
+    //-   v-bind:ratings = 'ratings'
+    //-   v-on:close = 'showEditRatingsModal = false'
+    //-   v-show = 'showEditRatingsModal'
+    //-   ref='theBootstrapModal'
+    //- )
+    //-   div(slot='title')
+    //-     | Your title here
+    //-   div(slot='body')
+    //-     | Your body here
+    //-   div(slot='footer')
+    //-     | Your footer here
+
+
     add-program-modal(
       v-bind:show = 'showAddProgramModal'
     )
@@ -669,7 +701,9 @@
 
   import PremiumPercentDropdown from '~components/price-guide/apply-premium-percent-dropdown'
   import PremiumClientsModal from '~components/price-guide/premium-clients-modal'
-  import EditRatingsModal from '~components/price-guide/edit-ratings-modal'
+  // import EditRatingsModal from '~components/price-guide/edit-ratings-modal'
+  // import EditRatingsModal from '~components/modal2'
+  // import BootstrapModal from '~components/modal/bootstrap-modal'
   import AddProgramModal from '~components/price-guide/add-program-modal'
   import AddWeekDropdown from '~components/common/add-week-dropdown'
 
@@ -677,7 +711,8 @@
     components: {
       PremiumPercentDropdown,
       PremiumClientsModal,
-      EditRatingsModal,
+      // BootstrapModal,
+      // EditRatingsModal,
       AddWeekDropdown,
       AddProgramModal
     },
@@ -692,6 +727,10 @@
     data () {
       return {
         priceGuide: {},
+        ratings: {
+          foo: 'bar'
+        },
+
         // dayparts: [
         //   { id: 'early-morning', name: 'Early Morning' },
         //   { id: 'early-morning', name: 'Daytime' },
@@ -836,10 +875,9 @@
       },
 
       displayEditRatingsModal (context) {
-        console.log(context)
-        this.showEditRatingsModal = true
-        this.context = context
-        EventBus.fire('display-edit-ratings-modal', this.context)
+        // this.showEditRatingsModal = true
+        // this.context = context
+        EventBus.fire('display-edit-ratings-modal', context)
       },
 
       highlightModifiedRow () {
@@ -934,6 +972,12 @@
 
     created () {
       this.fetchPriceGuide(this.$route.params.id)
-    }
+    },
+
+    // mounted () {
+    //   EventBus.listen('body-clicked', () => {
+    //     this.showEditRatingsModal = false
+    //   })
+    // }
   }
 </script>

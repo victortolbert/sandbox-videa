@@ -1,8 +1,6 @@
 <template lang="pug">
   .nested-order-line-grid
-    .vui-box(
-      style = 'padding: 0.5rem; border: none;border-top: 1px solid #51535c'
-    )
+    .vui-box(style='padding: 0.5rem; border: none;border-top: 1px solid #51535c')
       h3.vui-text-heading--label Traffic logs
     div
       table.vui-table.vui-no-row-hover.vui-table--fixed-layout
@@ -165,3 +163,18 @@
                 navigator = 'spotAllocationNavigator'
               )
 </template>
+
+<script>
+  export default {
+    props: {
+      isShowSpotAllocations: {
+        type: Boolean,
+        default: true
+      },
+
+      childItems: {
+        type: Array
+      }
+    }
+  }
+</script>

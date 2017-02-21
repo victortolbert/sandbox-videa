@@ -74,16 +74,18 @@
 
 ## Global
 ---
-- [ ] Add calendar icon to Datepicker
-- [ ] Add close buttons to modals
-- [ ] Add format hint placeholders to Datepicker
+- [ ] [VOM Spot Allocation] columns
+- [ ] Fix Modals and Popups
+- [ ] Check that Reps screens correspond and have correct navigation
+- [ ] Fix sort arrows, the Avails page is correct (Dual sort arrows, Dimmed unless the active sort)
+- [ ] Fix App Navigation dropdowns to align better
+- [ ] [Improve drop-down positioning][2]
+- [ ] Fix Navigation Active class for dropdowns
+- [ ] Add Zebra Striping
+- [ ] Fix Dropdown display
+- [ ] Add calendar icon to Datepicker component
+- [ ] Add close buttons to Modal component
+- [ ] Add format hint placeholder to Datepicker
 - [x] Add login page
 - [ ] Add Site Help Slide in
-- [ ] Check that Reps screens correspond and have correct navigation
-- [ ] Add 'No results Found' State
-- [ ] Fix Dropdown display
-- [ ] Fix Modals and Popups
-- [ ] [VOM Spot Allocation] columns
-- [ ] Add Zebra Striping
-- [ ] Set Navigation Active class for dropdowns
-- [ ] [Improve drop-down positioning][2]
+- [ ] Add 'No Results Found' state

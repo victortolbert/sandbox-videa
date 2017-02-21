@@ -8,7 +8,7 @@
     vui-panel
       order-reporting-filter
     order-reporting-grid(
-      v-bind:grid-columns = 'gridColumns'
+      v-bind:columns = 'columns'
       v-bind:orders = 'orders'
     )
 </template>
@@ -31,18 +31,18 @@
     data () {
       return {
         orders: [],
-        gridColumns: [
-          { field: 'advertiser', title: 'Advertiser' },
-          { field: 'agency', title: 'Agency' },
-          { field: 'cpe', title: 'CPE' },
-          { field: 'flightStartDate', title: 'Start' },
-          { field: 'flightEndDate', title: 'End' },
-          { field: 'revenue', title: 'Revenue' },
-          { field: 'share', title: 'Share' },
-          { field: 'stationOrderNumber', title: 'Station Order #' },
-          { field: 'manageSchedule', title: 'Manage Schedule' },
-          { field: 'orderId', title: 'Videa Order #' },
-          { field: 'orderDate', title: 'Order Date' }
+        columns: [
+          { field: 'advertiser', title: 'Advertiser', isSortable: true },
+          { field: 'agency', title: 'Agency', isSortable: true },
+          { field: 'cpe', title: 'CPE', isSortable: true },
+          { field: 'flightStartDate', title: 'Flight Start', isSortable: true },
+          { field: 'flightEndDate', title: 'Flight End', isSortable: true },
+          { field: 'revenue', title: 'Revenue', isSortable: true },
+          { field: 'share', title: 'Share', isSortable: true },
+          { field: 'stationOrderNumber', title: 'Station Order #', isSortable: true },
+          { field: 'manageSchedule', title: 'Manage Schedule', isSortable: false },
+          { field: 'orderId', title: 'Videa Order #', isSortable: true },
+          { field: 'orderDate', title: 'Order Date', isSortable: true }
         ]
       }
     },

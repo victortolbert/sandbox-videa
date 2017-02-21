@@ -13,7 +13,21 @@
             router-link(
               v-bind:to = '{ name: "terms" }'
             ) Terms &amp; Conditions
+          li.vui-list__item
+            a(
+              @click.prevent = 'toggleDebug'
+            ) Toggle Debug
       p.
         3390 Peachtree Road, NE, Suite 400 Atlanta, GA 30326 #[br]
         Copyright © 2014&ndash;{{ new Date().getFullYear() }} Videa. All rights reserved.
 </template>
+
+<script>
+  export default {
+    methods: {
+      toggleDebug () {
+        document.documentElement.classList.toggle('debug')
+      },
+    }
+  }
+</script>

@@ -16,18 +16,14 @@
             vui-sorting-column(
               title = 'Revenue'
             )
-          th.vui-text-align--right.u-width-x-small Market Budget
           th.vui-text-align--center.u-width-x-small Spot Volume
-          th.u-width-x-small Share
       tfoot
         tr
           td.vui-text-align--right(
             colspan = '3'
           ) Total
           td.vui-text-align--right {{ totalRevenueTy | numberWithCommas | formatMoney }}
-          td.vui-text-align--right {{ totalMarketRevenueTy | numberWithCommas | formatMoney }}
           td.vui-text-align--right {{ totalSpotVolumeTy | numberWithCommas }}
-          td
       tbody
         tr(
           v-for = 'account in accounts'
@@ -40,9 +36,7 @@
             ) {{ account.advertiser }}
           td {{ account.agency }}
           td.vui-text-align--right {{ account.revenueTy | numberWithCommas | formatMoney }}
-          td.vui-text-align--right {{ account.marketRevenueTy | numberWithCommas | formatMoney }}
           td.vui-text-align--right {{ account.spotVolumeTy }}
-          td.vui-text-align--right {{ account.shareTy | decimalToPercent }}
     account-detail-modal(
       v-bind:account = 'selectedAccount'
       v-bind:show = 'showAccountDetailModal'

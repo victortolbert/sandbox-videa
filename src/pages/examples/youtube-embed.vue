@@ -20,6 +20,12 @@
 
 <script>
   export default {
+    name: 'youtube-embed-example',
+
+    metaInfo: {
+      title: 'Example / Youtube Embed',
+    },
+
     data () {
       return {
         videoId: 'videoId',
@@ -51,6 +57,10 @@
       pause () {
         this.player.pauseVideo()
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

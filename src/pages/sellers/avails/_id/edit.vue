@@ -90,9 +90,9 @@
     )
       h2.vui-text-heading--medium Market Competitive
       p.vui-m-bottom--medium.
-        Need rates are generated from the market competitive.
+        Need Rates are generated from the market competitive.
         Buy specifications are not considered when generating
-        need rates.
+        need rates. You can update the rates or ratings in the avail below.
 
       .vui-scrollable--x.vui-m-bottom--large
         table.vui-table.vui-no-row-hover.vui-m-bottom--large
@@ -134,16 +134,17 @@
             | Back to Avail
           .action-buttons.vui-m-bottom--x-small
             button.vui-button.vui-button--neutral.vui-m-right--x-small Cancel
+            button.vui-button.vui-button--brand.vui-m-right--medium Save
             button.vui-button.vui-button--brand(
               @click.prevent = 'setActiveTab("buyer-ratings")'
-            ) Save Changes and Continue #[sup 1]
+            ) Save and Release #[sup 1]
         p.vui-text-body--small.vui-text-align--right(
           style = 'line-height: 1.2'
         )
 
       p.vui-text-body--small
         sup.vui-m-right--xx-small 1
-        span Saved changes are viewable by all station users and assigned reps.
+        span Saving will allow your station to see the work you have completed on this page
     #buyer-ratings(
       v-show = 'activeTab == "buyer-ratings"'
     )
@@ -207,12 +208,15 @@
               @click.prevent= 'setActiveTab("market-competitive")'
               href='#'
             ) Cancel
+            button.vui-button.vui-button--brand.vui-m-right--medium(
+              @click.prevent = ''
+            ) Save
             button.vui-button.vui-button--brand(
               @click.prevent = 'setActiveTab("rates-and-ratings")'
-            ) Save Changes and Continue #[sup 1]
+            ) Save and Release #[sup 1]
         p.vui-text-body--small
           sup.vui-m-right--xx-small 1
-          span Saved changes are viewable by all station users and assigned reps.
+          span Saving will allow your station to see the work you have completed on this page
     #rates-and-ratings(
       v-show = 'activeTab == "rates-and-ratings"'
     )
@@ -253,7 +257,7 @@
               ) End
               th(
                 colspan = '3'
-              ) Availed
+              ) Proposed
               th(
                 colspan = '4'
               ) Videa

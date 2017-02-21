@@ -1,7 +1,5 @@
 <template lang="pug">
-  .order-details-info(
-    order-info = 'orderInfo'
-  )
+  .order-details-info.vui-m-bottom--medium
     span.vui-text-link--reset(
       @click.prevent = 'infoClicked'
       href = 'javascript:void(0)'
@@ -21,12 +19,12 @@
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Status
             br
-            vui-badge {{ orderInfo.offerStatus }}
+            vui-badge {{ order.status }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Advertiser
             br
-            span {{ orderInfo.advertiserName }}
+            span {{ order.advertiser }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Station
@@ -36,37 +34,37 @@
           .vui-col.vui-m-right--medium
             label.vui-form-element__label C/P/E
             br
-            span {{ orderInfo.cpe }}
+            span {{ order.cpe }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Start Date
             br
-            span {{ startDate | formatDate }}
+            span {{ order.flightStartDate | formatDate }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label End Date
             br
-            span {{ endDate | formatDate }}
+            span {{ order.flightEndDate | formatDate }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Agency Order #
             br
-            span {{ orderInfo.agencyOrderNumber }}
+            span {{ order.agencyOrderNumber }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Videa Order #
             br
-            span {{ orderInfo.videaOrderNumber }}
+            span {{ order.id }}
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Version
             br
-            span {{ orderInfo.buyerVersion }}
+            span {{ order.buyerVersion }} 1
 
           .vui-col.vui-m-right--medium
             label.vui-form-element__label Station Order #
             br
-            span {{ orderInfo.stationOrderId }}
+            span {{ order.stationOrderNumber }}
 
     .vui-box(
       v-show = '!shouldShowInfo'
@@ -79,51 +77,51 @@
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Product
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.productName }}
+              span.vui-form-element__static {{ order.product }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Campaign Name
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.campaignName }}
+              span.vui-form-element__static {{ order.campaign }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Deal type
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.dealType }}
+              span.vui-form-element__static {{ order.dealType }}
 
         .vui-col.vui-p-horizontal--medium
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Agency Name
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.agencyName }}
+              span.vui-form-element__static {{ order.agency }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Buyer Name
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.buyerName }}
+              span.vui-form-element__static {{ order.buyer }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Schedule type
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.scheduleType }}
+              span.vui-form-element__static {{ order.scheduleType }}
 
         .vui-col.vui-p-horizontal--medium
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Demo
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.demo }}
+              span.vui-form-element__static {{ order.demo }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Estimate
             .vui-form-element__control
-              span.vui-form-element__static  {{ orderInfo.estimate }}
+              span.vui-form-element__static  {{ order.estimate }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Rep Name
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.repName }}
+              span.vui-form-element__static {{ order.salesPerson }}
 
         .vui-col.vui-p-horizontal--medium
 
@@ -132,17 +130,17 @@
           )
             label.vui-form-element__label Total GRPs
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.totalGuaranteeRating }}
+              span.vui-form-element__static {{ order.totalGuaranteeRating }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Total Spots
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.totalSpotsQuantity }}
+              span.vui-form-element__static {{ order.spots }}
 
           fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
             label.vui-form-element__label Total $$$
             .vui-form-element__control
-              span.vui-form-element__static {{ orderInfo.totalCost }}
+              span.vui-form-element__static {{ order.revenue | numberWithCommas | formatMoney }}
 
         .vui-col.vui-p-horizontal--medium
 
@@ -152,7 +150,7 @@
             label.vui-form-element__label.black-text.disabled Buyer Avail Request Notes
             .vui-form-element__control
               vui-resizable-textarea(
-                v-bind:text = 'orderInfo.buyerAvailRequestNotes'
+                v-bind:text = 'order.buyerAvailRequestNotes'
                 initial-height = '60'
                 is-readonly = 'true'
                 title  = ''
@@ -162,7 +160,7 @@
             label.vui-form-element__label.black-text.disabled Buyer Order Comment
             .vui-form-element__control
               vui-resizable-textarea(
-                v-bind:text = 'orderInfo.buyerOrderComment'
+                v-bind:text = 'order.buyerOrderComment'
                 initial-height = '60'
                 is-readonly = 'true'
                 title = ''
@@ -172,7 +170,7 @@
             label.vui-form-element__label.black-text.disabled Customer Care Comment To Station
             .vui-form-element__control
               vui-resizable-textarea(
-                v-bind:text = 'orderInfo.customerCareCommentToStation'
+                v-bind:text = 'order.customerCareCommentToStation'
                 initial-height = '60'
                 is-readonly = 'isCommentReadonly'
                 title = ''
@@ -180,53 +178,64 @@
 </template>
 
 <script>
+  import axios from '~plugins/axios'
   import moment from 'moment'
 
   export default {
+    props: {
+      orderId: {
+        type: [String, Number]
+      }
+    },
+
     data () {
       return {
         startDate: new Date(moment().add(14, 'days').toISOString()),
         endDate: new Date(moment().add(5, 'days').toISOString()),
-        orderInfo: {
-          buyerStatusName: 'pending',
-          offerStatus: 'pending',
-          productName: 'HEA',
-          campaignName: '3Q16 PTA',
-          cpe: 'PHC-HEA-57',
-          dealType: 'Trade',
-          startDate: new Date(),
-          endDate: new Date(),
-          stationCallLetters: '',
-          stationOrderId: '0',
-          advertiserName: 'Piedmont Healthcare',
-          agencyName: 'Hughes-Martin Agency',
-          agencyOrderNumber: 0,
-          buyerType: '',
-          videaOrderNumber: 135001,
-          buyerVersion: 1,
-          stationOrder: 0,
-          buyerName: 'Janna Valentine',
-          scheduleType: 'Weekly',
-          demo: 'A25-54',
-          estimate: '57',
-          repName: 'Brian Reed',
-          totalGuaranteeRating: '23.10',
-          totalSpotsQuantity: '113',
-          totalCost: '0',
-          buyerAvailRequestNotes: '',
-          buyerOrderComment: '',
-          customerCareCommentToStation: ''
-        },
+        offer: {},
+        order: {},
         isImpressionsBuyType: true,
         shouldShowInfo: true,
         isMakegoodDefined: true
       }
     },
-    computed: {},
+    computed: {
+
+    },
+
     methods: {
+      fetchOffer(id) {
+        axios.get(`/offers/${id}`)
+          .then((response) => {
+            this.offer = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
+      fetchOrder (id) {
+        axios.get(`/orders/${id}`)
+          .then((response) => {
+            this.order = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
+
       infoClicked () {
         this.shouldShowInfo = !this.shouldShowInfo
       }
+    },
+
+    created () {
+      // this.fetchOffer(this.$route.params.id)
+    },
+
+    mounted () {
+      this.fetchOrder(this.$route.params.id)
     }
   }
 </script>

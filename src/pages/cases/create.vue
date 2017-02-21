@@ -307,11 +307,7 @@
         ]
       }
     },
-    methods: {
-      onSubmit() {
-        console.log('submit!')
-      }
-    },
+
     computed: {
       requestSubtypes () {
         if( this.selectedRequestType == 'TechOps -- DBA Request') {
@@ -335,6 +331,16 @@
           .sort((a, b) => -versionCompare(a.id, b.id))
           .map((a, index) => ({ index, ...a }))
       }
+    },
+
+    methods: {
+      onSubmit() {
+        console.log('submit!')
+      }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

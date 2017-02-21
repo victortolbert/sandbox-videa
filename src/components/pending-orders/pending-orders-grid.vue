@@ -1,6 +1,6 @@
 <template lang="pug">
   .vui-scrollable--x.vui-m-bottom--medium
-    table.vui-table.vui-no-row-hover
+    table.vui-table
       thead
         tr
           th.u-width-medium Order #

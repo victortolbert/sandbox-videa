@@ -19,9 +19,13 @@
   import { mapState } from 'vuex'
 
   export default {
-    name: 'app',
+    name: 'fetch-data-example',
 
-    data() {
+    metaInfo: {
+      title: 'Example / Fetch Data',
+    },
+
+    data () {
       return {
         username: 'egoist'
       }
@@ -44,6 +48,10 @@
       handleChange() {
         this.$fetch('user')
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sandbox'
     }
   }
 </script>

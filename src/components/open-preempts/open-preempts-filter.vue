@@ -120,8 +120,8 @@
         isShowFilterErrors: false,
         isDatesValid: true,
         stationOrderPattern: '',
-        startDate: new Date(),
-        endDate: new Date(),
+        startDate: null,
+        endDate: null,
         videaOrderPattern: '',
         selectedStatus: 'All Open Preempts',
         statuses: [
@@ -132,11 +132,11 @@
         agencyConfig: {
           displayName: 'Agency'
         },
-        selectedAgency: 'Hughes-Martin Agency',
+        selectedAgency: '',
         agencies: [
           'Hughes-Martin Agency'
         ],
-        selectedAdvertiser: 'Piedmont Healthcare',
+        selectedAdvertiser: '',
         advertisers: [
           'Piedmont Healthcare'
         ],

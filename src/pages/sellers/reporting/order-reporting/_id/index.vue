@@ -20,6 +20,7 @@
         v-bind:order = 'order'
       )
     vui-footnote
+    vui-footer
 </template>
 
 <script>
@@ -33,14 +34,6 @@
 
     components: {
       OrderReportingDetailsGrid
-    },
-
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
-
-    created () {
-      this.fetchOrder(this.$route.params.id)
     },
 
     props: {
@@ -92,6 +85,14 @@
           name: this.ordersRoute
         })
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
+    },
+
+    created () {
+      this.fetchOrder(this.$route.params.id)
     }
   }
 </script>

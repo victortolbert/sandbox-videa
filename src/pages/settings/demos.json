@@ -103,199 +103,199 @@
     "female": [
       {
         "checked": false,
-        "group": "F12+"
+        "group": "W12+"
       },
       {
         "checked": false,
-        "group": "F12-17"
+        "group": "W12-17"
       },
       {
         "checked": false,
-        "group": "F12-20"
+        "group": "W12-20"
       },
       {
         "checked": false,
-        "group": "F18+"
+        "group": "W18+"
       },
       {
         "checked": false,
-        "group": "F18-24"
+        "group": "W18-24"
       },
       {
         "checked": false,
-        "group": "F18-34"
+        "group": "W18-34"
       },
       {
         "checked": false,
-        "group": "F18-49"
+        "group": "W18-49"
       },
       {
         "checked": false,
-        "group": "F18-54"
+        "group": "W18-54"
       },
       {
         "checked": false,
-        "group": "F18-64"
+        "group": "W18-64"
       },
       {
         "checked": false,
-        "group": "F21+"
+        "group": "W21+"
       },
       {
         "checked": false,
-        "group": "F21-24"
+        "group": "W21-24"
       },
       {
         "checked": false,
-        "group": "F21-34"
+        "group": "W21-34"
       },
       {
         "checked": false,
-        "group": "F21-49"
+        "group": "W21-49"
       },
       {
         "checked": false,
-        "group": "F21-54"
+        "group": "W21-54"
       },
       {
         "checked": false,
-        "group": "F21-64"
+        "group": "W21-64"
       },
       {
         "checked": false,
-        "group": "F25-49"
+        "group": "W25-49"
       },
       {
         "checked": true,
-        "group": "F25-54"
+        "group": "W25-54"
       },
       {
         "checked": false,
-        "group": "F25-64"
+        "group": "W25-64"
       },
       {
         "checked": false,
-        "group": "F35+"
+        "group": "W35+"
       },
       {
         "checked": false,
-        "group": "F35-54"
+        "group": "W35-54"
       },
       {
         "checked": false,
-        "group": "F35-64"
+        "group": "W35-64"
       },
       {
         "checked": false,
-        "group": "F50+"
+        "group": "W50+"
       },
       {
         "checked": false,
-        "group": "F55+"
+        "group": "W55+"
       },
       {
         "checked": false,
-        "group": "F65+"
+        "group": "W65+"
       }
     ]
   },
   {
-    "adult": [
+    "Adult": [
       {
         "checked": false,
-        "group": "A12+"
+        "group": "P12+"
       },
       {
         "checked": false,
-        "group": "A12-17"
+        "group": "P12-17"
       },
       {
         "checked": false,
-        "group": "A12-20"
+        "group": "P12-20"
       },
       {
         "checked": false,
-        "group": "A18+"
+        "group": "P18+"
       },
       {
         "checked": false,
-        "group": "A18-24"
+        "group": "P18-24"
       },
       {
         "checked": true,
-        "group": "A18-34"
+        "group": "P18-34"
       },
       {
         "checked": true,
-        "group": "A18-49"
+        "group": "P18-49"
       },
       {
         "checked": false,
-        "group": "A18-54"
+        "group": "P18-54"
       },
       {
         "checked": false,
-        "group": "A18-64"
+        "group": "P18-64"
       },
       {
         "checked": false,
-        "group": "A21+"
+        "group": "P21+"
       },
       {
         "checked": false,
-        "group": "A21-24"
+        "group": "P21-24"
       },
       {
         "checked": false,
-        "group": "A21-34"
+        "group": "P21-34"
       },
       {
         "checked": false,
-        "group": "A21-49"
+        "group": "P21-49"
       },
       {
         "checked": false,
-        "group": "A21-54"
+        "group": "P21-54"
       },
       {
         "checked": false,
-        "group": "A21-64"
+        "group": "P21-64"
       },
       {
         "checked": true,
-        "group": "A25-49"
+        "group": "P25-49"
       },
       {
         "checked": true,
-        "group": "A25-54"
+        "group": "P25-54"
       },
       {
         "checked": false,
-        "group": "A25-64"
+        "group": "P25-64"
       },
       {
         "checked": false,
-        "group": "A35+"
+        "group": "P35+"
       },
       {
         "checked": false,
-        "group": "A35-54"
+        "group": "P35-54"
       },
       {
         "checked": false,
-        "group": "A35-64"
+        "group": "P35-64"
       },
       {
         "checked": false,
-        "group": "A50+"
+        "group": "P50+"
       },
       {
         "checked": false,
-        "group": "A55+"
+        "group": "P55+"
       },
       {
         "checked": false,
-        "group": "A65+"
+        "group": "P65+"
       }
     ]
   }

@@ -30,7 +30,7 @@
               @click.prevent = ''
               href = '#'
             )
-              span.vui-align-middle Released
+              span.vui-align-middle Released Date
               span.vui-align-middle
                 vui-icon(
                   name = 'sort-asc'

@@ -22,9 +22,14 @@
           ) {{ order.status }}
 
       fieldset.vui-form-element
-        label.vui-form-element__label Order #
+        label.vui-form-element__label Videa Order ID
         .vui-form-element__control
           span.vui-form-element__static {{ order.id }}
+
+      fieldset.vui-form-element
+        label.vui-form-element__label Order Type
+        .vui-form-element__control
+          span.vui-form-element__static {{ order.type }}
 
       fieldset.vui-form-element
         label.vui-form-element__label Advertiser
@@ -87,7 +92,7 @@
           span.vui-form-element__static {{ order.salesPerson }}
 
     .vui-grid.vui-grid--align-end.vui-m-bottom--medium(
-      v-if = '$store.state.activeApp !== "reps"'
+      v-if = '$store.state.user.name !== "Rep User"'
     )
       .buttons
         button.vui-button--brand.vui-m-right--x-small(
@@ -97,7 +102,7 @@
           @click.prevent = 'showRejectOrderModal = true'
         ) Reject
     .vui-grid.vui-grid--align-end.vui-m-bottom--medium(
-      v-if = '$store.state.activeApp == "reps"'
+      v-if = '$store.state.user.name == "Rep User"'
     )
       .buttons
         form.vui-form--inline
@@ -116,12 +121,56 @@
             button.vui-button--brand(
               @click.prevent = ''
             ) Update
-    .vui-grid.vui-m-bottom--medium
+
+
+    form
+      .vui-grid.vui-grid--align-spread
+        .vui-text-heading--large.vui-m-bottom--medium Version History
+        .vui-form--inline(ng-show = "isRep || orderInfo.sellerStatus === 'Confirmed'")
+          .vui-form-element
+            label.vui-form-element__label(
+              for = 'manualShare'
+            ) Share
+            .vui-form-element__control
+              input#manualShare.vui-input.u-width-small(
+                name = 'manualShareField'
+                type = 'number',
+                ng-pattern = '/^[1-9][0-9]?$|^100$|^0$/'
+                ng-model = 'ctrl.manualShareOverride'
+              )
+          .vui-show--inline
+            button.vui-button.vui-button--neutral(
+              type = 'submit'
+              value = 'Update'
+              ng-disabled = 'shareFrm.manualShareField.$invalid'
+            ) Update
+
+    .vui-box.vui-grid.vui-grid--align-spread.vui-m-bottom--large.vui-wrap.vui-theme--default
+      fieldset.vui-col--padded.vui-form-element
+        label.vui-form-element__label(for='') Version
+        .vui-form-element__control.vui-text-align--center
+          span.vui-form-element__static.vui-m-right--small(ng-bind='orderInfo.version') 1
+      fieldset.vui-col--padded.vui-form-element
+        label.vui-form-element__label(for='') Submitted by
+        .vui-form-element__control
+          span.vui-form-element__static(ng-bind='orderInfo.buyerName') KARINE MCMASTER
+      fieldset.vui-col--padded.vui-form-element
+        label.vui-form-element__label(for='') Date
+        .vui-form-element__control
+          span.vui-form-element__static(ng-bind="orderInfo.createdDate | date:'MM/dd/yyyy'") 01/19/2017
+      fieldset.vui-col--padded.vui-col--bump-right.vui-form-element
+        label.vui-form-element__label(for='') Time
+        .vui-form-element__control
+          span.vui-form-element__static(ng-bind="orderInfo.createdDate | date:'h:mm a'") 4:54 PM
+
+
+    .vui-grid.vui-grid--align-end.vui-m-bottom--medium
       a.vui-align-middle.vui-m-right--small(
         target = '_blank'
         @click.prevent = 'showOffer(offer.makegoodNumber)'
       ) Manage Schedule
       button.vui-button.vui-button--brand Redeliver
+
     .vui-scrollable--x.vui-m-bottom--medium
       table.vui-table.vui-no-row-hover
         thead
@@ -154,7 +203,7 @@
             td.vui-text-align--right {{ program.totalCost | numberWithCommas | formatMoney }}
             td.vui-text-align--right {{ program.buyerRating | formatRating }}
             td.vui-text-align--right {{ program.totalRatings | formatRating }}
-    .vui-grid.vui-m-bottom--medium
+    .vui-grid.vui-grid--align-end.vui-m-bottom--medium
       a.vui-align-middle.vui-m-right--small(
         target = '_blank'
         @click.prevent = 'showOffer(offer.makegoodNumber)'

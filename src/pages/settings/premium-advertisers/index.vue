@@ -48,8 +48,10 @@
 
 <script>
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    name: 'premium-advertisers-settings',
+
+    metaInfo: {
+      title: 'Premium Advertisers Settings'
     },
 
     data () {
@@ -93,12 +95,6 @@
       }
     },
 
-    validators: {
-      confirm (val) {
-        return this.newpassword === val
-      }
-    },
-
     methods: {
       onKeyup () {
         alert('on keyup')
@@ -112,6 +108,10 @@
           e.preventDefault()
         }
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
     }
   }
 </script>

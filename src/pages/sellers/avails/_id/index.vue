@@ -60,14 +60,14 @@
       fieldset.vui-form-element
         label.vui-form-element__label(
           for = ''
-        ) Start
+        ) Start Date
         .vui-form-element__control
           span.vui-form-element__static {{ avail.flightStartDate }}
 
       fieldset.vui-form-element
         label.vui-form-element__label(
           for = ''
-        ) End
+        ) End Date
         .vui-form-element__control
           span.vui-form-element__static {{ avail.flightEndDate }}
 
@@ -85,23 +85,11 @@
         .vui-form-element__control
           span {{ avail.primaryDemo }}
 
-    .vui-container--medium
+    .vui-contain
       .vui-box.vui-grid.vui-grid--align-spread.vui-m-bottom--large.vui-wrap.vui-theme--default
         .vui-col--padded-medium(
           style = 'width: 50%'
         )
-          fieldset.vui-form-element.vui-m-bottom--small
-            label.vui-form-element__label Expiration Date
-            .vui-form-element__control
-              span(
-                v-if = '!editing'
-              ) {{ expirationDate | formatDate }}
-              //- input.vui-input(type='text', v-if='editing', v-model='avail.dueDate')
-              datepicker#expirationDate(
-                v-bind:value = 'expirationDate'
-                v-if = 'editing'
-                name = 'expirationDate'
-              )
           fieldset.vui-form-element.vui-m-bottom--small(
             v-bind:class = 'error'
           )
@@ -131,6 +119,20 @@
                 v-if = 'editing'
                 v-model = 'avail.totalGrpGoal'
               )
+
+          fieldset.vui-form-element.vui-m-bottom--small
+            label.vui-form-element__label Expiration Date
+            .vui-form-element__control
+              span(
+                v-if = '!editing'
+              ) {{ expirationDate | formatDate }}
+              //- input.vui-input(type='text', v-if='editing', v-model='avail.dueDate')
+              vui-datepicker#expirationDate(
+                v-model = 'expirationDate'
+                v-if = 'editing'
+                name = 'expirationDate'
+              )
+
           fieldset.vui-form-element.vui-m-bottom--small
             label.vui-form-element__label(
               for = ''
@@ -151,8 +153,8 @@
               span(
                 v-if = '!editing'
               ) {{ dueDate | formatDate }}
-              datepicker#dueDate(
-                v-bind:value = 'dueDate'
+              vui-datepicker#dueDate(
+                v-model = 'dueDate'
                 name = 'dueDate'
                 v-if = 'editing'
               )
@@ -231,7 +233,7 @@
                 @click.prevent = ''
                 href = '#'
               )
-                span.vui-align-middle CPP
+                span.vui-align-middle CPP - 30 secs
                 span.vui-align-middle
                   vui-icon(
                     name = 'sort'
@@ -253,7 +255,7 @@
                 @click.prevent = ''
                 href = "#"
               )
-                span.vui-align-middle Mix
+                span.vui-align-middle Mix %
                 span.vui-align-middle
                   vui-icon(
                     name = 'sort'
@@ -317,10 +319,9 @@
       table.vui-table.vui-table--nested-rows.vui-no-row-hover
         thead
           tr
-            th Program
-            th.u-width-small.vui-text-align--center Length
-            th.u-width-small Start
-            th.u-width-small End
+            th Programs
+            th.u-width-small Start Date
+            th.u-width-small End Date
             th.u-width-small Rate
             th.u-width-small Rating #[sup 1]
             th.u-width-small Avg. CPP #[sup 1]
@@ -351,7 +352,6 @@
                   span
                     span {{program.name}} #[br]
                     span {{ program.time }}
-            td.vui-text-align--center {{ program.length }}
             td {{ program.flightStartDate }}
             td {{ program.flightEndDate }}
             td.vui-text-align--right {{ program.rate | numberWithCommas | formatMoney }}
@@ -381,7 +381,6 @@
                     v-else
                   )
                     span {{ month.month }}
-              td.vui-text-align--center {{ month.length }}
               td {{ month.flightStartDate }}
               td {{ month.flightEndDate }}
               td.vui-text-align--right {{ month.rate | numberWithCommas | formatMoney  }}
@@ -395,7 +394,6 @@
                 v-show = 'month.expanded'
               )
                 td {{ week.week }}
-                td.vui-text-align--center {{ week.length }}
                 td
                 td
                 td.vui-text-align--right {{ week.rate | numberWithCommas | formatMoney }}

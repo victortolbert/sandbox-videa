@@ -3,14 +3,21 @@
     thead
       tr
         th Daypart
-        th.u-width-small Length
+        th.u-width-small Spot Length
         th.vui-text-align--right.u-width-medium AUR
         th.u-width-small # of Spots
         th.u-width-medium Revenue
-        th.vui-text-align--right.u-width-small GRPs
-        th.u-width-small
-          | CPP
+        th.u-width-medium
+          | RTGs/IMPs
           sup 1
+        th.vui-text-align--right.u-width-small
+          | GRPs/IMPs
+          sup 1
+        th.u-width-small
+          | CPP/CPM
+          sup 1
+        th.u-width-small Station Order #
+        th.u-width-small Videa Order #
     tbody(
       v-for = 'daypart in order.dayparts'
     )
@@ -31,8 +38,11 @@
           style = 'padding-right: 1rem'
         ) {{ daypart.spots }}
         td.vui-text-align--right {{ daypart.revenue | numberWithCommas | formatMoney }}
+        td.vui-text-align--right {{ daypart.rating | formatRating }}
         td.vui-text-align--right {{ daypart.grps | formatRating}}
         td.vui-text-align--right {{ Math.round(daypart.cpp) | numberWithCommas | formatMoney }}
+        td {{ order.stationOrderNumber }}
+        td {{ order.id }}
       template(
         v-for = 'show in daypart.shows'
       )
@@ -74,8 +84,11 @@
                 style = 'padding-right: 1rem'
               ) {{ date.numberOfSpots }}
               td.vui-text-align--right {{ date.revenue | numberWithCommas | formatMoney }}
+              td
               td.vui-text-align--right {{ date.grps | formatRating }}
               td.vui-text-align--right {{ Math.round(date.cpp) | numberWithCommas | formatMoney }}
+              td
+              td
 </template>
 
 <script>

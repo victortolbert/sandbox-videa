@@ -13,7 +13,7 @@
             ) Station Share Goal
             .vui-form-element__control
               input#stationAudienceShare.vui-input(
-                v-model = 'stationAudienceShare'
+                v-model = '$store.state.settings.stationAudienceShare'
                 type = 'text'
               )
             .vui-form-element__help Format xx.xx%
@@ -33,7 +33,7 @@
             .vui-form-element__control
               .vui-select_container
                 select#primaryDemographic.vui-select
-                  option A25-54
+                  option P25-54
 
           legend.vui-form-element__label Additional Demographics
 
@@ -67,8 +67,10 @@
 
 <script>
   export default {
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
+    name: 'display-settings',
+
+    metaInfo: {
+      title: 'Display Settings'
     },
 
     data () {
@@ -198,12 +200,6 @@
       }
     },
 
-    validators: {
-      confirm (val) {
-        return this.newpassword === val
-      }
-    },
-
     methods: {
       onKeyup () {
         alert('on keyup')
@@ -217,6 +213,10 @@
           e.preventDefault()
         }
       }
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
     }
   }
 </script>

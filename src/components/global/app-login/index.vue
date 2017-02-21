@@ -11,7 +11,7 @@
               label.vui-form-element__label(
                 for = 'input-01'
                 style = 'color: white'
-              ) Username
+              ) Email
               .vui-form-element__control.vui-input-has-icon.vui-input-has-icon--left
                 vui-icon.vui-input__icon(
                   name = 'envelope'
@@ -50,27 +50,41 @@
   export default {
     methods: {
       login () {
-
         if (this.$store.state.user.email.toLowerCase().includes('sell')) {
+          this.$store.state.hasError = false
           this.$store.state.user.name = 'Seller User'
           this.$store.state.activeApp = 'sellers'
           this.$router.push({
-            name: 'sellers-campaign-performance'
+            name: 'sellers-order-management-pending-orders'
           })
         }
-        // else if (this.$store.state.user.email.toLowerCase().includes('buy')) {
-        //   this.$store.state.user.name = 'Buyer User'
-        //   this.$store.state.activeApp = 'buyers'
-        //   // this.$router.push({
-        //   //   name: 'buyers-avails-request'
-        //   // })
-        // } else if (this.$store.state.user.email.toLowerCase().includes('rep')) {
-        //   this.$store.state.user.name = 'Rep User'
-        //   this.$store.state.activeApp = 'reps'
-        //   // this.$router.push({
-        //   //   name: 'reps-avails'
-        //   // })
-        // }
+        else if (this.$store.state.user.email.toLowerCase().includes('buy')) {
+          this.$store.state.hasError = false
+          this.$store.state.user.name = 'Buyer User'
+          this.$store.state.activeApp = 'buyers'
+          this.$router.push({
+            name: 'buyers-avails-request'
+          })
+        }
+        else if (this.$store.state.user.email.toLowerCase().includes('sa')) {
+          this.$store.state.hasError = false
+          this.$store.state.user.name = 'Sandbox User'
+          this.$store.state.activeApp = 'sandbox'
+          this.$router.push({
+            name: 'examples'
+          })
+        }
+        else if (this.$store.state.user.email.toLowerCase().includes('rep')) {
+          this.$store.state.hasError = false
+          this.$store.state.user.name = 'Rep User'
+          this.$store.state.activeApp = 'sellers'
+          this.$router.push({
+            name: 'sellers-order-management-pending-orders'
+          })
+        }
+        else {
+          this.$store.state.hasError = true
+        }
       }
     }
   }

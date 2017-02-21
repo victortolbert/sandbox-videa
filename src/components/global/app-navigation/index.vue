@@ -1,34 +1,34 @@
 <template lang="pug">
   nav.vui-site-navigation
     app-login(
-      v-if = '$store.state.activeApp == "login" || $store.state.activeApp == null'
+      v-if = '$store.state.activeApp == "login"'
     )
-    //-   buyers-nav(
-    //-     v-else-if = '$store.state.activeApp == "buyers"'
-    //-   )
-    sellers-nav(
+    app-buyers-nav(
+      v-else-if = '$store.state.activeApp == "buyers"'
+    )
+    app-sandbox-nav(
+      v-else-if = '$store.state.activeApp == "sandbox"'
+    )
+    app-sellers-nav(
       v-else = '$store.state.activeApp == "sellers"'
     )
+    app-notification
 </template>
 
 <script>
-  import SellersNav from '~components/global/sellers-nav'
-  // import BuyersNav from '~components/global/buyers-nav'
+  import AppNotification from '~components/global/app-notification'
+  import AppSandboxNav from '~components/global/app-sandbox-nav'
+  import AppSellersNav from '~components/global/app-sellers-nav'
+  import AppBuyersNav from '~components/global/app-buyers-nav'
   import AppLogin from '~components/global/app-login'
 
   export default {
-    props: {
-      app: {
-        type: String,
-        default: 'sellers'
-      }
-    },
-
     components: {
-      SellersNav,
-      // BuyersNav,
+      AppNotification,
+      AppSandboxNav,
+      AppSellersNav,
+      AppBuyersNav,
       AppLogin
     }
   }
 </script>
-

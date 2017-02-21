@@ -17,7 +17,7 @@
           ) Agency
           th(
             rowspan = '2'
-          ) CPE
+          ) Campaign Name
           th(
             rowspan = '2'
           ) Flight Start
@@ -33,6 +33,24 @@
           th(
             colspan = '2'
           ) Agency
+          th(
+            rowspan = '2'
+          ) Videa Order
+          th(
+            rowspan = '2'
+          ) MG Created by
+          th(
+            rowspan = '2'
+          ) Date/Time Created
+          th(
+            rowspan = '2'
+          ) MG Last updated by
+          th(
+            rowspan = '2'
+          ) Date/Time last updated
+          th(
+            rowspan = '2'
+          ) CPE
         tr
           th(
             style = 'padding-left: 0.5rem'
@@ -62,12 +80,14 @@
                 name = 'medicine-bottle'
               )
               span {{ offer.makegoodNumber }}
-          td: router-link(
-            v-bind:to = '{ name: "sellers-reporting-order-reporting-id", params: { id: offer.orderId }}'
-          ) {{ offer.orderId }}
+          td: a.vui-m-right--xx-small(
+            v-bind:href = '`/sellers/reporting/order-reporting/${offer.orderId}`'
+            target = '_blank'
+          ) Open
+
           td {{ offer.advertiser }}
           td {{ offer.agency }}
-          td {{ offer.cpe }}
+          td {{ offer.campaign }}
           td {{ offer.flightStartDate }}
           td {{ offer.flightEndDate }}
           td
@@ -112,6 +132,12 @@
               vui-icon(
                 name = 'sticky-note-o'
               )
+          td {{ offer.orderId }}
+          td
+          td
+          td
+          td
+          td {{ offer.cpe }}
 </template>
 
 <script>

@@ -1,13 +1,13 @@
 <template lang="pug">
   .flex-container(
-    demo = 'detailsCtrl.orderInfo.demo'
-    current-tab-changed = 'detailsCtrl.currentTabChanged'
-    current-tab-order-id = 'detailsCtrl.currentTabOrderId'
-    is-active-order = '!detailsCtrl.isCancelledOrder'
-    order-buy-type = 'detailsCtrl.orderInfo.orderBuyType'
-    show-offer-dialog = 'detailsCtrl.showOfferDialog'
-    show-orbit-details = 'detailsCtrl.showOrbitDetailsPopup'
-    tab-items = 'detailsCtrl.tabItems'
+    demo = 'orderInfo.demo'
+    current-tab-changed = 'currentTabChanged'
+    current-tab-order-id = 'currentTabOrderId'
+    is-active-order = '!isCancelledOrder'
+    order-buy-type = 'orderInfo.orderBuyType'
+    show-offer-dialog = 'showOfferDialog'
+    show-orbit-details = 'showOrbitDetailsPopup'
+    tab-items = 'tabItems'
   )
     makegoods-order-line-current-info-popup(
       demo = 'demo'
@@ -19,15 +19,13 @@
         role = 'tablist'
       )
         li.vui-tabs--scoped__item.vui-text-heading--label.vui-active(
-          v-bind:class = "{'vui-active':tab.orderId === currentTabOrderId}"
+          v-bind:class = '{ "vui-active" : tab.orderId === currentTabOrderId }'
           v-for = 'tab in tabItems'
           role = 'presentation'
         )
           a#tab_5009.vui-tabs--scoped__link(
-            @click = 'selectTab(tab)'
-            v-text = 'tab.tabHeader'
-            href = ''
-          ) Original Order Version #1
+            v-on:click = 'selectTab(tab)'
+          ) {{ tab.tabHeader }}
     div(
       v-for = 'tab in tabItems'
       v-if = 'tab.orderId === currentTabOrderId'
@@ -43,36 +41,33 @@
               )
               span.vui-checkbox--faux
               span.vui-form-element__label Show Spot Allocations
-            .vui-form-element_control.vui-m-right--small.vui-visible(
-              v-bind:class = "tab.isShowSpotAllocations ? 'vui-visible' : 'vui-hidden'"
+
+            .vui-form-element_control.vui-m-right--small(
+              v-bind:class = 'tab.isShowSpotAllocations ? "vui-visible" : "vui-hidden"'
             )
-              label.vui-radio(
-                for = 'radio_1'
-              )
+              label.vui-radio(for='radio_1')
                 input#radio_1(
+                  v-bind:value = 'true'
                   v-model = 'tab.isMissedSpotsShown'
                   name = 'spotTypeFilter0'
                   type = 'radio'
-                  value = 'true'
                 )
                 span.vui-radio--faux.vui-m-right--xxx-small
                 span.vui-form-element__label Order v. Missed
-              label.vui-radio(
-                for = 'radio_2'
-              )
+              label.vui-radio(for='radio_2')
                 input#radio_2(
+                  v-bind:value = 'false'
                   v-model = 'tab.isMissedSpotsShown'
                   name = 'spotTypeFilter0'
                   type = 'radio'
-                  value = 'false'
                 )
                 span.vui-radio--faux.vui-m-right--xxx-small
                 span.vui-form-element__label Order v. Traffic
 
         order-search-details-grid.flex-container(
+          v-bind:is-missed-spots-shown = 'tab.isMissedSpotsShown'
+          v-bind:is-show-spot-allocations = 'tab.isShowSpotAllocations'
           has-description-of-change-column = 'hasDescriptionOfChangeColumn(tab)'
-          is-missed-spots-shown = 'tab.isMissedSpotsShown'
-          is-show-spot-allocations = 'tab.isShowSpotAllocations'
           items = 'tab.tableItems'
           order-buy-type = 'orderBuyType'
           show-current-info = 'showCurrentLineInfoPopup'
@@ -80,3 +75,27 @@
           show-orbit-details = 'showOrbitDetails'
         )
 </template>
+
+<script>
+  export default {
+    data () {
+      return {
+        currentTabOrderId: 1,
+        tabItems: [
+          {
+            isMissedSpotsShown: false,
+            isShowSpotAllocations: false,
+            orderId: 1,
+            tabHeader: 'Original Order Version #1'
+          }
+        ]
+      }
+    },
+
+    methods: {
+      selectTab (tab) {
+        console.log(tab)
+      }
+    }
+  }
+</script>

@@ -7,19 +7,7 @@
             rowspan = '2'
           )
             vui-sorting-column(
-              title = 'Program'
-            )
-          th(
-            rowspan = '2'
-          )
-            vui-sorting-column(
               title = 'Daypart'
-            )
-          th.u-width-small(
-            rowspan = '2'
-          )
-            vui-sorting-column(
-              title = 'Time'
             )
           th(
             colspan = '2'
@@ -27,11 +15,6 @@
           th(
             colspan = '2'
           ) Revenue
-          th.u-width-small(
-            rowspan = '2'
-          )
-            | CPP
-            sup 1
           th.u-width-small.vui-text-align--center(
             rowspan = '2'
           ) Spot #
@@ -46,14 +29,11 @@
         tr(
           v-for = 'program in programs'
         )
-          td {{ program.name }}
           td {{ program.daypart }}
-          td {{ program.programTime }}
           td.vui-text-align--right {{ program.aurTy | numberWithCommas | formatMoney }}
           td.vui-text-align--right {{ program.aurLy | numberWithCommas | formatMoney }}
           td.vui-text-align--right {{ program.revenueTy | numberWithCommas | formatMoney }}
           td.vui-text-align--right {{ program.revenueLy | numberWithCommas | formatMoney }}
-          td.vui-text-align--right {{ program.cpp | formatMoney }}
           td.vui-text-align--right
             a(
               @click.prevent = 'showSpotDetail(program)'

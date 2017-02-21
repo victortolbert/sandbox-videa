@@ -11,10 +11,14 @@ const fractal = module.exports = require('@frctl/fractal').create()
 
 // Customize theme
 const mandelbrot = require('@frctl/mandelbrot')({
+  favicon: '/assets/icons/icon.ico',
   format: 'yaml',
   nav: ['docs', 'components'],
   skin: 'white',
-  styles: ['default', '/shared/css/vui.css']
+  styles: ['default', '/assets/styles/theme.css', '/shared/css/vui.css'],
+  // static: {
+  //   mount: 'fractal'
+  // }
 })
 
 // Project config
@@ -33,7 +37,6 @@ const md = require('markdown-it')({
 
 const nunjucksDate = require('nunjucks-date')
 const nunjucks = require('@frctl/nunjucks')({
-  paths: ['docs'],
   filters: {
     date: nunjucksDate,
     markdown (str) {
@@ -48,13 +51,15 @@ const nunjucks = require('@frctl/nunjucks')({
     stringify () {
       return JSON.stringify(this, null, '\t')
     }
-  }
+  },
+  paths: [`${paths.static}/assets/vectors`, 'docs']
 })
 
 // Components config
 fractal.components.engine(nunjucks)
-fractal.components.set('ext', '.html')
 fractal.components.set('default.preview', '@preview')
+fractal.components.set('default.status', null)
+fractal.components.set('ext', '.html')
 fractal.components.set('path', path.join(__dirname, 'src/components'))
 fractal.components.set('label', 'Components')
 

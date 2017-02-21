@@ -1,5 +1,6 @@
 ---
 title: Contributing
+hidden: true
 ---
 
 This is how you can contribute.

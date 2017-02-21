@@ -1,5 +1,6 @@
 import Vue from 'vue'
+import Multiselect from 'vue-multiselect'
 
-if (process.BROWSER_BUILD) {
-  Vue.component('multiselect', require('vue-multiselect'))
-}
+// register globally
+// Vue.component('multiselect', require('vue-multiselect'))
+Vue.component(Multiselect)

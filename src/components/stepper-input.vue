@@ -10,6 +10,8 @@
 </template>
 
 <style lang="stylus">
+  @import '~assets/variables'
+
   .stepperInput
     display flex
 

@@ -11,5 +11,5 @@ variants:
 - name: more
   context:
     label: Show me another 24 ways…
-    href: ?page=2
+    href: '?page=2'
     mods: [more]

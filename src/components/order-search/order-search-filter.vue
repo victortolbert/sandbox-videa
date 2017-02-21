@@ -133,7 +133,7 @@
         estimatePattern: '',
         startDate: new Date(),
         endDate: new Date(),
-        selectedAdvertiser: 'Piedmont Healthcare',
+        selectedAdvertiser: '',
         advertisers: [
           'Community Loans, Inc.',
           'Metro Wireless',
@@ -142,7 +142,7 @@
           'Southeast Ford',
           'Sun Valley Bank'
         ],
-        selectedAgency: 'Hughes-Martin Agency',
+        selectedAgency: '',
         agencies: [
           'Auto Advertising Partners',
           'Hughes-Martin Agency',

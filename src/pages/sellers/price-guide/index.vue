@@ -1,8 +1,9 @@
 <template lang="pug">
   .price-guide-parent
     vui-title Price Guide
-    h2.vui-text-heading--label.vui-m-bottom--medium Videa Pricing was last updated on {{ lastUpdated }} at 08:30 AM
-    vui-subtitle Use the Price Guide to review your rates and to either accept the Videa rates or override the Videa rates. The price is set prior to avail in the price guide. If you accept the Videa rates, know that Videa updates the rates every Sunday.
+    p.vui-text-heading--label Videa Pricing was last updated on {{ lastUpdated }} at 08:30 AM
+    p.vui-text-body--small ON THE BOOKS WAS LAST UPDATED ON FEBRUARY 13, 2017 AT  12:00 AM
+    p.vui-text-longform.vui-m-bottom--medium Use the Price Guide to review your rates and to either accept the Videa rates or override the Videa rates. The price is set prior to avail in the price guide. If you accept the Videa rates, know that Videa updates the rates every Sunday.
     vui-panel
       // Form
       form.vui-grid.vui-grid--vertical-align-end(
@@ -68,12 +69,6 @@
               span.vui-checkbox--faux
               span.vui-form-element__label $0 Spots
 
-        // Submit Button Fieldset
-        fieldset.vui-form-element
-          button.vui-button.vui-button--brand.vui-m-right--x-small(
-            @click.prevent = ''
-          ) Submit
-
     #daypart-selector.vui-m-bottom--large
       h3.vui-text-heading--medium.vui-m-bottom--small Select Daypart
       button.vui-button.vui-button--neutral.vui-max-small-buttons--stretch(
@@ -89,14 +84,14 @@
     .vui-grid.vui-grid--align-end
 
       form.vui-form--inline.vui-m-bottom--x-small(
-        v-bind:class = '$store.state.activeApp == "reps" ? "vui-grid vui-grid--align-end" : ""'
+        v-bind:class = '$store.state.user.name == "Rep User" ? "vui-grid vui-grid--align-end" : ""'
       )
 
         // Market CPP Input Fieldset
         .vui-media
           .vui-media__body
             .vui-align-middle(
-              v-if = '$store.state.activeApp == "reps"'
+              v-if = '$store.state.user.name == "Rep User"'
             )
               span.vui-m-right--xx-small Market CPP
               input.vui-input.vui-m-right--xx-small(
@@ -113,7 +108,7 @@
 
         // Update Market CPP Button Fieldset
         fieldset.vui-form-element(
-          v-show = '$store.state.activeApp == "reps"'
+          v-show = '$store.state.user.name == "Rep User"'
         )
           button.vui-button.vui-button--brand(
             @click.prevent = 'updateMarketCpp'

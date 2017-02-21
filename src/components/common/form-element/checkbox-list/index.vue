@@ -70,6 +70,8 @@
 </script>
 
 <style lang="stylus">
+  @import '~assets/variables'
+
   .checkbox-list .vui-form-element
     border-bottom 1px solid #eee
     padding 0.25rem 0 0.25rem 0.5rem

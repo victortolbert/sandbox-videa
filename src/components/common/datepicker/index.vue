@@ -710,69 +710,69 @@ export default {
 </script>
 
 <style lang="stylus">
+  @import '~assets/variables'
+  $width = 300px
 
-$width = 300px
-
-*
+  *
     box-sizing border-box
 
-.datepicker
+  .datepicker
     position relative
 
-.calendar
-    position absolute
-    z-index 100
-    background white
-    width $width
-    border 1px solid #ccc
-    header
+  .calendar
+      position absolute
+      z-index 100
+      background white
+      width $width
+      border 1px solid #ccc
+      header
         display block
         line-height 40px
         span
-            display inline-block
-            text-align center
-            width (100 - (100/7)*2)%
-            float left
+          display inline-block
+          text-align center
+          width (100 - (100/7)*2)%
+          float left
 
         .prev
         .next
-            width (100/7)%
-            float left
-            text-indent -10000px
-            position relative
-            &:after
-                content ''
-                position absolute
-                left 50%
-                top 50%
-                transform translateX(-50%) translateY(-50%)
-                border 6px solid transparent
+          width (100/7)%
+          float left
+          text-indent -10000px
+          position relative
+          &:after
+            content ''
+            position absolute
+            left 50%
+            top 50%
+            transform translateX(-50%) translateY(-50%)
+            border 6px solid transparent
 
         .prev
-            &:after
-                border-right 10px solid #000
-                margin-left -5px
-            &.disabled:after
-                border-right 10px solid #ddd
+          &:after
+            border-right 10px solid #000
+            margin-left -5px
+          &.disabled:after
+            border-right 10px solid #ddd
         .next
             &:after
-                border-left 10px solid #000
-                margin-left 5px
+              border-left 10px solid #000
+              margin-left 5px
             &.disabled:after
-                border-left 10px solid #ddd
+              border-left 10px solid #ddd
 
         .prev:not(.disabled)
         .next:not(.disabled)
         .up:not(.disabled)
-            cursor pointer
-            &:hover
-                background #eee
+          cursor pointer
+          &:hover
+            background #eee
 
-    .disabled
+      .disabled
         color #ddd
         cursor default
 
-    .cell
+      .cell
         display inline-block
         padding 0 5px
         width (100/7)%
@@ -784,32 +784,31 @@ $width = 300px
         &:not(.blank):not(.disabled).day
         &:not(.blank):not(.disabled).month
         &:not(.blank):not(.disabled).year
-            cursor pointer
-            &:hover
-                border 1px solid #4bd
+          cursor pointer
+          &:hover
+            border 1px solid #4bd
         &.selected
+          background #4bd
+          &:hover
             background #4bd
-            &:hover
-                background #4bd
-            &.highlighted
-                background #4bd
+          &.highlighted
+            background #4bd
         &.highlighted
-            background #cae5ed
+          background #cae5ed
         &.grey
-            color #888
+          color #888
 
-            &:hover
-                background inherit
-
+          &:hover
+            background inherit
 
         &.day-header
-            font-size 75%
-            white-space no-wrap
-            cursor inherit
-            &:hover
-                background inherit
+          font-size 75%
+          white-space no-wrap
+          cursor inherit
+          &:hover
+            background inherit
 
-    .month,
-    .year
+      .month,
+      .year
         width 33.333%
 </style>

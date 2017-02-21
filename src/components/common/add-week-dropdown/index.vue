@@ -35,9 +35,9 @@
               span.vui-checkbox--faux
               span.vui-form-element__label Week of {{ week.week }}
           fieldset.vui-form-element.vui-text-align--center
-            button.vui-button.vui-button--brand.vui-button--small(
+            button.vui-button.vui-button--neutral.vui-button--small(
               @click.prevent = 'showSelectedWeeks'
-            ) Submit
+            ) Close
 </template>
 
 <script>

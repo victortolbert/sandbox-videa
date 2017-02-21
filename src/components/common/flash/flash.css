@@ -1,0 +1,30 @@
+.flash {
+  align-items: center;
+  background: #ccc;
+  display: flex;
+  padding: 0.25rem 1rem;
+}
+
+.flash--success {
+  background: #008000;
+}
+
+.flash--error {
+  background: #f00;
+}
+
+.flash__text {
+  flex: 1;
+}
+
+.flash__remove {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 4rem;
+}
+
+.flash-messages > * {
+  margin-bottom: 1rem;
+}

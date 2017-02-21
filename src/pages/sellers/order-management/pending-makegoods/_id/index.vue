@@ -1,9 +1,9 @@
 <template lang="pug">
   .makegoods-details-view
-    vui-title {{ $store.state.stationCallLetters }} {{ offer.flightStartDate }} - {{ offer.flightEndDate }}
-    vui-subtitle Order Information - Offers
+    //- vui-title {{ $store.state.stationCallLetters }} {{ offer.flightStartDate }} - {{ offer.flightEndDate }}
+    vui-title Order Information - Offers
     makegoods-order-details-info(
-      order-info = 'offer.orderId'
+      v-bind:orderId = 'offer.orderId'
     )
 
     .vui-grid.vui-grid--align-spread.vui-m-top--large.vui-m-bottom--large
@@ -80,7 +80,7 @@
     },
 
     methods: {
-      fetchOffers(id) {
+      fetchOffer(id) {
         axios.get(`/offers/${id}`)
           .then((response) => {
             this.offer = response.data
@@ -98,7 +98,7 @@
     },
 
     created () {
-      this.fetchOffers(this.$route.params.id)
+      this.fetchOffer(this.$route.params.id)
     }
   }
 
