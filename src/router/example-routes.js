@@ -30,9 +30,9 @@ module.exports = [
     component: require('pages/examples/banner')
   },
   {
-    path: '/examples/device',
-    name: 'device-example',
-    component: require('pages/examples/device')
+    path: '/examples/devices',
+    name: 'devices-example',
+    component: require('pages/examples/devices')
   },
   {
     path: '/examples/event-bus',
@@ -43,6 +43,11 @@ module.exports = [
     path: '/examples/fetch-data',
     name: 'fetch-data-example',
     component: require('pages/examples/fetch-data')
+  },
+  {
+    path: '/examples/fraction-grid',
+    name: 'fraction-grid-example',
+    component: require('pages/examples/fraction-grid')
   },
   {
     path: '/examples/modal',

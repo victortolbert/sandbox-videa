@@ -75,6 +75,7 @@
     "vue-fetch-data": "^0.2.0",
     "vue-flatpickr": "^2.2.9",
     "vue-flexboxgrid": "^1.1.2",
+    "vue-fraction-grid": "^1.0.0",
     "vue-highcharts": "^0.0.9",
     "vue-howler": "^0.1.4",
     "vue-instagram": "^1.0.4",

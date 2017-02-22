@@ -4,10 +4,10 @@
 
 <script>
   export default {
-    name: 'device-example',
+    name: 'devices-example',
 
     metaInfo: {
-      title: 'Example / Device'
+      title: 'Example / Devices'
     },
 
     beforeCreate () {
