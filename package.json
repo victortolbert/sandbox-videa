@@ -24,7 +24,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "jest",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "deploy": "rsync -avzh --progress ./dist/. vtolbert@victortolbert.com:/home/vtolbert/demo.videa.design"
   },
   "dependencies": {
     "@frctl/fractal": "^1.0.11",
