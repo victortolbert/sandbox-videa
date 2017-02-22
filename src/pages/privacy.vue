@@ -1,5 +1,5 @@
 <template lang="pug">
-  .page.privacy
+  .page.privacy.vui-container--medium.vui-p-top--large
     vui-title Privacy Policy
     p
       b General:
@@ -39,5 +39,26 @@
       | :
       br
       | Videa takes commercially reasonable security precautions in order to keep the information disclosed to this Site secure. However, notwithstanding such precautions, Videa assumes no responsibility for the security of this Site or any data transmitted to Videa, including, but not limited to, information related to potential employment or applications therefore, or any other matter.
-
 </template>
+
+<script>
+  export default {
+    name: 'privacy',
+
+    metaInfo: {
+      title: 'Privacy Policy',
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = null
+    }
+  }
+</script>
+
+<style lang="stylus">
+  .page
+    &.terms
+    &.privacy
+      p
+        margin-bottom 1rem
+</style>

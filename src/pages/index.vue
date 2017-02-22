@@ -1,6 +1,6 @@
 <!-- node_modules/cq-prolyfill/cq-prolyfill.min.js -->
 <template lang="pug">
-  .home
+  .index
     //- input#slider(
     //-   max = '100'
     //-   min = '0'
@@ -42,7 +42,7 @@
 
 <script>
   export default {
-    name: 'Home',
+    name: 'index',
 
     metaInfo: {
       title: 'Home',

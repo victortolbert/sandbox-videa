@@ -1,5 +1,5 @@
 <template lang="pug">
-  .page.terms
+  .page.terms.vui-container--medium.vui-p-top--large
     vui-title Videa Platform Terms of Use Agreement
     p
       strong
@@ -104,3 +104,17 @@
           u Changes to the Videa Service and the Agreement.
           |  Videa reserves the right to suspend or change the Videa Services and the Videa Platform and this Agreement, including the fees charged for the Videa Services and the areas of access to the Videa Platform, in Videa's sole discretion from time to time, by either sending User notice of such changes or posting such changes within the Videa Platform.If User does not agree to any amendments, User's sole and exclusive remedy is to stop using the Videa Platform and Videa Services. User's continued use of the Videa Services after Customer is notified of any change will constitute User's acceptance of and agreement to be bound by the change.
 </template>
+
+<script>
+  export default {
+    name: 'terms',
+
+    metaInfo: {
+      title: 'Terms of Use',
+    },
+
+    beforeCreate () {
+      this.$store.state.activeApp = null
+    }
+  }
+</script>
