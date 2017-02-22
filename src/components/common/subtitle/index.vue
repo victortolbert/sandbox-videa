@@ -1,5 +1,5 @@
 <template lang="pug">
-  p.vui-text-heading--small.vui-m-bottom--medium
+  h3.vui-text-heading--small.vui-m-bottom--medium
     slot
 </template>
 
