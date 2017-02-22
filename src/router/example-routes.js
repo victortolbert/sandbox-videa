@@ -70,14 +70,19 @@ module.exports = [
     component: require('pages/examples/order-by')
   },
   {
-    path: '/examples/selectize',
-    name: 'selectize-example',
-    component: require('pages/examples/selectize')
-  },
-  {
     path: '/examples/scoped-slots',
     name: 'scoped-slots-example',
     component: require('pages/examples/scoped-slots')
+  },
+  {
+    path: '/examples/select-checkbox',
+    name: 'select-checkbox-example',
+    component: require('pages/examples/select-checkbox')
+  },
+  {
+    path: '/examples/selectize',
+    name: 'selectize-example',
+    component: require('pages/examples/selectize')
   },
   {
     path: '/examples/select',

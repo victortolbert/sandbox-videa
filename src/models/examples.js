@@ -12,6 +12,7 @@ module.exports = [
   { name: 'Banner', path: '/examples/banner', route: 'banner-example' },
   { name: 'Fraction Grid', path: '/examples/fraction-grid', route: 'fraction-grid-example' },
   { name: 'Select', path: '/examples/select', route: 'select-example' },
+  { name: 'Select Checkbox', path: '/examples/select-checkbox', route: 'select-checkbox-example' },
   { name: 'Selectize', path: '/examples/selectize', route: 'selectize-example' },
   { name: 'Table', path: '/examples/table', route: 'table-example' },
   { name: 'Toast', path: '/examples/toast', route: 'toast-example' },
