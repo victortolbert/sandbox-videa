@@ -33,11 +33,10 @@
 
         // Order Tab -- Controls
         .vui-grid.vui-grid--align-start.vui-grid--vertical-align-center.vui-m-bottom--medium
-
           .vui-size--1-of-12
             // Pending or Draft Makegood Legend
             ul
-              li.row-padding
+              li
                 a(
                   @click.prevent = 'showOfferDialog("item.makegoodId")'
                   title = 'Click to open the Offer which has been sent and is awaiting approval'
@@ -46,13 +45,12 @@
                     name = 'medicine-bottle'
                   )
                 span Pending MG
-              li.row-padding
+              li
                 span.vui-text-link
                   vui-icon.vui-m-bottom--xxx-small.vui-m-left--xx-small.vui-m-right--xx-small(
                     name = 'pencil-square'
                   )
                 span.graft-mg-text Draft MG
-
           .vui-size--1-of-8
             // Show All or Missed Only
             label.vui-radio(
@@ -314,3 +312,9 @@
     }
   }
 </script>
+
+
+<style lang="stylus">
+  .vui-form-element__label
+    white-space nowrap
+</style>

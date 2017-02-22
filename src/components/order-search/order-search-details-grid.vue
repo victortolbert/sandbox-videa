@@ -54,7 +54,7 @@
       tr(v-bind:class = '{ "vui-is-selected": item.isExpanded }')
         td.vui-text-align--center(style='width: 80px')
           a(v-on:click = 'item.isExpanded = !item.isExpanded')
-            vui-icon.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
+            vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
               v-bind:name = 'item.isExpanded ? "caret-lower-right" : "caret-right"'
             )
         td.vui-text-align--right(
@@ -70,7 +70,7 @@
         td.vui-text-align--right(v-bind:title='item.totalTrafficSpots' style='width: 86px') {{ item.totalTrafficSpots }}
         td.vui-text-align--center(style='width: 140px')
           a.pointer.current-info.popup(v-on:click='showCurrentInfo(item)')
-            vui-icon.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
+            vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
               name = 'popout'
             )
         td(

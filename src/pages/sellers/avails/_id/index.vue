@@ -336,9 +336,10 @@
                   @click.prevent = 'program.expanded = !program.expanded'
                   href = '#'
                 )
-                  vui-icon.vui-align-middle.vui-m-right--x-small(
+                  vui-icon.vui-icon--small.vui-align-middle.vui-m-right--x-small(
                     v-bind:name = 'program.expanded ? "caret-lower-right" : "caret-right"'
                     v-if = 'program.months'
+                    style = 'margin-left: -0.5rem'
                   )
                 template(
                   v-if = '!program.months'
@@ -369,9 +370,10 @@
                     @click.prevent = 'month.expanded = !month.expanded'
                     href = '#'
                   )
-                    vui-icon.vui-align-middle.vui-m-right--x-small(
+                    vui-icon.vui-icon--small.vui-align-middle.vui-m-right--x-small(
                       v-bind:name = 'month.expanded ? "caret-lower-right" : "caret-right"'
                       v-if = 'month.weeks'
+                      style = 'margin-left: -0.5rem'
                     )
                   template(
                     v-if = '!month.weeks'

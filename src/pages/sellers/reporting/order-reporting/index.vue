@@ -2,8 +2,8 @@
   .orders-view
     vui-title Order Reporting
     vui-subtitle.
-      The order information below reflects the data from your station's
-      traffic system. Videa updates traffic information once each day;
+      Order Reporting – The order information below reflects the data from your
+      station’s traffic system. Videa updates traffic information once each day;
       as a result, data may not be current.
     vui-panel
       order-reporting-filter

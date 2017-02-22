@@ -16,7 +16,7 @@
           li.vui-list__item
             a(
               @click.prevent = 'toggleDebug'
-            ) Toggle Debug
+            ) Toggle Debug Tools
       p.
         3390 Peachtree Road, NE, Suite 400 Atlanta, GA 30326 #[br]
         Copyright © 2014&ndash;{{ new Date().getFullYear() }} Videa. All rights reserved.

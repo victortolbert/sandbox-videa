@@ -123,9 +123,9 @@
               v-if = 'avail.versions'
               href = '#'
             )
-              vui-icon.vui-align-middle(
+              vui-icon.vui-icon--small.vui-align-middle(
                 v-bind:name = 'avail.expanded ? "caret-lower-right" : "caret-right"'
-                style = 'margin-left: -1rem'
+                style = 'margin-left: -1.5rem'
               )
             router-link(
               v-bind:to = '{ name: "sellers-avails-id", params: { id: avail.id } }'

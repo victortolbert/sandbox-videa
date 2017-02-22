@@ -100,7 +100,6 @@
           ) Order #[br] Completed By
       tbody
         tr(
-
           v-for = 'order in orders'
           style = 'cursor: pointer'
         )

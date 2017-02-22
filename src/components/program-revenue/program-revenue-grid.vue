@@ -1,6 +1,6 @@
 <template lang="pug">
   .program-revenue-grid.vui-scrollable--x.vui-m-bottom--medium
-    table.vui-table.vui-no-row-hover
+    table.vui-table.vui-table--striped.vui-no-row-hover
       thead
         tr
           th(

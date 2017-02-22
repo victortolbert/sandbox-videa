@@ -10,7 +10,7 @@
       )
         .vui-grid.vui-grid--vertical-align-center
 
-          vui-icon.vui-m-right--x-small(
+          vui-icon.vui-icon--small.vui-m-right--x-small(
             v-bind:name = 'shouldShowInfo ? "caret-right" : "caret-down"'
             size = 'medium'
             style = 'color: #0177a2'

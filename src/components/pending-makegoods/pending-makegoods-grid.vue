@@ -1,6 +1,6 @@
 <template lang="pug">
   .vui-scrollable--x
-    table.vui-table.vui-no-row-hover
+    table.vui-table.vui-no-row-hover.vui-table--striped
       thead
         tr
           th(
@@ -82,17 +82,10 @@
 
           td {{ offer.advertiser }}
           td {{ offer.agency }}
-          td {{ offer.campaign }}
+          td {{ offer.campaignName }}
           td {{ offer.flightStartDate }}
           td {{ offer.flightEndDate }}
-          td
-            a(
-              @click.prevent = 'showOffer(offer.makegoodNumber)'
-            )
-              vui-icon(
-                name = 'medicine-bottle'
-              )
-              span {{ offer.makegoodNumber }}
+          td.vui-text-align--center {{ offer.makegoodNumber }}
           td
             span.vui-badge(
               v-bind:class = 'offer.offerStatus'
@@ -108,9 +101,7 @@
               v-bind:class = 'offer.acceptedByStation'
             ) {{ offer.acceptedByStation }}
           td.vui-text-align--center
-            a(
-              @click.prevent = ''
-            )
+            a(@click.prevent = '')
               vui-icon(
                 name = 'sticky-note-o'
               )

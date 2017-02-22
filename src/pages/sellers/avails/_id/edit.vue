@@ -235,7 +235,7 @@
         .vui-grid.vui-grid--align-spread
           h3.vui-text-heading--small.vui-m-bottom--small {{ selectedDaypart.name }}
           a.vui-text-align--right(
-            @click.prevent = 'showEditProgramsModal = true'
+            @click.prevent = 'displayEditProgramsModal'
             href = '#'
           )
             vui-icon.vui-m-right--xx-small(
@@ -302,9 +302,10 @@
                     @click.prevent = 'program.expanded = !program.expanded'
                     href='#'
                   )
-                    vui-icon.vui-align-middle.vui-m-right--x-small(
-                      v-bind:name = '(program.expanded) ? "caret-lower-right" : "caret-right"'
+                    vui-icon.vui-icon--small.vui-align-middle.vui-m-right--x-small(
+                      v-bind:name = 'program.expanded ? "caret-lower-right" : "caret-right"'
                       v-if = 'program.months'
+                      style = 'margin-left: -0.5rem'
                     )
                   template(
                     v-if = '!program.months'
@@ -532,6 +533,8 @@
 
 <script>
   import axios from '~plugins/axios'
+  import moment from 'moment'
+
   import AvailsEditProgramsModal from '~components/avails/avails-edit-programs-modal'
   import AddWeekDropdown from '~components/common/add-week-dropdown'
   import StepWizard from '~components/avails/step-wizard'
@@ -560,6 +563,7 @@
     data () {
       return {
         avail: {},
+        whenReady: moment().format('dddd, MMMM DD, YYYY'),
         showEditProgramsModal: false,
         activeTab: 'market-competitive',
         application: 'reps',
@@ -626,6 +630,11 @@
     },
 
     methods: {
+      displayEditProgramsModal() {
+        alert('\n\nThe work is still in progress on the common Modal component...\n\n...might be ready today, ' + this.whenReady + '\n\n\n' )
+        // this.showEditProgramsModal = true
+      },
+
       fetchAvail (id) {
         axios.get(`/avails/${id}`)
           .then((response) => {

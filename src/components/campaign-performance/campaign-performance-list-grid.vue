@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    table.vui-table.vui-no-row-hover
+    table.vui-table.vui-table--striped.vui-no-row-hover
       thead
         tr
           th.vui-cell-wrap(

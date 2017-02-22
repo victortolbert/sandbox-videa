@@ -92,7 +92,7 @@
                   @click.prevent = 'program.expanded = !program.expanded'
                   href = '#'
                 )
-                  vui-icon.vui-align-middle.vui-m-right--x-small(
+                  vui-icon.vui-icon--small.vui-align-middle.vui-m-right--x-small(
                     v-bind:name = "program.expanded ? 'caret-lower-right' : 'caret-right'"
                   )
                 .vui-align-middle
@@ -668,7 +668,7 @@
     //-   v-on:close = 'showEditRatingsModal = false'
     //- )
 
-    button(@click = 'showEditRatingsModal = true') show modal
+    //- button(@click = 'showEditRatingsModal = true') show modal
 
     //- edit-ratings-modal(
     //-   v-bind:ratings = 'ratings'
@@ -881,6 +881,7 @@
       },
 
       displayEditRatingsModal (context) {
+        alert('\n\nThe work is still in progress on the common Modal component...\n\n...might be ready today\n\n\n')
         // this.showEditRatingsModal = true
         // this.context = context
         EventBus.fire('display-edit-ratings-modal', context)

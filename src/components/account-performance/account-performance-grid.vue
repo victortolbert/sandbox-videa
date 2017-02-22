@@ -1,6 +1,6 @@
 <template lang="pug">
-  .vui-scrollable--x.account-performance-grid
-    table.vui-table.vui-no-row-hover
+  .vui-scrollable--x
+    table.vui-table.vui-table--striped.vui-no-row-hover
       thead
         tr
           th.vui-text-align--center.u-width-x-small Order Count

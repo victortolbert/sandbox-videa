@@ -1,6 +1,6 @@
 <template lang="pug">
   .vui-scrollable--x.vui-m-bottom--medium
-    table.vui-table
+    table.vui-table.vui-table--striped
       thead
         tr
           th.u-width-medium Order #
@@ -17,36 +17,33 @@
       tbody(
         v-for = 'order in orders'
       )
-        tr
+        tr(style='cursor: pointer')
           td
             a(
               @click.prevent = 'toggleExpanded'
               v-if = 'order.versions.length !== 1'
               href = '#'
             )
-              vui-icon(
+              vui-icon.vui-icon--small(
                 v-bind:name = 'expanded ? "caret-lower-right" : "caret-right"'
-                style = 'margin-left: -1rem'
+                style = 'margin-left: -1.5rem'
               )
             //- a.vui-align-middle(@click.prevent='showDetail(order.id)', href='#') {{ order.id }}
-            a.vui-align-middle(
-              @click.prevent = 'showDetail(order.id)'
-              href = '#'
-            ) {{ order.id }}
-          td
+            span(@click.prevent = 'showDetail(order.id)') {{ order.id }}
+          td(@click.prevent = 'showDetail(order.id)')
             span.vui-badge.new(
               v-bind:class = 'order.status'
             ) {{ order.status }}
-          td {{ order.type }}
-          td {{ order.advertiser }}
-          td {{ order.agency }}
-          td {{ order.cpe }}
-          td {{ order.flightStartDate }}
-          td {{ order.flightEndDate }}
-          td {{ order.currency }}
-          td.vui-text-align--right {{ order.revenue | numberWithCommas | formatMoney }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.type }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.advertiser }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.agency }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.cpe }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.flightStartDate }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.flightEndDate }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.currency }}
+          td.vui-text-align--right(@click.prevent = 'showDetail(order.id)') {{ order.revenue | numberWithCommas | formatMoney }}
           //- td.vui-text-align--right {{ order.share | decimalToPercent }}
-          td.vui-text-align--right {{ $store.state['share'+order.id] | decimalToPercent }}
+          td.vui-text-align--right(@click.prevent = 'showDetail(order.id)') {{ $store.state['share'+order.id] | decimalToPercent }}
         tr(
           v-if = 'order.versions.length !== 1'
           v-show = 'expanded'
@@ -122,3 +119,10 @@
 
   }
 </script>
+
+<style lang="stylus" scoped>
+  @import '~assets/variables'
+
+  tbody:nth-child(odd) tr
+     background-color: #eee
+</style>

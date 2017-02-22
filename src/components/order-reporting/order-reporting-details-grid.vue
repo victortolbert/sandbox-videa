@@ -28,8 +28,9 @@
               @click.prevent = 'daypart.expanded = !daypart.expanded'
               href = '#'
             )
-              vui-icon.vui-align-middle(
+              vui-icon.vui-icon--small.vui-align-middle(
                 v-bind:name = 'daypart.expanded ? "caret-lower-right" : "caret-right"'
+                style= 'margin-left: -0.5rem'
               )
             span {{ daypart.name }}
         td
@@ -57,8 +58,9 @@
                 @click.prevent = 'show.expanded = !show.expanded'
                 href = '#'
               )
-                vui-icon.vui-align-middle(
+                vui-icon.vui-icon--small.vui-align-middle(
                   v-bind:name = 'show.expanded ? "caret-lower-right" : "caret-right"'
+                  style= 'margin-left: -0.5rem'
                 )
               span.vui-align-middle {{ show.name }}
         template(
