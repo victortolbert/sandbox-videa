@@ -16,6 +16,8 @@
   import AccountPerformanceGrid from '~components/account-performance/account-performance-grid'
 
   export default {
+    name: 'account-performance',
+
     metaInfo: {
       title: 'Account Performance'
     },

@@ -224,7 +224,11 @@
   import RejectOrderModal from '~components/pending-orders/reject-order-modal'
 
   export default {
+    name: 'pending-orders-id',
 
+    metaInfo: {
+      title: 'Pending Order Details',
+    },
 
     components: {
       AcceptOrderModal,

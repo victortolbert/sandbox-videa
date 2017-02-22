@@ -1,8 +1,6 @@
 <template lang="pug">
-
   // Offer Tab Details
   .offer-tab-details.offers-container
-
     // Tabs
     .vui-tabs--scoped.details-tabs-header-container
       ul.vui-tabs--scoped__nav.details-tabs.om-details-tabs(
@@ -84,7 +82,7 @@
           .vui-size--4-of-12.vui-grid.vui-grid--align-start
             .vui-size--3-of-12.vui-align-middle
               a.vui-button.vui-button--secondary.vui-m-right--xx-small(
-                v-bind:href = '`/sellers/order-management/pending-makegoods/12676/add-${addButtonType}-offer`'
+                v-bind:href = '`/sellers/order-management/pending-makegoods/${orderId}/offer`'
                 target = '_blank'
               ) Add Offer
             .vui-size--3-of-12
@@ -277,7 +275,7 @@
 
 <script>
   export default {
-    props: [ 'offers', 'orders' ],
+    props: [ 'offers', 'orders', 'offer', 'orderId' ],
     data () {
       return {
         currentTabName: 'Order',

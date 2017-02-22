@@ -16,6 +16,8 @@
   import PendingMakegoodsGrid from '~components/pending-makegoods/pending-makegoods-grid'
 
   export default {
+    name: 'pending-makegoods',
+
     metaInfo: {
       title: 'Pending Makegoods'
     },

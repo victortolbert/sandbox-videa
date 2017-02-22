@@ -28,6 +28,8 @@
   import OrderReportingDetailsGrid from '~components/order-reporting/order-reporting-details-grid'
 
   export default {
+    name: 'order-reporting-id',
+
     metaInfo: {
       title: 'Order Reporting Details'
     },

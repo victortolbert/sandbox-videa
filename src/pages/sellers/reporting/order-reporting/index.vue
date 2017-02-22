@@ -19,6 +19,8 @@
   import OrderReportingGrid from '~components/order-reporting/order-reporting-grid'
 
   export default {
+    name: 'order-reporting',
+
     metaInfo: {
       title: 'Order Reporting'
     },

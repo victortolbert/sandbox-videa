@@ -10,9 +10,10 @@
           value = 'Close'
         )
 
-      a.vui-button.vui-button--secondary(
+      a.vui-button.vui-button--secondary.vui-m-right--xx-small(
         v-if = '!isCancelledOrder'
-        v-on:click = 'openMakegoodDetails(orderId)'
+        v-bind:href = '`/sellers/order-management/pending-makegoods/${orderId}`'
+        target = '_blank'
       ) Makegoods
 
       input.vui-button.vui-button--secondary(
@@ -38,6 +39,13 @@
     props: {
       orderId: {
         type: [String, Number]
+      },
+      offers: {
+        type: Array
+      },
+      offerRoute: {
+        type: String,
+        default: 'sellers-order-management-pending-makegoods-id'
       }
     },
 
@@ -54,10 +62,25 @@
       }
     },
     methods: {
+      showOffer (id, version = '') {
+        let routeInfo = {
+          name: this.offerRoute,
+          params: {
+            id: id
+          }
+        }
+
+        if (version) {
+          routeInfo.query = { version: version }
+        }
+
+        this.$router.push(routeInfo)
+      },
+
       closeTab () {},
 
       openMakegoodDetails (id) {
-        alert(id)
+
       },
 
       openSpotsRunNotOrderedPopup () {},

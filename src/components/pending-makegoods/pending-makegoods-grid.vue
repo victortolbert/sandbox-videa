@@ -73,13 +73,8 @@
           v-for = 'offer in offers'
         )
           td
-            a(
-              @click.prevent = 'showOffer(offer.makegoodNumber)'
-            )
-              vui-icon(
-                name = 'medicine-bottle'
-              )
-              span {{ offer.makegoodNumber }}
+            a(@click.prevent='showOffer(offer.orderId)')
+              vui-icon.vui-icon--small(name='medicine-bottle')
           td: a.vui-m-right--xx-small(
             v-bind:href = '`/sellers/reporting/order-reporting/${offer.orderId}`'
             target = '_blank'

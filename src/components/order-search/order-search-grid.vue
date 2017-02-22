@@ -124,7 +124,7 @@
             //- ) Manage
             a.vui-align-middle.vui-m-right--small(
               target = '_blank'
-              @click.prevent = 'showOffer(order.offers[0].id)'
+              @click.prevent = 'showOffer(order.id)'
             ) Manage
           td.vui-truncate(
             @click = 'showOrder(order.id)'

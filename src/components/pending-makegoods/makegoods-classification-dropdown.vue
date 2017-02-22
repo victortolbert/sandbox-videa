@@ -35,7 +35,7 @@
           a(
             v-bind:class = '{ "selected": multiSelect === true && selectedItems.indexOf(item) != -1 }'
           )
-            icon(
+            vui-icon(
               name = 'triangle-up'
               v-bind:style = '{ "left" : styleTriangleUpLeft }'
             )

@@ -174,6 +174,12 @@
 
 <script>
   export default {
+    name: 'price-guide',
+
+    metaInfo: {
+      title: 'Price Guide',
+    },
+
     props: {
       routeName: {
         type: String,

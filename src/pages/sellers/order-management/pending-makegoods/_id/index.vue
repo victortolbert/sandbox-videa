@@ -2,6 +2,7 @@
   .makegoods-details-view
     //- vui-title {{ $store.state.stationCallLetters }} {{ offer.flightStartDate }} - {{ offer.flightEndDate }}
     vui-title Order Information - Offers
+
     makegoods-order-details-info(
       v-bind:orderId = 'offer.orderId'
     )
@@ -19,8 +20,10 @@
       //- close-button
 
     makegoods-offer-tab-details.flex-container(
-      orders = 'orders'
-      offers = 'offers'
+      v-bind:offer = 'offer'
+      v-bind:orderId = '$route.params.id'
+      v-bind:orders = 'orders'
+      v-bind:offers = 'offers'
       show-offer-dialog = 'showOfferDialog'
       delete-makegood = 'deleteMakegood'
       copy-makegood = 'copyMakegood'
@@ -64,6 +67,12 @@
   import moment from 'moment'
 
   export default {
+    name: 'pending-makegoods-id',
+
+    metaInfo: {
+      title: 'Pending Makegood',
+    },
+
     metaInfo: {
       title: 'Pending Makegood'
     },

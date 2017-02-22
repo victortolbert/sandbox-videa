@@ -708,6 +708,12 @@
   import AddWeekDropdown from '~components/common/add-week-dropdown'
 
   export default {
+    name: 'price-guide-id',
+
+    metaInfo: {
+      title: 'Price Guide',
+    },
+
     components: {
       PremiumPercentDropdown,
       PremiumClientsModal,

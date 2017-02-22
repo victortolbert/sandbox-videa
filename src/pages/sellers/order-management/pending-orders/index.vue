@@ -21,6 +21,8 @@
   import PendingOrdersGrid from '~components/pending-orders/pending-orders-grid'
 
   export default {
+    name: 'pending-orders',
+
     metaInfo: {
       title: 'Pending Orders'
     },

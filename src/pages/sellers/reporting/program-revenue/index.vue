@@ -17,8 +17,10 @@
   import ProgramRevenueGrid from '~components/program-revenue/program-revenue-grid'
 
   export default {
+    name: 'program-revenue',
+
     metaInfo: {
-      title: 'Account Performance'
+      title: 'Program Revenue'
     },
 
     components: {

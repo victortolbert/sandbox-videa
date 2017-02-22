@@ -20,6 +20,11 @@ module.exports = [
     component: require('pages/sellers/order-management/pending-makegoods/_id')
   },
   {
+    path: '/sellers/order-management/pending-makegoods/:id/:offer',
+    name: 'sellers-order-management-pending-makegoods-id-offer',
+    component: require('pages/sellers/order-management/pending-makegoods/_id/offer')
+  },
+  {
     path: '/sellers/order-management/open-preempts',
     name: 'sellers-order-management-open-preempts',
     component: require('pages/sellers/order-management/open-preempts')
