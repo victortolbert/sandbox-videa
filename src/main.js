@@ -25,6 +25,9 @@ Vue.use(VueFetchData)
 import VueFlexboxgrid from 'vue-flexboxgrid'
 Vue.use(VueFlexboxgrid)
 
+import VueFractionGrid from 'vue-fraction-grid'
+Vue.use(VueFractionGrid)
+
 import VueHighcharts from 'vue-highcharts'
 Vue.use(VueHighcharts)
 
