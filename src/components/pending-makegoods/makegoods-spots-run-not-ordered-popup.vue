@@ -19,9 +19,7 @@
                 @click = 'hideDialog'
                 title = 'Close'
               )
-                //- svg.vui-icon.vui-icon-text-default(aria-hidden='true', style='fill:#fff')
-                //-   use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/assets/icons/utility-sprite/svg/symbols.svg#close')
-                span.vui-assistive-text Close
+                vui-icon(name='delete')
           .modal-body
             .vui-float--right.vui-m-bottom--small
               h4

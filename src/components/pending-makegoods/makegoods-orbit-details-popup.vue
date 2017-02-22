@@ -23,9 +23,7 @@
                   span.pointer.vui-icon_container.vui-m-right--x-small(
                     title = 'description of icon when needed'
                   )
-                    //- svg.vui-icon.vui-icon-text-default(aria-hidden='true', style='fill: white')
-                    //-   use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/assets/icons/utility-sprite/svg/symbols.svg#close')
-                    span.vui-assistive-text Description of icon
+                    vui-icon(name='delete')
           .modal-body
             div
               .filter-validation.vui-theme--shade.error.vui-m-bottom--large(

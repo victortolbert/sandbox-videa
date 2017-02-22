@@ -22,8 +22,8 @@
     makegoods-offer-tab-details.flex-container(
       v-bind:offer = 'offer'
       v-bind:orderId = '$route.params.id'
-      v-bind:orders = 'orders'
-      v-bind:offers = 'offers'
+      orders = 'orders'
+      offers = 'offers'
       show-offer-dialog = 'showOfferDialog'
       delete-makegood = 'deleteMakegood'
       copy-makegood = 'copyMakegood'
@@ -54,12 +54,12 @@
         label Pending MGs:
         span 1
 
-    makegoods-orbit-details-popup(
-      show-dialog = 'isOrbitDetailsPopupShown'
-    )
-    makegoods-offer-popup(
-      show-dialog = 'showPopupMakegoodOffersDialog'
-    )
+    //- makegoods-orbit-details-popup(
+    //-   show-dialog = 'isOrbitDetailsPopupShown'
+    //- )
+    //- makegoods-offer-popup(
+    //-   show-dialog = 'showPopupMakegoodOffersDialog'
+    //- )
 </template>
 
 <script>

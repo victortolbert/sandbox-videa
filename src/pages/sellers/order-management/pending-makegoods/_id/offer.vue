@@ -46,11 +46,11 @@
             .vui-form-element
               label.vui-form-element__label Makegood comments
               .vui-form-element__control
-                vui-resizable-textarea(
-                  initial-height = '140'
-                  text = 'makegood.comment'
-                  width = '200'
-                )
+                //- vui-resizable-textarea(
+                //-   initial-height = '140'
+                //-   text = 'makegood.comment'
+                //-   width = '200'
+                //- )
           .vui-col.vui-truncate_container--50.vui-size--1-of-2.vui-p-left--medium.vui-grid.vui-align-spread.vui-form--inline
             .vui-col.vui-size--2-of-3.vui-m-top--large
               makegoods-total-grid(
@@ -60,12 +60,21 @@
                 preempts-name = '"Pre-empt(s)"'
                 show-difference = 'true'
               )
+
             .vui-form-element.vui-col.vui-size--1-of-3.vui-m-left--x-large.vui-m-top--medium
-              label.vui-form-element__label Classification:
+              label.vui-form-element__label Classification
               .vui-form-element__control
-                makegoods-classification-dropdown(
-                  value = 'makegood.classification'
-                )
+                .vui-select_container
+                  select.vui-select(
+                    v-model = 'selectedClassification'
+                  )
+                    //- option(
+                    //-   value = ''
+                    //- ) All Avails
+                    option(
+                      v-for = 'classification in classifications'
+                    ) {{ classification }}
+
         .vui-grid.vui-m-bottom--medium
           h4.vui-text-heading--small.vui-align-middle.vui-m-right--large Pre-Empt(s)
           fieldset.vui-form-element.vui-align-middle
@@ -120,7 +129,17 @@
         mgComment: '',
         canTransfer: false,
         canSave: false,
-
+        selectedClassification: 'Unknown',
+        classifications: [
+          'Unknown',
+          'MG for Missed Spot',
+          'MG for Programing Change',
+          'MG for Live event schedule changes',
+          'MK to fix schedule',
+          'Technical difficulties',
+          'Wrong or no copy',
+          'Buyer request'
+        ]
       }
     },
 

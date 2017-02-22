@@ -4,16 +4,10 @@
     show = 'isShowDialog'
     hide-modal = 'hideDialog'
   )
-    .ng-modal-overlay(
-      @click = 'showModal'
-    )
-    .ng-modal-dialog(
-      v-bind:style = 'dialogStyle'
-    )
+    .ng-modal-overlay(v-on:click='showModal')
+    .ng-modal-dialog(v-bind:style='dialogStyle')
       .ng-modal-dialog-content
-        .modal-container(
-          style = 'width: 1600px; height: 700px'
-        )
+        .modal-container(style = 'width: 1600px; height: 700px')
           .modal-header.vui-m-bottom--large
             h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
               span Order eBiz History
@@ -21,9 +15,7 @@
                 @click = 'hideDialog'
                 title = 'Close'
               )
-                //- svg.vui-icon.vui-icon-text-default(aria-hidden='true', style='fill:#fff')
-                //-   use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/assets/icons/utility-sprite/svg/symbols.svg#close')
-                span.vui-assistive-text Close
+                vui-icon(name='delete')
           .modal-body(
             cg-busy = 'dataPromise'
           )

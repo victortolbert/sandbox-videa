@@ -23,14 +23,12 @@
                   span.pointer.vui-icon_container.vui-m-right--x-small(
                     title = 'description of icon when needed'
                   )
-                    //- svg.vui-icon.vui-icon-text-default(aria-hidden='true', style='fill: white')
-                    //-   use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/assets/icons/utility-sprite/svg/symbols.svg#close')
-                    span.vui-assistive-text Description of icon
+                    vui-icon(name='delete')
           .modal-body
             div
               .vui-box.vui-theme--default.vui-m-bottom--large
                 h4.vui-text-heading--small.vui-m-bottom--medium(
-                ) {{ 'Current Rates and Ratings when Order line#' + orderLine.lineNumber}}
+                ) {{ 'Current Rates and Ratings when Order line#' + orderLine.lineNumber }}
                 .vui-grid
                   fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large
                     label.vui-form-element__label Rate and Ratings update Date
