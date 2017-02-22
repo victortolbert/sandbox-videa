@@ -1,5 +1,5 @@
 <template lang="pug">
-  vui-section.create-case
+  vui-section.create-case.vui-container--medium
     vui-form
       vui-breadcrumb
         router-link(
