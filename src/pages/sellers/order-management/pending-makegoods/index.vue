@@ -2,7 +2,8 @@
   .makegoods-view
     vui-title Pending Makegoods
     vui-panel
-      pending-makegoods-filter
+      .vui-scrollable--x.vui-p-bottom--x-small
+        pending-makegoods-filter
     pending-makegoods-grid(
       v-bind:offers = 'offers'
     )

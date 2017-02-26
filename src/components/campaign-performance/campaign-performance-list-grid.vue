@@ -69,17 +69,14 @@
           )
             .vui-grid.vui-grid--align-spread
               span(v-if="campaign.campaignDeliveryPercent") {{ campaign.campaignDeliveryPercent | decimalToPercent }}
-              span(v-if="!campaign.campaignDeliveryPercent") N/A
-              span(v-else-if="campaign.campaignDeliveryPercent > 0.89")
-                vui-icon.vui-m-left--x-small(
-                  name = 'stop'
-                  style = 'color: #3B7F36'
-                )
-              span(v-if="campaign.campaignDeliveryPercent < 0.90")
-                vui-icon.vui-m-left--x-small(
-                  name = 'stop'
-                  style = 'color: #F58220'
-                )
+              span(v-else) N/A
+              span(v-if="campaign.campaignDeliveryPercent >= 0.90")
+                vui-icon.vui-m-left--x-small(name='stop', style='color: #3B7F36')
+
+              //- span(v-if="campaign.campaignDeliveryPercent < 0.90 || campaign.campaignDeliveryPercent >= 0.80")
+              //-   vui-icon.vui-m-left--x-small(name = 'stop', style='color: #F58220')
+              //- span(v-if="campaign.campaignDeliveryPercent <= 0.79")
+                vui-icon.vui-m-left--x-small(name='stop', style='color: #C5103D')
 
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'campaign.currentGrpsImps'

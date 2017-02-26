@@ -1,13 +1,15 @@
 $colors: (
   // set explicit colors
+  'brand-purple': #692565,
+  'brand-orange': #F58220,
   'brand-pink': hsl(330, 85%, 62%),
-  'brand-light': #ddf,
-  'brand-dark': #224,
+  'brand-light': #E0E4E5,
+  'brand-dark': #52545D,
 
   // reference existing colors
   'background': 'brand-light',
   'border': 'brand-dark',
 
   // make adjustments as needed
-  'link': 'brand-pink' ('shade': 25%),
+  'link': 'brand-purple' ('shade': 25%),
 );

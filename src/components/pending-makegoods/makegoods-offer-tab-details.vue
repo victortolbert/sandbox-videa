@@ -187,10 +187,12 @@
 
         // Offer Tab -- Order Grid
         makegoods-offer-tab-order-grid.flex-container(
+          items = 'orderItems'
+          v-bind:order = 'order'
+          v-bind:orderId = '$route.params.id'
           is-missed-spots-shown = 'isMissedSpotsShown'
           is-only-missed-shown = 'isOnlyMissedShown'
           is-show-spot-allocations = 'isShowSpotAllocations'
-          items = 'orderItems'
           order-buy-type = 'orderBuyType'
           selected-makegood-type = 'addButtonType'
           show-current-info = 'showCurrentLineInfoPopup'
@@ -258,6 +260,8 @@
 
         // Offer Tab -- Offer Grid
         makegoods-offer-tab-offer-grid.flex-container(
+          v-bind:order = 'order'
+          v-bind:orderId = '$route.params.id'
           is-only-draft-and-pending-shown = 'offerTabIsOnlyDraftAndPendingShown'
           items = 'offerItems'
           selected-offer = 'offerTabSelected'
@@ -273,7 +277,7 @@
 
 <script>
   export default {
-    props: [ 'offers', 'orders', 'offer', 'orderId' ],
+    props: [ 'order', 'offers', 'orderId' ],
     data () {
       return {
         currentTabName: 'Order',

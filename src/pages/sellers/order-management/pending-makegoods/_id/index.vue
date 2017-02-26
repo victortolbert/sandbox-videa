@@ -1,11 +1,8 @@
 <template lang="pug">
   .makegoods-details-view
-    //- vui-title {{ $store.state.stationCallLetters }} {{ offer.flightStartDate }} - {{ offer.flightEndDate }}
-    vui-title Order Information - Offers
+    vui-title Order Information - Offers {{ id }}
 
-    makegoods-order-details-info(
-      v-bind:orderId = 'offer.orderId'
-    )
+    makegoods-order-details-info(v-bind:order='order')
 
     .vui-grid.vui-grid--align-spread.vui-m-top--large.vui-m-bottom--large
       h2.vui-text-heading--medium
@@ -20,9 +17,8 @@
       //- close-button
 
     makegoods-offer-tab-details.flex-container(
-      v-bind:offer = 'offer'
       v-bind:orderId = '$route.params.id'
-      orders = 'orders'
+      v-bind:order = 'order'
       offers = 'offers'
       show-offer-dialog = 'showOfferDialog'
       delete-makegood = 'deleteMakegood'
@@ -79,7 +75,8 @@
 
     data () {
       return {
-        offer: {},
+        id: this.$route.params.id,
+        order: {},
         searchKey: '',
         fromDate: new Date('2016-04-25T12:24:00'),
         toDate: new Date('2016-06-05T12:24:00'),
@@ -88,11 +85,17 @@
       }
     },
 
+    computed: {
+      offers () {
+        // return this.order.offers
+      }
+    },
+
     methods: {
-      fetchOffer(id) {
-        axios.get(`/offers/${id}`)
+      fetchOrder(id) {
+        axios.get(`/orders/${id}`)
           .then((response) => {
-            this.offer = response.data
+            this.order = response.data
           })
           .catch((error) => {
             console.log(error)
@@ -107,9 +110,7 @@
     },
 
     created () {
-      this.fetchOffer(this.$route.params.id)
+      this.fetchOrder(this.$route.params.id)
     }
   }
-
-
 </script>

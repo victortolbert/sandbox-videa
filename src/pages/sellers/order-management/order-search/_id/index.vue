@@ -1,6 +1,9 @@
 <template lang="pug">
   .order-search-details
-    vui-title Order Search Details
+    vui-title
+      .vui-grid.vui-grid--align-spread
+        span Order Search Details
+        span {{ id }}
     makegoods-order-details-info(v-bind:orderId='order.id')
     order-search-details-actions(v-bind:orderId='order.id')
     order-search-details-tabs
@@ -93,6 +96,7 @@
 
     data () {
       return {
+        id: this.$route.params.id,
         order: {},
         searchKey: '',
         fromDate: new Date('2016-04-25T12:24:00'),

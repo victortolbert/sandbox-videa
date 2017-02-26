@@ -1,31 +1,26 @@
 <template lang="pug">
   nav.vui-site-navigation
-    app-login(
-      v-if = '$store.state.activeApp == "login"'
-    )
-    app-buyers-nav(
-      v-else-if = '$store.state.activeApp == "buyers"'
-    )
-    app-sandbox-nav(
-      v-else-if = '$store.state.activeApp == "sandbox"'
-    )
-    app-sellers-nav(
-      v-else = '$store.state.activeApp == "sellers"'
-    )
+    app-login(v-if='$store.state.activeApp == "login"')
+    app-buyers-nav(v-else-if='$store.state.activeApp == "buyers"')
+    app-examples-nav(v-else-if='$store.state.activeApp == "examples"')
+    app-tickets-nav(v-else-if='$store.state.activeApp == "tickets"')
+    app-sellers-nav.vui-max-medium-hide(v-else-if='$store.state.activeApp == "sellers"')
     app-notification
 </template>
 
 <script>
+  import AppTicketsNav from '~components/global/app-tickets-nav'
   import AppNotification from '~components/global/app-notification'
-  import AppSandboxNav from '~components/global/app-sandbox-nav'
+  import AppExamplesNav from '~components/global/app-examples-nav'
   import AppSellersNav from '~components/global/app-sellers-nav'
   import AppBuyersNav from '~components/global/app-buyers-nav'
   import AppLogin from '~components/global/app-login'
 
   export default {
     components: {
+      AppTicketsNav,
       AppNotification,
-      AppSandboxNav,
+      AppExamplesNav,
       AppSellersNav,
       AppBuyersNav,
       AppLogin

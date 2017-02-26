@@ -1,12 +1,12 @@
 {
   "primary": {
     "light": "#f04",
-    "base": "#c02",
+    "base": "#692565",
     "dark": "#601"
   },
   "secondary": {
     "light": "#3be",
-    "base": "#269",
+    "base": "#F58220",
     "dark": "#257"
   },
   "neutral": {

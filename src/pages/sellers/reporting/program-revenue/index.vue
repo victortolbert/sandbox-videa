@@ -2,7 +2,8 @@
   .program-revenue
     vui-title Program Revenue
     vui-panel
-      program-revenue-filter
+      .vui-scrollable--x.vui-p-bottom--x-small
+        program-revenue-filter
     program-revenue-metrics
     program-revenue-grid(
       v-bind:programs = 'programs'

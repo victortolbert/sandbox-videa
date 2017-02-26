@@ -13,7 +13,7 @@ const routes = [
   ...require('./example-routes'),
   ...require('./seller-routes'),
   ...require('./buyer-routes'),
-  ...require('./cases-routes'),
+  ...require('./tickets-routes'),
   { path: '*', component: require('pages/error') }
 ]
 

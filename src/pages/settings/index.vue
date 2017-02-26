@@ -21,7 +21,7 @@
           ) User Settings
 
         router-link.vui-tabs--scoped__item.vui-text-heading--label(
-          v-if = '$store.state.activeApp == "sellers"'
+          v-if = '$store.state.user.name == "Seller User"'
           v-bind:to = '{ name: "settings-display" }'
           active-class = 'vui-active'
           exact
@@ -37,7 +37,7 @@
           ) Display Settings
 
         router-link.vui-tabs--scoped__item.vui-text-heading--label(
-          v-if = '$store.state.activeApp == "sellers"'
+          v-if = '$store.state.user.name == "Seller User"'
           v-bind:to = "{ name: 'settings-specials' }"
           active-class = 'vui-active'
           exact
@@ -53,7 +53,7 @@
           ) Add A Program
 
         router-link.vui-tabs--scoped__item.vui-text-heading--label(
-          v-if = '$store.state.activeApp == "sellers"'
+          v-if = '$store.state.user.name == "Seller User"'
           v-bind:to = '{ name: "settings-reps" }'
           active-class='vui-active'
           exact

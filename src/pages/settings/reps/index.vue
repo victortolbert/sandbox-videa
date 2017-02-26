@@ -4,7 +4,7 @@
     aria-labelledby = 'tab-scoped-1__item'
     role = 'tabpanel'
   )
-    .vui-container--large
+    .vui-container--x-large
       h2.vui-text-heading--medium.vui-m-bottom--medium  Current Sales Reps
 
       .vui-scrollable--x.vui-m-bottom--medium
@@ -30,18 +30,15 @@
                     type = 'checkbox'
                   )
                   span.vui-checkbox--faux
-              td.vui-text-align--center
-                | TODO: Fix Toogle Styling
-                //- .vui-form-element
-                //-   label.vui-checkbox--toggle.vui-grid
-                //-     span.vui-form-element__label.vui-m-bottom--none Toggle Label
-                //-     input(type='checkbox', name='checkbox', aria-describedby='toggle-desc')
-                //-     span#toggle-desc.vui-checkbox--faux_container(aria-live='assertive')
-                //-       span.vui-checkbox--faux
-                //-       span.vui-checkbox--on Enabled
-                //-       span.vui-checkbox--off Disabled
-
-
+              td
+                .vui-form-element
+                  label.switch
+                    input(
+                      type = 'checkbox'
+                    )
+                    div.slider.round
+                    span.option1 Read only
+                    span.option2 Create
       button.vui-button.vui-button--brand Submit
 
       edit-sales-reps-modal(
@@ -53,10 +50,8 @@
   import EditSalesRepsModal from '~components/edit-sales-reps-modal'
 
   export default {
-    name: 'reps-settings',
-
-    metaInfo: {
-      title: 'Reps Settings'
+    beforeCreate () {
+      this.$store.state.activeApp = 'sellers'
     },
 
     components: { EditSalesRepsModal },
@@ -88,6 +83,12 @@
       }
     },
 
+    validators: {
+      confirm (val) {
+        return this.newpassword === val
+      }
+    },
+
     methods: {
       onKeyup () {
         alert('on keyup')
@@ -101,10 +102,6 @@
           e.preventDefault()
         }
       }
-    },
-
-    beforeCreate () {
-      this.$store.state.activeApp = 'sellers'
-    },
+    }
   }
 </script>

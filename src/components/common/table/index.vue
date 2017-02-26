@@ -8,6 +8,7 @@
     tbody
       tr(v-for = 'item in items')
         td {{ item.id }}
+        td {{ item.dateOpened }}
         td {{ item.status }}
         td {{ item.priority }}
         td {{ item.reason }}

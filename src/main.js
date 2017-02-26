@@ -1,5 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
+// import 'script-loader!jquery/dist/jquery.min'
+// import 'script-loader!what-input/dist/what-input.min'
+// import 'script-loader!foundation-sites/dist/js/foundation.min'
+
 import Vue from 'vue'
 import App from './App'
 
@@ -12,9 +17,34 @@ import router from './router'
 //   load: Load,
 //   toast: Toast
 // }
+// window.jQuery = window.$ = require('jquery')
+// Vue.use(require('vue-full-calendar'))
+
+// import fullCalendar from 'vue-fullcalendar'
+// Vue.component('fullcalendar', fullCalendar)
+
+// https://github.com/surmon-china/vue-awesome-swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper)
+
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
 
 import Carousel3d from 'vue-carousel-3d'
 Vue.use(Carousel3d)
+
+// chartjs package
+require('chart.js')
+
+// vue-charts package
+require('hchs-vue-charts')
+Vue.use(VueCharts)
+
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate)
+
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
 
 import VueAsyncComputed from 'vue-async-computed'
 Vue.use(VueAsyncComputed)
@@ -36,6 +66,9 @@ Vue.use(VueSweetalert)
 
 import VueYouTubeEmbed from 'vue-youtube-embed'
 Vue.use(VueYouTubeEmbed)
+
+// import VueWaypoint from 'vue-waypoint'
+// Vue.use(VueWaypoint)
 
 // require('~plugins/ga')
 // require('~plugins/global-event-bus')

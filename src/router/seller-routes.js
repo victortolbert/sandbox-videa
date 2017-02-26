@@ -1,14 +1,23 @@
+function dynamicPropsFn (route) {
+  const now = new Date()
+  return {
+    name: (now.getFullYear() + parseInt(route.params.years)) + '!'
+  }
+}
+
 module.exports = [
   {
     path: '/sellers/order-management/pending-orders',
     name: 'sellers-order-management-pending-orders',
-    component: require('pages/sellers/order-management/pending-orders')
-  },
+    component: require('pages/sellers/order-management/pending-orders'),
+    props: { name: 'world' }
+  }, // static values
   {
     path: '/sellers/order-management/pending-orders/:id',
     name: 'sellers-order-management-pending-orders-id',
-    component: require('pages/sellers/order-management/pending-orders/_id')
-  },
+    component: require('pages/sellers/order-management/pending-orders/_id'),
+    props: true
+  }, // Pass route.params to props
   {
     path: '/sellers/order-management/pending-makegoods',
     name: 'sellers-order-management-pending-makegoods',
@@ -66,8 +75,9 @@ module.exports = [
       {
         path: '',
         name: 'sellers-price-guide-id',
-        component: require('pages/sellers/price-guide/_id')
-      }
+        component: require('pages/sellers/price-guide/_id'),
+        props: dynamicPropsFn
+      } // custom logic for mapping between route and props
     ]
   },
   {

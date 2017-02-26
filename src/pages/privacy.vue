@@ -1,7 +1,7 @@
 <template lang="pug">
   .page.privacy.vui-container--medium.vui-p-top--large
     vui-title Privacy Policy
-    p
+    p.jump-target
       b General:
       br
       | Videa, LLC (hereinafter referred to as “Videa”) respects the privacy of visitors to the Site and its Visitors, as defined in the Visitor Agreement. Please read this Privacy Policy carefully so that Visitor understands Videa's privacy practices. Questions regarding privacy issues should be directed to Videa, LLC, 3390 Peachtree Road NE, Suite 700 Atlanta, Georgia 30326.
@@ -39,15 +39,21 @@
       | :
       br
       | Videa takes commercially reasonable security precautions in order to keep the information disclosed to this Site secure. However, notwithstanding such precautions, Videa assumes no responsibility for the security of this Site or any data transmitted to Videa, including, but not limited to, information related to potential employment or applications therefore, or any other matter.
+    back-to-top(target=".jump-target")
+      button.button UP
 </template>
 
 <script>
+  import BackToTop from '~components/back-to-top'
+
   export default {
     name: 'privacy',
 
     metaInfo: {
       title: 'Privacy Policy',
     },
+
+    components: { BackToTop },
 
     beforeCreate () {
       this.$store.state.activeApp = null

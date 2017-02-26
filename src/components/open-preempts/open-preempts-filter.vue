@@ -1,7 +1,7 @@
 <template lang="pug">
   .offer-preempts-filter
 
-    form.vui-grid.vui-grid--vertical-align-end.vui-wrap(
+    form.vui-grid.vui-grid--vertical-align-end(
       name = 'filterForm'
     )
 

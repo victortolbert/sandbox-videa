@@ -1,10 +1,18 @@
 import Vue from 'vue'
 
+// components
+//   form
+//    .label
+//    .input
+//    .textarea
+//    .select
+//    .checkbox
+//    .radio
+//    .button
+//    .help
+
 export default {
   registerAllGlobalComponents () {
-    Vue.component('the-button', require('~components/_the-button'))
-    Vue.component('the-box', require('~components/_the-box'))
-
     Vue.component('vui-items-per-page-selector', require('~components/common/datagrid/items-per-page-selector'))
     Vue.component('vui-resizable-textarea', require('~components/common/form-element/resizable-textarea'))
     Vue.component('vui-quarter-selector', require('~components/common/form-element/quarter-selector'))
@@ -20,7 +28,7 @@ export default {
     Vue.component('vui-navigation', require('~components/common/nav/navigation'))
     Vue.component('vui-input', require('~components/common/form-element/input'))
     Vue.component('vui-back-to-top', require('~components/common/back-to-top'))
-    Vue.component('vui-datepicker', require('~components/common/datepicker'))
+    // Vue.component('vui-datepicker', require('~components/common/datepicker'))
     Vue.component('vui-media', require('~components/common/media-object'))
     Vue.component('vui-checkbox', require('~components/common/checkbox'))
     Vue.component('vui-dropdown', require('~components/common/dropdown'))

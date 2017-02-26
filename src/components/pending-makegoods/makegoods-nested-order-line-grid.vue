@@ -171,6 +171,24 @@
         type: Boolean,
         default: true
       },
+      columnWidths: {
+        blank: 39,
+        unitAiredStatusName: 100,
+        spotNumber: 78,
+        programPlaced: 192,
+        airTime: 138,
+        airDay: 108,
+        priority: 88,
+        status: 80,
+        airDate: 100,
+        lineNumber: 86,
+        altLineNumber: 65,
+        assignedMakegoodId: 72,
+        isciAdId: 100,
+        invoiceDate: 100,
+        externalInvoiceId: 99,
+        affidavitRate: 99
+      },
 
       childItems: {
         type: Array

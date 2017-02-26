@@ -2,7 +2,7 @@
   .vui-grid.vui-grid--align-spread.vui-m-bottom--xx-small
     .vui-align-middle
       campaign-performance-legend
-    .vui-align-middle
+    .vui-align-middle.vui-col--bump-left
       .vui-dropdown-trigger
         | Show:
         .vui-dropdown-trigger.vui-m-right--small.vui-m-left--x-small
@@ -11,10 +11,19 @@
               items-per-page = 'listCtrl.queryParams.pageSize'
               refresh-data = 'listCtrl.changeItemsPerPage(itemsPerPage)'
             )
+    .vui-align-middle
       .vui-dropdown-trigger
         | Columns:
-        .vui-dropdown-trigger.vui-m-right--small
-      #excelExporter.vui-dropdown-trigger
+        .vui-dropdown-trigger.vui-m-right--small.vui-m-left--x-small
+          .vui-select_container
+            select.vui-select(
+              v-model = 'selectedColumn'
+            )
+              option(
+                v-for = 'column in columns'
+              ) {{ column }}
+    .vui-align-middle
+      .vui-dropdown-trigger
         | Export to Excel
         button.vui-button.vui-button--icon-border-filled.vui-m-left--x-small
           vui-icon(
@@ -30,6 +39,22 @@
   export default {
     components: {
       CampaignPerformanceLegend
+    },
+
+    data () {
+      return {
+        selectedColumn: 'Unknown',
+        columns: [
+          'Unknown',
+          'MG for Missed Spot',
+          'MG for Programing Change',
+          'MG for Live event schedule changes',
+          'MK to fix schedule',
+          'Technical difficulties',
+          'Wrong or no copy',
+          'Buyer request'
+        ]
+      }
     }
   }
 </script>

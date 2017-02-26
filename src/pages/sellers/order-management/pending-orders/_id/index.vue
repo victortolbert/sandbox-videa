@@ -1,6 +1,8 @@
 <template lang="pug">
   .order-management-show-view
-    vui-title Pending Order Details
+    vui-title.vui-grid.vui-grid--align-spread
+      span Pending Order Details
+      span {{ id }}
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
       a(
         @click.prevent = 'showSummary'
@@ -252,6 +254,7 @@
 
     data () {
       return {
+        id: this.$route.params.id,
         order: {},
         showAcceptOrderModal: false,
         showRejectOrderModal: false,

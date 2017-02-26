@@ -2,10 +2,9 @@
   .avails-view
     vui-title Avails
     vui-panel
-      avails-filter
-    avails-grid(
-      v-bind:avails = 'avails'
-    )
+      .vui-scrollable--x.vui-p-bottom--x-small
+        avails-filter
+    avails-grid(:avails='avails')
 </template>
 
 <script>

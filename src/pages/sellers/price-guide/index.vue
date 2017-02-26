@@ -82,29 +82,36 @@
 
     // Market CPP
     .vui-grid.vui-grid--align-end
-
       form.vui-form--inline.vui-m-bottom--x-small(
+        name='marketCppForm'
         v-bind:class = '$store.state.user.name == "Rep User" ? "vui-grid vui-grid--align-end" : ""'
       )
-
         // Market CPP Input Fieldset
         .vui-media
           .vui-media__body
             .vui-align-middle(
               v-if = '$store.state.user.name == "Rep User"'
             )
-              span.vui-m-right--xx-small Market CPP
-              input.vui-input.vui-m-right--xx-small(
-                @click.prevent = ''
-                v-model = '$store.state.marketCpp'
-                style = 'width: 5rem'
-                type = 'text'
-              )
+
+              fieldset.vui-form-element
+                label.vui-form-element__label Market CPP
+
+              fieldset.vui-form-element.u-width-large
+                .vui-form-element__control
+                  input.vui-input(
+                    name='marketCppField'
+                    maxlength='15'
+                    v-bind:disabled = '$store.state.user.name !== "Rep User"'
+                    v-model='$store.state.marketCpp'
+                    required=''
+                    style = 'width: 5rem'
+                    type = 'text'
+                )
             p.vui-align-middle(
               v-else
             )
               span.vui-m-right--xx-small Market CPP
-              span.vui-text-heading--medium {{ $store.state.marketCpp }}
+              span.vui-text-heading--medium {{ $store.state.marketCpp | numberWithCommas | formatMoney }}
 
         // Update Market CPP Button Fieldset
         fieldset.vui-form-element(
@@ -189,7 +196,7 @@
 
     data () {
       return {
-        selectedQuarter: '2017/Q1',
+        selectedQuarter: '2017/Q2',
         quarters: [
           '2016/Q3',
           '2016/Q4',

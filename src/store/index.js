@@ -12,6 +12,7 @@ const store = new Vuex.Store({
     visibleAffix: false,
     activeApp: null,
     hasError: false,
+    marketCpp: 200,
     orderManagementRoute: false,
     reportingRoute: false,
     user: {
@@ -46,6 +47,10 @@ const store = new Vuex.Store({
   },
 
   mutations: {
+    UPDATE_USER (state, payload) {
+      state.user = payload
+    },
+
     increment (state) {
       state.counter++
     },

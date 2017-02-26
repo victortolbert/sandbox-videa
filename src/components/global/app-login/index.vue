@@ -66,12 +66,20 @@
             name: 'buyers-avails-request'
           })
         }
-        else if (this.$store.state.user.email.toLowerCase().includes('sa')) {
+        else if (this.$store.state.user.email.toLowerCase().includes('ex')) {
           this.$store.state.hasError = false
-          this.$store.state.user.name = 'Sandbox User'
-          this.$store.state.activeApp = 'sandbox'
+          this.$store.state.user.name = 'Example User'
+          this.$store.state.activeApp = 'examples'
           this.$router.push({
             name: 'examples'
+          })
+        }
+        else if (this.$store.state.user.email.toLowerCase().includes('tic')) {
+          this.$store.state.hasError = false
+          this.$store.state.user.name = 'Tickets User'
+          this.$store.state.activeApp = 'tickets'
+          this.$router.push({
+            name: 'tickets'
           })
         }
         else if (this.$store.state.user.email.toLowerCase().includes('rep')) {

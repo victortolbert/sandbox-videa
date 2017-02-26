@@ -2,7 +2,8 @@
   .account-performance-view
     vui-title Account Performance
     vui-panel
-      account-performance-filter
+      .vui-scrollable--x.vui-p-bottom--small
+        account-performance-filter
     account-performance-metrics
     account-performance-grid(
       v-bind:accounts = 'accounts'
@@ -55,3 +56,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  .vui-input
+  .vui-select
+    min-width 135px !important
+</style>

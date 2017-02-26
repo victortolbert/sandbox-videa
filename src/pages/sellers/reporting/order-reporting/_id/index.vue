@@ -1,20 +1,16 @@
 <template lang="pug">
   .orders-show-detail
-    .vui-grid.vui-grid--align-spread
-        vui-title Order Reporting Detail
-        h2.vui-text-heading--medium.vui-text-align--right.vui-align-middle
-          | {{ order.advertiser }}
-          | &mdash;Order #
-          | {{ order.id }}
+    vui-title.vui-grid.vui-grid--align-spread(style='margin-bottom: 0')
+      span Order Reporting Detail
+      span {{ order.advertiser }} &mdash;Order # {{ order.id }}
+
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
-        a(
-          @click.prevent = 'showOrders'
-        )
-          vui-icon.vui-align-middle(
-            name = 'arrow-circle-left'
-          )
+        a(@click.prevent='showOrders')
+          vui-icon.vui-align-middle.vui-m-right--xx-small(name='arrow-circle-left')
           span.vui-align-middle Back to Order Reporting
+
     vui-datagrid-heading
+
     .vui-scrollable--x
       order-reporting-details-grid(
         v-bind:order = 'order'

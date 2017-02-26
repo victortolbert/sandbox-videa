@@ -1,11 +1,12 @@
 <template lang="pug">
   .marvel-device(
-    v-bind:class = '[ "ipad", "silver", "landscape" ]'
+    v-bind:class = '[ "macbook" ]'
   )
+    .top-bar
     .camera
     .screen
       slot
-    .home
+    .bottom-bar
 </template>
 
 <script>

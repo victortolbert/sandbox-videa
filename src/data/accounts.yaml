@@ -1,0 +1,135 @@
+---
+- id: 3
+  advertiser: Piedmont Healthcare
+  agency: Hughes-Martin Agency
+  revenueTy: 37189
+  marketRevenueTy: 119965
+  spotVolumeTy: 154
+  shareTy: 0.31
+  bookedTy: 0
+  revenueLy: 0
+  marketRevenueLy: 0
+  spotVolumeLy: 0
+  shareLy: 0
+  orderCount: 1
+  orders:
+  - id: 135001
+    flightStartDate: 04/25/16
+    flightEndDate: 06/05/16
+    revenue: 37189
+    share: 0.31
+- id: 1
+  advertiser: Metro Wireless
+  agency: The Media Masters Group
+  revenueTy: 64780
+  marketRevenueTy: 148580
+  spotVolumeTy: 84
+  shareTy: 0.43
+  bookedTy: 0
+  revenueLy: 0
+  marketRevenueLy: 0
+  spotVolumeLy: 0
+  shareLy: 0
+  orderCount: 2
+  orders:
+  - id: 131542
+    flightStartDate: 02/15/16
+    flightEndDate: 03/27/16
+    revenue: 41000
+    share: 0.46
+  - id: 121003
+    flightStartDate: 12/28/15
+    flightEndDate: 01/31/16
+    revenue: 23780
+    share: 0.4
+- id: 2
+  advertiser: Papa John’s Pizza
+  agency: Zone Group Advertising
+  revenueTy: 22405
+  marketRevenueTy: 46862
+  spotVolumeTy: 15
+  shareTy: 0.46
+  bookedTy: 0
+  revenueLy: 0
+  marketRevenueLy: 0
+  spotVolumeLy: 0
+  shareLy: 0
+  orderCount: 3
+  orders:
+  - id: 133529
+    flightStartDate: 12/28/16
+    flightEndDate: 01/10/16
+    revenue: '10650'
+    share: 0.49
+  - id: 134297
+    flightStartDate: 02/01/15
+    flightEndDate: 02/14/16
+    revenue: 8445
+    share: 0.53
+  - id: 134557
+    flightStartDate: 02/29/16
+    flightEndDate: 03/13/16
+    revenue: 3310
+    share: 0.47
+- id: 4
+  advertiser: Sun Valley Bank
+  agency: Mullberry Way Group
+  revenueTy: 52215
+  marketRevenueTy: 248643
+  spotVolumeTy: 87
+  shareTy: 0.21
+  bookedTy: 0
+  revenueLy: 0
+  marketRevenueLy: 0
+  spotVolumeLy: 0
+  shareLy: 0
+  orderCount: 1
+  orders:
+  - id: 134557
+    flightStartDate: 02/29/16
+    flightEndDate: 03/13/16
+    revenue: 3310
+    share: 0.47
+- id: 5
+  advertiser: Southeast Ford
+  agency: Auto Advertising Partners
+  revenueTy: 65240
+  marketRevenueTy: 166230
+  spotVolumeTy: 92
+  shareTy: 0.39
+  bookedTy: 0
+  revenueLy: 0
+  marketRevenueLy: 0
+  spotVolumeLy: 0
+  shareLy: 0
+  orderCount: 2
+  orders:
+  - id: 131642
+    flightStartDate: 12/28/16
+    flightEndDate: 01/10/16
+    revenue: 41450
+    share: 0.4
+  - id: 132210
+    flightStartDate: 02/15/15
+    flightEndDate: 02/28/16
+    revenue: 23790
+    share: 0.38
+- id: 6
+  advertiser: Community Loans, Inc
+  agency: Vanthrop & Associates
+  revenueTy: 19100
+  marketRevenueTy: 54571
+  spotVolumeTy: 45
+  shareTy: 0.35
+  bookedTy: 0
+  revenueLy: 0
+  marketRevenueLy: 0
+  spotVolumeLy: 0
+  shareLy: 0
+  orderCount: 1
+  orders:
+  - id: 134297
+    flightStartDate: 02/01/15
+    flightEndDate: 02/14/16
+    revenue: 8445
+    share: 0.53

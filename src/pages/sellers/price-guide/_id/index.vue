@@ -1,7 +1,6 @@
 <template lang="pug">
   .child
     .vui-scrollable--x.vui-m-bottom--small
-
       table.vui-table.vui-no-row-hover
         thead
           tr
@@ -732,6 +731,7 @@
 
     data () {
       return {
+        id: this.$route.params.id,
         priceGuide: {},
         ratings: {
           foo: 'bar'
@@ -970,6 +970,12 @@
       acceptVideaRate (context) {
         context.acceptVideaRate = true
         context.station.rate = context.videa.rate
+      }
+    },
+
+    watch: {
+      '$route' (to, from) {
+        this.id = to.params.id
       }
     },
 

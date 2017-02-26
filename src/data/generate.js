@@ -9,15 +9,17 @@ module.exports = function () {
         avatar: faker.internet.avatar()
       }
     }),
-    requestAvails: require('../models/request-avails'),
-    priceGuide: require('../models/price-guide'),
+    accounts: require('../models/accounts'),
+    avails: require('../models/avails'),
     campaigns: require('../models/campaigns'),
+    class87: require('../models/class-of-87'),
     dayparts: require('../models/dayparts'),
-    programs: require('../models/programs'),
-    specials: require('../models/specials'),
+    markets: require('../models/markets'),
     offers: require('../models/offers'),
     orders: require('../models/orders'),
-    class87: require('../models/class-of-87'),
-    avails: require('../models/avails')
+    priceGuide: require('../models/price-guide'),
+    programs: require('../models/programs'),
+    requestedAvails: require('../models/requested-avails'),
+    specials: require('../models/specials')
   }
 }

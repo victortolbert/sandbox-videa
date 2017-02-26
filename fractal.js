@@ -23,6 +23,7 @@ const mandelbrot = require('@frctl/mandelbrot')({
 
 // Project config
 fractal.set('project.title', 'Videa Design')
+fractal.set('project.description', 'UI Component Library and Patterns Lab')
 fractal.set('project.version', '0.1.0')
 fractal.set('project.lastUpdated', new Date())
 

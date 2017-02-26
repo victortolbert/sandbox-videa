@@ -231,8 +231,8 @@
     },
 
     methods: {
-      fetchRequestAvails () {
-        axios.get('/requestAvails')
+      fetchRequestedAvails () {
+        axios.get('/requestedAvails')
           .then((response) => {
             this.programs = response.data
           })
@@ -269,7 +269,7 @@
     },
 
     created () {
-      this.fetchRequestAvails()
+      this.fetchRequestedAvails()
     },
 
     mounted () {

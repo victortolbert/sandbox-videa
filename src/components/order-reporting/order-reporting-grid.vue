@@ -19,7 +19,6 @@
             a(v-on:click.prevent='')
               vui-icon.vui-icon--small.vui-align-middle(
                 v-bind:name = 'order.expanded ? "caret-lower-right" : "caret-right"'
-                style = 'margin-left: -1rem'
               )
             span {{ order.advertiser }}
           td(v-on:click.prevent='toggleDetail(order)') {{ order.agency }}

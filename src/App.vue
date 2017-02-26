@@ -2,6 +2,7 @@
   #app.app
     app-header
     app-navigation
+    //- https://robots.thoughtbot.com/transitions-and-transforms
     main.vui-main(
       v-bind:class = '{ "vui-main--login": $store.state.activeApp == "login" }'
     )
@@ -37,26 +38,27 @@
   }
 </script>
 
+<style lang="sass">
+  @import '~vue-flexboxgrid/dist/vue-flexboxgrid'
+  @import '~mathsass'
+  @import '~accoutrement-color/sass/color'
+  @import '~assets/sass/accoutrement/color'
 
-<style lang="scss">
-  @import '~vue-flexboxgrid/dist/vue-flexboxgrid';
-
-  // @import '~mathsass';
-  // @import '~accoutrement-color/sass/color';
-  // @import './assets/sass/accoutrement/color';
-
-  // .example {
+  // .example
+  //   border: 1px solid transparent
   //   // call any color
-  //   border-color: color('border');
+  //   border-color: color('border')
+  //   color: color('brand-orange')
 
   //   // adjust on the fly
-  //   color: color('brand-pink' ('saturate': 15));
-  // }
+  //   background-color: color('brand-purple' ('shade': 90))
+  //   background-color: color('brand-dark')
 
-  // a:hover {
+  //   &:hover
+  //     background-color: color('brand-purple' ('shade': 25))
+  // a:hover
   //   // set a background, and get well-contrasted text
-  //   @include contrasted('link');
-  // }
+  //   @include contrasted('link')
 </style>
 
 <style lang="sass">

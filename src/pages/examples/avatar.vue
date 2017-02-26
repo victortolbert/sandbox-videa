@@ -1,5 +1,5 @@
 <template lang="pug">
-  .home
+  .example
     vui-well
       vui-avatar
 </template>
@@ -13,7 +13,7 @@
     },
 
     beforeCreate () {
-      this.$store.state.activeApp = 'sandbox'
+      this.$store.state.activeApp = 'examples'
     }
   }
 </script>

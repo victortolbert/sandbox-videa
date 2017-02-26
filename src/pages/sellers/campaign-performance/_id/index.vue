@@ -1,6 +1,9 @@
 <template lang="pug">
   .campaign-performance-details-view
-    vui-title(style = 'margin-bottom: 0') Campaign Performance Details
+    vui-title.vui-grid.vui-grid--align-spread(style = 'margin-bottom: 0')
+      span Campaign Performance Details
+      span {{ id }}
+
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
       router-link(
         v-bind:to = '{ name: "sellers-campaign-performance" }'
@@ -56,6 +59,7 @@
 
     data () {
       return {
+        id: this.$route.params.id,
         campaign: {}
       }
     },

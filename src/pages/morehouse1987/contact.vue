@@ -7,7 +7,7 @@
 <script>
   export default {
     beforeCreate () {
-      this.$store.state.activeApp = 'sandbox'
+      this.$store.state.activeApp = 'morehouse1987'
     }
   }
 </script>

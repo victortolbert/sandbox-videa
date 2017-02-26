@@ -2,12 +2,8 @@
   .open-preempts-view
     vui-title Open Pre-Empts
     vui-panel
-      open-preempts-filter(
-        apply-filter = 'filterApply'
-        clear-filter = 'filterClear'
-        filter = 'filter.value'
-        is-show-filter-errors = 'isShowFilterErrors'
-      )
+      .vui-scrollable--x.vui-p-bottom--x-small
+        open-preempts-filter
     open-preempts-grid(
       v-bind:items = 'openPreempts'
       v-bind:offers = 'offers'

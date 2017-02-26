@@ -1,0 +1,2028 @@
+- lineNumber: 1
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 2
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 3
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 4
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 5
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 6
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 7
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 8
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 9
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 10
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 11
+  days: MO-FR
+  time: 7-8am
+  program: Network23 News This Morning
+  length: 30 s
+  orderSpots: 12
+  openPreempts:
+  trafficSpots: 12
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original
+- lineNumber: 12
+  days: Su
+  time: 8-8:30am
+  program: Family Guy
+  length: 30 s
+  orderSpots: 2
+  openPreempts:
+  trafficSpots: 2
+  trafficLogs:
+    - airedStatus:
+      spotNumber: 1
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 2
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 3
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 4
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 5
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 6
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 7
+      airDay: Monday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 8
+      airDay: Tuesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 9
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 10
+      airDay: Thursday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 11
+      airDay: Wednesday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+    - airedStatus:
+      spotNumber: 12
+      airDay: Friday
+      airTime: 7:00 AM
+      programPlaced: Network23 News This Morning
+      priority: P-05
+      statusName: Placed
+      airDate:
+      stationLineNumber: 1
+      altLineNumber: 1
+      makegoodNumber:
+  agencyInvoiceDetails:
+    - isciAdId:
+      stationInvoiceDate:
+      stationInvoiceAmount:
+      stationInvoiceNumber:
+      makegoodNumber:
+  makegoods:
+    - makegoodStatus:
+      makegoodApplied:
+      makegoodNewLines:
+  currentInformation:
+  startDate:
+  endDate:
+  weeks:
+    - 3
+    - 3
+    - null
+    - 3
+    - null
+    - 3
+  spotRate: 350
+  buyerRtg: 1.5
+  videaRtg: 1.7
+  lineNumberTotal: 4200
+  buyerComment: null
+  videaToStationComments: null
+  spotOption: null
+  lineType: Original

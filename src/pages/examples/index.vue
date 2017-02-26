@@ -1,6 +1,6 @@
 <template lang="pug">
-.examples.vui-m-top--x-large
-  vui-title Examples
+.example.vui-m-top--x-large
+  vui-title 🔥 Examples
   grid
     grid-item(size = '2/3')
       .vui-box.vui-theme--shade
@@ -10,39 +10,40 @@
               v-bind:href = 'example.path'
             ) {{ example.path }}
     grid-item(size = '1/3')
-      .vui-box.vui-theme--shade
-        component-a
-        component-b
-        parent
-        vui-widget
-          h1(
-            slot = 'header'
-          ) This is the main title
-          p I will go in the unnamed slot!
+      //- .vui-box.vui-theme--shade
+      //-   //- pre {{ orders }}
+      //-   component-a
+      //-   component-b
+      //-   parent
+      //-   vui-widget
+      //-     h1(
+      //-       slot = 'header'
+      //-     ) This is the main title
+      //-     p I will go in the unnamed slot!
 
-        a(
-          href = "paparazzi:(width=2500,height=600)http://localhost:8082/"
-        ) Test Paparazzi URL
+      //-   a(
+      //-     href = "paparazzi:(width=2500,height=600)http://localhost:8082/"
+      //-   ) Test Paparazzi URL
 
-        keep-alive
-          component(
-            v-bind:is = 'selected'
-          )
+      //-   keep-alive
+      //-     component(
+      //-       v-bind:is = 'selected'
+      //-     )
 
-        vui-button(
-          @buttonClick = 'selected = "appBlack", labelColor = "#000000"'
-          primary
-        ) Black Label
+      //-   vui-button(
+      //-     @buttonClick = 'selected = "appBlack", labelColor = "#000000"'
+      //-     primary
+      //-   ) Black Label
 
-        vui-button(
-          @buttonClick = 'selected = "appWhite", labelColor = "#ffffff"'
-        ) White Label
+      //-   vui-button(
+      //-     @buttonClick = 'selected = "appWhite", labelColor = "#ffffff"'
+      //-   ) White Label
 
-        input(
-          type = 'color'
-          v-model = "labelColor"
-          defaultValue = '#ff0000'
-        )
+      //-   input(
+      //-     type = 'color'
+      //-     v-model = "labelColor"
+      //-     defaultValue = '#ff0000'
+      //-   )
 
 </template>
 
@@ -73,6 +74,8 @@
     }
   })
 
+  // const orders = require('yamljs').load('~data/orders.yaml')
+
   export default {
     name: 'examples',
 
@@ -85,6 +88,7 @@
     data () {
       return {
         examples: require('~models/examples'),
+        // orders: orders,
         selected: 'appBlack',
         labelColor: '#000000'
       }

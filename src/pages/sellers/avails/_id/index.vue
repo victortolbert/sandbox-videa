@@ -447,6 +447,7 @@
 
     data () {
       return {
+        id: this.$route.params.id,
         avail: {},
         expirationDate: new Date(moment().add(14, 'days').toISOString()),
         dueDate: new Date(moment().add(5, 'days').toISOString()),

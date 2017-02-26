@@ -875,12 +875,12 @@
       let ageRange = document.getElementById('age-range')
 
       noUiSlider.create(ageRange, {
-        start: [25.0, 54.000],
+        start: [25.0, 54.0],
         tooltips: true,
         step: 1,
         connect: true,
         range: {
-          'min': 18,
+          'min': 0,
           'max': 100
         },
         format: {

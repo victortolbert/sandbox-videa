@@ -19,6 +19,9 @@
       name: {
         type: String
       },
+      label: {
+        type: String
+      },
       type: {
         type: String
       },

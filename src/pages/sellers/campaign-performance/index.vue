@@ -2,12 +2,14 @@
   .campaign-performance-view
     vui-title Campaign Performance
     vui-panel
-      campaign-performance-list-filter
+      .vui-scrollable--x.vui-p-bottom--x-small
+        campaign-performance-list-filter
+
     campaign-performance-list-grid-controls
+
     .vui-scrollable--x.vui-m-bottom--small
-      campaign-performance-list-grid(
-        campaigns = 'campaigns'
-      )
+      campaign-performance-list-grid(campaigns='campaigns')
+
     vui-footnote
 
 </template>

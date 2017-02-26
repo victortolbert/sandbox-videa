@@ -109,7 +109,6 @@ export function delayer (fn, varTimer, ifNaN = 100) {
 }
 
 // Fix a vue instance Lifecycle to vue 1/2 (just the basic elements, is not a real parser, so this work only if your code is compatible with both)
-// (Waiting for testing)
 export function VueFixer (vue) {
   var vue2 = !window.Vue || !window.Vue.partial
   var mixin = {
@@ -118,7 +117,6 @@ export function VueFixer (vue) {
     }
   }
   if (!vue2) {
-    //translate vue2 attributes to vue1
     if (vue.beforeCreate) {
       mixin.create = vue.beforeCreate
       delete vue.beforeCreate
@@ -132,7 +130,6 @@ export function VueFixer (vue) {
       delete vue.mounted
     }
   } else {
-    //translate vue1 attributes to vue2
     if (vue.beforeCompile) {
       vue.beforeMount = vue.beforeCompile
       delete vue.beforeCompile

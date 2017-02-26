@@ -1,18 +1,12 @@
 <template lang="pug">
   .active-orders-view
-    h1.vui-text-heading--large.vui-m-bottom--medium Order Search
-    order-search-filter(
-      apply-filter = 'filterApply'
-      clear-filter = 'filterClear'
-      filter = 'filter.value'
-      is-dates-valid = 'isDatesValid'
-    )
+    vui-title Order Search
+    vui-panel
+      .vui-scrollable--x.vui-p-bottom--x-small
+        order-search-filter
 
-    order-search-grid(
-      v-bind:orders = 'orders'
-      is-column-sorted = 'isColumnSorted'
-      sorting-changed = 'sortingChanged'
-    )
+    order-search-grid(:orders='orders')
+
     .table-footer-row
       .vui-pagination(
         current-page = 'currentPage'
@@ -32,8 +26,8 @@
           //-     a(href='', @click='selectPage(page + 1)') 
     .vui-grid.vui-grid--align-end
       input.vui-button.vui-button--brand(
-        @click = 'complete'
         v-bind:disabled = '!hasChangedCompletionOrders'
+        v-on:click = 'complete'
         type = 'button'
         value = 'Save'
       )

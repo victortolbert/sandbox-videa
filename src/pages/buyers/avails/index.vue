@@ -9,69 +9,70 @@
         ) Request New Avail
 
       vui-panel
-        form.vui-form--inline(
-          action = ''
-        )
-          .vui-form-element__control.vui-m-right--small
-            .vui-select_container
-              select.vui-select(
-                id = ''
+        .vui-scrollable--x
+          form.vui-form--inline(
+            action = ''
+          )
+            .vui-form-element__control.vui-m-right--small
+              .vui-select_container
+                select.vui-select(
+                  id = ''
+                )
+                  option Client...
+                  option Community Loans, LLC
+                  option Metro Wireless
+                  option Papa John's Pizza
+                  option Piedmont Healthcare
+                  option Southeast Ford
+                  option Sun Valley Bank
+            .vui-form-element__control.vui-m-right--small
+              .vui-select_container
+                select.vui-select(
+                  id = ''
+                )
+                  option Product...
+            .vui-form-element
+              input.vui-input(
+                placeholder = 'Estimate'
+                style = 'width: 8rem'
               )
-                option Client...
-                option Community Loans, LLC
-                option Metro Wireless
-                option Papa John's Pizza
-                option Piedmont Healthcare
-                option Southeast Ford
-                option Sun Valley Bank
-          .vui-form-element__control.vui-m-right--small
-            .vui-select_container
-              select.vui-select(
-                id = ''
-              )
-                option Product...
-          .vui-form-element
-            input.vui-input(
-              placeholder = 'Estimate'
-              style = 'width: 8rem'
-            )
 
-          .vui-form-element__control.vui-m-right--small
-            .vui-select_container
-              select.vui-select(
-                id = ''
-              )
-                option Market...
-                option Tulsa
-          .vui-form-element__control.vui-m-right--small
-            .vui-select_container
-              select.vui-select(
-                id = ''
-              )
-                option Station...
-                option WVVV
+            .vui-form-element__control.vui-m-right--small
+              .vui-select_container
+                select.vui-select(
+                  id = ''
+                )
+                  option Market...
+                  option Tulsa
+            .vui-form-element__control.vui-m-right--small
+              .vui-select_container
+                select.vui-select(
+                  id = ''
+                )
+                  option Station...
+                  option WVVV
 
-          .vui-form-element__control.vui-m-right--small
-            vui-datepicker#startDate(
-              v-bind:value = 'startDate'
-              name = 'startDate'
-            )
-
-          .vui-form-element__control.vui-m-right--small
-            vui-datepicker#endDate(
-              v-bind:value = 'endDate'
-              name = 'endDate'
-            )
-
-          .vui-form-element__control.vui-m-right--small
-            .vui-select_container
-              select.vui-select(
-                id = ''
+            .vui-form-element__control.vui-m-right--small
+              vui-datepicker#startDate(
+                v-bind:value = 'startDate'
+                name = 'startDate'
               )
-                option Status
-          button.vui-button.vui-button--brand.vui-m-right--x-small(
-            @click.prevent = ''
-          ) Search
+
+            .vui-form-element__control.vui-m-right--small
+              vui-datepicker#endDate(
+                v-bind:value = 'endDate'
+                name = 'endDate'
+              )
+
+            .vui-form-element__control.vui-m-right--small
+              .vui-select_container
+                select.vui-select(
+                  id = ''
+                )
+                  option Status
+            button.vui-button.vui-button--brand.vui-m-right--x-small(
+              @click.prevent = ''
+            ) Search
       table.vui-table.vui-no-row-hover
         thead
           tr

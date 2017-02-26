@@ -6,7 +6,8 @@
       station’s traffic system. Videa updates traffic information once each day;
       as a result, data may not be current.
     vui-panel
-      order-reporting-filter
+      .vui-scrollable--x.vui-p-bottom--x-small
+        order-reporting-filter
     order-reporting-grid(
       v-bind:columns = 'columns'
       v-bind:orders = 'orders'

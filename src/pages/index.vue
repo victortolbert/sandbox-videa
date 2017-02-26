@@ -1,6 +1,46 @@
 <!-- node_modules/cq-prolyfill/cq-prolyfill.min.js -->
+<!-- http://codepen.io/VictorTolbert/pen/rjYJGO?editors=1100 -->
 <template lang="pug">
   .index
+    //- button(v-tooltip.top-center="msg") Hover me
+
+    //- grid.vui-m-bottom--medium.vui-m-top--medium
+    //-   grid-item(size='1/6')
+    //-     .vui-box.vui-box--xx-small.vui-theme--default 🔥 ⇧  ⌥ ⌫ ⌦ ⌘
+    //-   grid-item(size='1/6')
+    //-     .vui-box.vui-box--xx-small.vui-theme--default ⇧  ⌥ ⌫ ⌦ ⌘
+    //-   grid-item(size='1/6')
+    //-     .vui-box.vui-box--xx-small.vui-theme--default ⇧  ⌥ ⌫ ⌦ ⌘
+    //-   grid-item(size='1/6')
+    //-     .vui-box.vui-box--xx-small.vui-theme--default ⇧  ⌥ ⌫ ⌦ ⌘
+    //-   grid-item(size='1/6')
+    //-     .vui-box.vui-box--xx-small.vui-theme--default ⇧  ⌥ ⌫ ⌦ ⌘
+    //-   grid-item(size='1/6')
+    //-     .vui-box.vui-box--xx-small.vui-theme--default ⇧  ⌥ ⌫ ⌦ ⌘
+
+    //- .vui-box.vui-theme--default
+    //-   .vui-x-small-show Show on 320px and up
+    //-   .vui-x-small-show-only Show only between 320px and 479px
+    //-   .vui-max-x-small-hide Hide on 319px and down
+    //-   .vui-small-show Show on 480px and up
+    //-   .vui-small-show-only Show only between 480px and 767px
+    //-   .vui-max-small-hide Hide on 479px and down
+    //-   .vui-medium-show Show on 768px and up
+    //-   .vui-medium-show-only Show only between 768px and 1023px
+    //-   .vui-max-medium-hide Hide on 1023px and down
+    //-   .vui-large-show Show on 1024px and up
+    //-   .vui-text-color--default Default -- The quick brown fox jumps over the lazy dog.
+    //-   .vui-text-color--weak Weak -- The quick brown fox jumps over the lazy dog.
+    //-   .vui-text-color--error Error -- The quick brown fox jumps over the lazy dog.
+    //-   .vui-text-color--inverse(style='background: #570e1b') Inverse -- The quick brown fox jumps over the lazy dog.
+    //-   .vui-text-color--inverse-weak Inverse Weak -- The quick brown fox jumps over the lazy dog.
+
+
+    //- //- http://codepen.io/VictorTolbert/pen/rjYJGO?editors=1100
+    //- .abs-center.container
+    //-   .palette(v-for='i in 7', :class='`palette${i}`')
+    //-     .color-square(v-for='j in 5', :class='`color${j}`')
+
     //- input#slider(
     //-   max = '100'
     //-   min = '0'
@@ -70,6 +110,25 @@
   }
 </script>
 
+<style lang="stylus">
+  .tooltip
+    display: none
+    opacity: 0
+    transition: opacity .15s
+    pointer-events: none
+    padding: 4px
+    z-index: 10000
+    .tooltip-content
+      background: black
+      color: white
+      border-radius: 16px
+      padding: 5px 10px 4px
+    &.tooltip-open-transitionend
+      display: block
+    &.tooltip-after-open
+      opacity: 1
+</style>
+
 <style>
   .element:container(width >= 100px) {
     /* Styles for .element if its container is at least 100px wide */
@@ -80,4 +139,31 @@
   .element:container(text-align = right) {
     /* Styles for .element if its container has a right text-align */
   }
+</style>
+
+<style lang="stylus" scoped>
+  @import '~assets/variables';
+
+  $color = color-cardinal; // Seed Color - Appears in the left-most palette in the center
+
+  // --- GENERAL SETUP STUFF ---
+  * { box-sizing: border-box; transition: 0.3s ease; }
+  body { background-color: #222A36; transition: 0s; font-family: "Montserrat"; color: white; }
+  .abs-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+  // --- ELEMENT STYLING ---
+  .container { display: flex; width: 350px; overflow: hidden; }
+  .palette { flex: 1 1 0; height: 250px; }
+  .palette:hover { flex-grow: 4; }
+  .color-square { position: relative; height: 20%; width: 100%; }
+  .color-square::before { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0; transition: 0.3s ease; }
+  .color-square:hover::before { opacity: 1; }
+
+  // --- THE MAGIC ---
+  for x in (1..7)
+      for y in (1..5)
+          if light(lighten(spin($color,((x - 1)*44deg)),((y - 3)*28%))) { .palette{x} .color{y}::before {color: black;} } // Makes ::before text black if the background is light
+          .palette{x} .color{y} { background-color: lighten(spin($color,((x - 1)*44deg)),((y - 3)*28%)); }
+          .palette{x} .color{y}::before { content: ''+lighten(spin($color,((x - 1)*44deg)),((y - 3)*28%)); }
+
 </style>

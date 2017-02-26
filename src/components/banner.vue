@@ -15,7 +15,7 @@
             | Videa
             span Design
           h3.banner__subtitle
-            | We be building stuff...
+            | UI Component Library and Patterns Lab
 
           ul.banner__actions
             li.banner__actions__item(v-for = 'action in actions')
