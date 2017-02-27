@@ -1,8 +1,7 @@
 <template lang="pug">
   .order-management-show-view
     vui-title.vui-grid.vui-grid--align-spread(style='margin-bottom: 0')
-      span Pending Order Details
-      span  {{ order.advertiser }} &mdash; Order # {{ id }}
+      span {{ order.advertiser }} Details
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
       a(
         @click.prevent = 'showSummary'
@@ -103,9 +102,7 @@
         button.vui-button--neutral(
           @click.prevent = 'showRejectOrderModal = true'
         ) Reject
-    .vui-grid.vui-grid--align-end.vui-m-bottom--medium(
-      v-if = '$store.state.user.name == "Rep User"'
-    )
+    .vui-grid.vui-grid--align-end.vui-m-bottom--medium(v-if = '$store.state.user.name == "Rep User"')
       .buttons
         form.vui-form--inline
           fieldset.vui-form-element
@@ -122,29 +119,6 @@
           fieldset.vui-form-element
             button.vui-button--brand(
               @click.prevent = ''
-            ) Update
-
-
-    form
-      .vui-grid.vui-grid--align-spread
-        .vui-text-heading--large.vui-m-bottom--medium Version History
-        .vui-form--inline(ng-show = "isRep || orderInfo.sellerStatus === 'Confirmed'")
-          .vui-form-element
-            label.vui-form-element__label(
-              for = 'manualShare'
-            ) Share
-            .vui-form-element__control
-              input#manualShare.vui-input.u-width-small(
-                name = 'manualShareField'
-                type = 'number',
-                ng-pattern = '/^[1-9][0-9]?$|^100$|^0$/'
-                ng-model = 'ctrl.manualShareOverride'
-              )
-          .vui-show--inline
-            button.vui-button.vui-button--neutral(
-              type = 'submit'
-              value = 'Update'
-              ng-disabled = 'shareFrm.manualShareField.$invalid'
             ) Update
 
     .vui-box.vui-grid.vui-grid--align-spread.vui-m-bottom--large.vui-wrap.vui-theme--default
@@ -169,7 +143,7 @@
     .vui-grid.vui-grid--align-end.vui-m-bottom--medium
       a.vui-align-middle.vui-m-right--small(
         target = '_blank'
-        @click.prevent = 'showOffer(id)'
+        v-bind:href = '`/sellers/order-management/pending-makegoods/${id}`'
       ) Manage Schedule
       button.vui-button.vui-button--brand Redeliver
 
@@ -208,7 +182,7 @@
     .vui-grid.vui-grid--align-end.vui-m-bottom--medium
       a.vui-align-middle.vui-m-right--small(
         target = '_blank'
-        @click.prevent = 'showOffer(id)'
+        v-bind:href = '`/sellers/order-management/pending-makegoods/${order.id}`'
       ) Manage Schedule
       button.vui-button.vui-button--brand Redeliver
 

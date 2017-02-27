@@ -1,9 +1,5 @@
 <template lang="pug">
-  vui-modal(
-    v-bind:on-close = 'close'
-    v-bind:show = 'show'
-    size = 'large'
-  )
+  vui-modal(size='large')
     .modal-header.vui-m-bottom--x-large
       h3.vui-text-heading--medium Spot Details
     .modal-body
@@ -43,13 +39,6 @@
       return {
         comment: '',
         spots: require('./sample-spots.json')
-      }
-    },
-
-    methods: {
-      close () {
-        this.show = false
-        this.comment = ''
       }
     }
   }

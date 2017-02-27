@@ -2,18 +2,14 @@
   .campaign-performance-details-view
     vui-title.vui-grid.vui-grid--align-spread(style = 'margin-bottom: 0')
       span Campaign Performance Details
-      span {{ id }}
+      span {{ campaign.advertiser }} {{ campaign.product }} {{campaign.estimateNumber }}  &mdash; {{ id }}
 
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
-      router-link(
-        v-bind:to = '{ name: "sellers-campaign-performance" }'
-      )
-        vui-icon.vui-align-middle(
-          name = 'arrow-circle-left'
-        )
+      router-link(v-bind:to='{ name: "sellers-campaign-performance" }')
+        vui-icon.vui-align-middle.vui-m-right--xx-small(name='arrow-circle-left')
         span.vui-align-middle Back to Campaign Performance
 
-    vui-subtitle {{ campaign.advertiser }} {{ campaign.product }} {{campaign.estimateNumber }}
+    vui-subtitle
 
     //- campaign-performance-details-info(
     //-   v-bind:campaign = 'campaign'

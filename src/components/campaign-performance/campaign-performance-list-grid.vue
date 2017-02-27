@@ -67,21 +67,24 @@
             v-bind:title = 'campaign.campaignDelivery'
             v-show = 'columns.campaignDelivery.isVisible'
           )
-            div.vui-float--left
-              span {{ campaign.campaignDeliveryPercent }}
-              span.vui-float--left(v-if="campaign.campaignDeliveryPercent > 0") %
-            div.vui-float--right(v-if="campaign.campaignDeliveryPercent > 89")
-              span.vui-float--right
-                vui-icon.vui-m-left--x-small(
-                  name = 'stop'
-                  style = 'color: #3B7F36'
-                )
-            div.vui-float--right(v-if="campaign.campaignDeliveryPercent < 90")
-              span.vui-float--right
-                vui-icon.vui-m-left--x-small(
-                  name = 'stop'
-                  style = 'color: #F58220'
-                )
+            .vui-grid.vui-grid--align-spread
+              span(v-if="campaign.campaignDeliveryPercent") {{ campaign.campaignDeliveryPercent | decimalToPercent }}
+              span(v-else) N/A
+
+
+              span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent >= 0.90")
+                vui-icon.vui-m-left--x-small(name='stop', style='color: #3B7F36')
+
+              span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent >= 0.80 && campaign.campaignDeliveryPercent < 0.90")
+                vui-icon.vui-m-left--x-small(name='stop', style='color: #F58220')
+
+
+              //- span(v-if="campaign.campaignDeliveryPercent < 0.90 || campaign.campaignDeliveryPercent >= 0.80")
+              //-   vui-icon.vui-m-left--x-small(name = 'stop', style='color: #F58220')
+              //- span(v-else)
+
+
+
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'campaign.currentGrpsImps'
             v-show = 'columns.currentRtgsImps.isVisible'

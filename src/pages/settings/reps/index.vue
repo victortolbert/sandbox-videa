@@ -42,7 +42,8 @@
       button.vui-button.vui-button--brand Submit
 
       edit-sales-reps-modal(
-        v-bind:show = 'showEditSalesRepsModal'
+        v-show = 'showEditSalesRepsModal'
+        @close = 'showEditSalesRepsModal = false'
       )
 </template>
 
