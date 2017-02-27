@@ -41,8 +41,7 @@
               ) Open
             td.vui-text-align--center(style = 'width: 60px')
               a.pointer(
-                v-on:click = 'createOffer(item.videaOrderNumber)'
-                v-on:click.prevent = 'showOffer(item.offerId)'
+                v-bind:href='`/sellers/order-management/pending-makegoods/${item.videaOrderNumber}`'
                 v-show = 'item.videaOrderNumber'
                 target = '_blank'
                 title = 'Click to create a MG Offer'
