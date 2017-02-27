@@ -62,9 +62,7 @@
             vui-sorting-column(
               title = 'Len'
             )
-          th.spot-allocation-column(
-            style = 'width: 503px'
-          )
+          th.spot-allocation-column(style='width: 503px')
             makegoods-spot-allocation-header(
               v-model = 'items[0].spotAllocations'
               navigator = 'spotAllocationNavigator'

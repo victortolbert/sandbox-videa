@@ -26,7 +26,12 @@
           type = 'button'
           value = 'Save'
         )
-        //- close-button
+        input.vui-button.vui-button--neutral(
+          @click.prevent = 'closeWindow'
+          v-bind:disabled = '!canSave'
+          type = 'button'
+          value = 'Close'
+        )
 
     .vui-tabs--scoped.details-tabs-header-container
       ul.vui-tabs--scoped__nav.details-tabs(role='tablist')
@@ -111,7 +116,7 @@
         isOnlySelectedPreemptsShown: true,
         mgComment: '',
         canTransfer: false,
-        canSave: false,
+        canSave: true,
         selectedClassification: 'Unknown',
         classifications: [
           'Unknown',
@@ -137,7 +142,10 @@
           })
       },
       transfer () {},
-      save () {}
+      save () {},
+      closeWindow () {
+        window.close()
+      }
     },
 
     watch: {

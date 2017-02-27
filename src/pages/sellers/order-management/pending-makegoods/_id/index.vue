@@ -4,7 +4,6 @@
       span Order Information - Offers
       span {{ order.advertiser }} &mdash; Order # {{ id }}
 
-
     makegoods-order-details-info(v-bind:order='order')
 
     .vui-grid.vui-grid--align-spread.vui-m-top--large.vui-m-bottom--large

@@ -1,22 +1,14 @@
 <template lang="pug">
   .spot-allocation-row
-    //- .spot-allocation-nav-section.pointer.vui-align-middle
-    //-   vui-icon.vui-icon--small.vui-align-middle(
-    //-     v-on:click = 'scrollLeft'
-    //-     name = 'arrow-circle-left'
-    //-     size = 'medium'
-    //-   )
-    .spot-allocation-container(v-bind:style='{ "width": spotsWidth }')
-      ul.spot-allocation(style='left: 0')
+    .spot-allocation-nav-section.pointer
+      i.button-icon.left-icon(@click='scrollLeft', ng-disabled='!isLeftButtonEnabled')
+    .spot-allocation-container(:style='{ "width": spotsWidth }')
+      ul.spot-allocation.spot-allocation-headers(:style="{'left': left + 'px'}")
         li(v-for='spot in spots')
-          div.vui-truncate
+          div
             span(v-bind:title='spot.week', v-html='spot.week')
-    //- .spot-allocation-nav-section.pointer.vui-align-middle
-    //-   vui-icon.vui-icon--small.vui-align-middle(
-    //-     v-on:click = 'scrollRight'
-    //-     name = 'arrow-circle-right'
-    //-     size = 'medium'
-    //-   )
+    .spot-allocation-nav-section.pointer
+      i.button-icon.right-icon(@click='scrollRight', ng-disabled='!isRightButtonEnabled')
 </template>
 
 <script>
@@ -24,6 +16,7 @@
     data () {
       return {
         spotsWidth: '455px',
+        left: 0,
         spots: [
           { week: '06<br>27' },
           { week: '07<br>04' },
@@ -205,7 +198,7 @@
   .spot-allocation-row .spot-allocation-data li > div span .highlight
     color #c5203e
   .left-icon
-    background-image url('/shared/static/img/left-arrow.png')
+    background-image url('/static/shared/img/left-arrow.png')
   .button-icon
     display block
     width 100%

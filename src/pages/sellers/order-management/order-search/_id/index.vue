@@ -3,7 +3,6 @@
     vui-title
       .vui-grid.vui-grid--align-spread
         span Order Search Details
-        span {{ id }}
     makegoods-order-details-info(v-bind:orderId='order.id')
     order-search-details-actions(v-bind:orderId='order.id')
     order-search-details-tabs

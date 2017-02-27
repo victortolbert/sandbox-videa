@@ -59,24 +59,23 @@
             td.vui-text-align--right {{ program.revenueTy | numberWithCommas | formatMoney }}
             td.vui-text-align--right {{ program.revenueLy | numberWithCommas | formatMoney }}
             td.vui-text-align--right
-              //- a(
-              //-   @click.prevent = 'showSpotDetail(programRevenueDaypart)'
-              //- )
-              | {{ program.spotCount }}
-    //- program-revenue-spot-detail-modal(
-    //-   v-bind:programRevenueDaypart = 'selectedProgram'
-    //-   v-show = 'showSpotDetailModal'
-    //-   @close = 'showSpotDetailModal = false'
-    //- )
+              a(
+                @click.prevent = 'showSpotDetailModal = true'
+              ) {{ program.spotCount }}
+    program-revenue-spot-detail-modal(
+      v-show = 'showSpotDetailModal'
+      @close = 'showSpotDetailModal = false'
+    )
 </template>
 
 <script>
   import ProgramRevenueSpotDetailModal from '~components/program-revenue/program-revenue-spot-detail-modal'
 
   export default {
-    // components: { ProgramRevenueSpotDetailModal },
+    components: { ProgramRevenueSpotDetailModal },
     data () {
       return {
+        showSpotDetailModal: false,
         programRevenueDayparts: [
           {
             daypartName: 'Early Morning',

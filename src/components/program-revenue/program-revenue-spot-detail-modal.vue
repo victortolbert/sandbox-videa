@@ -1,7 +1,10 @@
 <template lang="pug">
   vui-modal(size='large')
     .modal-header.vui-m-bottom--x-large
-      h3.vui-text-heading--medium Spot Details
+      h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
+        span.vui-align-middle Spot Details
+        a.vui-align-middle.vui-text-align--right(@click.prevent = '$emit("close")' style='color: white')
+          vui-icon(name='close', style='width: 2rem; height: 2rem')
     .modal-body
       .vui-scrollable--x.vui-m-bottom--medium
         table.vui-table.vui-no-row-hover

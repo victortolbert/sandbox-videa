@@ -77,7 +77,9 @@
         this.$router.push(routeInfo)
       },
 
-      closeTab () {},
+      closeTab () {
+        window.close();
+      },
 
       openMakegoodDetails (id) {
 

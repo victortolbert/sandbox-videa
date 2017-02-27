@@ -37,9 +37,11 @@
           v-bind:class = '[ offer.overdue ? "overdue" : "" ]'
           v-for = 'offer in offers'
         )
-          td
-            a(@click.prevent='showOffer(offer.orderId)')
-              vui-icon.vui-icon--small(name='medicine-bottle')
+          td: a(
+            v-bind:href = '`/sellers/order-management/pending-makegoods/${offer.orderId}/makegood`'
+            target = '_blank'
+          )
+            vui-icon.vui-icon--small(name='medicine-bottle')
           td: a.vui-m-right--xx-small(
             v-bind:href = '`/sellers/reporting/order-reporting/${offer.orderId}`'
             target = '_blank'

@@ -2,7 +2,7 @@
   .campaign-performance-view
     vui-title Campaign Performance
     vui-panel
-      .vui-scrollable--x.vui-p-bottom--x-small
+      .vui-scrollabl.vui-p-bottom--x-small
         campaign-performance-list-filter
 
     campaign-performance-list-grid-controls

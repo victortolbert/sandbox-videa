@@ -258,19 +258,8 @@
     //   }
     // },
     methods: {
-      showOrder (id, version = '') {
-        let routeInfo = {
-          name: this.orderRoute,
-          params: {
-            id: id
-          }
-        }
-
-        if (version) {
-          routeInfo.query = { version: version }
-        }
-
-        this.$router.push(routeInfo)
+      showOrder (id) {
+        window.open(`/sellers/order-management/order-search/${id}`, '_blank')
       },
 
       showOffer (id, version = '') {

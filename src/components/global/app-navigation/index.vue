@@ -5,7 +5,9 @@
     app-examples-nav(v-else-if='$store.state.activeApp == "examples"')
     app-tickets-nav(v-else-if='$store.state.activeApp == "tickets"')
     app-sellers-nav.vui-max-medium-hide(v-else-if='$store.state.activeApp == "sellers"')
-    app-notification
+    //- app-notification
+    //- .vui-grid.vui-grid--align-end(style='position: relative; top: 110%')
+    //-     mark.vui-p-vertical--xx-small Still working...
 </template>
 
 <script>

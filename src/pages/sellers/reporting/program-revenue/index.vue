@@ -2,7 +2,7 @@
   .program-revenue
     vui-title Program Revenue
     vui-panel
-      .vui-scrollable--x.vui-p-bottom--x-small
+      .vui-scrollabl.vui-p-bottom--x-small
         program-revenue-filter
     program-revenue-metrics
     program-revenue-grid(

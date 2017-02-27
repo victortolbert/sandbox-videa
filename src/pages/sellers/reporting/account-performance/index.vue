@@ -2,7 +2,7 @@
   .account-performance-view
     vui-title Account Performance
     vui-panel
-      .vui-scrollable--x.vui-p-bottom--small
+      .vui-scrollabl.vui-p-bottom--small
         account-performance-filter
     account-performance-metrics
     account-performance-grid(

@@ -2,7 +2,7 @@
   .open-preempts-view
     vui-title Open Pre-Empts
     vui-panel
-      .vui-scrollable--x.vui-p-bottom--x-small
+      .vui-scrollabl.vui-p-bottom--x-small
         open-preempts-filter
     open-preempts-grid(
       v-bind:items = 'openPreempts'

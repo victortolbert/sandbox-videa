@@ -2,10 +2,39 @@
   vui-modal(size='large')
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
-        span Edit Ratings
+        span Edit Rating
         a.vui-text-align--right(@click.prevent = '$emit("close")')
           vui-icon(name='close')
     .modal-body
+      .ng-scope(ng-if='ratingType.rating')
+        h2.vui-text-heading--large Skew and Factor
+        p.vui-text--longform.vui-m-bottom--large
+          | Use the Edit Ratings window to skew ratings by household, apply a positive or negative factor, or edit ratings individually. To view ratings rationale click here.
+        .vui-grid.vui-grid--pull-padded.vui-grid--align-spread.vui-m-bottom--large.ng-scope(ng-if='ratingType.rating')
+          .vui-col--padded
+            .vui-form-element
+              label.vui-form-element__label(for='hhRating') HH Rating
+            .vui-form--inline
+              .vui-form-element
+                .vui-form-element__control
+                  input#hhRating.vui-input.u-width-medium.ng-pristine.ng-untouched.ng-valid-min.ng-valid-max.ng-valid-pattern.ng-not-empty.ng-valid.ng-valid-required(type='number', data-ng-disabled='isRepUser', name='hhRating', data-ng-model='programRatings.householdRating', ng-pattern='/^[0-9]+(\.[0-9])?$/', pv-decimal='{nullable: true, scale:1,formatRaw: true}', required='', min='0.1', max='70', step='0.1')
+              .vui-form-element
+                .vui-form-element__control
+                  // ngIf: !isRepUser
+                  input#btnApplySkew.vui-button.vui-button--brand.ng-scope(type='button', ng-if='!isRepUser', value='Apply Skew', data-ng-click='applySkewOnClick()', data-ng-disabled='ratingForProgram.hhRating.$invalid')
+                  // end ngIf: !isRepUser
+          .vui-col--padded
+            .vui-form-element
+              label.vui-form-element__label(for='ratingFactor') Factor
+            .vui-form--inline
+              .vui-form-element
+                .vui-form-element__control
+                  input#ratingFactor.vui-input.vui-p-right--none.ng-pristine.ng-untouched.ng-empty.ng-valid-min.ng-valid-max.ng-invalid.ng-invalid-required(type='number', data-ng-disabled='isRepUser', name='ratingFactor', data-ng-model='$parent.$parent.factor', pv-decimal='{nullable: true}', required='', min='0.01', max='5.00', step='0.01')
+              .vui-form-element
+                .vui-form-element__control
+                  // ngIf: !isRepUser
+                  input#btnApplyFactor.vui-button.vui-button--brand.ng-scope(type='button', ng-if='!isRepUser', value='Apply Factor', data-ng-click='applyFactorOnClick()', data-ng-disabled='ratingForProgram.ratingFactor.$invalid', disabled='disabled')
+                  // end ngIf: !isRepUser
       .vui-grid.vui-grid--align-spread.vui-p-around--small(style='background-color: white')
         .vui-media
           .vui-media__body
