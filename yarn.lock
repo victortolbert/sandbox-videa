@@ -11048,6 +11048,10 @@ timers-browserify@^2.0.2:
   dependencies:
     setimmediate "^1.0.4"
 
+tiny-cookie@^1.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tiny-cookie/-/tiny-cookie-1.0.1.tgz#753786079c642a3c3d0b2accad600f8de119ac2a"
+
 tiny-emitter@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.1.0.tgz#ab405a21ffed814a76c19739648093d70654fecb"
@@ -11660,6 +11664,12 @@ vue-color:
     material-colors "^1.0.0"
     tinycolor2 "^1.1.2"
 
+vue-cookie:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/vue-cookie/-/vue-cookie-1.1.3.tgz#580b4e9dcf56c0234b5eeec5d52aed3bf6080c97"
+  dependencies:
+    tiny-cookie "^1.0"
+
 vue-easy-slider@next:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/vue-easy-slider/-/vue-easy-slider-1.4.0.tgz#b55eba31bfd4b233f0b6aa9d2ee9a3b416a1d994"
@@ -11790,6 +11800,10 @@ vue-loader@^11.0.0:
     vue-hot-reload-api "^2.0.1"
     vue-style-loader "^2.0.0"
     vue-template-es2015-compiler "^1.2.2"
+
+vue-localstorage:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/vue-localstorage/-/vue-localstorage-0.1.3.tgz#929f740999985b93d01a910f66ec540062650f60"
 
 vue-lory:
   version "0.0.4"

@@ -1,4 +1,4 @@
 
 ## Sales Reps Settings
-- [ ] Add Checkbox Toggle
-
+- [x] Add Checkbox Toggle
+⇧  ⌥ ⌫ ⌦ ⌘

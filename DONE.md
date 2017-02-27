@@ -1,0 +1,4 @@
+- Fixed 'sandbox' browser title flash, now will appear as Videa Demo before page renders
+- Added Unmatched Spots Indicator  ⇧  ⌥ ⌫ ⌦ ⌘
+- Use cookie to persist current user to avoid navigation from switching
+-

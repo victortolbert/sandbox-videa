@@ -33,6 +33,9 @@ Vue.use(VTooltip)
 import Carousel3d from 'vue-carousel-3d'
 Vue.use(Carousel3d)
 
+import VueCookie from 'vue-cookie'
+Vue.use(VueCookie)
+
 // chartjs package
 require('chart.js')
 

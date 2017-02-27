@@ -42,7 +42,7 @@
 * [ ] Add Export to Excel
 
 ### Program Revenue
-- [x] Add Nested Datagrid
+- [x] Add Nested Datagrid   ⇧  ⌥ ⌫ ⌦ ⌘
 - [x] Add Quarter Selector
 - [x] Fix date-picker errors
 - [x] Add Sorting
