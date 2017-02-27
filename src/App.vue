@@ -10,12 +10,14 @@
       transition(name='slide')
         router-view
     app-footer
+    app-help
 </template>
 
 <script>
   import AppNavigation from '~components/global/app-navigation'
   import AppHeader from '~components/global/app-header'
   import AppFooter from '~components/global/app-footer'
+  import AppHelp from '~components/global/app-help'
 
   import { EventBus } from '~plugins/event-bus'
 
@@ -31,7 +33,8 @@
     components: {
       AppNavigation,
       AppHeader,
-      AppFooter
+      AppFooter,
+      AppHelp
     },
 
     mounted () {

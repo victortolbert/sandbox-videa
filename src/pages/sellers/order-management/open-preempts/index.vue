@@ -26,7 +26,7 @@
           style = 'cursor: pointer; visibility: visible'
         )
           | Back to Top
-          vui-icon(
+          vui-icon.vui-m-left--xx-small(
             name = 'arrow-circle-up'
           )
 </template>

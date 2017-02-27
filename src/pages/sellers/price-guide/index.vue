@@ -221,7 +221,7 @@
         cppOrCpm: 'cpp',
         editingPercent: false,
         globalPercent: 0,
-        lastUpdated: null,
+        lastUpdated: moment().format('MM/DD/YY'),
         selected: 'early-morning',
         showAddProgramModal: false,
         showEditRatingsModal: false,

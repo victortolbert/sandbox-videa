@@ -121,7 +121,7 @@
               @click.prevent = ''
             ) Update
 
-    .vui-box.vui-grid.vui-grid--align-spread.vui-m-bottom--large.vui-wrap.vui-theme--default
+    .vui-box.vui-grid.vui-grid--align-spread.vui-m-bottom--large.vui-wrap.vui-theme--default(v-show='version')
       fieldset.vui-col--padded.vui-form-element
         label.vui-form-element__label(for='') Version
         .vui-form-element__control.vui-text-align--center
@@ -230,6 +230,7 @@
 
     data () {
       return {
+        version: false,
         id: this.$route.params.id,
         order: {},
         showAcceptOrderModal: false,

@@ -137,6 +137,11 @@
       }
     },
 
+    methods: {
+      saveEditedRatings (context) {
+        this.$emit('close')
+      }
+    }
     // mounted () {
     //   EventBus.listen('display-edit-ratings-modal', (context) => {
     //     this.show = true
