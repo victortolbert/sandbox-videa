@@ -118,9 +118,7 @@
               span(
                 v-if = 'item.isRunNotOrdered'
               )
-                i.glyphicon.glyphicon-stop.glyphicon.vui-m-right--x-small(
-                  style = 'color: #C5103D'
-                )
+                vui-icon.vui-m-left--x-small(name = 'stop', style='color: #C5103D')
           td.vui-truncate(
             data-column-name = 'orderedTimePeriod'
           ) {{ item.orderedTimePeriod }}
@@ -294,6 +292,7 @@
             isciCode1: 'GIFW29755H'
           },
           {
+            isRunNotOrdered: true,
             buyLineNumber: 8,
             purchasedProgram: '7am News',
             formattedAirDate: moment().subtract(1, 'weeks').weekday(1).format('MM/DD/YY'),

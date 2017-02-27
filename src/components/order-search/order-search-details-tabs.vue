@@ -35,7 +35,7 @@
         .vui-m-bottom--xx-small.p-a-5.row.active-orders-details-tab-options
           .col-md-2
             label.vui-checkbox
-              input.vui-input(
+              input.vui-input.vui-m-right--xx-small(
                 v-model = 'tab.isShowSpotAllocations'
                 type = 'checkbox'
               )

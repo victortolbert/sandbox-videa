@@ -38,7 +38,7 @@
           v-for = 'offer in offers'
         )
           td: a(
-            v-bind:href = '`/sellers/order-management/pending-makegoods/${offer.orderId}/makegood`'
+            v-bind:href = '`/sellers/order-management/pending-makegoods/${offer.orderId}/${offer.offerType}`'
             target = '_blank'
           )
             vui-icon.vui-icon--small(name='medicine-bottle')

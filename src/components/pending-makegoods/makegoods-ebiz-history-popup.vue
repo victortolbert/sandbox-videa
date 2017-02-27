@@ -1,8 +1,6 @@
 <template lang="pug">
   .modal-mask.modal-transition(
-    v-show = 'show'
-    show = 'isShowDialog'
-    hide-modal = 'hideDialog'
+    size = 'large'
   )
     .ng-modal-overlay(v-on:click='showModal')
     .ng-modal-dialog(v-bind:style='dialogStyle')

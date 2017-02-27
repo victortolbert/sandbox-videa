@@ -36,7 +36,7 @@
     .vui-tabs--scoped.details-tabs-header-container
       ul.vui-tabs--scoped__nav.details-tabs(role='tablist')
         li.vui-tabs--scoped__item.vui-text-heading--label.vui-active(role='presentation')
-          a.vui-tabs--scoped__link(href='') Makegood {{ $route.params.offer }}
+          a.vui-tabs--scoped__link(href='')  {{ $route.params.offer || 'Makegood' }}
 
     div(role='tabpanel')
       form.vui-p-around--large.vui-tabs--scoped__content

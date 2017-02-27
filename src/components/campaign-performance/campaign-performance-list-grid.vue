@@ -72,10 +72,10 @@
               span(v-else) N/A
 
 
-              span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent >= 0.90")
+              span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent >= 0.95")
                 vui-icon.vui-m-left--x-small(name='stop', style='color: #3B7F36')
 
-              span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent >= 0.80 && campaign.campaignDeliveryPercent < 0.90")
+              span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent >= 0.80 && campaign.campaignDeliveryPercent < 0.95")
                 vui-icon.vui-m-left--x-small(name='stop', style='color: #F58220')
 
 

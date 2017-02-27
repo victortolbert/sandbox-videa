@@ -77,8 +77,8 @@
   export default {
     data () {
       return {
-        startDate: new Date(moment().add(14, 'days').toISOString()),
-        endDate: new Date(moment().add(5, 'days').toISOString()),
+        startDate: new Date(moment().subtract(14, 'days').toISOString()),
+        endDate: new Date(moment().add(21, 'days').toISOString()),
         searchText: ''
       }
     },
