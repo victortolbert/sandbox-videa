@@ -1,9 +1,5 @@
 <template lang="pug">
-  vui-modal(
-    v-bind:on-close = 'close'
-    v-bind:show = 'show'
-    size = 'large'
-  )
+  vui-modal(size='large')
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium Order Details
 

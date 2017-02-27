@@ -83,6 +83,49 @@
     // custom styling
 </style>
 
+
+<style lang="stylus">
+  #loadingWidget
+    position: fixed
+    z-index: 9999
+  .shaded
+    background-color: #eeeeee
+  .vui-table tr.with-row-span,.vui-table tr.with-row-span td
+    height: 41px
+  .vui-fieldset
+    padding: 5px
+    border: 1px solid #a9aeb9
+    position: relative
+  .vui-fieldset>.vui-fieldset-header
+    position: absolute
+    z-index: 100
+    top: -15px
+    left: 0
+    right: 0
+  .vui-fieldset>.vui-fieldset-header label
+    font-size: .85rem
+    background: white
+  .vui-display--block
+    display: block
+  .vui-display--inline-block
+    display: inline-block
+  .vui-text-grey,.vui-text-grey:hover
+    color: #cccccc
+  .vui-no-border-right
+    border-right: 0 !important
+  .vui-no-border-left
+    border-left: 0 !important
+  .resizable
+    min-width: 25px
+    min-height: 25px
+    padding-right: 3px
+    padding-bottom: 3px
+  .resizable textarea
+    width: 100%
+    height: 100%
+    resize: none
+</style>
+
 <style lang="stylus">
   @import '~assets/variables'
 

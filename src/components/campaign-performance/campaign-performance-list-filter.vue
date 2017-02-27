@@ -1,5 +1,5 @@
 <template lang="pug">
-  form.vui-grid.vui-grid--vertical-align-end.order-summary-filter-container.performance-filter-controls.station-performance-controls(
+  form.vui-grid.vui-grid--vertical-align-end.vui-wrap.order-summary-filter-container.performance-filter-controls.station-performance-controls(
     name = 'filterForm'
   )
     fieldset.vui-form-element.on-valid

@@ -1,5 +1,5 @@
 <template lang="pug">
-  form.vui-grid.vui-grid--vertical-align-end(
+  form.vui-grid.vui-grid--vertical-align-end.vui-wrap(
     action = ''
   )
     fieldset.vui-form-element

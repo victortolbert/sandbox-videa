@@ -36,7 +36,7 @@
     .vui-tabs--scoped.details-tabs-header-container
       ul.vui-tabs--scoped__nav.details-tabs(role='tablist')
         li.vui-tabs--scoped__item.vui-text-heading--label.vui-active(role='presentation')
-          a.vui-tabs--scoped__link(href='') Makegood
+          a.vui-tabs--scoped__link(href='') Makegood {{ $route.params.offer }}
 
     div(role='tabpanel')
       form.vui-p-around--large.vui-tabs--scoped__content
@@ -108,6 +108,12 @@
   import moment from 'moment'
 
   export default {
+    name: 'pending-makegoods-id-offer',
+
+    metaInfo: {
+      title: 'Pending Makegood / Offer'
+    },
+
     data () {
       return {
         id: this.$route.params.id,

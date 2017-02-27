@@ -2,7 +2,7 @@
   .active-orders-view
     vui-title Order Search
     vui-panel
-      .vui-scrollable--x.vui-p-bottom--x-small
+      .vui-scrollabl.vui-p-bottom--x-small
         order-search-filter
 
     order-search-grid(:orders='orders')

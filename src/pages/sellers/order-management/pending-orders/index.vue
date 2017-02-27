@@ -71,7 +71,7 @@
     },
 
     beforeCreate () {
-      this.$store.state.activeApp == 'sellers'
+      this.$store.state.activeApp = 'sellers'
     },
 
     created () {

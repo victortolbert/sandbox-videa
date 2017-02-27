@@ -1,5 +1,5 @@
 <template lang="pug">
-    form.vui-grid.vui-grid--vertical-align-end(name='filterForm')
+    form.vui-grid.vui-grid--vertical-align-end.vui-wrap(name='filterForm')
       fieldset.vui-form-element.vui-m-right--small
         label.vui-form-element__label Station Order
         .vui-form-element__control(
