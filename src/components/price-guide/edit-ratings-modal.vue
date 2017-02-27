@@ -1,5 +1,5 @@
 <template lang="pug">
-  vui-modal(size = 'large')
+  vui-modal(size='large')
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
         span Edit Ratings

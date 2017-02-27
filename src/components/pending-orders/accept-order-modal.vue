@@ -1,9 +1,5 @@
 <template lang="pug">
-  vui-modal(
-    v-bind:on-close = 'close'
-    v-bind:show = 'show'
-    size = 'large'
-  )
+  vui-modal(size='large')
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium Accept Order
 
@@ -14,14 +10,12 @@
           @click.prevent = 'showOrders'
         ) Yes
         button.vui-button.vui-button--neutral(
-          @click.prevent = 'close'
+          @click.prevent = '$emit("close")'
         ) No
 </template>
 
 <script>
   export default {
-    props: ['show'],
-
     data () {
       return {
         comment: '',
@@ -30,18 +24,9 @@
     },
 
     methods: {
-      close () {
-        this.show = false
-        this.comment = ''
-      },
-
-      postComment () {
-        this.close()
-      },
-
       showOrders () {
         this.$router.push({
-          name: 'sellers-pending-orders'
+          name: 'sellers-order-management-pending-orders'
         })
       }
     }

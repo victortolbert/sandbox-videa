@@ -213,10 +213,12 @@
       button.vui-button.vui-button--brand Redeliver
 
     accept-order-modal(
-      v-bind:show = 'showAcceptOrderModal'
+      v-show='showAcceptOrderModal'
+      @close='showAcceptOrderModal = false'
     )
     reject-order-modal(
-      v-bind:show = 'showRejectOrderModal'
+      v-show='showRejectOrderModal'
+      @close='showRejectOrderModal = false'
     )
 </template>
 

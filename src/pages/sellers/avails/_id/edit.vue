@@ -235,7 +235,7 @@
         .vui-grid.vui-grid--align-spread
           h3.vui-text-heading--small.vui-m-bottom--small {{ selectedDaypart.name }}
           a.vui-text-align--right(
-            @click.prevent = 'displayEditProgramsModal'
+            @click.prevent = 'showEditProgramsModal = true'
             href = '#'
           )
             vui-icon.vui-m-right--xx-small(
@@ -527,7 +527,8 @@
         sup.vui-m-right--xx-small 1
         span Saving will allow your station to see the work you have completed on this page
     avails-edit-programs-modal(
-      v-bind:show = 'showEditProgramsModal'
+      v-show = 'showEditProgramsModal'
+      @close = 'showEditProgramsModal = false'
     )
 </template>
 
@@ -630,11 +631,6 @@
     },
 
     methods: {
-      displayEditProgramsModal() {
-        alert('\n\nThe work is still in progress on the common Modal component...\n\n...might be ready today, ' + this.whenReady + '\n\n\n' )
-        // this.showEditProgramsModal = true
-      },
-
       fetchAvail (id) {
         axios.get(`/avails/${id}`)
           .then((response) => {

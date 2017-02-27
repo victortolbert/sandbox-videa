@@ -1,9 +1,5 @@
 <template lang="pug">
-  vui-modal(
-    v-bind:show = 'show'
-    v-bind:on-close = 'close'
-    size = 'large'
-  )
+  vui-modal(size='large')
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium Reject Order
     .modal-body
@@ -16,32 +12,19 @@
 
       .vui-text-align--right
         button.vui-button.vui-button--brand.vui-m-right--x-small(
-          @click.prevent = 'close'
+          @click.prevent = '$emit("close")'
         ) Submit
         button.vui-button.vui-button--neutral(
-          @click.prevent = 'close'
+          @click.prevent = '$emit("close")'
         ) Cancel
 </template>
 
 <script>
   export default {
-    props: ['show'],
-
     data () {
       return {
         comment: '',
         expirationDate: new Date()
-      }
-    },
-
-    methods: {
-      close () {
-        this.show = false
-        this.comment = ''
-      },
-
-      postComment () {
-        this.close()
       }
     }
   }
