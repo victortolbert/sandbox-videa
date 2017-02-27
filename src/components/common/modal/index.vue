@@ -1,29 +1,17 @@
 <template lang="pug">
-  .modal-mask(
-    @click = 'close'
-    v-show = 'show'
-    transition = 'modal'
-  )
-    .modal-container(
-      @click.stop = ''
-      v-bind:class = '{ "modal-container--xx-large": size }'
-    )
+  // http://adamwathan.me/2016/01/04/composing-reusable-modal-dialogs-with-vuejs/
+  .modal-mask(@click='$emit("close")' transition='modal')
+    .modal-container(@click.stop='', :class="{ 'modal-container--xx-large': size, 'class-b': isB }")
       slot
 </template>
 
 <script>
   export default {
     props: [
-      'show',
       'onClose',
-      'size'
+      'size',
+      'isB'
     ],
-
-    methods: {
-      close () {
-        this.onClose()
-      }
-    },
 
     mounted () {
       document.addEventListener('keydown', (event) => {

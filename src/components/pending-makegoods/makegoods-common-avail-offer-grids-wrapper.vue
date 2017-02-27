@@ -1,70 +1,33 @@
 <template lang="pug">
   .offers-makegoods-common-avail-offer-grids-wrapper
-    div
-      .vui-grid.vui-grid--pull-padded.vui-grid--align-spread.vui-m-top--medium.vui-m-bottom--medium
-        .vui-col--padded.vui-align-middle
-          h4.vui-text-heading--small {{ offersLabel }}
-        .vui-col--padded
-          button.vui-button.vui-button--neutral(
-            @click = 'addSpotsColumn'
-            type = 'button'
-          )
-            vui-icon(
-              name = 'plus-circle'
-            )
-            span {{ addSpotsLabel }}
-          button.vui-button.vui-button--brand(
-            @click = 'removeSpots'
-            type = 'button'
-          )
-            vui-icon(
-              name = 'minus-circle'
-            )
+    .makegood-spots-offered.vui-m-bottom--xx-large
+      .vui-grid.vui-grid--align-spread.vui-m-bottom--medium
+        .vui-align-middle
+          h4.vui-text-heading--small Makegood spot(s) offered
+        .vui-align-middle
+          button.vui-button.vui-button--neutral.vui-m-right--x-small(@click='addSpotsColumn' type='button')
+            vui-icon(name='plus-circle')
+            | Add a week
+          button.vui-button.vui-button--brand(@click='removeSpots' type='button')
+            vui-icon(name='minus-circle')
             | Delete Spot(s)
-      .vui-scrollable.offers-makegood-offered-spots-container(
-        style = 'height: 14rem'
-      )
-        makegoods-offered-spots-grid(
-          items = 'makegoodOffers'
-          length-items = 'spotLengthItems'
-          offers-changed = 'onDataChanged'
-          order-buy-type = 'orderBuyType'
-        )
-      .vui-grid.vui-grid--pull-padded.vui-grid--align-spread.vui-m-top--medium.vui-m-bottom--medium
-        .vui-col--padded.vui-align-middle
+      .vui-scrollable.offers-makegood-offered-spots-container(style='height: 14rem')
+        makegoods-offered-spots-grid(items='makegoodOffers')
+    .station-avails
+      .vui-grid.vui-grid--align-spread.vui-m-bottom--medium
+        .vui-align-middle
           h4.vui-text-heading--small Station Avails
-        .vui-col--padded
-          button.vui-button.vui-button--neutral(
-            @click = 'createSpots'
-            type = 'button'
-          )
-            vui-icon(
-              name = 'plus-circle'
-            )
+        .vui-align-middle
+          button.vui-button.vui-button--neutral.vui-m-right--x-small(@click='createSpots' type='button')
+            vui-icon(name='plus-circle')
             | Create Spots
-          button.vui-button.vui-button--brand(
-            @click = 'addSpots'
-            type = 'button'
-          )
-            vui-icon(
-              name = 'plus-circle'
-            )
+          button.vui-button.vui-button--brand(@click='addSpots' type='button')
+            vui-icon(name='plus-circle')
             | Add Spot(s)
-    div
-      makegoods-avails-filter(
-        apply-filter = 'filterAvailsApply'
-        clear-filter = 'filterAvailsClear'
-        filter = 'filterAvails.value'
-        selected-preemt-spot-lengths-async = 'selectedPreemtSpotLengthsAsync'
-        show-requested-dayparts = 'showRequestedDayparts'
-      )
-      div(
-        style = 'height: 25rem'
-      )
-        makegoods-avails-grid(
-          order-buy-type = 'orderBuyType'
-          items = 'availsItems'
-        )
+
+      makegoods-avails-filter(show-requested-dayparts='showRequestedDayparts')
+      div(style='height: 25rem')
+        makegoods-avails-grid(order-buy-type='orderBuyType' items='availsItems')
       .vui-m-top--medium
         label Found Avails Count:
         span {{ availsCount }}
@@ -74,8 +37,8 @@
 export default {
   data () {
     return {
-      offersLabel: 'Makegood spot(s) offered',
-      addSpotsLabel: 'Add a week',
+      offersLabel: '',
+      addSpotsLabel: '',
       availsCount: 0
     }
   },

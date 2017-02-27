@@ -1,5 +1,5 @@
 <template lang="pug">
-  .vui-scrollable--x
+  .vui-scrollable--x.vui-m-bottom--large
     table.vui-table.vui-no-row-hover.vui-table--fixed-layout.vui-table--compact.mg-preempts
       thead
         tr
@@ -187,10 +187,27 @@
         items: [
           {
             isSelected: false,
-            airDay: 'Thursday',
-            airTime: '6:00pm',
-            programName: 'Unknown',
-            lineNumber: 1,
+            airDay: 'MO-FR',
+            airTime: '6-7pm',
+            programName: 'Network 23 News This Morning',
+            lineNumber: 2,
+            spotNumber: 0,
+            status: 'Open Preempt',
+            priority: null,
+            airDate: '09/02/2016',
+            spotLength: '30 s',
+            spotAllocations: [],
+            spotRate: '0',
+            buyerImpressions: '8.4',
+            buyerCppm: '0',
+            comment: ''
+          },
+          {
+            isSelected: false,
+            airDay: 'MO-FR',
+            airTime: '6-7pm',
+            programName: 'Network 23 News @ 6',
+            lineNumber: 4,
             spotNumber: 0,
             status: 'Open Preempt',
             priority: null,

@@ -42,7 +42,9 @@
           { title: 'GRPs', isVisible: true }
         ],
         items: [
-          { rowName: 'Credit(s)', spotsCount: 1, rateSum: '0', ratings: '3.10' }
+          { rowName: 'Preempt(s)', spotsCount: 0, rateSum: 0, ratings: 0 },
+          { rowName: 'Makegoods(s)', spotsCount: 1, rateSum: 0, ratings: 0 },
+          { rowName: 'Diff.', spotsCount: -1, rateSum: 0, ratings: 0 }
         ]
       }
     }

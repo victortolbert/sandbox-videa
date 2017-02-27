@@ -658,14 +658,14 @@
 
     premium-clients-modal(
       v-bind:account = 'account'
-      v-bind:show = 'showPremiumClientsModal'
+      v-show = 'showPremiumClientsModal'
+      @close = 'showPremiumClientsModal = false'
     )
-    //- edit-ratings-modal(
-    //-   v-bind:data = 'context'
-    //-   v-bind:heading = 'heading'
-    //-   v-show = 'showEditRatingsModal'
-    //-   v-on:close = 'showEditRatingsModal = false'
-    //- )
+    edit-ratings-modal(
+      v-bind:context = 'context'
+      v-if='showEditRatingsModal'
+      @close='showEditRatingsModal = false'
+    )
 
     //- button(@click = 'showEditRatingsModal = true') show modal
 
@@ -689,9 +689,7 @@
     //-     | Your footer here
 
 
-    add-program-modal(
-      v-bind:show = 'showAddProgramModal'
-    )
+    //- add-program-modal(v-show = 'showAddProgramModal')
 </template>
 
 <script>
@@ -700,10 +698,10 @@
 
   import PremiumPercentDropdown from '~components/price-guide/apply-premium-percent-dropdown'
   import PremiumClientsModal from '~components/price-guide/premium-clients-modal'
-  // import EditRatingsModal from '~components/price-guide/edit-ratings-modal'
+  import EditRatingsModal from '~components/price-guide/edit-ratings-modal'
   // import EditRatingsModal from '~components/modal2'
   // import BootstrapModal from '~components/modal/bootstrap-modal'
-  import AddProgramModal from '~components/price-guide/add-program-modal'
+  // import AddProgramModal from '~components/price-guide/add-program-modal'
   import AddWeekDropdown from '~components/common/add-week-dropdown'
 
   export default {
@@ -717,9 +715,9 @@
       PremiumPercentDropdown,
       PremiumClientsModal,
       // BootstrapModal,
-      // EditRatingsModal,
+      EditRatingsModal,
       AddWeekDropdown,
-      AddProgramModal
+      // AddProgramModal
     },
 
     props: {
@@ -881,9 +879,9 @@
       },
 
       displayEditRatingsModal (context) {
-        alert('\n\nThe work is still in progress on the common Modal component...\n\n...might be ready today\n\n\n')
-        // this.showEditRatingsModal = true
-        // this.context = context
+        // alert('\n\nThe work is still in progress on the common Modal component...\n\n...might be ready today\n\n\n')
+        this.showEditRatingsModal = true
+        this.context = context
         EventBus.fire('display-edit-ratings-modal', context)
       },
 

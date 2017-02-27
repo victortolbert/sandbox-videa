@@ -2,22 +2,20 @@
   .makegoods-add-makegood-offer-view
     vui-title Order Information - Offers
 
-    makegoods-order-details-info(
-      v-bind:orderId = '$route.params.id'
-    )
+    makegoods-order-details-info(v-bind:orderId = 'id')
 
     .vui-grid.vui-grid--align-spread.vui-m-top--large.vui-m-bottom--large
       h2.vui-text-heading--medium
         span {{ $store.state.stationCallLetters }} Details
 
       fieldset.vui-form-element
-        input.vui-button.vui-button--brand(
+        input.vui-button.vui-button--brand.vui-m-right--x-small(
           @click = 'transfer'
           v-bind:disabled = '!canTransfer'
           type = 'button'
           value = 'Transfer to MediaOps'
         )
-        input.vui-button.vui-button--brand(
+        input.vui-button.vui-button--brand.vui-m-right--x-small(
           @click = 'viewGuidlines'
           type = 'button'
           value = 'Guidelines'
@@ -29,28 +27,20 @@
           value = 'Save'
         )
         //- close-button
+
     .vui-tabs--scoped.details-tabs-header-container
-      ul.vui-tabs--scoped__nav.details-tabs(
-        role = 'tablist'
-      )
-        li.vui-tabs--scoped__item.vui-text-heading--label.vui-active(
-          role = 'presentation'
-        )
-          a.vui-tabs--scoped__link(
-            href = ''
-          ) Makegood
+      ul.vui-tabs--scoped__nav.details-tabs(role='tablist')
+        li.vui-tabs--scoped__item.vui-text-heading--label.vui-active(role='presentation')
+          a.vui-tabs--scoped__link(href='') Makegood
+
     div(role='tabpanel')
       form.vui-p-around--large.vui-tabs--scoped__content
-        .vui-grid.vui-m-bottom--x-large
+        .vui-grid.vui-m-bottom--xx-large
           .vui-col.vui-p-right--medium
             .vui-form-element
               label.vui-form-element__label Makegood comments
               .vui-form-element__control
-                //- vui-resizable-textarea(
-                //-   initial-height = '140'
-                //-   text = 'makegood.comment'
-                //-   width = '200'
-                //- )
+                vui-resizable-textarea(initial-height='140' text='' width='200')
           .vui-col.vui-truncate_container--50.vui-size--1-of-2.vui-p-left--medium.vui-grid.vui-align-spread.vui-form--inline
             .vui-col.vui-size--2-of-3.vui-m-top--large
               makegoods-total-grid(
@@ -61,44 +51,36 @@
                 show-difference = 'true'
               )
 
-            .vui-form-element.vui-col.vui-size--1-of-3.vui-m-left--x-large.vui-m-top--medium
+            .vui-form-element.vui-col.vui-size--1-of-3.vui-m-left--x-large
               label.vui-form-element__label Classification
               .vui-form-element__control
                 .vui-select_container
-                  select.vui-select(
-                    v-model = 'selectedClassification'
-                  )
-                    //- option(
-                    //-   value = ''
-                    //- ) All Avails
-                    option(
-                      v-for = 'classification in classifications'
-                    ) {{ classification }}
+                  select.vui-select(v-model='selectedClassification')
+                    option(v-for='classification in classifications') {{ classification }}
+        .preempts-grid.vui-m-bottom--xx-large
+          .vui-grid.vui-m-bottom--small
+            h4.vui-text-heading--small.vui-align-middle.vui-m-right--large Pre-Empt(s)
+            fieldset.vui-form-element.vui-align-middle
+              label.vui-radio
+                input(
+                  v-model = 'isOnlySelectedPreemptsShown'
+                  name = 'selectedPreemptsRadioGroup'
+                  type = 'radio'
+                  value = 'false'
+                )
+                span.vui-radio--faux.vui-m-right--xxx-small
+                span.vui-form-element__label All Order Preempts
 
-        .vui-grid.vui-m-bottom--medium
-          h4.vui-text-heading--small.vui-align-middle.vui-m-right--large Pre-Empt(s)
-          fieldset.vui-form-element.vui-align-middle
-            label.vui-radio
-              input(
-                v-model = 'isOnlySelectedPreemptsShown'
-                name = 'selectedPreemptsRadioGroup'
-                type = 'radio'
-                value = 'false'
-              )
-              span.vui-radio--faux.vui-m-right--xxx-small
-              span.vui-form-element__label All Order Preempts
-            label.vui-radio
-              input(
-                v-model = 'isOnlySelectedPreemptsShown'
-                name = 'selectedPreemptsRadioGroup'
-                type = 'radio'
-                value = 'true'
-              )
-              span.vui-radio--faux.vui-m-right--xxx-small
-              span.vui-form-element__label Selected
-        div(
-          style = 'height: 12rem'
-        )
+              label.vui-radio
+                input(
+                  v-model = 'isOnlySelectedPreemptsShown'
+                  name = 'selectedPreemptsRadioGroup'
+                  type = 'radio'
+                  value = 'true'
+                )
+                span.vui-radio--faux.vui-m-right--xxx-small
+                span.vui-form-element__label Selected
+
           makegoods-preempts-grid(
             is-edit-mode = 'true'
             is-only-selected-preempts-shown = 'isOnlySelectedPreemptsShown'
@@ -123,6 +105,7 @@
   export default {
     data () {
       return {
+        id: this.$route.params.id,
         order: { },
         viewGuidlines: true,
         isOnlySelectedPreemptsShown: true,
@@ -155,6 +138,12 @@
       },
       transfer () {},
       save () {}
+    },
+
+    watch: {
+      '$route' (to, from) {
+        this.id = to.params.id
+      }
     },
 
     beforeCreate () {

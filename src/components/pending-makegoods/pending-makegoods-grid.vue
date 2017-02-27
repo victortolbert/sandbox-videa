@@ -3,58 +3,24 @@
     table.vui-table.vui-no-row-hover.vui-table--striped
       thead
         tr
-          th(
-            rowspan = '2'
-          ) View<br>Offer
-          th(
-            rowspan = '2'
-          ) View<br>Order
-          th(
-            rowspan = '2'
-          ) Advertiser
-          th(
-            rowspan = '2'
-          ) Agency
-          th(
-            rowspan = '2'
-          ) Campaign Name
-          th(
-            rowspan = '2'
-          ) Flight Start
-          th(
-            rowspan = '2'
-          ) Flight End
-          th(
-            colspan = '6'
-          ) Makegood
-          th(
-            colspan = '4'
-          ) Station
-          th(
-            colspan = '2'
-          ) Agency
-          th(
-            rowspan = '2'
-          ) Videa Order
-          th(
-            rowspan = '2'
-          ) MG Created by
-          th(
-            rowspan = '2'
-          ) Date/Time Created
-          th(
-            rowspan = '2'
-          ) MG Last updated by
-          th(
-            rowspan = '2'
-          ) Date/Time last updated
-          th(
-            rowspan = '2'
-          ) CPE
+          th(rowspan = '2') View #[br] Offer
+          th(rowspan = '2') View #[br] Order
+          th(rowspan = '2') Advertiser
+          th(rowspan = '2') Agency
+          th(rowspan = '2') Campaign Name
+          th(rowspan = '2') Flight Start
+          th(rowspan = '2') Flight End
+          th(colspan = '6') Makegood
+          th(colspan = '4') Station
+          th(colspan = '2') Agency
+          th(rowspan = '2') Videa Order
+          th(rowspan = '2') MG Created by
+          th(rowspan = '2') Date/Time Created
+          th(rowspan = '2') MG Last updated by
+          th(rowspan = '2') Date/Time last updated
+          th(rowspan = '2') CPE
         tr
-          th(
-            style = 'padding-left: 0.5rem'
-          ) Number
+          th(style = 'padding-left: 0.5rem') Number
           th Status
           th Sent
           th Due
@@ -66,7 +32,6 @@
           th Action
           th Status
           th Notes
-
       tbody
         tr(
           v-bind:class = '[ offer.overdue ? "overdue" : "" ]'
@@ -136,7 +101,7 @@
       },
       offerRoute: {
         type: String,
-        default: 'sellers-order-management-pending-makegoods-id'
+        default: 'sellers-order-management-pending-makegoods-id-offer'
       }
     },
 
@@ -152,7 +117,8 @@
         let routeInfo = {
           name: this.offerRoute,
           params: {
-            id: id
+            id: id,
+            offer: 'makegood'
           }
         }
 

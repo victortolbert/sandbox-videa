@@ -10,7 +10,7 @@
         span KOKI
         | Details
       fieldset.vui-form-element
-        input.vui-button.vui-button--brand(
+        input.vui-button.vui-button--brand.vui-m-right--x-small(
           @click = 'transfer'
           v-bind:disabled = '!canTransfer'
           type = 'button'
@@ -38,18 +38,14 @@
           a.vui-tabs--scoped__link(
             href = ''
           ) Makegood
-    div(
-      role='tabpanel'
-    )
-      form.vui-p-around--large.vui-tabs--scoped__content(
-        ng-form = 'makegoodForm'
-      )
+    div(role='tabpanel')
+      form.vui-p-around--large.vui-tabs--scoped__content
         .vui-grid.vui-m-bottom--x-large
           .vui-col.vui-p-right--medium
             .vui-form-element
               label.vui-form-element__label Makegood comments
               .vui-form-element__control
-                resizable-textarea(
+                vui-resizable-textarea(
                   initial-height = '140'
                   text = 'makegood.comment'
                   width = '200'
@@ -118,7 +114,7 @@
 
     data () {
       return {
-        viewGuidlines: true,
+        viewGuidelines: true,
         isOnlySelectedPreemptsShown: true,
         mgComment: ''
       }

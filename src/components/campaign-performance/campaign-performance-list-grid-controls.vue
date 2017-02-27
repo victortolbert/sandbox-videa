@@ -45,14 +45,14 @@
       return {
         selectedColumn: 'Unknown',
         columns: [
-          'Unknown',
-          'MG for Missed Spot',
-          'MG for Programing Change',
-          'MG for Live event schedule changes',
-          'MK to fix schedule',
-          'Technical difficulties',
-          'Wrong or no copy',
-          'Buyer request'
+          '',
+          'Station Order #',
+          'Videa Order #',
+          'Advertiser',
+          'Agency',
+          'Product',
+          'Est. #',
+          'Revenue'
         ]
       }
     }

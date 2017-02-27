@@ -65,7 +65,10 @@
               br
               span {{ order.stationOrderNumber }}
 
-    .vui-box.vui-theme--default(:class = '[ shouldShowInfo ? "vui-is-collapsed": "vui-is-expanded" ]')
+    .vui-box(
+      v-show = '!shouldShowInfo'
+      style = 'margin-top: -1px;background: #f0f8fc'
+    )
       .vui-scrollable--x.vui-p-bottom--x-small
         .vui-grid.vui-p-around--large
           .vui-grid.vui-col(style='width: 75%')

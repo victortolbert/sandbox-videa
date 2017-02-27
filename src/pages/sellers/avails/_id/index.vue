@@ -416,14 +416,15 @@
           @click.prevent = 'editAvail(avail.id)'
           href = '#'
         ) Edit Avail
-    avails-release-to-buyer-modal(
-      v-bind:show = 'showReleaseToBuyerModal'
-    )
+
+    avails-release-to-buyer-modal(v-show='showReleaseToBuyerModal' @close='showReleaseToBuyerModal = false')
 </template>
 
 <script>
   import axios from '~plugins/axios'
   import moment from 'moment'
+  import { EventBus } from '~plugins/event-bus'
+
   import AvailsReleaseToBuyerModal from '~components/avails/avails-release-to-buyer-modal'
 
   export default {
@@ -516,6 +517,11 @@
     },
 
     methods: {
+      displayModal () {
+        EventBus.fire('display-modal')
+        this.showReleaseToBuyerModal = true
+      },
+
       fetchAvail (id) {
         axios.get(`/avails/${id}`)
           .then((response) => {

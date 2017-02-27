@@ -121,31 +121,31 @@
       tbody
         template(
           v-bind:class = "{ 'vui-is-selected': offer.isExpanded }"
-          v-for = 'offer in order.offers'
+          v-for = 'offer in orderLineItems'
           v-show = '!isOnlyMissedShown || offer.totalMissedSpots > 0'
         )
           tr
             td(style='width: 41px')
-              a(@click='offer.isExpanded = !offer.isExpanded')
-                //- svg.vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small
-                //-   use(v-if='offer.isExpanded', xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/Images/icons.svg#icon-caret-down')
-            td.vui-text-align--center(style = 'width: 48px')
+              a(v-on:click.prevent='toggleDetail(offer)')
+                vui-icon.vui-icon--small.vui-align-middle(
+                  v-bind:name = 'offer.isExpanded ? "caret-lower-right" : "caret-right"'
+                  style = 'margin-left: -1rem'
+                )
+            td.vui-text-align--center(style='width: 48px')
               a.vui-m-right--xx-small(
                 @click = 'showOfferDialog(offer.firstSentMakegood)'
                 v-show = 'offer.firstSentMakegood'
                 title = 'Click to open the Offer which has been sent and is awaiting approval'
               )
                 vui-icon(name = 'medicine-bottle')
-            td.vui-text-align--center(style = 'width: 52px')
+            td.vui-text-align--center(style='width: 52px')
               a(
                 @click = 'showOfferDialog(offer.firstDraftMakegood)'
                 v-show = 'offer.firstDraftMakegood'
                 title = 'Indicates this Buy Line has DRAFT Offers'
               )
-                vui-icon(name ='pencil-square')
-            td.vui-text-align--center.overflow-visible(
-              style = 'width: 68px'
-            )
+                vui-icon(name='pencil-square')
+            td.vui-text-align--center.overflow-visible(style='width: 68px')
               label.vui-checkbox(
                 v-if = 'isCheckboxVisible(offer)'
                 title = 'Select to include in Offer'
@@ -170,35 +170,31 @@
               style = 'width: 110px'
             ) {{ offer.time }}
             td.vui-truncate(
-              v-bind:title = 'offer.programName'
+              v-bind:title = 'offer.program'
               style = 'width: 200px'
-            ) {{ offer.programName }}
+            ) {{ offer.program }}
             td.vui-text-align--center(
-              v-bind:title = 'offer.spotLength'
+              v-bind:title = 'offer.length'
               style = 'width: 83px'
-            ) {{ offer.spotLength }}
+            ) {{ offer.length }}
             td.vui-text-align--right(
               v-bind:title = 'offer.totalSpots'
               style = 'width: 92px'
-            ) {{ offer.totalSpots }}
+            ) {{ offer.orderSpots }}
             td.vui-text-align--right.vui-text-color--error(
               v-bind:title = 'offer.totalMissedSpots'
               style = 'width: 88px'
-            ) {{ offer.totalMissedSpots }}
+            ) {{ offer.openPreempts }}
             td.vui-text-align--right(
               v-bind:title = 'offer.totalTrafficSpots'
               style = 'width: 82px'
-            ) {{ offer.totalTrafficSpots }}
-            td.vui-text-align--center(
-              style = 'width: 140px'
-            )
+            ) {{ offer.trafficSpots }}
+            td.vui-text-align--center(style = 'width: 140px')
               a(
                 @click = 'showCurrentInfo(offer)'
                 title = 'Click to see current rates & ratings and matched Avails'
               )
-                vui-icon(
-                  name = 'popout'
-                )
+                vui-icon(name = 'popout')
             td.spot-allocation-cell(
               v-if = 'isShowSpotAllocations'
               style = 'width: 503px'
@@ -211,21 +207,21 @@
             td.vui-text-align--right.currency(
               v-bind:title = 'offer.orderedSpotRate'
               style = 'width: 100px'
-            ) {{ offer.orderedSpotRate }}
+            ) {{ offer.spotRate | numberWithCommas | formatMoney }}
             td.vui-text-align--right(
               v-bind:title = 'offer.orderedImpressions'
               v-if = 'isImpressionsBuyType'
               style = 'width: 100px'
-            ) {{ offer.orderedImpressions }}
+            ) {{ offer.buyerRtg }}
             td.vui-text-align--right(
               v-bind:title='offer.videaCurrentImpressions'
               v-if = 'isImpressionsBuyType'
               style = 'width: 100px'
-            ) {{ offer.videaCurrentImpressions }}
+            ) {{ offer.videaRtg }}
             td.vui-text-align--right.currency(
               v-bind:title = 'offer.lineTotalMoney'
               style = 'width: 100px'
-            ) {{ offer.lineTotalMoney }}
+            ) {{ offer.lineNumberTotal | numberWithCommas | formatMoney }}
             td.vui-truncate(
               v-bind:title='offer.buyerComment'
               style = 'width: 100px'
@@ -233,10 +229,8 @@
             td.vui-truncate(
               v-bind:title='offer.stationOrderComment'
               style = 'width: 132px'
-            ) {{ offer.stationOrderComment }}
-            td(
-              style = 'width: 100px'
-            )
+            ) {{ offer.videaToStationComments }}
+            td(style = 'width: 100px')
             td(
               v-bind:title = 'offer.lineType'
               style = 'width: 100px'
@@ -245,92 +239,12 @@
             v-if = 'offer.isExpanded'
             v-show = '!isOnlyMissedShown || offer.totalMissedSpots > 0'
           )
-            td.vui-align-top.om-nested-table-container.bordered(
-              colspan = '14'
-              style = 'padding: 0'
-            )
-              makegoods-nested-order-line-grid(
-                column-widths = 'expandingColumnsWidths'
-                is-items-selectable = 'isChildCheckboxVisible'
-                is-show-spot-allocations = 'isShowSpotAllocations'
-                open-makegood = 'showOfferDialog'
-                order-line-child-selected = 'orderLineChildSelected(order)'
-                order-line-id = 'order.orderDetailsId'
-                spot-allocation-navigator = 'spotAllocationNavigator'
-              )
-            td.vui-align-top.om-nested-table-container.bordered(
-              colspan = '4'
-              style = 'padding: 0'
-            )
-              makegoods-nested-order-line-invoice-details-grid(
-                column-widths = 'expandingColumnsWidths'
-                is-items-selectable = 'isChildCheckboxVisible'
-                is-show-spot-allocations = 'isShowSpotAllocations'
-                order-line-child-selected = 'orderLineChildSelected(order)'
-                order-line-id = 'order.orderDetailsId'
-                spot-allocation-navigator = 'spotAllocationNavigator'
-              )
-                .vui-box(
-                  style = 'padding: 0.5rem; border: none; border-top: 1px solid #51535c'
-                )
-                  h3.vui-text-heading--label Agency Invoice Details
-                div
-                  table.vui-table.vui-no-row-hover.vui-table--fixed-layout(
-                    cg-busy = 'promise'
-                  )
-                    caption
-                    thead
-                      tr
-                        th.vui-truncate(
-                          v-bind:style = '{ "width": columnWidths.isciAdId }'
-                          style = 'border-left: 1px solid rgb(81, 83, 92); width: 100px'
-                        )
-                          | ISCI
-                          br
-                          | AD ID
-                        th.vui-truncate(
-                          v-bind:style = '{ "width": columnWidths.invoiceDate }'
-                          style = 'width: 100px'
-                        )
-                          | Station
-                          br
-                          | Inv Date
-                        th.vui-truncate(
-                          v-bind:style = '{ "width": columnWidths.affidavitRate }'
-                          style = 'width: 99px'
-                        )
-                          | Station
-                          br
-                          | Inv Amt
-                        th.vui-truncate(
-                          v-bind:style = '{ "width": columnWidths.externalInvoiceId }'
-                          style = 'width: 99px'
-                        )
-                          | Station
-                          br
-                          | Inv #
-                    tbody
-                      tr(
-                        v-for = 'item in childItems'
-                      )
-                        td(
-                          style = 'border-left: 1px solid #51535c; height: 2.5rem'
-                        ) {{ item.isciAdId }}
-                        td.vui-truncate {{ item.invoiceDate }}
-                        td.vui-truncate.vui-text-align--right(
-                          v-bind:class = '{ "currency": item.detailsAffidavitRate }'
-                        ) {{ item.detailsAffidavitRate }}
-                        td.vui-truncate  {{ item.externalInvoiceId }}
-            td.vui-align-top.om-nested-table-container.bordered(
-              colspan = '4'
-              style = 'padding:0'
-            )
-              makegoods-nested-order-line-makegoods-grid(
-                column-widths = 'expandingMakegoodColumnsWidths'
-                items = 'item.makegoods'
-                order-line-id = 'item.orderDetailsId'
-                show-offer-dialog = 'showOfferDialog'
-              )
+            td.vui-align-top.om-nested-table-container.bordered(colspan='14' style='padding: 0')
+              makegoods-nested-order-line-grid
+            td.vui-align-top.om-nested-table-container.bordered(colspan='4' style='padding: 0')
+              makegoods-nested-order-line-invoice-details-grid
+            td.vui-align-top.om-nested-table-container.bordered(colspan='4' style='padding: 0')
+              makegoods-nested-order-line-makegoods-grid
     //- grid
     //-   grid-item(size = '3/4')
     //-     .vui-box.vui-theme--shade
@@ -340,11 +254,14 @@
 </template>
 
 <script>
+  import axios from '~plugins/axios'
+
   export default {
     props: ['order'],
 
     data () {
       return {
+        orderLineItems: [],
         isShowSpotAllocations: true,
         isImpressionsBuyType: true,
         isOnlyMissedShown: true,
@@ -373,13 +290,56 @@
             stationOrderComment: '',
             lineType: 'Original'
           }
-        ]
+        ],
+        nestedOrderLineGridColumns: {
+          unitAiredStatusName: { sortable: true, isSorted: false, sortedDesc: false, title: 'Aired<br>Status', columnName: 'unitAiredStatusName' },
+          spotNumber: { sortable: true, isSorted: false, sortedDesc: false, title: 'Spot#', columnName: 'spotNumber' },
+          programPlaced: { sortable: true, isSorted: false, sortedDesc: false, title: 'Program Placed', columnName: 'programName' },
+          statusName: { sortable: true, isSorted: false, sortedDesc: false, title: 'Status<br>Name', columnName: 'statusName' },
+          priority: { sortable: true, isSorted: false, sortedDesc: false, title: 'Priority', columnName: 'priority' },
+          airDay: { sortable: true, isSorted: false, sortedDesc: false, title: 'Air Day', columnName: 'airDay' },
+          airDate: { sortable: true, isSorted: false, sortedDesc: false, title: 'Air Date', columnName: 'airDate' },
+          airTime: { sortable: true, isSorted: false, sortedDesc: false, title: 'Air Time', columnName: 'airTime' },
+          spotLength: { sortable: true, isSorted: false, sortedDesc: false, title: 'Length', columnName: 'spotLength' },
+          reason: { sortable: true, isSorted: false, sortedDesc: false, title: 'Reason', columnName: 'currentStateDescription' },
+          lineNumber: { sortable: true, isSorted: false, sortedDesc: false, title: 'Station Line#', columnName: 'lineNumber' }
+        },
+        nestedOrderLineInvoiceDetailsGridColumns: {
+          isciAdId: { sortable: true, isSorted: false, sortedDesc: false, title: 'ISCI<br>AD ID', columnName: 'isciAdId' },
+          invoiceDate: { sortable: true, isSorted: false, sortedDesc: false, title: 'Station<br>Inv. Date', columnName: 'invoiceDate' },
+          externalInvoiceId: { sortable: true, isSorted: false, sortedDesc: false, title: 'Station<br>Inv. Number', columnName: 'externalInvoiceId' },
+          affidavitRate: { sortable: true, isSorted: false, sortedDesc: false, title: 'Station Inv. Amt.', columnName: 'affidavitRate' }
+        },
+        nestedOrderLineMakegoodsGridColumns: {
+          sellerOfferId: { sortable: true, isSorted: false, sortedDesc: false, title: 'MG#', columnName: 'sellerOfferId' },
+          statusName: { sortable: true, isSorted: false, sortedDesc: false, title: 'MG Status', columnName: 'statusName' },
+          confirmDate: { sortable: true, isSorted: false, sortedDesc: false, title: 'MG Applied', columnName: 'confirmDate' },
+          newMakegoodLines: { sortable: true, isSorted: false, sortedDesc: false, title: 'New MG Lines', columnName: 'newMakegoodLines' }
+        }
       }
     },
     methods: {
+      fetchOrderLineItems () {
+        axios.get('/orderLineItems')
+          .then((response) => {
+            this.orderLineItems = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
+      toggleDetail (offer) {
+        offer.isExpanded = !offer.isExpanded
+      },
+
       isCheckboxVisible (item) {},
       orderLineOnSelected (item) {},
       showCurrentInfo (item) {}
+    },
+
+    created () {
+      this.fetchOrderLineItems()
     }
   }
 </script>
