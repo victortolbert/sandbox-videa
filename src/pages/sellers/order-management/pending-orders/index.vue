@@ -1,14 +1,17 @@
 <template lang="pug">
   .order-management-view
     vui-title Pending Orders
+
     vui-subtitle.
       Click an Order Number below to accept/reject new orders, modify orders,
       and update share information. Note that sales representatives can only
       view orders and update share information.
+
     pending-orders-grid(
       v-bind:grid-columns = 'gridColumns'
       v-bind:orders = 'orders'
     )
+
     .vui-align-middle
       sup.vui-m-right--xx-small *
       span(

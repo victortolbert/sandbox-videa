@@ -1,0 +1,12 @@
+{
+  "name": "sandbox",
+  "alias": "sandbox.videa.design",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "type": "npm",
+  "forwardNpm": true,
+  "engines": {
+    "node": "7.4.0"
+  }
+}

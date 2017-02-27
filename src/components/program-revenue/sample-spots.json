@@ -2,36 +2,31 @@
   {
     "id": 1,
     "advertiser": "Metro Wireless",
-    "intendedAirDate": "04/30/16",
+    "intendedAirDate": "20.02.2017",
+    "purchasedDemo": "P18-49",
     "unitRate": "200",
-    "cpp": "245"
+    "ratingsIMPs": 0.8,
+    "cpp": "250",
+    "stationOrder": 131498
   },
   {
     "id": 2,
-    "advertiser": "Piedmont Healthcare",
-    "intendedAirDate": "04/23/16",
+    "advertiser": "Metro Wireless",
+    "intendedAirDate": "06.03.2017",
+    "purchasedDemo": "P18-49",
     "unitRate": "250",
-    "cpp": "238"
+    "ratingsIMPs": 0.8,
+    "cpp": "312.5",
+    "stationOrder": 131498
   },
   {
     "id": 3,
-    "advertiser": "Southeast Ford",
-    "intendedAirDate": "04/23/16",
-    "unitRate": "175",
-    "cpp": "233"
-  },
-  {
-    "id": 4,
-    "advertiser": "Southeast Ford",
-    "intendedAirDate": "05/07/16",
-    "unitRate": "175",
-    "cpp": "243"
-  },
-  {
-    "id": 5,
-    "advertiser": "Papa John's",
-    "intendedAirDate": "05/21/16",
-    "unitRate": "200",
-    "cpp": "238"
+    "advertiser": "Piedmont Healthcare",
+    "intendedAirDate": "06.02.2017",
+    "purchasedDemo": "P25-54",
+    "unitRate": "195",
+    "ratingsIMPs": 1.2,
+    "cpp": "162.5",
+    "stationOrder": 131498
   }
 ]

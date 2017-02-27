@@ -1,6 +1,9 @@
 <template lang="pug">
   .makegoods-details-view
-    vui-title Order Information - Offers {{ id }}
+    vui-title.vui-grid.vui-grid--align-spread
+      span Order Information - Offers
+      span {{ order.advertiser }} &mdash; Order # {{ id }}
+
 
     makegoods-order-details-info(v-bind:order='order')
 

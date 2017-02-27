@@ -1,13 +1,13 @@
 <template lang="pug">
   .order-management-show-view
-    vui-title.vui-grid.vui-grid--align-spread
+    vui-title.vui-grid.vui-grid--align-spread(style='margin-bottom: 0')
       span Pending Order Details
-      span {{ id }}
+      span  {{ order.advertiser }} &mdash; Order # {{ id }}
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
       a(
         @click.prevent = 'showSummary'
       )
-        vui-icon.vui-align-middle(
+        vui-icon.vui-m-right--xx-small.vui-align-middle(
           name = 'arrow-circle-left'
         )
         span.vui-align-middle Back to Pending Orders
@@ -169,7 +169,7 @@
     .vui-grid.vui-grid--align-end.vui-m-bottom--medium
       a.vui-align-middle.vui-m-right--small(
         target = '_blank'
-        @click.prevent = 'showOffer(offer.makegoodNumber)'
+        @click.prevent = 'showOffer(id)'
       ) Manage Schedule
       button.vui-button.vui-button--brand Redeliver
 
@@ -208,7 +208,7 @@
     .vui-grid.vui-grid--align-end.vui-m-bottom--medium
       a.vui-align-middle.vui-m-right--small(
         target = '_blank'
-        @click.prevent = 'showOffer(offer.makegoodNumber)'
+        @click.prevent = 'showOffer(id)'
       ) Manage Schedule
       button.vui-button.vui-button--brand Redeliver
 

@@ -15,17 +15,17 @@
       .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label Delivered To Date #[sup 1]
         br
-        b.vui-form-element__helper {{ total.deliveredToDate }}
+        b.vui-form-element__helper.vui-m-right--small {{ total.deliveredToDate }}
     .vui-m-bottom--x-small
       .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label %
         br
-        b.vui-form-element__helper {{ total.percentage }}
+        b.vui-form-element__helper.vui-m-right--small {{ total.percentage }}
     .vui-m-bottom--x-small
       .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label +/-
         br
-        b.vui-form-element__helper(
+        b.vui-form-element__helper.vui-m-right--small(
           style='color: rgb(197, 32, 62)'
         ) {{ total.difference }}
 </template>

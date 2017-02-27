@@ -6,7 +6,9 @@
     main.vui-main(
       v-bind:class = '{ "vui-main--login": $store.state.activeApp == "login" }'
     )
-      router-view
+      //- router-view(name='header-top')
+      transition(name='slide')
+        router-view
     app-footer
 </template>
 
@@ -467,6 +469,16 @@
     font-size 0
     padding 0
     background none
+
+  // // Override VUI setting
+  // .vui-table tr > th:first-child,
+  // .vui-table tr > td:first-child
+  //   padding-left 0
+
+  // .vui-table tr > th:last-child,
+  // .vui-table tr > td:last-child
+  //   padding-right: 0
+
 </style>
 
 <!-- Site Navigation -->

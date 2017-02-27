@@ -2,7 +2,7 @@
   .orders-show-detail
     vui-title.vui-grid.vui-grid--align-spread(style='margin-bottom: 0')
       span Order Reporting Detail
-      span {{ order.advertiser }} &mdash;Order # {{ order.id }}
+      span {{ order.advertiser }} &mdash; Order # {{ id }}
 
     .vui-grid.vui-grid--align-spread.vui-m-bottom--large
         a(@click.prevent='showOrders')
@@ -43,6 +43,7 @@
 
     data () {
       return {
+        id: this.$route.params.id,
         order: {},
         editing: false,
         loading: false,

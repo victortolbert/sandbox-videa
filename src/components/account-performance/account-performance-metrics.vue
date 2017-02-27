@@ -1,7 +1,5 @@
 <template lang="pug">
-  .vui-grid.vui-p-around--small(
-    style = 'background-color: white'
-  )
+  .vui-grid.vui-p-around--small
     vui-media(
       label = 'Station Audience Share'
     ) {{ $store.state.settings.stationAudienceShare | decimalToPercent }}

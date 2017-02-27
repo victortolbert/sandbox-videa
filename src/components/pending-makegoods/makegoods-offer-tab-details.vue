@@ -80,7 +80,7 @@
           .vui-size--4-of-12.vui-grid.vui-grid--align-start
             .vui-size--3-of-12.vui-align-middle
               a.vui-button.vui-button--secondary.vui-m-right--xx-small(
-                v-bind:href = '`/sellers/order-management/pending-makegoods/${orderId}/offer`'
+                v-bind:href = '`/sellers/order-management/pending-makegoods/${id}/offer`'
                 target = '_blank'
               ) Add Offer
             .vui-size--3-of-12
@@ -277,9 +277,10 @@
 
 <script>
   export default {
-    props: [ 'order', 'offers', 'orderId' ],
+    props: [ 'order', 'offers' ],
     data () {
       return {
+        id: this.$route.params.id,
         currentTabName: 'Order',
         isCurrentLineInfoPopupShown: false,
         offerTabIsOnlyDraftAndPendingShown: true,
@@ -293,6 +294,7 @@
         }
       }
     },
+
     methods: {
       selectTab (tab) {
         this.currentTabName = tab

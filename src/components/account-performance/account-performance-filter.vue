@@ -63,13 +63,12 @@
       .vui-form-element__control(
         style = 'margin-top: -2rem'
       )
-        label.vui-checkbox
-          input#checkbox-01(
-            type = 'checkbox'
-            name = 'options'
-          )
-          span.vui-checkbox--faux
-          span.vui-form-element__label Exclude $0 Spots
+        input#checkbox-01.vui-m-right--xx-small(
+          type = 'checkbox'
+          name = 'options'
+        )
+        span.vui-checkbox--faux
+        span.vui-form-element__label Exclude $0 Spots
 </template>
 
 <script>

@@ -5,7 +5,7 @@
     role = 'tabpanel'
   )
     //- validator(name='userSettingsValidation')
-    form.vui-container--medium(
+    form.vui-container--x-large(
       @submit = 'onSubmit'
       novalidate
     )
@@ -61,7 +61,7 @@
             )
               //- validator-errors(:validation="$userSettingsValidation")
             ul
-              //- li(v-if='$userSettingsValidation.password.minlength') At least 6 characters
+              li At least 6 characters
               li Contains uppercase and lowercase letters
               li Contains a number
               li Contains at least 1 special character (!@$)

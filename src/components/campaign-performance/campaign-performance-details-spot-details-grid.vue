@@ -93,7 +93,7 @@
         tr(
           v-for = 'item in items'
         )
-          td.vui-truncate(
+          td.vui-truncate.vui-text-align--right(
             v-bind:title = 'item.buyLineNumber'
             data-column-name = 'buyLineNumber'
           ) {{ item.buyLineNumber }}
@@ -127,7 +127,7 @@
           td.vui-truncate(
             data-column-name = 'orderedDates'
           ) {{ item.orderedDates }}
-          td.vui-truncate(
+            td.vui-truncate.vui-text-align--right(
             v-bind:title = 'item.formattedSpotLength'
             data-column-name = 'spotLength'
           ) {{ item.formattedSpotLength }}

@@ -1,6 +1,6 @@
 <template lang="pug">
-  .vui-scrollable--x
-    table.vui-table.vui-table--striped.vui-no-row-hover
+  .vui-scrollable--x.account-performance-grid
+    table.vui-table.vui-no-row-hover
       thead
         tr
           th.vui-text-align--center.u-width-x-small Order Count
@@ -24,52 +24,71 @@
           ) Total
           td.vui-text-align--right {{ totalRevenueTy | numberWithCommas | formatMoney }}
           td.vui-text-align--right {{ totalSpotVolumeTy | numberWithCommas }}
-      tbody
-        tr(
-          v-for = 'account in accounts'
-        )
-          td.vui-text-align--center {{ account.orderCount }}
+      tbody(
+        v-for = 'account in accounts'
+      )
+        tr
+          td.vui-text-align--right {{ account.orderCount }}
           td
             a(
-              @click.prevent = 'showAccountDetail(account)'
+              @click.prevent = 'toggleExpanded(account)'
               href = '#'
-            ) {{ account.advertiser }}
+            )
+              vui-icon(
+                v-bind:name = 'account.expanded ? "caret-lower-right" : "caret-right"'
+              )
+              span {{ account.advertiser }}
           td {{ account.agency }}
           td.vui-text-align--right {{ account.revenueTy | numberWithCommas | formatMoney }}
           td.vui-text-align--right {{ account.spotVolumeTy }}
-    account-detail-modal(
-      v-bind:account = 'selectedAccount'
-      v-bind:show = 'showAccountDetailModal'
-    )
+        tr(
+          v-show = 'account.expanded'
+        )
+          td.expanded(
+            colspan = '5'
+          )
+            table.vui-table.vui-no-row-hover.vui-m-bottom--large.vui-m-top--medium(
+              style = 'background: white'
+            )
+              thead.vui-theme--shade
+                tr
+                  th Station Order #
+                  th CPE
+                  th Flight Start
+                  th Flight End
+                  th Revenue
+                  th Market Budget
+                  th Demo
+                  th Share
+              tbody
+                tr(
+                  v-for = 'order in account.orders'
+                )
+                  td {{ order.id }}
+                  td {{ order.CPE }}
+                  td {{ order.flightStartDate }}
+                  td {{ order.flightEndDate }}
+                  td {{ order.revenue | numberWithCommas | formatMoney }}
+                  td {{ order.marketBudget | numberWithCommas | formatMoney }}
+                  td {{ order.demo }}
+                  td {{ order.share | decimalToPercent }}
 </template>
 
 <script>
-  import AccountDetailModal from '~components/account-detail-modal'
 
   export default {
-    components: {
-      AccountDetailModal
+    props: {
+      accounts: {
+        type: Array
+      },
+      orders: {
+        type: Array
+      },
     },
-
-    props: [ 'accounts' ],
 
     data () {
       return {
-        showAccountDetailModal: false,
-        selectedAccount: {
-          id: 1,
-          advertiser: '',
-          orders: [
-            {
-              id: 1,
-              start: '',
-              end: '',
-              revenue: 0,
-              share: 0
-            }
-          ]
-        },
-        accountPerformance: {}
+        expanded: false
       }
     },
 
@@ -97,9 +116,8 @@
     },
 
     methods: {
-      showAccountDetail (account) {
-        this.showAccountDetailModal = true
-        this.selectedAccount = account
+      toggleExpanded (account) {
+        account.expanded = !account.expanded
       }
     }
   }

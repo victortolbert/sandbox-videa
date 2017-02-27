@@ -1,5 +1,6 @@
 {
-  "name": "videa-sandbox",
+  "name": "sandbox",
+  "alias": "sandbox.videa.design",
   "version": "0.1.0",
   "description": "A playground for building, documenting and demonstrating UI patterns and components",
   "private": true,
@@ -32,7 +33,6 @@
     "@frctl/fractal": "^1.0.11",
     "@frctl/mandelbrot": "^1.0.7",
     "@frctl/nunjucks": "^1.0.2",
-    "@victortolbert/videa-ui-css": "1.0.0-alpha.26",
     "accounting": "^0.4.1",
     "ava": "^0.18.2",
     "axios": "^0.15.3",
@@ -125,6 +125,7 @@
     "vue2-selectize": "^1.0.2",
     "vuelidate": "^0.2.0",
     "vuex": "^2.1.1",
+    "wallop": "^2.4.1",
     "what-input": "^4.0.6",
     "yaml2json": "^1.0.2",
     "zxcvbn": "^4.4.1"

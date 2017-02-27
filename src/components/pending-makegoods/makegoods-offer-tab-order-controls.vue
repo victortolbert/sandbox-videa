@@ -3,46 +3,66 @@
     table.vui-table.vui-no-row-hover.vui-table--striped.vui-table--fixed-layout
       thead
         tr
-          th(style='width: 41px')
-          th(style='width: 48px') Sent
-          th(style='width: 52px') Draft
-          th(style = 'width: 68px') Select
-          th(style = 'width: 74px')
+          th(
+            style = 'width: 41px'
+          )
+          th(
+            style = 'width: 48px'
+          ) Sent
+          th(
+            style = 'width: 52px'
+          ) Draft
+          th(
+            style = 'width: 68px'
+          ) Select
+          th(
+            style = 'width: 74px'
+          )
             vui-sorting-column(
               column-name = 'lineNumber'
               current-sorting = 'sorting'
               on-sorting = 'columnSortingChanged(gridColumns.lineNumber)'
               title = 'Line #'
             )
-          th(style = 'width: 70px')
+          th(
+            style = 'width: 70px'
+          )
             vui-sorting-column(
               column-name = 'days'
               current-sorting = 'sorting'
               on-sorting = 'columnSortingChanged(gridColumns.days)'
               title = 'Days'
             )
-          th(style = 'width: 110px')
+          th(
+            style = 'width: 110px'
+          )
             vui-sorting-column(
               column-name = 'time'
               current-sorting = 'sorting'
               on-sorting = 'columnSortingChanged(gridColumns.time)'
               title = 'Time'
             )
-          th.vui-truncate(style='width: 200px')
+          th.vui-truncate(
+            style='width: 200px'
+          )
             vui-sorting-column(
               column-name = 'programName'
               current-sorting = 'sorting'
               on-sorting = 'columnSortingChanged(gridColumns.programName)'
               title = 'Program'
             )
-          th(style = 'width: 83px')
+          th(
+            style = 'width: 83px'
+          )
             vui-sorting-column(
               column-name = 'spotLength'
               current-sorting = 'sorting'
               on-sorting = 'columnSortingChanged(gridColumns.spotLength)'
               title = 'Length'
             )
-          th(style = 'width: 92px')
+          th(
+            style = 'width: 92px'
+          )
             vui-sorting-column(
               column-name = 'totalSpots'
               current-sorting = 'sorting'
@@ -100,24 +120,43 @@
               on-sorting = 'columnSortingChanged(gridColumns.orderedImpressions)'
               title = 'Buyer<br>IMP'
             )
-          th(v-if='isImpressionsBuyType' style='width: 100px')
+          th(
+            v-if = 'isImpressionsBuyType'
+            style = 'width: 100px'
+          )
             vui-sorting-column(
               column-name = 'videaCurrentImpressions'
               current-sorting = 'sorting'
               on-sorting = 'columnSortingChanged(gridColumns.videaCurrentImpressions)'
               title = 'Videa<br>IMP'
             )
-          th(style = 'width: 100px')
+          th(
+            style = 'width: 100px'
+          )
             vui-sorting-column(
               column-name = 'lineTotalMoney'
               current-sorting = 'sorting'
               on-sorting = 'columnSortingChanged(gridColumns.lineTotalMoney)'
               title = 'Line<br>$ Total'
             )
-          th(style='width: 100px') Buyer #[br] Comment
-          th(style = 'width: 132px') Station #[br] Order Comment
-          th(style = 'width: 100px') Spot Option
-          th(style = 'width: 100px') Line Type
+          th(
+            style = 'width: 100px'
+          )
+            | Buyer
+            br
+            | Comment
+          th(
+            style = 'width: 132px'
+          )
+            | Station
+            br
+            | Order Comment
+          th(
+            style = 'width: 100px'
+          ) Spot Option
+          th(
+            style = 'width: 100px'
+          ) Line Type
       tbody
         template(
           v-bind:class = "{ 'vui-is-selected': offer.isExpanded }"
@@ -125,24 +164,36 @@
           v-show = '!isOnlyMissedShown || offer.totalMissedSpots > 0'
         )
           tr
-            td(style='width: 41px')
-              a(@click='offer.isExpanded = !offer.isExpanded')
+            td(
+              style = 'width: 41px'
+            )
+              a(
+                @click = 'offer.isExpanded = !offer.isExpanded'
+              )
                 //- svg.vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small
                 //-   use(v-if='offer.isExpanded', xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/Images/icons.svg#icon-caret-down')
-            td.vui-text-align--center(style = 'width: 48px')
+            td.vui-text-align--center(
+              style = 'width: 48px'
+            )
               a.vui-m-right--xx-small(
                 @click = 'showOfferDialog(offer.firstSentMakegood)'
                 v-show = 'offer.firstSentMakegood'
                 title = 'Click to open the Offer which has been sent and is awaiting approval'
               )
-                vui-icon(name = 'medicine-bottle')
-            td.vui-text-align--center(style = 'width: 52px')
+                vui-icon(
+                  name = 'medicine-bottle'
+                )
+            td.vui-text-align--center(
+              style = 'width: 52px'
+            )
               a(
                 @click = 'showOfferDialog(offer.firstDraftMakegood)'
                 v-show = 'offer.firstDraftMakegood'
                 title = 'Indicates this Buy Line has DRAFT Offers'
               )
-                vui-icon(name ='pencil-square')
+                vui-icon(
+                  name ='pencil-square'
+                )
             td.vui-text-align--center.overflow-visible(
               style = 'width: 68px'
             )

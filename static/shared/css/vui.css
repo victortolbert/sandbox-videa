@@ -39,6 +39,11 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(../fonts/webfonts/glyphicons-halflings-regular-68ed1dac.woff) format("woff");
+}
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -2954,7 +2959,7 @@ a.vui-button--inverse:focus {
   border-radius: 0.25rem;
   width: 100%;
   transition: border 0.1s linear, background-color 0.1s linear;
-  height: 2.125rem;
+  height: calc(2.125rem + 2px);
 }
 
 .vui-select:focus, .vui-select:active {
@@ -14926,3 +14931,97 @@ tr.overdue td {
 
 /*** Dropdown styles from old vui.css ***/
 
+/*** Toggle-checkbox ***/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #9faab5;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #0070d2;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0070d2;
+}
+
+input + .slider + span.option1 {
+  display: block;
+  padding-left: 60px;
+}
+input + .slider + span.option1 + span.option2 {
+  display: none;
+}
+input:checked + .slider + span.option1 {
+  display: none;
+}
+input:checked + .slider + span.option1 + span.option2 {
+  display: block;
+  padding-left: 60px;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/*** Glyphicons styles ***/
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-calendar:before {
+  content: "\E109";
+}
+.glyphicon-minus:before {
+  content: "\2212";
+}
