@@ -50,7 +50,7 @@
         th(style='width: 110px') Videa to Station #[br] Comment
         th(style='width: 100px') Spot #[br] Option
         th(style='width: 100px') Line #[br] Type
-    tbody(v-for = 'item in items')
+    tbody(v-for = 'item in orderLineItems')
       tr(v-bind:class = '{ "vui-is-selected": item.isExpanded }')
         td.vui-text-align--center(style='width: 80px')
           a(v-on:click = 'item.isExpanded = !item.isExpanded')
@@ -63,11 +63,11 @@
         ) {{ item.lineNumber }}
         td(v-bind:title='item.days' style='width: 82px') {{ item.days }}
         td.vui-truncate(v-bind:title='item.time' style='width: 110px') {{ item.time }}
-        td.vui-truncate(v-bind:title='item.programName' style='width: 200px') {{ item.programName }}
-        td(v-bind:title='item.spotLength' style='width: 88px') {{ item.spotLength }}
-        td.vui-text-align--right(v-bind:title='item.totalSpots' style='width: 116px') {{ item.totalSpots }}
-        td.vui-text-align--right(v-bind:title='item.totalMissedSpots' style='width: 100px') {{ item.totalMissedSpots }}
-        td.vui-text-align--right(v-bind:title='item.totalTrafficSpots' style='width: 86px') {{ item.totalTrafficSpots }}
+        td.vui-truncate(v-bind:title='item.programName' style='width: 200px') {{ item.program }}
+        td(v-bind:title='item.spotLength' style='width: 88px') {{ item.length }}
+        td.vui-text-align--right(v-bind:title='item.totalSpots' style='width: 116px') {{ item.orderSpots }}
+        td.vui-text-align--right(v-bind:title='item.totalMissedSpots' style='width: 100px') {{ item.openPreempts }}
+        td.vui-text-align--right(v-bind:title='item.totalTrafficSpots' style='width: 86px') {{ item.trafficSpots }}
         td.vui-text-align--center(style='width: 140px')
           a.pointer.current-info.popup(v-on:click='showCurrentInfo(item)')
             vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
@@ -98,23 +98,23 @@
             v-model = 'item.weeklySpotAllocations'
             navigator = 'spotAllocationNavigator'
           )
-        td.vui-text-align--right(v-bind:title='item.orderedSpotRate' style='width: 100px') {{ item.orderedSpotRate | numberWithCommas | formatMoney }}
+        td.vui-text-align--right(v-bind:title='item.orderedSpotRate' style='width: 100px') {{ item.spotRate | numberWithCommas | formatMoney }}
         td.vui-text-align--right(
           v-if = '!isImpressionsBuyType'
           v-bind:title = 'item.orderedRating'
           style = 'width: 100px'
-        ) {{ item.orderedRating | formatRating }}
+        ) {{ item.buyerRtg | formatRating }}
         td.vui-text-align--right(
           v-if = '!isImpressionsBuyType'
           v-bind:title = 'item.videaCurrentRating'
           style = 'width: 100px'
-        ) {{ item.videaCurrentRating }}
-        td.vui-text-align--right.currency(v-bind:title='item.lineTotalMoney' style='width: 100px') {{ item.lineTotalMoney | numberWithCommas | formatMoney }}
+        ) {{ item.videaRtg }}
+        td.vui-text-align--right.currency(v-bind:title='item.lineTotalMoney' style='width: 100px') {{ item.lineNumberTotal | numberWithCommas | formatMoney }}
         td(v-bind:title='item.buyerComment' style='width: 100px') {{ item.buyerComment }}
-        td(v-bind:title='item.stationOrderComment' style='width: 150px') {{ item.stationOrderComment }}
+        td(v-bind:title='item.stationOrderComment' style='width: 150px') {{ item.videaToStationComments }}
         td(title='' style='width: 100px')
         td(v-bind:title='item.lineType' style='width: 100px') {{ item.lineType }}
-      tr.vui-is-expanded(v-if='item.isExpanded' ng-repeat-end='')
+      tr.vui-is-expanded(v-if='item.isExpanded')
         td.vui-align-top.om-nested-table-container.bordered(
           v-bind:colspan = 'isShowSpotAllocations ? 11 : 10',
           style='padding: 0'
@@ -309,6 +309,7 @@
 </template>
 
 <script>
+  import axios from '~plugins/axios'
   import moment from 'moment'
 
   export default {
@@ -328,6 +329,7 @@
 
     data () {
       return {
+        orderLineItems: [],
         tabItems: [
           {
             orderId: 1,
@@ -435,6 +437,15 @@
     },
 
     methods: {
+      fetchOrderLineItems () {
+        axios.get('/orderLineItems')
+          .then((response) => {
+            this.orderLineItems = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
       getTrafficLogsTableSpan () {
         // Returns colspan value for traffic logs table wrapper based on shown columns
         // of main table.
@@ -453,6 +464,10 @@
 
         return spareColumns + defaultSpan
       }
+    },
+
+    created () {
+      this.fetchOrderLineItems()
     }
   }
 </script>
