@@ -308,9 +308,9 @@
                 tbody
                   tr
     makegoods-order-line-current-info-popup(
-    v-show = 'showCurrentInfoPopup'
-    @close = 'showCurrentInfoPopup = false'
-  )
+      v-show = 'showCurrentInfoPopup'
+      @close = 'showCurrentInfoPopup = false'
+    )
 </template>
 
 <script>

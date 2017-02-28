@@ -269,11 +269,9 @@
           selected-offer = 'offerTabSelected'
           show-offer-dialog = 'showOfferDialog'
         )
-
     makegoods-order-line-current-info-popup(
-      demo = 'demo'
-      order-buy-type = 'orderBuyType'
-      show-dialog = 'isCurrentLineInfoPopupShown'
+      v-show = 'showCurrentInfoPopup'
+      @close = 'showCurrentInfoPopup = false'
     )
 </template>
 
@@ -284,6 +282,7 @@
       return {
         id: this.$route.params.id,
         offer: this.$route.params.offer,
+        showCurrentInfoPopup: false,
         currentTabName: 'Order',
         isCurrentLineInfoPopupShown: false,
         offerTabIsOnlyDraftAndPendingShown: true,
@@ -307,6 +306,10 @@
         this.$router.push({
           name: `sellers-order-management-makegoods-id-add-${button}-offer`
         })
+      },
+
+      showCurrentInfo(item) {
+        this.showCurrentInfoPopup = true
       },
 
       showOfferDialog (item) {},
