@@ -266,18 +266,18 @@
               )
                 .vui-grid.vui-grid--align-spread
                   span.vui-align-middle Buyer
-                  span.vui-align-middle.vui-grid
-                    //- input.vui-align-middle.vui-m-right--xx-small(type = 'checkbox')
-                    .vui-form-element
-                      .vui-checkbox.vui-m-right--xxx-small
-                        input(
-                          id = 'accept-all-buyer-ratings'
-                          type = 'checkbox'
-                        )
-                        span.vui-checkbox--faux
-                      label.vui-align-middle(
-                        for = 'accept-all-buyer-ratings'
-                      ) Accept All Buyer Ratings #[small (except 0's)]
+                  //- span.vui-align-middle.vui-grid
+                  //-   //- input.vui-align-middle.vui-m-right--xx-small(type = 'checkbox')
+                  //-   .vui-form-element
+                  //-     .vui-checkbox.vui-m-right--xxx-small
+                  //-       input(
+                  //-         id = 'accept-all-buyer-ratings'
+                  //-         type = 'checkbox'
+                  //-       )
+                  //-       span.vui-checkbox--faux
+                  //-     label.vui-align-middle(
+                  //-       for = 'accept-all-buyer-ratings'
+                  //-     ) Accept All Buyer Ratings #[small (except 0's)]
             tr
               th.u-width-large Rate
               th.u-width-large Rating
@@ -354,13 +354,13 @@
               td.vui-text-align--right.u-width-small.u-highlight {{ program.videa.needHigh | numberWithCommas | formatMoney }}
               // Buyer --  Rating (program)
               td.vui-text-align--right.u-width-small
-                .vui-grid.vui-grid--align-spread
-                  .vui-form-element
-                    .vui-checkbox.vui-m-right--xxx-small
-                      input(
-                        type = 'checkbox'
-                      )
-                      span.vui-checkbox--faux
+                .vui-grid.vui-grid--align-end
+                  //- .vui-form-element
+                  //-   .vui-checkbox.vui-m-right--xxx-small
+                  //-     input(
+                  //-       type = 'checkbox'
+                  //-     )
+                  //-     span.vui-checkbox--faux
                   span.vui-align-middle {{ program.buyer.rating | formatRating }}
               // Buyer --  Need Goal (program)
               td.vui-text-align--right.u-width-small {{ program.buyer.needGoal | numberWithCommas | formatMoney }}
@@ -421,13 +421,13 @@
                 td.vui-text-align--right.u-width-small.u-highlight {{ month.videa.needHigh | numberWithCommas | formatMoney }}
                 // Buyer Rating (month)
                 td.vui-text-align--right.u-width-small
-                  .vui-grid.vui-grid--align-spread
-                    .vui-form-element
-                      .vui-checkbox.vui-m-right--xxx-small
-                        input(
-                          type = 'checkbox'
-                        )
-                        span.vui-checkbox--faux
+                  .vui-grid.vui-grid--align-end
+                    //- .vui-form-element
+                    //-   .vui-checkbox.vui-m-right--xxx-small
+                    //-     input(
+                    //-       type = 'checkbox'
+                    //-     )
+                    //-     span.vui-checkbox--faux
                     span.vui-align-middle {{ month.buyer.rating | formatRating }}
                 // Buyer Need Goal(month)
                 td.vui-text-align--right.u-width-small {{ month.buyer.needGoal | numberWithCommas | formatMoney }}

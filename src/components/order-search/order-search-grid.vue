@@ -139,12 +139,12 @@
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.advertiser'
             style = 'width: 280px'
-          ) {{ order.advertiser }}
+          ) {{ order.advertiser.toUpperCase() }}
           td.vui-truncate(
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.agency'
             style = 'width: 110px'
-          )  {{ order.agency }}
+          )  {{ order.agency.toUpperCase() }}
           td.vui-text-align--right.vui-truncate(
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.estimate'

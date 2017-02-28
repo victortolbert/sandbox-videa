@@ -117,7 +117,7 @@
         v-for = 'avail in avails'
       )
         tr
-          td
+          td(:style="!avail.versions ? 'padding-left: 1.5rem' : ''")
             a(
               @click.prevent = 'toggleDetail(avail)'
               v-if = 'avail.versions'
@@ -125,7 +125,7 @@
             )
               vui-icon.vui-icon--small.vui-align-middle(
                 v-bind:name = 'avail.expanded ? "caret-lower-right" : "caret-right"'
-                style = 'margin-left: -1.5rem'
+                style = 'margin-left: -0.5rem'
               )
             router-link(
               v-bind:to = '{ name: "sellers-avails-id", params: { id: avail.id } }'
@@ -135,12 +135,12 @@
               v-bind:class = 'avail.availStatus'
             ) {{ avail.availStatus }}
           td {{ avail.id == 65733 ? releasedDate : avail.releasedDate }}
-          td {{ avail.advertiser }}
+          td {{ avail.advertiser.toUpperCase() }}
           td {{ avail.product }}
           td {{ avail.estimateNumber }}
           td {{ avail.flightStartDate }}
           td {{ avail.flightEndDate }}
-          td {{ avail.agency }}
+          td {{ avail.agency.toUpperCase() }}
           td {{ avail.id == 65733 ? lastUpdated : avail.lastUpdated }}
         tr(
           v-show = 'avail.expanded'

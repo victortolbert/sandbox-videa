@@ -34,7 +34,7 @@
               @click.prevent = 'toggleExpanded(account)'
               href = '#'
             )
-              vui-icon(
+              vui-icon.vui-icon--small(
                 v-bind:name = 'account.expanded ? "caret-lower-right" : "caret-right"'
               )
               span {{ account.advertiser }}

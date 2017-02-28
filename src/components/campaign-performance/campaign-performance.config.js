@@ -15,7 +15,7 @@ module.exports = {
         revenue: 41000,
         flightStartDate: moment().subtract(2, 'weeks').weekday(1).format('MM/DD/YY'),
         flightEndDate: moment().add(3, 'weeks').weekday(7).format('MM/DD/YY'),
-        campaignDeliveryPercent: 0.80,
+        campaignDeliveryPercent: 0.79,
         currentGrpsImps: 25.3,
         purchasedGrpsImps: 31.5,
         difference: -6.2,

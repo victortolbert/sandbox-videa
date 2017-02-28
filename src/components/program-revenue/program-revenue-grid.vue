@@ -35,7 +35,7 @@
               @click.prevent = 'toggleExpanded(programRevenueDaypart)'
               href = '#'
             )
-              vui-icon(
+              vui-icon.vui-icon--small(
                 v-bind:name = 'programRevenueDaypart.expanded ? "caret-lower-right" : "caret-right"'
               )
               span {{ programRevenueDaypart.daypartName }}

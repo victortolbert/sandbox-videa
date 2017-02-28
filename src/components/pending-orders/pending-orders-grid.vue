@@ -18,7 +18,7 @@
         v-for = 'order in orders'
       )
         tr(style='cursor: pointer')
-          td
+          td(:style="(order.versions.length == 1) ? 'padding-left: 1.5rem' : ''")
             a(
               @click.prevent = 'toggleExpanded'
               v-if = 'order.versions.length !== 1'
@@ -26,7 +26,7 @@
             )
               vui-icon.vui-icon--small(
                 v-bind:name = 'expanded ? "caret-lower-right" : "caret-right"'
-                style = 'margin-left: -1.5rem'
+                style = 'margin-left: -0.5rem'
               )
             //- a.vui-align-middle(@click.prevent='showDetail(order.id)', href='#') {{ order.id }}
             span(@click.prevent = 'showDetail(order.id)') {{ order.id }}
@@ -35,8 +35,8 @@
               v-bind:class = 'order.status'
             ) {{ order.status }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.type }}
-          td(@click.prevent = 'showDetail(order.id)') {{ order.advertiser }}
-          td(@click.prevent = 'showDetail(order.id)') {{ order.agency }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.advertiser.toUpperCase() }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.agency.toUpperCase() }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.cpe }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.flightStartDate }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.flightEndDate }}

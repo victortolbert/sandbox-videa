@@ -935,7 +935,7 @@
         cppOrCpm: 'cpp',
         editingPercent: false,
         globalPercent: 0,
-        lastUpdated: moment().format('MM/DD/YY'),
+        lastUpdated: moment().format('MMMM DD, YYYY'),
         showAddProgramModal: false,
         showEditRatingsModal: false,
         showPremiumClientsModal: false,

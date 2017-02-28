@@ -38,11 +38,11 @@
           td.vui-truncate(
             v-bind:title = 'campaign.advertiser'
             v-show = 'columns.advertiser.isVisible'
-          ) {{ campaign.advertiser }}
+          ) {{ campaign.advertiser.toUpperCase() }}
           td.vui-truncate(
             v-bind:title = 'campaign.agencyName'
             v-show = 'columns.agency.isVisible'
-          ) {{ campaign.agency }}
+          ) {{ campaign.agency.toUpperCase() }}
           td.vui-truncate(
             v-bind:title = 'campaign.product'
             v-show = 'columns.product.isVisible'
@@ -78,12 +78,8 @@
               span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent >= 0.80 && campaign.campaignDeliveryPercent < 0.95")
                 vui-icon.vui-m-left--x-small(name='stop', style='color: #F58220')
 
-
-              //- span(v-if="campaign.campaignDeliveryPercent < 0.90 || campaign.campaignDeliveryPercent >= 0.80")
-              //-   vui-icon.vui-m-left--x-small(name = 'stop', style='color: #F58220')
-              //- span(v-else)
-
-
+              span(v-if="campaign.campaignDeliveryPercent && campaign.campaignDeliveryPercent < 0.80")
+                vui-icon.vui-m-left--x-small(name='stop', style='color: #c5103d')
 
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'campaign.currentGrpsImps'
