@@ -107,13 +107,13 @@
             | Internal Notes
       tbody
         tr(v-for='offer in order.offers')
-          td {{}}
-    grid
-      grid-item(size = '3/4')
-        .vui-box.vui-theme--shade
-      grid-item(size = '1/4')
-        .vui-box.vui-theme--shade
-          pre {{ order.offers }}
+          td
+    //- grid
+    //-   grid-item(size = '3/4')
+    //-     .vui-box.vui-theme--shade
+    //-   grid-item(size = '1/4')
+    //-     .vui-box.vui-theme--shade
+    //-       pre {{ order.offers }}
 </template>
 
 <script>

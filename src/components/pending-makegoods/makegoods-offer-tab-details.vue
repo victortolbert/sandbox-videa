@@ -32,8 +32,8 @@
       .vui-p-around--large.vui-tabs--scoped__content
 
         // Order Tab -- Controls
-        .vui-grid.vui-grid--align-start.vui-grid--vertical-align-center.vui-m-bottom--medium
-          .vui-size--1-of-12
+        .vui-grid.vui-grid--vertical-align-center.vui-m-bottom--medium
+          .vui-col
             // Pending or Draft Makegood Legend
             ul
               li.row-padding
@@ -49,7 +49,7 @@
                     name = 'pencil-square'
                   )
                 span.graft-mg-text Draft MG
-          .vui-size--1-of-8
+          .vui-col
             // Show All or Missed Only
             .vui-fieldset.vui-display--inline-block
               .vui-fieldset-header
@@ -78,7 +78,7 @@
                 span.vui-form-element__label Missed Only
 
           // Offer Selector
-          .vui-size--4-of-12.vui-grid.vui-grid--align-start
+          .vui-col.vui-col--bump-left.vui-grid.vui-grid--align-start
             .vui-fieldset.vui-grid.vui-grid--align-start
               .vui-size--3-of-12.vui-align-middle
                 a.vui-button.vui-button--secondary.vui-m-right--xx-small(
@@ -156,7 +156,7 @@
                   span.vui-form-element__label Missed Spots
 
           // Show or Hide Spot Allocations
-          .vui-size--3-of-12.vui-align-top
+          .vui-col
             label.vui-checkbox
               input.vui-input(
                 v-model = 'isShowSpotAllocations'
