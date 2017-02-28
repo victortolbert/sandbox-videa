@@ -69,7 +69,9 @@
         td.vui-text-align--right(v-bind:title='item.totalMissedSpots' style='width: 100px') {{ item.openPreempts }}
         td.vui-text-align--right(v-bind:title='item.totalTrafficSpots' style='width: 86px') {{ item.trafficSpots }}
         td.vui-text-align--center(style='width: 140px')
-          a.pointer.current-info.popup(v-on:click='showCurrentInfo(item)')
+          a.pointer.current-info.popup(
+            v-on:click='showCurrentInfo(item)'
+          )
             vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
               name = 'popout'
             )
@@ -305,6 +307,10 @@
                       vui-sorting-column(title='MG<br>New Lines')
                 tbody
                   tr
+    makegoods-order-line-current-info-popup(
+    v-show = 'showCurrentInfoPopup'
+    @close = 'showCurrentInfoPopup = false'
+  )
 </template>
 
 <script>
@@ -328,6 +334,7 @@
 
     data () {
       return {
+        showCurrentInfoPopup: false,
         orderLineItems: [],
         tabItems: [
           {
@@ -462,6 +469,10 @@
         var defaultSpan = 4
 
         return spareColumns + defaultSpan
+      },
+
+      showCurrentInfo(item) {
+        this.showCurrentInfoPopup = true
       }
     },
 

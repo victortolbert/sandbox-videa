@@ -58,7 +58,7 @@
                 )
       .vui-grid.vui-grid--align-end
         input.vui-button.vui-button--neutral(
-          @click = 'hideDialog'
+          @click = '$emit("close")'
           type = 'button'
           value = 'Cancel'
         )
