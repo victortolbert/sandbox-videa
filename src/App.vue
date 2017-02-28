@@ -433,6 +433,11 @@
 <style lang="stylus">
   @import '~assets/variables'
 
+  .vui-table tr > th:first-child,
+  .vui-table tr > td:first-child
+    padding-left 0.5rem
+
+
   // // TABLES
   // .vui-table th [class^="icon-"],
   // .vui-table th [class*=" icon-"]
