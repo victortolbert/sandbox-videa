@@ -9,7 +9,9 @@
     show-orbit-details = 'showOrbitDetailsPopup'
     tab-items = 'tabItems'
   )
-    makegoods-order-line-current-info-popup
+    makegoods-order-line-current-info-popup(
+      v-show = 'false'
+    )
     .vui-tabs--scoped.details-tabs-header-container
       ul.vui-tabs--scoped__nav.details-tabs.om-details-tabs(role = 'tablist')
         li.vui-tabs--scoped__item.vui-text-heading--label.vui-active(

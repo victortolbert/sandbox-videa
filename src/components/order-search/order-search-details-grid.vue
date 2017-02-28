@@ -305,7 +305,6 @@
                       vui-sorting-column(title='MG<br>New Lines')
                 tbody
                   tr
-
 </template>
 
 <script>
@@ -323,7 +322,7 @@
       },
       isMissedSpotsShown: {
         type: Boolean,
-        default: false
+        default: true
       }
     },
 

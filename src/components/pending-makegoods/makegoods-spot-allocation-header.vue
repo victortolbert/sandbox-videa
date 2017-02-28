@@ -1,42 +1,120 @@
 <template lang="pug">
   .spot-allocation-row
     .spot-allocation-nav-section.pointer
-      i.button-icon.left-icon(@click='scrollLeft', ng-disabled='!isLeftButtonEnabled')
-    .spot-allocation-container(:style='{ "width": spotsWidth }')
+      i.button-icon.left-icon(@click='scrollLeft', :disabled='!isLeftButtonEnabled')
+    .spot-allocation-container(:style='{ "width": spotsWidthPixels }')
       ul.spot-allocation.spot-allocation-headers(:style="{'left': left + 'px'}")
         li(v-for='spot in spots')
           div
             span(v-bind:title='spot.week', v-html='spot.week')
     .spot-allocation-nav-section.pointer
-      i.button-icon.right-icon(@click='scrollRight', ng-disabled='!isRightButtonEnabled')
+      i.button-icon.right-icon(@click='scrollRight', :disabled='!isRightButtonEnabled')
 </template>
 
 <script>
+  import moment from 'moment'
+
+
+
   export default {
     data () {
       return {
-        spotsWidth: '455px',
+        dayFormat: 'dd',
+        dayFormat: 'dd',
         left: 0,
+        maximumSpotValue: 99,
+        maxStepSize: 13,
+        monthFormat: 'MMM',
+        numberOfColumnsInSpotsToDisplay: 13,
+        spotCellWidth: 35,
+        spotsWidth: 0,
+        spotsWidth: '455',
+        stepWidth: 0,
+        tableCellWidth: 0,
+        titleDateFormat: 'MM/dd/yyyy',
+        titleDateFormat: 'MM/dd/yyyy',
+        totalButtonsWidth: 48,
+        totalButtonsWidth: 48,
+        totalSpotsCount: 0,
+        totalWidth: 0,
         spots: [
-          { week: 'Jun<br>27' },
-          { week: 'Jul<br>04' },
-          { week: 'Jul<br>11' },
-          { week: 'Jul<br>18' },
-          { week: 'Jul<br>25' },
-          { week: 'Aug<br>01' },
-          { week: 'Aug<br>08' },
-          { week: 'Aug<br>15' },
-          { week: 'Aug<br>22' },
-          { week: 'Aug<br>29' },
-          { week: 'Sep<br>05' },
-          { week: 'Sep<br>12' },
-          { week: 'Sep<br>19' }
+          {
+            week: moment().subtract(14, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(7, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().add(7, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().add(14, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(21, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(28, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(35, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(42, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(47, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(54, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(61, 'days').weekday(1).format('MMM<br>DD')
+          },
+          {
+            week: moment().subtract(68, 'days').weekday(1).format('MMM<br>DD')
+          }
         ]
       }
     },
+    computed: {
+      spotsWidthPixels () {
+        return this.spotsWidth + 'px'
+      }
+    },
     methods: {
-      scrollLeft () {},
-      scrollRight () {}
+      scrollLeft () {
+        if (!this.isLeftButtonEnabled()) {
+          return
+        }
+        if ((this.left + this.stepWidth) > 0) {
+          this.left -= this.left;
+        } else {
+          this.left += this.stepWidth;
+        }
+      },
+
+      scrollRight () {
+        if (!this.isRightButtonEnabled()) {
+          return
+        }
+        if (this.totalWidth + (this.left - (this.stepWidth - this.spotCellWidth)) < this.stepWidth) {
+          this.left -= this.totalWidth + (this.left - this.stepWidth)
+        } else {
+          this.left -= this.stepWidth
+        }
+      },
+
+      isLeftButtonEnabled () {
+        return this.left < 0
+      },
+
+      isRightButtonEnabled () {
+        return !(this.stepWidth - this.left >= this.totalWidth)
+      }
     }
   }
 </script>
