@@ -102,7 +102,7 @@
         button.vui-button--neutral(
           @click.prevent = 'showRejectOrderModal = true'
         ) Reject
-    .vui-grid.vui-grid--align-end.vui-m-bottom--medium(v-if = '$store.state.user.name == "Rep User"')
+    .vui-grid.vui-grid--align-end.vui-m-bottom--medium
       .buttons
         form.vui-form--inline
           fieldset.vui-form-element

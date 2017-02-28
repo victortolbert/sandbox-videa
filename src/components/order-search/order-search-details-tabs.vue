@@ -9,15 +9,9 @@
     show-orbit-details = 'showOrbitDetailsPopup'
     tab-items = 'tabItems'
   )
-    makegoods-order-line-current-info-popup(
-      demo = 'demo'
-      order-buy-type = 'orderBuyType'
-      show-dialog = 'isCurrentLineInfoPopupShown'
-    )
+    makegoods-order-line-current-info-popup
     .vui-tabs--scoped.details-tabs-header-container
-      ul.vui-tabs--scoped__nav.details-tabs.om-details-tabs(
-        role = 'tablist'
-      )
+      ul.vui-tabs--scoped__nav.details-tabs.om-details-tabs(role = 'tablist')
         li.vui-tabs--scoped__item.vui-text-heading--label.vui-active(
           v-bind:class = '{ "vui-active" : tab.orderId === currentTabOrderId }'
           v-for = 'tab in tabItems'

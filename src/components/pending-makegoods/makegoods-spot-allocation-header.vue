@@ -18,19 +18,19 @@
         spotsWidth: '455px',
         left: 0,
         spots: [
-          { week: '06<br>27' },
-          { week: '07<br>04' },
-          { week: '07<br>11' },
-          { week: '07<br>18' },
-          { week: '07<br>25' },
-          { week: '08<br>01' },
-          { week: '08<br>08' },
-          { week: '08<br>15' },
-          { week: '08<br>22' },
-          { week: '08<br>29' },
-          { week: '09<br>05' },
-          { week: '09<br>12' },
-          { week: '09<br>19' }
+          { week: 'Jun<br>27' },
+          { week: 'Jul<br>04' },
+          { week: 'Jul<br>11' },
+          { week: 'Jul<br>18' },
+          { week: 'Jul<br>25' },
+          { week: 'Aug<br>01' },
+          { week: 'Aug<br>08' },
+          { week: 'Aug<br>15' },
+          { week: 'Aug<br>22' },
+          { week: 'Aug<br>29' },
+          { week: 'Sep<br>05' },
+          { week: 'Sep<br>12' },
+          { week: 'Sep<br>19' }
         ]
       }
     },
@@ -40,6 +40,74 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  @import '~assets/variables'
+  /* Spot Allocation Column */
+  .spot-allocation-column
+    white-space normal !important
+  .edit-spot-allocation input, .editable-spot-value input
+    text-align center
+    height 100%
+    width 100%
+  div.spot-item-disabled
+    background-color rgb(235, 235, 228) !important
+  th.spot-allocation-column,
+  td.spot-allocation-cell
+    padding 1px
+  .spot-allocation-cell
+    background-color #D8E0E3
+  .spot-allocation-row > div
+    float left
+  .spot-allocation-row .spot-allocation-nav-section
+    width 22px
+    margin-top 7px
+  .spot-allocation-row .spot-allocation-container
+    overflow hidden
+  .spot-allocation-row .spot-allocation
+    display flex
+    position relative
+    width 100%
+    padding 0
+    margin 0
+    list-style none
+    transition left 0.5s
+  .spot-allocation-row .spot-allocation > li
+    width auto
+  .spot-allocation-row .spot-allocation li > div
+    width 35px
+    text-align center
+  .spot-allocation-row .spot-allocation li:not(:only-of-type) > div
+    border-right 2px solid white
+  .spot-allocation-row .spot-allocation-data
+    margin-left 23px
+  .spot-allocation-row .spot-allocation-data li > div
+    width 33px
+    height 30px
+    border 1px solid silver
+    margin-right 2px
+    background-color #FFF
+    font-size 0.7rem
+  .spot-allocation-row .spot-allocation-data li > div span
+    line-height 30px
+  .spot-allocation-row .spot-allocation-data li > div span .highlight
+    color #c5203e
+  .left-icon
+    background-image url('/static/shared/img/left-arrow.png')
+  .button-icon
+    display block
+    width 100%
+    height 21px
+    padding 0
+    margin 0
+    background-repeat no-repeat
+    background-position center
+    cursor pointer
+  .right-icon
+    background-image url('/static/shared/img/right-arrow.png')
+  .button-icon[disabled]
+    opacity 0.5
+</style>
 
 <style lang="stylus">
   @import '~assets/variables'
@@ -144,72 +212,4 @@
         letter-spacing 0em
       li div.table-row span
         line-height 0
-</style>
-
-<style lang="stylus">
-  @import '~assets/variables'
-  /* Spot Allocation Column */
-  .spot-allocation-column
-    white-space normal !important
-  .edit-spot-allocation input, .editable-spot-value input
-    text-align center
-    height 100%
-    width 100%
-  div.spot-item-disabled
-    background-color rgb(235, 235, 228) !important
-  th.spot-allocation-column,
-  td.spot-allocation-cell
-    padding 1px
-  .spot-allocation-cell
-    background-color #D8E0E3
-  .spot-allocation-row > div
-    float left
-  .spot-allocation-row .spot-allocation-nav-section
-    width 22px
-    margin-top 7px
-  .spot-allocation-row .spot-allocation-container
-    overflow hidden
-  .spot-allocation-row .spot-allocation
-    display flex
-    position relative
-    width 100%
-    padding 0
-    margin 0
-    list-style none
-    transition left 0.5s
-  .spot-allocation-row .spot-allocation > li
-    width auto
-  .spot-allocation-row .spot-allocation li > div
-    width 35px
-    text-align center
-  .spot-allocation-row .spot-allocation li:not(:only-of-type) > div
-    border-right 2px solid white
-  .spot-allocation-row .spot-allocation-data
-    margin-left 23px
-  .spot-allocation-row .spot-allocation-data li > div
-    width 33px
-    height 30px
-    border 1px solid silver
-    margin-right 2px
-    background-color #FFF
-    font-size 0.7rem
-  .spot-allocation-row .spot-allocation-data li > div span
-    line-height 30px
-  .spot-allocation-row .spot-allocation-data li > div span .highlight
-    color #c5203e
-  .left-icon
-    background-image url('/static/shared/img/left-arrow.png')
-  .button-icon
-    display block
-    width 100%
-    height 21px
-    padding 0
-    margin 0
-    background-repeat no-repeat
-    background-position center
-    cursor pointer
-  .right-icon
-    background-image url('/static/shared/img/right-arrow.png')
-  .button-icon[disabled]
-    opacity 0.5
 </style>

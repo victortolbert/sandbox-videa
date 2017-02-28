@@ -69,16 +69,17 @@ module.exports = [
     component: require('pages/sellers/reporting/order-reporting/_id')
   },
   {
-    path: '/sellers/price-guide/:id',
-    component: require('pages/sellers/price-guide'),
-    children: [
-      {
-        path: '',
-        name: 'sellers-price-guide-id',
-        component: require('pages/sellers/price-guide/_id'),
-        props: dynamicPropsFn
-      } // custom logic for mapping between route and props
-    ]
+    path: '/sellers/price-guide',
+    name: 'sellers-price-guide',
+    component: require('pages/sellers/price-guide')
+    // children: [
+    //   {
+    //     path: '',
+    //     name: 'sellers-price-guide-id',
+    //     component: require('pages/sellers/price-guide/_id'),
+    //     props: dynamicPropsFn
+    //   } // custom logic for mapping between route and props
+    // ]
   },
   {
     path: '/sellers/avails',

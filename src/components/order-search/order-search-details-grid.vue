@@ -1,6 +1,6 @@
 <template lang="pug">
 .vui-scrollable--x
-  table.vui-table.vui-no-row-hover.vui-table--striped
+  table.vui-table.vui-no-row-hover.vui-table--striped.vui-table--fixed-layout
     thead
       tr
         th(style='width: 80px')
@@ -111,7 +111,7 @@
         ) {{ item.videaCurrentRating }}
         td.vui-text-align--right.currency(v-bind:title='item.lineTotalMoney' style='width: 100px') {{ item.lineTotalMoney | numberWithCommas | formatMoney }}
         td(v-bind:title='item.buyerComment' style='width: 100px') {{ item.buyerComment }}
-        td(v-bind:title='item.stationOrderComment' style='width: 110px') {{ item.stationOrderComment }}
+        td(v-bind:title='item.stationOrderComment' style='width: 150px') {{ item.stationOrderComment }}
         td(title='' style='width: 100px')
         td(v-bind:title='item.lineType' style='width: 100px') {{ item.lineType }}
       tr.vui-is-expanded(v-if='item.isExpanded' ng-repeat-end='')
@@ -304,6 +304,8 @@
                     th.vui-truncate(v-bind:style='{ "width": expandingMakegoodColumnsWidths.newMakegoodLines }')
                       vui-sorting-column(title='MG<br>New Lines')
                 tbody
+                  tr
+
 </template>
 
 <script>
