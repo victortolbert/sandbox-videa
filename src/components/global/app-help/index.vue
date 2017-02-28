@@ -1,6 +1,6 @@
 <template lang="pug">
-  .site-help.slideright-transition.open-drawer(:class="open ? 'open-drawer' : 'close-drawer'")
-    .wrapper.open-drawer(:class="open ? 'open-drawer' : 'close-drawer'")
+  .site-help.slideright-transition(:class="open ? 'open-drawer' : 'close-drawer'")
+    .wrapper(:class="open ? 'open-drawer' : 'close-drawer'")
       .site-help__toggle(@click='toggle') Need Help?
       .site-help__content
         .contact-us(v-show='showContactUs')
