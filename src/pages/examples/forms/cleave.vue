@@ -1,5 +1,8 @@
 <template lang="pug">
-  cleave(placeholder="Enter your credit card number", :options="{ creditCard: true }")
+  cleave.vui-input(
+    placeholder = 'Enter your credit card number'
+    v-bind:options='{ creditCard: true }'
+  )
 </template>
 
 <script>

@@ -29,6 +29,11 @@ module.exports = [
     name: 'links-example',
     component: require('pages/examples/links')
   },
+  {
+    path: '/examples/quiz',
+    name: 'quiz-example',
+    component: require('pages/examples/quiz')
+  },
   // {
   //   path: '/examples/resume',
   //   name: 'resume-example',
@@ -43,6 +48,11 @@ module.exports = [
     path: '/examples/tooltip',
     name: 'tooltip-example',
     component: require('pages/examples/tooltip')
+  },
+  {
+    path: '/examples/watch',
+    name: 'watch-example',
+    component: require('pages/examples/watch')
   },
   // {
   //   path: '/examples/waypoint-easy',
@@ -107,6 +117,16 @@ module.exports = [
   },
 
   // Forms
+  {
+    path: '/examples/cleave',
+    name: 'cleave-example',
+    component: require('pages/examples/forms/cleave')
+  },
+  {
+    path: '/examples/float-label',
+    name: 'float-label-example',
+    component: require('pages/examples/forms/float-label')
+  },
   {
     path: '/examples/multiselect',
     name: 'multiselect-example',

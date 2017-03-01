@@ -44,7 +44,7 @@
                 b.vui-m-right--x-small Buyer: {{ order.buyer }}
               .vui-theme--shade.vui-grid.vui-grid--align-spread(v-for='entry in order.revenueBy')
                 .vui-grid--vertical.vui-grid--align-center
-                  .vui-text-align--center #[b {{ entry.month.toUpperCase() }}]
+                  .vui-text-align--center #[b {{ entry.month }}]
                   .vui-text-align--center $ {{ entry.revenue | numberWithCommas }}
               span
                 b.vui-m-right--x-small Dates: {{ order.flightStartDate }} - {{ order.flightEndDate }} #[br]

@@ -3,132 +3,45 @@
     table.vui-table.vui-no-row-hover.vui-table--fixed-layout.vui-table--compact.mg-preempts
       thead
         tr
-          th(
-            v-if = 'isEditMode'
-            style = 'width: 35px'
-          ) Sel
-          th(
-            style = 'width: 90px'
-          )
-            vui-sorting-column(
-              title = 'Air Day'
-            )
-          th(
-            style = 'width: 90px'
-          )
-            vui-sorting-column(
-              title = 'Air Time'
-            )
-          th(
-            v-bind:style = '{ width: isEditMode ? "120px" : "110px" }'
-            style = 'width: 120px'
-          )
-            vui-sorting-column(
-              title = 'Program<br>Placed'
-            )
-          th(
-            style = 'width: 65px'
-          )
-            vui-sorting-column(
-              title = 'Buy<br>Line #'
-            )
-          th.vui-cell-wrap(
-            style = 'width: 70px'
-          )
-            vui-sorting-column(
-              title = 'Spot #'
-            )
-          th(
-            style = 'width: 122px'
-          )
-            vui-sorting-column(
-              title = 'Status'
-            )
-          th(
-            style = 'width: 67px'
-          )
-            vui-sorting-column(
-              title = 'Priority'
-            )
-          th(
-            style = 'width: 103px'
-          )
-            vui-sorting-column(
-              title = 'Air Date'
-            )
-          th(
-            style = 'width: 55px'
-          )
-            vui-sorting-column(
-              title = 'Len'
-            )
+          th(v-if='isEditMode' style='width: 35px') Sel
+          th(style='width: 90px'): vui-sorting-column(title='Air Day')
+          th(style='width: 90px'): vui-sorting-column(title='Air Time')
+          th(v-bind:style='{ width: isEditMode ? "120px" : "110px" }' style='width: 120px'): vui-sorting-column(title='Program<br>Placed')
+          th(style='width: 65px'): vui-sorting-column(title='Buy<br>Line #')
+          th.vui-cell-wrap(style='width: 70px'): vui-sorting-column(title='Spot #')
+          th(style='width: 122px'): vui-sorting-column(title='Status')
+          th(style='width: 67px'): vui-sorting-column(title='Priority')
+          th(style='width: 103px'): vui-sorting-column(title='Air Date')
+          th(style='width: 55px'): vui-sorting-column(title='Len')
           th.spot-allocation-column(style='width: 503px')
-            makegoods-spot-allocation-header(
-              v-model = 'items[0].spotAllocations'
-              navigator = 'spotAllocationNavigator'
-            )
-          th(
-            style = 'width: 90px'
-          )
-            vui-sorting-column(
-              title = 'Spot<br>Rate'
-            )
-          th(
-            v-if = 'isImpressionsBuyType'
-            style = 'width: 90px'
-          )
-            vui-sorting-column(
-              title = 'Buyer<br>IMP'
-            )
-          th(
-            v-if = 'isEditMode',
-            style = 'width: 90px'
-          )
-            vui-sorting-column(
-              title = 'Buyer<br>CPP'
-            )
-          th(
-            style = 'width: 120px'
-          ) Comment
+            //- makegoods-spot-allocation-header(v-model='lineItems[0].weeklySpotAllocations')
+          th(style='width: 90px'): vui-sorting-column(title='Spot<br>Rate')
+          th(v-if='isImpressionsBuyType' style='width: 90px'): vui-sorting-column(title='Buyer<br>IMP')
+          th(v-if='isEditMode' style='width: 90px'): vui-sorting-column(title = 'Buyer<br>CPP')
+          th(style = 'width: 120px') Comment
       tbody
-        tr(
-          v-for = 'item in items'
-        )
-          td.align-center(
-            v-if = 'isEditMode'
-            style = 'width: 35px'
-          )
+        tr(v-for = 'item in order.preempts')
+          td.align-center(v-if='isEditMode' style='width: 35px')
             .checkbox.vui-checkbox.checked(
               changed = 'orderLineOnSelected'
-              ng-change-arg = 'item'
               ng-change-function = 'itemSelectionChanged'
               value = 'item.isSelected'
             )
               span.icons
-              input(
-                type = 'checkbox'
-              )
-          td.vui-truncate(
-            v-bind:title = 'item.airDay'
-            style = 'width: 90px'
-          ) {{ item.airDay }}
-          td.vui-truncate(
-            v-bind:title = 'item.airTime'
-            style = 'width: 90px'
-          ) {{ item.airTime }}
-          td.vui-truncate(
-            v-bind:title = 'item.programName'
-            style = 'width: 120px' v-text='item.programName'
-          ) {{ item.programName }}
+              input(type='checkbox')
+
+          td.vui-truncate(v-bind:title = 'item.airDay' style = 'width: 90px') {{ item.airDay }}
+          td.vui-truncate(v-bind:title = 'item.airTime' style = 'width: 90px') {{ item.airTime }}
+          td.vui-truncate(v-bind:title = 'item.programName' style = 'width: 120px') {{ item.buyerProgramOrdered }}
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'item.lineNumber'
             style = 'width: 65px'
-          ) {{ item.lineNumber }}
+          ) {{ item.buyerLineNumber }}
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'item.spotNumber'
             style = 'width: 70px'
           )
-            span {{ item.spotNumber }}
+            span {{ item.stationSpotNumber }}
           td.vui-truncate(
             v-bind:title = 'item.status'
             style = 'width: 122px'
@@ -144,13 +57,12 @@
           td.vui-truncate.vui-text-align--center(
             v-bind:title = 'item.spotLength'
             style = 'width: 55px'
-          ) {{ item.spotLength }}
+          ) {{ item.length }}
           td.spot-allocation-cell(
             style = 'width: 503px'
           )
             makegoods-spot-allocation-with-missed-spots(
               v-model = 'item.spotAllocations'
-              navigator = 'spotAllocationNavigator'
             )
           td.vui-truncate.vui-text-align--right(
             v-bind:title = 'item.spotRate'
@@ -178,6 +90,7 @@
 
 <script>
   export default {
+    props: [ 'order' ],
     data () {
       return {
         isEditMode: true,

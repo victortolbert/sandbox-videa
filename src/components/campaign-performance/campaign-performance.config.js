@@ -16,7 +16,7 @@ module.exports = {
         flightStartDate: moment().subtract(2, 'weeks').weekday(1).format('MM/DD/YY'),
         flightEndDate: moment().add(3, 'weeks').weekday(7).format('MM/DD/YY'),
         campaignDeliveryPercent: 0.79,
-        currentGrpsImps: 25.3,
+        currentGrpsImps: 24.9,
         purchasedGrpsImps: 31.5,
         difference: -6.2,
         currentHouseholdGrpsImps: 47.6,

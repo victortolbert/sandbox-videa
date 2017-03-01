@@ -6,266 +6,201 @@
           th(style='width: 41px')
           th(style='width: 48px') Sent
           th(style='width: 52px') Draft
-          th(style = 'width: 68px') Select
-          th(style = 'width: 74px')
-            vui-sorting-column(
-              column-name = 'lineNumber'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.lineNumber)'
-              title = 'Line #'
-            )
-          th(style = 'width: 70px')
-            vui-sorting-column(
-              column-name = 'days'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.days)'
-              title = 'Days'
-            )
-          th(style = 'width: 110px')
-            vui-sorting-column(
-              column-name = 'time'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.time)'
-              title = 'Time'
-            )
-          th.vui-truncate(style='width: 200px')
-            vui-sorting-column(
-              column-name = 'programName'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.programName)'
-              title = 'Program'
-            )
-          th(style = 'width: 83px')
-            vui-sorting-column(
-              column-name = 'spotLength'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.spotLength)'
-              title = 'Length'
-            )
-          th(style = 'width: 92px')
-            vui-sorting-column(
-              column-name = 'totalSpots'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.totalSpots)'
-              title = 'Ordered<br>Spots'
-            )
-          th(
-            style = 'width: 88px'
-          )
-            vui-sorting-column(
-              column-name = 'totalMissedSpots'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.totalMissedSpots)'
-              title = 'Missed<br>Spots'
-            )
-          th(
-            style = 'width: 82px'
-          )
-            vui-sorting-column(
-              column-name = 'totalTrafficSpots'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.totalTrafficSpots)'
-              title = 'Traffic<br>Spots'
-            )
-          th(
-            style = 'width: 140px'
-          )
-            | Current
-            br
-            | Information
-          th.spot-allocation-column(
-            v-if = 'isShowSpotAllocations'
-            style = 'width: 503px'
-          )
-            makegoods-spot-allocation-header(
-              v-model = 'items[0].weeklySpotAllocations'
-              navigator = 'spotAllocationNavigator'
-            )
-          th(
-            style = 'width: 100px'
-          )
-            vui-sorting-column(
-              column-name = 'orderedSpotRate'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.orderedSpotRate)'
-              title = 'Spot Rate'
-            )
-          th(
-            v-if='isImpressionsBuyType'
-            style = 'width: 100px'
-          )
-            vui-sorting-column(
-              column-name = 'orderedImpressions'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.orderedImpressions)'
-              title = 'Buyer<br>IMP'
-            )
-          th(v-if='isImpressionsBuyType' style='width: 100px')
-            vui-sorting-column(
-              column-name = 'videaCurrentImpressions'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.videaCurrentImpressions)'
-              title = 'Videa<br>IMP'
-            )
-          th(style = 'width: 100px')
-            vui-sorting-column(
-              column-name = 'lineTotalMoney'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.lineTotalMoney)'
-              title = 'Line<br>$ Total'
-            )
+          th(style='width: 68px') Select
+          th(style='width: 74px'): vui-sorting-column(title='Line #')
+          th(style='width: 70px'): vui-sorting-column(title='Days')
+          th(style='width: 110px'): vui-sorting-column(title='Time')
+          th.vui-truncate(style='width: 200px'): vui-sorting-column(title='Program')
+          th(style='width: 83px'): vui-sorting-column(title='Length')
+          th(style='width: 92px'): vui-sorting-column(title='Ordered<br>Spots')
+          th(style='width: 88px'): vui-sorting-column(title='Open<br>Preempts')
+          th(style='width: 82px'): vui-sorting-column(title='Traffic<br>Spots')
+          th(style='width: 140px') Current #[br] Information
+          th.spot-allocation-column(v-if='isShowSpotAllocations' style='width: 503px')
+            makegoods-spot-allocation-header(v-model='orderLineItems[0].weeklySpotAllocations')
+          th(style='width: 100px'): vui-sorting-column(title='Spot Rate')
+          th(v-if='isImpressionsBuyType' style='width: 100px'): vui-sorting-column(title='Buyer<br>IMP')
+          th(v-if='isImpressionsBuyType' style='width: 100px'): vui-sorting-column(title='Videa<br>IMP')
+          th(style='width: 100px'): vui-sorting-column(title='Line<br>$ Total')
           th(style='width: 100px') Buyer #[br] Comment
-          th(style = 'width: 132px') Station #[br] Order Comment
-          th(style = 'width: 100px') Spot Option
-          th(style = 'width: 100px') Line Type
+          th(style='width: 132px') Station #[br] Order Comment
+          th(style='width: 100px') Spot Option
+          th(style='width: 100px') Line Type
       tbody
         template(
-          v-bind:class = "{ 'vui-is-selected': offer.isExpanded }"
-          v-for = 'offer in orderLineItems'
-          v-show = '!isOnlyMissedShown || offer.totalMissedSpots > 0'
+          v-bind:class="{ 'vui-is-selected': offer.isExpanded }"
+          v-for='lineItem in orderLineItems'
+          v-show='!isOnlyMissedShown || lineItem.totalMissedSpots > 0'
         )
           tr
             td(style='width: 41px')
-              a(v-on:click.prevent='toggleDetail(offer)')
+              a(v-on:click.prevent='toggleDetail(lineItem)')
                 vui-icon.vui-icon--small.vui-align-middle(
-                  v-bind:name = 'offer.isExpanded ? "caret-lower-right" : "caret-right"'
-                  style = 'margin-left: -1rem'
+                  v-bind:name = 'lineItem.isExpanded ? "caret-lower-right" : "caret-right"'
                 )
             td.vui-text-align--center(style='width: 48px')
               a.vui-m-right--xx-small(
-                @click = 'showOfferDialog(offer.firstSentMakegood)'
-                v-show = 'offer.firstSentMakegood'
+                @click = 'showlineItemDialog(lineItem.firstSentMakegood)'
+                v-show = 'lineItem.firstSentMakegood'
                 title = 'Click to open the Offer which has been sent and is awaiting approval'
               )
                 vui-icon(name = 'medicine-bottle')
             td.vui-text-align--center(style='width: 52px')
               a(
-                @click = 'showOfferDialog(offer.firstDraftMakegood)'
-                v-show = 'offer.firstDraftMakegood'
+                @click = 'showOfferDialog(lineItem.firstDraftMakegood)'
+                v-show = 'lineItem.firstDraftMakegood'
                 title = 'Indicates this Buy Line has DRAFT Offers'
               )
-                vui-icon(name='pencil-square')
+                vui-icon.vui-icon--small(name='pencil-square')
             td.vui-text-align--center.overflow-visible(style='width: 68px')
               label.vui-checkbox(
-                v-if = 'isCheckboxVisible(offer)'
-                title = 'Select to include in Offer'
+                v-if = 'isCheckboxVisible(lineItem)'
+                title = 'Select to include in lineItem'
               )
                 input.vui-input(
-                  @change='orderLineOnSelected(offer)'
-                  v-model = 'offer.isSelected'
+                  @change='orderLineOnSelected(lineItem)'
+                  v-model = 'lineItem.isSelected'
                   type = 'checkbox'
                 )
                 span.vui-checkbox--faux
             td.vui-text-align--right(
-              v-bind:title = 'offer.lineNumber'
-              v-if = '!offer.isOrbit'
+              v-bind:title = 'lineItem.lineNumber'
+              v-if = '!lineItem.isOrbit'
               style = 'width: 74px'
-            ) {{ offer.lineNumber }}
+            ) {{ lineItem.lineNumber }}
             td.vui-truncate(
-              v-bind:title = 'offer.days'
+              v-bind:title = 'lineItem.days'
               style = 'width: 70px'
-            ) {{ offer.days }}
+            ) {{ lineItem.days }}
             td.vui-truncate(
-              v-bind:title = 'offer.time'
+              v-bind:title = 'lineItem.time'
               style = 'width: 110px'
-            ) {{ offer.time }}
+            ) {{ lineItem.time }}
             td.vui-truncate(
-              v-bind:title = 'offer.program'
+              v-bind:title = 'lineItem.program'
               style = 'width: 200px'
-            ) {{ offer.program }}
+            ) {{ lineItem.program }}
             td.vui-text-align--center(
-              v-bind:title = 'offer.length'
+              v-bind:title = 'lineItem.length'
               style = 'width: 83px'
-            ) {{ offer.length }}
+            ) {{ lineItem.length }}
             td.vui-text-align--right(
-              v-bind:title = 'offer.totalSpots'
+              v-bind:title = 'lineItem.totalSpots'
               style = 'width: 92px'
-            ) {{ offer.orderSpots }}
+            ) {{ lineItem.orderSpots }}
             td.vui-text-align--right.vui-text-color--error(
-              v-bind:title = 'offer.totalMissedSpots'
+              v-bind:title = 'lineItem.totalMissedSpots'
               style = 'width: 88px'
-            ) {{ offer.openPreempts }}
+            ) {{ lineItem.openPreempts }}
             td.vui-text-align--right(
-              v-bind:title = 'offer.totalTrafficSpots'
+              v-bind:title = 'lineItem.totalTrafficSpots'
               style = 'width: 82px'
-            ) {{ offer.trafficSpots }}
+            ) {{ lineItem.trafficSpots }}
             td.vui-text-align--center(style = 'width: 140px')
               a(
-                @click = 'showCurrentInfo(offer)'
+                @click = 'showCurrentInfo(lineItem)'
                 title = 'Click to see current rates & ratings and matched Avails'
               )
-                vui-icon(name = 'popout')
+                vui-icon.vui-icon--small(name = 'popout')
             td.spot-allocation-cell(
               v-if = 'isShowSpotAllocations'
               style = 'width: 503px'
             )
               makegoods-spot-allocation-with-missed-spots(
                 v-if = 'isMissedSpotsShown'
-                v-model = 'offer.weeklySpotAllocations'
+                v-bind:spots = 'lineItem.weeklySpotAllocations'
                 navigator = 'spotAllocationNavigator'
               )
             td.vui-text-align--right.currency(
-              v-bind:title = 'offer.orderedSpotRate'
+              v-bind:title = 'lineItem.orderedSpotRate'
               style = 'width: 100px'
-            ) {{ offer.spotRate | numberWithCommas | formatMoney }}
+            ) {{ lineItem.spotRate | numberWithCommas | formatMoney }}
             td.vui-text-align--right(
-              v-bind:title = 'offer.orderedImpressions'
+              v-bind:title = 'lineItem.orderedImpressions'
               v-if = 'isImpressionsBuyType'
               style = 'width: 100px'
-            ) {{ offer.buyerRtg }}
+            ) {{ lineItem.buyerRtg | formatRating }}
             td.vui-text-align--right(
-              v-bind:title='offer.videaCurrentImpressions'
+              v-bind:title='lineItem.videaCurrentImpressions'
               v-if = 'isImpressionsBuyType'
               style = 'width: 100px'
-            ) {{ offer.videaRtg }}
+            ) {{ lineItem.videaRtg | formatRating }}
             td.vui-text-align--right.currency(
-              v-bind:title = 'offer.lineTotalMoney'
+              v-bind:title = 'lineItem.lineTotalMoney'
               style = 'width: 100px'
-            ) {{ offer.lineNumberTotal | numberWithCommas | formatMoney }}
+            ) {{ lineItem.lineNumberTotal | numberWithCommas | formatMoney }}
             td.vui-truncate(
-              v-bind:title='offer.buyerComment'
+              v-bind:title='lineItem.buyerComment'
               style = 'width: 100px'
-            ) {{ offer.buyerComment }}
+            ) {{ lineItem.buyerComment }}
             td.vui-truncate(
-              v-bind:title='offer.stationOrderComment'
+              v-bind:title='lineItem.stationOrderComment'
               style = 'width: 132px'
-            ) {{ offer.videaToStationComments }}
+            ) {{ lineItem.videaToStationComments }}
             td(style = 'width: 100px')
             td(
-              v-bind:title = 'offer.lineType'
+              v-bind:title = 'lineItem.lineType'
               style = 'width: 100px'
-            ) {{ offer.lineType }}
+            ) {{ lineItem.lineType }}
           tr.vui-is-expanded(
-            v-if = 'offer.isExpanded'
-            v-show = '!isOnlyMissedShown || offer.totalMissedSpots > 0'
+            v-if = 'lineItem.isExpanded'
+            vt-show = '!isOnlyMissedShown || lineItem.totalMissedSpots > 0'
           )
             td.vui-align-top.om-nested-table-container.bordered(colspan='14' style='padding: 0')
-              makegoods-nested-order-line-grid
+              makegoods-nested-order-line-grid(
+                v-bind:lineItem='lineItem'
+                v-bind:is-show-spot-allocations = 'isShowSpotAllocations'
+                v-bind:is-missed-spots-shown = 'isMissedSpotsShown'
+              )
             td.vui-align-top.om-nested-table-container.bordered(colspan='4' style='padding: 0')
-              makegoods-nested-order-line-invoice-details-grid
+              makegoods-nested-order-line-invoice-details-grid(
+                v-bind:agencyInvoiceDetails='lineItem.agencyInvoiceDetails'
+              )
             td.vui-align-top.om-nested-table-container.bordered(colspan='4' style='padding: 0')
-              makegoods-nested-order-line-makegoods-grid
-    //- grid
-    //-   grid-item(size = '3/4')
-    //-     .vui-box.vui-theme--shade
-    //-   grid-item(size = '1/4')
-    //-     .vui-box.vui-theme--shade
-    //-       pre {{ order }}
+              makegoods-nested-order-line-makegoods-grid(
+                v-bind:makegoods='lineItem.makegoods'
+              )
 </template>
 
 <script>
   import axios from '~plugins/axios'
 
   export default {
-    props: ['order'],
+    props: {
+      order: {
+        type: Object
+      },
+
+      isShowSpotAllocations: {
+        type: Boolean,
+        default: false
+      }
+    },
 
     data () {
       return {
         orderLineItems: [],
-        isShowSpotAllocations: true,
         isImpressionsBuyType: true,
         isOnlyMissedShown: true,
-        isMissedSpotsShown: false,
+        isMissedSpotsShown: true,
+        orderDetailsGridExpandingColumnsWidths: {
+          blank: '0px',
+          unitAiredStatusName: '80px',
+          spotNumber: '78px',
+          programPlaced: '200px',
+          airTime: '110px',
+          airDay: '82px',
+          priority: '88px',
+          status: '116px',
+          airDate: '100px',
+          lineNumber: '86px',
+          altLineNumber: '60px',
+          assignedMakegoodId: '72px',
+          isciAdId: '80px',
+          invoiceDate: '85px',
+          externalInvoiceId: '81px',
+          affidavitRate: '81px'
+        },
         items: [
           {
             isExpanded: false,

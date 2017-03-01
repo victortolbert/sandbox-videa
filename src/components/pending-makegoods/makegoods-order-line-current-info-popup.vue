@@ -1,14 +1,11 @@
 <template lang="pug">
   vui-modal(size = 'large')
     .modal-header.vui-m-bottom--large
-      .modal-header
+      .modal-header.vui-m-bottom--large
         h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
-          div Buy Line / Current Information
-          a(@click='hideDialog')
-            span.pointer.vui-icon_container.vui-m-right--x-small(
-              title = 'description of icon when needed'
-            )
-              vui-icon(name='delete')
+          span Buy Line / Current Information
+          a.vui-text-align--right(@click.prevent = '$emit("close")')
+            vui-icon(name='close')
     .modal-body
       div
         .vui-box.vui-theme--default.vui-m-bottom--large

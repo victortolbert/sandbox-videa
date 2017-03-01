@@ -39,6 +39,7 @@
           a.vui-tabs--scoped__link(href='')  {{ $route.params.offer || 'Makegood' }}
 
     div(role='tabpanel')
+      .vui-container: mark {{ $route.params.offer || 'Makegood' }} Conditionally show selected offer type
       form.vui-p-around--large.vui-tabs--scoped__content
         .vui-grid.vui-m-bottom--xx-large
           .vui-col.vui-p-right--medium
@@ -91,6 +92,7 @@
             is-only-selected-preempts-shown = 'isOnlySelectedPreemptsShown'
             item-selection-changed = 'selectedPreemptsChanged'
             items = 'allOrderPreempts'
+            v-bind:order = 'order'
             order-buy-type = 'orderInfo.orderBuyType'
           )
         makegoods-common-avail-offer-grids-wrapper(

@@ -7,169 +7,126 @@
         thead
           tr
             th(
-              v-if = 'isColumnExists(columnWidths.blank)'
-              v-bind-style = "{ 'width': columnWidths.blank }"
-              style = 'width: 39px'
+              v-bind:style = '{ "width": orderDetailsGridExpandingColumnsWidths.blank }'
             )
-            th(
-              v-bind:style = '{ "width": columnWidths.unitAiredStatusName }'
-              style = 'width: 100px'
-            )
-              vui-sorting-column(
-                title = 'Aired<br>Status'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.spotNumber }'
-              style = 'width: 78px'
-            )
-              vui-sorting-column(
-                title = 'Spot #'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.airDay }'
-              style = 'width: 108px'
-            )
-              vui-sorting-column(
-                title = 'Air Day'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.airTime }'
-              style = 'width: 138px'
-            )
-              vui-sorting-column(
-                title = 'Air Time'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.programPlaced }'
-              style = 'width: 192px'
-            )
-              vui-sorting-column(
-                title = 'Program Placed'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.priority }'
-              style = 'width: 88px'
-            )
-              vui-sorting-column(
-                title = 'Priority'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.status }'
-              style = 'width: 80px'
-            )
-              vui-sorting-column(
-                title = 'Status<br>Name'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.airDate }'
-              style = 'width: 100px'
-            )
-              vui-sorting-column(
-                title = 'Air Date'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.lineNumber }'
-              style = 'width: 86px'
-            )
-              vui-sorting-column(
-                title = 'Station<br>Line #'
-              )
-            th(
-              v-bind:style = '{ "width": columnWidths.altLineNumber }'
-              style = 'width: 65px'
-            ) Alt. #[br] Line #
-            th(
-              v-bind:style = '{ "width": columnWidths.assignedMakegoodId }'
-              style = 'border-right: 1px solid rgb(81, 83, 92); width: 73px'
-            ) MG #
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.unitAiredStatusName }')
+              vui-sorting-column(title='Aired<br>Status')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.spotNumber }')
+              vui-sorting-column(title = 'Spot #')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.airDay }')
+              vui-sorting-column(title='Air Day')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.airTime }')
+              vui-sorting-column(title='Air Time')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.programPlaced }')
+              vui-sorting-column(title='Program Placed')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.priority }')
+              vui-sorting-column(title='Priority')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.status }')
+              vui-sorting-column(title='Status<br>Name')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.airDate }')
+              vui-sorting-column(title='Air Date')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.lineNumber }')
+              vui-sorting-column(title='Station<br>Line #')
+            th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.altLineNumber }') Alt. #[br] Line #
+            th.vui-no-border-right(v-bind:style = '{ "width": orderDetailsGridExpandingColumnsWidths.assignedMakegoodId }') MG #
             th(
               v-bind:style = '{ "width": spotAllocationNavigator.tableCellWidth }'
               v-if = 'isShowSpotAllocations'
-              style = 'background-color: rgb(240, 248, 252); width: 503px;'
+              style = 'background-color: rgb(240, 248, 252)'
             )
         tbody
-          tr(
-            v-for = 'item in childItems'
-          )
-            td(
-              v-if = 'isColumnExists(columnWidths.blank)'
-              rowspan = '0'
-            )
+          tr.with-row-span(v-for='trafficLog in lineItem.trafficLogs')
+            td
             td.vui-truncate(
-              v-bind:title = 'item.unitAiredStatusName'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ !!item.airedBroadcastingDateTime ? item.unitAiredStatusName : null }}
+            ) {{ !!trafficLog.airedBroadcastingDateTime ? trafficLog.unitAiredStatusName : null }}
             td.vui-text-align--right(
-              v-bind:title = 'item.spotNumber'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.spotNumber }}
+              v-bind:title = 'trafficLog.spotNumber '
+            ) {{ trafficLog.spotNumber }}
             td.vui-truncate(
-              v-bind:title = 'item.airDay'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.airDay }}
+              v-bind:title = 'trafficLog.airDay'
+            ) {{ trafficLog.airDay }}
             td(
-              v-bind:title = 'item.airTime'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.airTime }}
+              v-bind:title = 'trafficLog.airTime'
+            ) {{ trafficLog.airTime }}
             td.vui-truncate(
-              v-bind:title = 'item.programName'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.programName }}
+              v-bind:title = 'trafficLog.programName'
+            ) {{ trafficLog.programPlaced }}
             td(
-              v-bind:title = 'item.priority'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.priority }}
+              v-bind:title = 'trafficLog.priority'
+            ) {{ trafficLog.priority }}
             td.vui-truncate(
-              v-bind:title = 'item.statusName'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.statusName }}
+              v-bind:title = 'trafficLog.statusName'
+              ) {{ trafficLog.statusName }}
             td(
-              v-bind:title = 'item.airDate'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.airDate }}
+              v-bind:title = 'trafficLog.airDate'
+            ) {{ trafficLog.airDate }}
             td.vui-text-align--right(
-              v-bind:title = 'item.lineNumber'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.lineNumber }}
+              v-bind:title = 'trafficLog.lineNumber'
+            ) {{ trafficLog.stationLineNumber }}
             td.vui-text-align--right(
-              v-bind:title = 'item.altLineNumber'
-              v-if = 'item.isMain'
-              rowspan = '0'
-            ) {{ item.altLineNumber }}
-            td(
-              v-if = 'item.isMain'
-              rowspan = '0'
-              v-bind:title = 'item.assignedMakegoodData.sellerOfferId'
-              style = 'border-right: 1px solid #51535c'
+              v-bind:title = 'trafficLog.altLineNumber'
+            ) {{ trafficLog.altLineNumber }}
+            td.vui-no-border-right(
+              rowspan='0'
+              title=''
             )
-              a.text-underline(
-                @click = 'openMakegood(item.assignedMakegoodData)'
-              ) {{ item.assignedMakegoodData.sellerOfferId }}
-            td.spot-allocation-cell(
-              v-if = 'isShowSpotAllocations && item.isMain'
-              rowspan = '0'
-            )
+            td.spot-allocation-cell(v-if='isShowSpotAllocations')
               makegoods-spot-allocation-with-missed-spots(
-                v-model = 'item.spotAllocations'
+                v-if = 'isMissedSpotsShown'
+                v-bind:spots = 'lineItem.weeklySpotAllocations'
                 navigator = 'spotAllocationNavigator'
               )
+              makegoods-spot-allocation-with-traffic-spots(
+                v-if = '!isMissedSpotsShown'
+                v-bind:spots = 'lineItem.weeklySpotAllocations'
+                navigator = 'spotAllocationNavigator'
+              )
+              //- a.text-underline(
+              //-   href = ''
+              //-   ng-click = 'openMakegood(trafficLog.assignedMakegoodData)'
+              //- ) {{ trafficLog.assignedMakegoodData.sellerOfferId }}
 </template>
 
 <script>
   export default {
     props: {
+      lineItem: {
+        type: Object
+      },
       isShowSpotAllocations: {
         type: Boolean,
         default: true
+      },
+      isMissedSpotsShown: {
+        type: Boolean,
+        default: true
+      },
+      childItems: {
+        type: Array
+      }
+    },
+
+    data: () => ({
+      orderDetailsGridExpandingColumnsWidths: {
+        blank: '39px',
+        unitAiredStatusName: '80px',
+        spotNumber: '78px',
+        programPlaced: '200px',
+        airTime: '110px',
+        airDay: '82px',
+        priority: '88px',
+        status: '116px',
+        airDate: '100px',
+        lineNumber: '86px',
+        altLineNumber: '60px',
+        assignedMakegoodId: '72px',
+        isciAdId: '80px',
+        invoiceDate: '85px',
+        externalInvoiceId: '81px',
+        affidavitRate: '81px'
+      },
+      spotAllocationNavigator: {
+        tableCellWidth: '503px'
       },
       columnWidths: {
         blank: 39,
@@ -188,11 +145,7 @@
         invoiceDate: 100,
         externalInvoiceId: 99,
         affidavitRate: 99
-      },
-
-      childItems: {
-        type: Array
       }
-    }
+    })
   }
 </script>

@@ -43,6 +43,9 @@ require('chart.js')
 require('hchs-vue-charts')
 Vue.use(VueCharts)
 
+import VueFloatLabel from 'vue-float-label'
+Vue.use(VueFloatLabel)
+
 import VeeValidate from 'vee-validate'
 Vue.use(VeeValidate)
 

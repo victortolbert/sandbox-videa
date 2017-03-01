@@ -61,8 +61,8 @@ export default {
 
     Vue.component('makegoods-nested-order-line-invoice-details-grid', require('~components/pending-makegoods/makegoods-nested-order-line-invoice-details-grid'))
     Vue.component('makegoods-order-line-curr-info-rate-rating-grid', require('~components/pending-makegoods/makegoods-order-line-curr-info-rate-rating-grid'))
-    Vue.component('makegoods-spot-allocation-with-missed-spots', require('~components/pending-makegoods/makegoods-spot-allocation-with-missed-spots'))
     Vue.component('makegoods-spot-allocation-with-traffic-spots', require('~components/pending-makegoods/makegoods-spot-allocation-with-traffic-spots'))
+    Vue.component('makegoods-spot-allocation-with-missed-spots', require('~components/pending-makegoods/makegoods-spot-allocation-with-missed-spots'))
     Vue.component('makegoods-common-avail-offer-grids-wrapper', require('~components/pending-makegoods/makegoods-common-avail-offer-grids-wrapper'))
     Vue.component('makegoods-nested-order-line-makegoods-grid', require('~components/pending-makegoods/makegoods-nested-order-line-makegoods-grid'))
     Vue.component('makegoods-program-name-change-lines-grid', require('~components/pending-makegoods/makegoods-program-name-change-lines-grid'))
@@ -81,6 +81,7 @@ export default {
     Vue.component('makegoods-orbit-details-popup', require('~components/pending-makegoods/makegoods-orbit-details-popup'))
     Vue.component('makegoods-order-details-info', require('~components/pending-makegoods/makegoods-order-details-info'))
     Vue.component('makegoods-offered-spots-grid', require('~components/pending-makegoods/makegoods-offered-spots-grid'))
+    Vue.component('makegoods-ebiz-history-popup', require('~components/pending-makegoods/makegoods-ebiz-history-popup'))
     Vue.component('makegoods-offer-tab-details', require('~components/pending-makegoods/makegoods-offer-tab-details'))
     Vue.component('makegoods-ebiz-history-grid', require('~components/pending-makegoods/makegoods-ebiz-history-grid'))
     Vue.component('makegoods-offer-spots-grid', require('~components/pending-makegoods/makegoods-offer-spots-grid'))

@@ -16,7 +16,11 @@
           type = 'button'
           value = 'Save'
         )
-      //- close-button
+        input.vui-button.vui-button--neutral.vui-m-right--x-small(
+          @click = 'save'
+          type = 'button'
+          value = 'Close'
+        )
 
     makegoods-offer-tab-details.flex-container(
       v-bind:orderId = '$route.params.id'

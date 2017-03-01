@@ -7,7 +7,7 @@
 <style lang="stylus">
   @import '~assets/variables'
 
-  .actions
+  .mh-actions
     // align-items flex-end
     display flex
     // height 100%

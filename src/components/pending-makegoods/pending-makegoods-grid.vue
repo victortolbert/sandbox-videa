@@ -47,8 +47,8 @@
             target = '_blank'
           ) Open
 
-          td {{ offer.advertiser.toUpperCase() }}
-          td {{ offer.agency.toUpperCase() }}
+          td {{ offer.advertiser }}
+          td {{ offer.agency }}
           td {{ offer.campaignName }}
           td {{ offer.flightStartDate }}
           td {{ offer.flightEndDate }}

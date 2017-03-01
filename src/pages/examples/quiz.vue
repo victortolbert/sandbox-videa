@@ -1,5 +1,5 @@
-<template lang="pug>
-  #app
+<template lang="pug">
+#app
   h1 {{ quiz.title }}
   // index is used to check with current question index
   div(v-for='(question, index) in quiz.questions')

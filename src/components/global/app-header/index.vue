@@ -30,8 +30,6 @@
     methods: {
       goHome () {
         this.$store.state.activeApp = 'login'
-        this.$cookie.delete('user')
-
         this.$router.push({
           name: 'index'
         })

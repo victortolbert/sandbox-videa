@@ -4,22 +4,16 @@
       h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
         span Spots Run Not Ordered
         span.pointer.vui-icon_container.vui-m-right--x-small(
-          @click = 'hideDialog'
+          @click = '$emit("close")'
           title = 'Close'
         )
-          vui-icon(name='delete')
+          vui-icon.vui-icon--small(name='close')
     .modal-body
       .vui-float--right.vui-m-bottom--small
-        h4
-          | Target Demo:
-          span M18-49
+        h4 Target Demo: #[span M18-49]
       .vui-m-bottom--large
-        .table-container.spots-run-not-ordered-container.vui-scrollable.vui-size--1-of-1(
-          style = 'height: 30rem'
-        )
-          makegoods-spots-run-not-ordered-grid(
-            items = 'items'
-          )
+        .table-container.spots-run-not-ordered-container.vui-scrollable.vui-size--1-of-1(style='height: 30rem')
+          makegoods-spots-run-not-ordered-grid(items='items')
       .vui-grid.vui-grid--pull-padded.vui-grid--vertical-align-end
         .vui-col--padded
           h4
@@ -32,7 +26,7 @@
         .vui-col--padded
           .vui-grid.vui-grid--align-end
             input.vui-button.vui-button--neutral(
-              @click = 'hideDialog'
+              @click = '$emit("close")'
               type = 'button'
               value = 'Close'
             )

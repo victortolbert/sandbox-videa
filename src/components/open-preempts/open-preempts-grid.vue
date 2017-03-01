@@ -104,8 +104,8 @@
             td {{ item.updatedBy
             td {{ item.updatedDateTime }}
 
-            td.vui-truncate(v-bind:title='item.agencyName' style='width: 300px') {{ item.agencyName.toUpperCase() }}
-            td.vui-truncate(v-bind:title='item.advertiserName' style='width: 250px') {{ item.advertiserName.toUpperCase() }}
+            td.vui-truncate(v-bind:title='item.agencyName' style='width: 300px') {{ item.agencyName }}
+            td.vui-truncate(v-bind:title='item.advertiserName' style='width: 250px') {{ item.advertiserName }}
             td.vui-truncate(v-bind:title='item.campaignName' style='width: 250px') {{ item.campaignName }}
             td(v-bind:title='item.flightStartDate' style='width: 116px') {{ item.flightStartDate }}
             td(v-bind:title='item.flightEndDate' style='width: 110px') {{ item.flightEndDate }}

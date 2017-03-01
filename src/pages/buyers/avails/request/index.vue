@@ -147,7 +147,7 @@
             template(
               v-for = 'market in markets'
             )
-              checkbox-list(
+              vui-checkbox-list(
                 v-bind:items = 'market.stations'
                 v-if = 'selectedMarket == market.id && market.id !== "none"'
               )

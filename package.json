@@ -95,6 +95,7 @@
     "vue-flatpickr": "^2.2.9",
     "vue-flexboxgrid": "^1.1.2",
     "vue-flickity": "^1.0.7",
+    "vue-float-label": "^1.0.0",
     "vue-fraction-grid": "^1.0.0",
     "vue-full-calendar": "^1.0.0",
     "vue-fullcalendar": "latest",
@@ -117,6 +118,7 @@
     "vue-sweetalert": "^0.1.16",
     "vue-toast": "^3.0.0",
     "vue-twentytwenty": "^0.1.0",
+    "vue-validity": "^0.1.5",
     "vue-waterfall": "^1.0.5",
     "vue-waypoint": "^2.4.0",
     "vue-windows": "^0.1.3",
@@ -272,11 +274,17 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "src/components/(.*)$": "<rootDir>/src/components/$.vue",
-      "^vue$": "vue/dist/vue.common.js",
-      "src": "<rootDir>/src",
-      "assets": "<rootDir>/src/assets",
-      "components": "<rootDir>/src/components"
+      "components/(.*)$": "<rootDir>/components/$1.vue",
+      "utils/(.*)$": "<rootDir>/utils/$1.js",
+      "(.*)$": "<rootDir>/$1.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".*\\.(vue)$": "jest-vue-preprocessor"
     }
   },
   "engines": {

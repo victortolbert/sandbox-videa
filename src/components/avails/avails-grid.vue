@@ -135,12 +135,12 @@
               v-bind:class = 'avail.availStatus'
             ) {{ avail.availStatus }}
           td {{ avail.id == 65733 ? releasedDate : avail.releasedDate }}
-          td {{ avail.advertiser.toUpperCase() }}
+          td {{ avail.advertiser }}
           td {{ avail.product }}
           td {{ avail.estimateNumber }}
           td {{ avail.flightStartDate }}
           td {{ avail.flightEndDate }}
-          td {{ avail.agency.toUpperCase() }}
+          td {{ avail.agency }}
           td {{ avail.id == 65733 ? lastUpdated : avail.lastUpdated }}
         tr(
           v-show = 'avail.expanded'

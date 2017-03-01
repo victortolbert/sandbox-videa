@@ -35,6 +35,8 @@
 
 <script>
   import axios from '~plugins/axios'
+  import { EventBus } from '~plugins/event-bus'
+
   import OrderSearchFilter from '~components/order-search/order-search-filter'
   import OrderSearchGrid from '~components/order-search/order-search-grid'
 
@@ -84,6 +86,12 @@
 
     created () {
       this.fetchOrders()
+    },
+
+    mounted () {
+      // EventBus.listen('completed-order', () => this.hasChangedCompletionOrders)
+
+
     }
   }
 </script>

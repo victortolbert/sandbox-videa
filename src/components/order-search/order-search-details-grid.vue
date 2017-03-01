@@ -33,58 +33,50 @@
           style = 'width: 503px'
         )
           makegoods-spot-allocation-header(
-            v-model = 'items[0].weeklySpotAllocations'
+            v-model = 'orderLineItems[0].weeklySpotAllocations'
             navigator = 'spotAllocationNavigator'
           )
         th(style='width: 100px') Spot #[br] Rate
         th(
           v-if = '!isImpressionsBuyType'
           style = 'width: 100px'
-        ) Buyer #[br] IMP
+        ) Buyer #[br] RTG
         th(
           v-if = '!isImpressionsBuyType'
           style = 'width: 100px'
-        ) Videa #[br] IMP
-        th(style='width: 100px') Line #[br] $ Total
+        ) Videa #[br] RTG
+        th(style='width: 100px') Line $#[br] Total
         th(style='width: 100px') Buyer #[br] Comment
-        th(style='width: 110px') Videa to Station #[br] Comment
+        th(style='width: 150px') Videa to Station #[br] Comment
         th(style='width: 100px') Spot #[br] Option
         th(style='width: 100px') Line #[br] Type
-    tbody(v-for = 'item in orderLineItems')
-      tr(v-bind:class = '{ "vui-is-selected": item.isExpanded }')
+    tbody(v-for = 'lineItem in orderLineItems')
+      tr(v-bind:class = '{ "vui-is-selected": lineItem.isExpanded }')
         td.vui-text-align--center(style='width: 80px')
-          a(v-on:click = 'item.isExpanded = !item.isExpanded')
+          a(v-on:click = 'lineItem.isExpanded = !lineItem.isExpanded')
             vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
-              v-bind:name = 'item.isExpanded ? "caret-lower-right" : "caret-right"'
+              v-bind:name = 'lineItem.isExpanded ? "caret-lower-right" : "caret-right"'
             )
         td.vui-text-align--right(
-          v-bind:title = 'item.lineNumber'
+          v-bind:title = 'lineItem.lineNumber'
           style = 'width: 78px'
-        ) {{ item.lineNumber }}
-        td(v-bind:title='item.days' style='width: 82px') {{ item.days }}
-        td.vui-truncate(v-bind:title='item.time' style='width: 110px') {{ item.time }}
-        td.vui-truncate(v-bind:title='item.programName' style='width: 200px') {{ item.program }}
-        td(v-bind:title='item.spotLength' style='width: 88px') {{ item.length }}
-        td.vui-text-align--right(v-bind:title='item.totalSpots' style='width: 116px') {{ item.orderSpots }}
-        td.vui-text-align--right(v-bind:title='item.totalMissedSpots' style='width: 100px') {{ item.openPreempts }}
-        td.vui-text-align--right(v-bind:title='item.totalTrafficSpots' style='width: 86px') {{ item.trafficSpots }}
+        ) {{ lineItem.lineNumber }}
+        td(v-bind:title='lineItem.days' style='width: 82px') {{ lineItem.days }}
+        td.vui-truncate(v-bind:title='lineItem.time' style='width: 110px') {{ lineItem.time }}
+        td.vui-truncate(v-bind:title='lineItem.programName' style='width: 200px') {{ lineItem.program }}
+        td(v-bind:title='lineItem.spotLength' style='width: 88px') {{ lineItem.length }}
+        td.vui-text-align--right(v-bind:title='lineItem.totalSpots' style='width: 116px') {{ lineItem.orderSpots }}
+        td.vui-text-align--right.vui-text-color--error(v-bind:title='lineItem.totalMissedSpots' style='width: 100px') {{ lineItem.openPreempts }}
+        td.vui-text-align--right(v-bind:title='lineItem.totalTrafficSpots' style='width: 86px') {{ lineItem.trafficSpots }}
         td.vui-text-align--center(style='width: 140px')
           a.pointer.current-info.popup(
-            v-on:click='showCurrentInfo(item)'
+            v-on:click='showCurrentInfo(lineItem)'
           )
             vui-icon.vui-icon--small.vui-m-bottom--xxx-small.vui-m-right--xxx-small(
               name = 'popout'
             )
-        td(
-          v-bind:title = 'item.startDate'
-          v-if = '!isShowSpotAllocations'
-          style = 'width: 120px'
-        ) {{ item.startDate }}
-        td(
-          v-bind:title = 'item.endDate'
-          v-if = '!isShowSpotAllocations'
-          style = 'width: 120px'
-        ) {{ item.endDate }}
+        td(:title='lineItem.startDate' v-if='!isShowSpotAllocations' style='width: 120px') {{ lineItem.startDate }}
+        td(:title='lineItem.endDate' v-if='!isShowSpotAllocations' style='width: 120px') {{ lineItem.endDate }}
         td.spot-allocation-cell(
           v-bind:style = '{ "width": spotAllocationNavigator.tableCellWidth }'
           v-if = 'isShowSpotAllocations'
@@ -92,159 +84,124 @@
         )
           makegoods-spot-allocation-with-missed-spots(
             v-if = 'isMissedSpotsShown'
-            v-model = 'item.weeklySpotAllocations'
+            v-bind:spots = 'lineItem.weeklySpotAllocations'
             navigator = 'spotAllocationNavigator'
           )
           makegoods-spot-allocation-with-traffic-spots(
             v-if = '!isMissedSpotsShown'
-            v-model = 'item.weeklySpotAllocations'
+            v-bind:spots = 'lineItem.weeklySpotAllocations'
             navigator = 'spotAllocationNavigator'
           )
-        td.vui-text-align--right(v-bind:title='item.orderedSpotRate' style='width: 100px') {{ item.spotRate | numberWithCommas | formatMoney }}
+        td.vui-text-align--right(v-bind:title='lineItem.orderedSpotRate' style='width: 100px') {{ lineItem.spotRate | numberWithCommas | formatMoney }}
         td.vui-text-align--right(
           v-if = '!isImpressionsBuyType'
-          v-bind:title = 'item.orderedRating'
+          v-bind:title = 'lineItem.orderedRating'
           style = 'width: 100px'
-        ) {{ item.buyerRtg | formatRating }}
+        ) {{ lineItem.buyerRtg | formatRating }}
         td.vui-text-align--right(
           v-if = '!isImpressionsBuyType'
-          v-bind:title = 'item.videaCurrentRating'
+          v-bind:title = 'lineItem.videaCurrentRating'
           style = 'width: 100px'
-        ) {{ item.videaRtg }}
-        td.vui-text-align--right.currency(v-bind:title='item.lineTotalMoney' style='width: 100px') {{ item.lineNumberTotal | numberWithCommas | formatMoney }}
-        td(v-bind:title='item.buyerComment' style='width: 100px') {{ item.buyerComment }}
-        td(v-bind:title='item.stationOrderComment' style='width: 150px') {{ item.videaToStationComments }}
+        ) {{ lineItem.videaRtg | formatRating }}
+        td.vui-text-align--right.currency(v-bind:title='lineItem.lineTotalMoney' style='width: 100px') {{ lineItem.lineNumberTotal | numberWithCommas | formatMoney }}
+        td(v-bind:title='lineItem.buyerComment' style='width: 100px') {{ lineItem.buyerComment }}
+        td(v-bind:title='lineItem.stationOrderComment' style='width: 150px') {{ lineItem.videaToStationComments }}
         td(title='' style='width: 100px')
-        td(v-bind:title='item.lineType' style='width: 100px') {{ item.lineType }}
-      tr.vui-is-expanded(v-if='item.isExpanded')
+        td(v-bind:title='lineItem.lineType' style='width: 100px') {{ lineItem.lineType }}
+      tr.vui-is-expanded(v-if='lineItem.isExpanded')
         td.vui-align-top.om-nested-table-container.bordered(
           v-bind:colspan = 'isShowSpotAllocations ? 11 : 10',
-          style='padding: 0'
+          style = 'padding: 0'
         )
-          .nested-order-line-grid(
-            child-items = 'item.child'
-            column-widths = 'expandingColumnsWidths'
-            is-show-spot-allocations = 'isShowSpotAllocations'
-            open-makegood = 'showOfferDialog'
-            order-line-id = 'item.orderDetailsId'
-            spot-allocation-navigator = 'spotAllocationNavigator'
-          )
+          .nested-order-line-grid
+
             .vui-box(style='padding: 0.5rem; border:none; border-top: 1px solid #51535c')
               h3.vui-text-heading--label Traffic logs
+
             div
               table.vui-table.vui-no-row-hover.vui-table--fixed-layout
                 thead
                   tr
                     th.vui-truncate(v-bind:style="{ 'width': orderDetailsGridExpandingColumnsWidths.unitAiredStatusName }")
                       vui-sorting-column(title='Aired<br>Status')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.spotNumber }')
                       vui-sorting-column(title = 'Spot #')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.airDay }')
                       vui-sorting-column(title='Air Day')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.airTime }')
                       vui-sorting-column(title='Air Time')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.programPlaced }')
                       vui-sorting-column(title='Program Placed')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.priority }')
                       vui-sorting-column(title='Priority')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.status }')
                       vui-sorting-column(title='Status<br>Name')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.airDate }')
                       vui-sorting-column(title='Air Date')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.lineNumber }')
                       vui-sorting-column(title='Station<br>Line #')
-
                     th.vui-truncate(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.altLineNumber }') Alt. #[br] Line #
-                    th.vui-no-border-right(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.assignedMakegoodId }') MG #
+                    th.vui-no-border-right(v-bind:style = '{ "width": orderDetailsGridExpandingColumnsWidths.assignedMakegoodId }') MG #
                     th(
-                      v-bind:style='{ "width": spotAllocationNavigator.tableCellWidth }'
+                      v-bind:style = '{ "width": spotAllocationNavigator.tableCellWidth }'
                       v-if = 'isShowSpotAllocations'
                       style = 'background-color: rgb(240, 248, 252)'
                     )
                 tbody
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::(!!item.airedBroadcastingDateTime ? item.unitAiredStatusName : null)', title='')
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.spotNumber', title='2') 2
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDay', title='Tuesday') Tuesday
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airTime|vuiTimeWithSeconds', title='07:43:24 pm') 07:43:24 pm
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.programName', title='Jeopardy') Jeopardy
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.priority', title='P05-SB') P05-SB
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.statusName', title='Placed') Placed
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDate|vuiDate', title='04/11/2017') 04/11/2017
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.lineNumber', title='1') 1
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.altLineNumber', title='1') 1
-                  //-   td.vui-no-border-right(rowspan='0', ng-if='item.isMain', title='')
-                  //-     a.text-underline(href='', ng-bind='::item.assignedMakegoodData.sellerOfferId', ng-click='openMakegood(item.assignedMakegoodData)')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::(!!item.airedBroadcastingDateTime ? item.unitAiredStatusName : null)', title='')
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.spotNumber', title='1') 1
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDay', title='Wednesday') Wednesday
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airTime|vuiTimeWithSeconds', title='07:43:34 pm') 07:43:34 pm
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.programName', title='Jeopardy') Jeopardy
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.priority', title='P05-SB') P05-SB
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.statusName', title='Placed') Placed
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDate|vuiDate', title='04/12/2017') 04/12/2017
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.lineNumber', title='1') 1
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.altLineNumber', title='1') 1
-                  //-   td.vui-no-border-right(rowspan='0', ng-if='item.isMain', title='')
-                  //-     a.text-underline(href='', ng-bind='::item.assignedMakegoodData.sellerOfferId', ng-click='openMakegood(item.assignedMakegoodData)')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::(!!item.airedBroadcastingDateTime ? item.unitAiredStatusName : null)', title='')
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.spotNumber', title='4') 4
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDay', title='Monday') Monday
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airTime|vuiTimeWithSeconds', title='07:50:51 pm') 07:50:51 pm
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.programName', title='Jeopardy') Jeopardy
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.priority', title='P05-SB') P05-SB
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.statusName', title='Placed') Placed
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDate|vuiDate', title='04/17/2017') 04/17/2017
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.lineNumber', title='1') 1
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.altLineNumber', title='1') 1
-                  //-   td.vui-no-border-right(rowspan='0', ng-if='item.isMain', title='')
-                  //-     a.text-underline(href='', ng-bind='::item.assignedMakegoodData.sellerOfferId', ng-click='openMakegood(item.assignedMakegoodData)')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::(!!item.airedBroadcastingDateTime ? item.unitAiredStatusName : null)', title='')
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.spotNumber', title='3') 3
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDay', title='Friday') Friday
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airTime|vuiTimeWithSeconds', title='07:43:39 pm') 07:43:39 pm
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.programName', title='Jeopardy') Jeopardy
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.priority', title='P05-SB') P05-SB
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.statusName', title='Placed') Placed
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDate|vuiDate', title='04/21/2017') 04/21/2017
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.lineNumber', title='1') 1
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.altLineNumber', title='1') 1
-                  //-   td.vui-no-border-right(rowspan='0', ng-if='item.isMain', title='')
-                  //-     a.text-underline(href='', ng-bind='::item.assignedMakegoodData.sellerOfferId', ng-click='openMakegood(item.assignedMakegoodData)')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::(!!item.airedBroadcastingDateTime ? item.unitAiredStatusName : null)', title='')
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.spotNumber', title='5') 5
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDay', title='Thursday') Thursday
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airTime|vuiTimeWithSeconds', title='07:35:12 pm') 07:35:12 pm
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.programName', title='Jeopardy') Jeopardy
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.priority', title='P05-SB') P05-SB
-                  //-   td.vui-truncate(rowspan='0', ng-if='item.isMain', ng-bind='::item.statusName', title='Placed') Placed
-                  //-   td(rowspan='0', ng-if='item.isMain', ng-bind='::item.airDate|vuiDate', title='04/27/2017') 04/27/2017
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.lineNumber', title='1') 1
-                  //-   td.vui-text-align--right(rowspan='0', ng-if='item.isMain', ng-bind='::item.altLineNumber', title='1') 1
-                  //-   td.vui-no-border-right(rowspan='0', ng-if='item.isMain', title='')
-                  //-     a.text-underline(href='', ng-bind='::item.assignedMakegoodData.sellerOfferId', ng-click='openMakegood(item.assignedMakegoodData)')
+                  tr.with-row-span(v-for='trafficLog in lineItem.trafficLogs')
+                    td.vui-truncate(
+                    ) {{ !!trafficLog.airedBroadcastingDateTime ? trafficLog.unitAiredStatusName : null }}
+                    td.vui-text-align--right(
+                      v-bind:title = 'trafficLog.spotNumber '
+                    ) {{ trafficLog.spotNumber }}
+                    td.vui-truncate(
+                      v-bind:title = 'trafficLog.airDay'
+                    ) {{ trafficLog.airDay }}
+                    td(
+                      v-bind:title = 'trafficLog.airTime'
+                    ) {{ trafficLog.airTime }}
+                    td.vui-truncate(
+                      v-bind:title = 'trafficLog.programName'
+                    ) {{ trafficLog.programPlaced }}
+                    td(
+                      v-bind:title = 'trafficLog.priority'
+                    ) {{ trafficLog.priority }}
+                    td.vui-truncate(
+                      v-bind:title = 'trafficLog.statusName'
+                      ) {{ trafficLog.statusName }}
+                    td(
+                      v-bind:title = 'trafficLog.airDate'
+                    ) {{ trafficLog.airDate }}
+                    td.vui-text-align--right(
+                      v-bind:title = 'trafficLog.lineNumber'
+                    ) {{ trafficLog.stationLineNumber }}
+                    td.vui-text-align--right(
+                      v-bind:title = 'trafficLog.altLineNumber'
+                    ) {{ trafficLog.altLineNumber }}
+                    td.vui-no-border-right
+                    td.spot-allocation-cell(v-if='isShowSpotAllocations')
+                      makegoods-spot-allocation-with-missed-spots(
+                        v-if = 'isMissedSpotsShown'
+                        v-bind:spots = 'lineItem.weeklySpotAllocations'
+                        navigator = 'spotAllocationNavigator'
+                      )
+                      makegoods-spot-allocation-with-traffic-spots(
+                        v-if = '!isMissedSpotsShown'
+                        v-bind:spots = 'lineItem.weeklySpotAllocations'
+                        navigator = 'spotAllocationNavigator'
+                      )
+                      //- a.text-underline(
+                      //-   href = ''
+                      //-   ng-click = 'openMakegood(trafficLog.assignedMakegoodData)'
+                      //- ) {{ trafficLog.assignedMakegoodData.sellerOfferId }}
+
         td.vui-align-top.om-nested-table-container.bordered(colspan='4', style='padding: 0')
-          .nested-order-line-invoice-details-grid(
-            v-bind:is-show-spot-allocations = 'isShowSpotAllocations'
-            child-items = 'item.child'
-            column-widths = 'expandingColumnsWidths'
-            order-line-id = 'item.orderDetailsId'
-            spot-allocation-navigator = 'spotAllocationNavigator'
-          )
+
+          .nested-order-line-invoice-details-grid
+
             .vui-box(style='padding:.5rem;border:none;border-top:1px solid #51535c')
               h3.vui-text-heading--label Agency Invoice Details
+
             div
               table.vui-table.vui-no-row-hover.vui-table--fixed-layout
                 caption
@@ -259,40 +216,21 @@
                     th.vui-truncate.vui-no-border-right(v-bind:style='{ "width": orderDetailsGridExpandingColumnsWidths.externalInvoiceId }')
                       | Station #[br] Inv #
                 tbody
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-no-border-left(ng-bind='::item.isciAdId', title='')
-                  //-   td.vui-truncate(ng-bind='::item.invoiceDate|vuiDate', title='')
-                  //-   td.vui-truncate.vui-text-align--right(ng-bind='::item.detailsAffidavitRate|vuiDecimal', title='', ng-class="::{'currency': item.detailsAffidavitRate}")
-                  //-   td.vui-truncate.vui-no-border-right(ng-bind='::item.externalInvoiceId', title='')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-no-border-left(ng-bind='::item.isciAdId', title='')
-                  //-   td.vui-truncate(ng-bind='::item.invoiceDate|vuiDate', title='')
-                  //-   td.vui-truncate.vui-text-align--right(ng-bind='::item.detailsAffidavitRate|vuiDecimal', title='', ng-class="::{'currency': item.detailsAffidavitRate}")
-                  //-   td.vui-truncate.vui-no-border-right(ng-bind='::item.externalInvoiceId', title='')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-no-border-left(ng-bind='::item.isciAdId', title='')
-                  //-   td.vui-truncate(ng-bind='::item.invoiceDate|vuiDate', title='')
-                  //-   td.vui-truncate.vui-text-align--right(ng-bind='::item.detailsAffidavitRate|vuiDecimal', title='', ng-class="::{'currency': item.detailsAffidavitRate}")
-                  //-   td.vui-truncate.vui-no-border-right(ng-bind='::item.externalInvoiceId', title='')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-no-border-left(ng-bind='::item.isciAdId', title='')
-                  //-   td.vui-truncate(ng-bind='::item.invoiceDate|vuiDate', title='')
-                  //-   td.vui-truncate.vui-text-align--right(ng-bind='::item.detailsAffidavitRate|vuiDecimal', title='', ng-class="::{'currency': item.detailsAffidavitRate}")
-                  //-   td.vui-truncate.vui-no-border-right(ng-bind='::item.externalInvoiceId', title='')
-                  //- tr.with-row-span(ng-repeat='item in childItems')
-                  //-   td.vui-no-border-left(ng-bind='::item.isciAdId', title='')
-                  //-   td.vui-truncate(ng-bind='::item.invoiceDate|vuiDate', title='')
-                  //-   td.vui-truncate.vui-text-align--right(ng-bind='::item.detailsAffidavitRate|vuiDecimal', title='', ng-class="::{'currency': item.detailsAffidavitRate}")
-                  //-   td.vui-truncate.vui-no-border-right(ng-bind='::item.externalInvoiceId', title='')
+                  tr.with-row-span(v-for='agencyInvoiceDetail in lineItem.agencyInvoiceDetails')
+                    td.vui-no-border-left(:title='agencyInvoiceDetail.isciAdId') {{ agencyInvoiceDetail.isciAdId }}
+                    td.vui-truncate(:title='agencyInvoiceDetail.invoiceDate') {{ agencyInvoiceDetail.invoiceDate }}
+                    td.vui-truncate.vui-text-align--right(
+                      v-bind:class="{ 'currency': agencyInvoiceDetail.detailsAffidavitRate }"
+                      v-bind:title='agencyInvoiceDetail.detailsAffidavitRate') {{ agencyInvoiceDetail.detailsAffidavitRate }}
+                    td.vui-truncate.vui-no-border-right(:title='agencyInvoiceDetail.externalInvoiceId') {{ agencyInvoiceDetail.externalInvoiceId }}
+
         td.vui-align-top.om-nested-table-container.bordered(colspan='6', style='padding: 0')
-          .nested-order-line-makegoods-grid(
-            column-widths = 'expandingMakegoodColumnsWidths'
-            items = 'item.makegoods'
-            order-line-id = 'item.orderDetailsId'
-            show-offer-dialog = 'showOfferDialog'
-          )
+
+          .nested-order-line-makegoods-grid
+
             .vui-box(style='padding: 0.5rem; border:none; border-top: 1px solid #51535c')
               h3.vui-text-heading--label Makegoods
+
             .vui-scrollable--x
               table.vui-table.vui-no-row-hover.vui-table--fixed-layout(cg-busy='promise')
                 thead
@@ -306,7 +244,12 @@
                     th.vui-truncate(v-bind:style='{ "width": expandingMakegoodColumnsWidths.newMakegoodLines }')
                       vui-sorting-column(title='MG<br>New Lines')
                 tbody
-                  tr
+                  tr(v-for='makegood in lineItem.makegoods')
+                    td {{ makegood.makegoodNumber }}
+                    td {{ makegood.makegoodStatus }}
+                    td {{ makegood.makegoodApplied }}
+                    td {{ makegood.makegoodNewLines }}
+
     makegoods-order-line-current-info-popup(
       v-show = 'showCurrentInfoPopup'
       @close = 'showCurrentInfoPopup = false'
@@ -343,30 +286,6 @@
           }
         ],
         isImpressionsBuyType: false,
-        items: [
-          {
-            weeklySpotAllocations: null,
-            isExpanded: false,
-            lineNumber: 1,
-            isOrbit: true,
-            days: 'MO-FR',
-            time: '7:30 - 8pm',
-            startDate: moment().add(14, 'days').format('MM/DD/YY'),
-            endDate: moment().add(5, 'days').format('MM/DD/YY'),
-            programName: 'Jeopady',
-            spotLength: '30 s',
-            totalSpots: 5,
-            totalMissedSpots: 0,
-            totalTrafficSpots: 5,
-            orderedSpotRate: 425,
-            orderedRating: 23.1,
-            videaCurrentRating: 0,
-            lineTotalMoney: 2125,
-            buyerComment: '',
-            stationOrderComment: '',
-            lineType: 'Original',
-          }
-        ],
         currentTabOrderId: 1,
         spotAllocationNavigator: {
           tableCellWidth: '503px'

@@ -33,7 +33,7 @@
 
         // Order Tab -- Controls
         .vui-grid.vui-grid--vertical-align-center.vui-m-bottom--medium
-          .vui-col
+          .vui-col.vui-size-1-of-14.vui-m-right--x-large.vui-shrink-none.vui-grow-none
             // Pending or Draft Makegood Legend
             ul
               li.row-padding
@@ -41,139 +41,121 @@
                   @click.prevent = 'showOfferDialog("item.makegoodId")'
                   title = 'Click to open the Offer which has been sent and is awaiting approval'
                 )
-                  vui-icon(name = 'medicine-bottle')
+                  vui-icon.vui-icon--small(name = 'medicine-bottle')
                 span Pending MG
               li.row-padding
                 span.vui-text-link
-                  vui-icon.vui-m-bottom--xxx-small.vui-m-left--xx-small.vui-m-right--xx-small(
+                  vui-icon.vui-icon--x-small.vui-m-right--xxx-small.vui-m-left--xx-small.vui-m-right--xx-small(
                     name = 'pencil-square'
                   )
                 span.graft-mg-text Draft MG
-          .vui-col
+          .vui-col.vui-size-1-of-4.vui-m-right--x-large.vui-shrink-none.vui-grow-none
+
             // Show All or Missed Only
-            .vui-fieldset.vui-display--inline-block
+            .vui-fieldset
               .vui-fieldset-header
                 label  Filter rows
-              label.vui-radio(
-                for = 'view-all'
-              )
-                input#view-all(
-                  v-bind:value = 'false'
-                  v-model = 'isOnlyMissedShown'
-                  name = 'missedRadioGroup'
-                  type = 'radio'
-                )
-                span.vui-radio--faux.vui-m-right--xxx-small
-                span.vui-form-element__label View All
-              label.vui-radio(
-                for = 'missed-only'
-              )
-                input#missed-only(
-                  v-bind:value = 'true'
-                  v-model = 'isOnlyMissedShown'
-                  name = 'missedRadioGroup'
-                  type = 'radio'
-                )
-                span.vui-radio--faux.vui-m-right--xxx-small
-                span.vui-form-element__label Missed Only
+              .vui-p-around--small
+                label.vui-radio(for='view-all')
+                  input#view-all(
+                    v-bind:value = 'false'
+                    v-model = 'isOnlyMissedShown'
+                    name = 'missedRadioGroup'
+                    type = 'radio'
+                  )
+                  span.vui-radio--faux.vui-m-right--xxx-small
+                  span.vui-form-element__label View All
+                label.vui-radio(for = 'missed-only')
+                  input#missed-only(
+                    v-bind:value = 'true'
+                    v-model = 'isOnlyMissedShown'
+                    name = 'missedRadioGroup'
+                    type = 'radio'
+                  )
+                  span.vui-radio--faux.vui-m-right--xxx-small
+                  span.vui-form-element__label Missed Only
 
-          // Offer Selector
-          .vui-col.vui-col--bump-left.vui-grid.vui-grid--align-start
-            .vui-fieldset.vui-grid.vui-grid--align-start
-              .vui-size--3-of-12.vui-align-middle
+          .vui-fieldset.vui-size-3-of-4.vui-m-right--x-large.vui-shrink-none.vui-grow-none
+            .vui-grid.vui-grid--vertical-align-center.vui-p-around--x-small
+              .vui-col.vui-size-1-of-2.vui-m-right--medium.vui-shrink-none
                 a.vui-button.vui-button--secondary.vui-m-right--xx-small(
                   v-bind:href = '`/sellers/order-management/pending-makegoods/${id}/${addButtonType}`'
                   target = '_blank'
                 ) Add Offer
-              .vui-size--3-of-12
-                label.vui-radio(
-                  for = 'make-good'
-                )
-                  input#make-good(
-                    v-bind:value = '"makegood"'
-                    v-model = 'addButtonType'
-                    name = 'addButtonTypeRadioGroup'
-                    type = 'radio'
+              .vui-col.vui-size-1-of-2.vui-m-right--medium.vui-shrink-none.vui-grid
+                .vui-col.vui-grid.vui-p-around--x-small.vui-grid--vertical
+                  label.vui-radio(for='make-good')
+                    input#make-good(
+                      v-bind:value = '"makegood"'
+                      v-model = 'addButtonType'
+                      name = 'addButtonTypeRadioGroup'
+                      type = 'radio'
+                    )
+                    span.vui-radio--faux.vui-m-right--xxx-small
+                    span.vui-form-element__label Makegood
+                  label.vui-radio(for='credit')
+                    input#credit(
+                      v-bind:value = '"credit"'
+                      v-model = 'addButtonType'
+                      name = 'addButtonTypeRadioGroup'
+                      type = 'radio'
+                    )
+                    span.vui-radio--faux.vui-m-right--xxx-small
+                    span.vui-form-element__label Credit
+                .vui-col.vui-grid.vui-p-around--x-small.vui-grid--vertical
+                  label.vui-radio(
+                    for = 'r-bonus'
                   )
-                  span.vui-radio--faux.vui-m-right--xxx-small
-                  span.vui-form-element__label Makegood
-                label.vui-radio(
-                  for = 'credit'
-                )
-                  input#credit(
-                    v-bind:value = '"credit"'
-                    v-model = 'addButtonType'
-                    name = 'addButtonTypeRadioGroup'
-                    type = 'radio'
+                    input#r-bonus(
+                      v-bind:value = '"bonus"'
+                      v-model = 'addButtonType'
+                      name = 'addButtonTypeRadioGroup'
+                      type = 'radio'
+                    )
+                    span.vui-radio--faux.vui-m-right--xxx-small
+                    span.vui-form-element__label Bonus
+                  label.vui-radio(
+                    for = 'r-pgm-change'
                   )
-                  span.vui-radio--faux.vui-m-right--xxx-small
-                  span.vui-form-element__label Credit
-              .vui-size--3-of-12
-                label.vui-radio(
-                  for = 'r-bonus'
-                )
-                  input#r-bonus(
-                    v-bind:value = '"bonus"'
-                    v-model = 'addButtonType'
-                    name = 'addButtonTypeRadioGroup'
-                    type = 'radio'
-                  )
-                  span.vui-radio--faux.vui-m-right--xxx-small
-                  span.vui-form-element__label Bonus
-                label.vui-radio(
-                  for = 'r-pgm-change'
-                )
-                  input#r-pgm-change(
-                    v-bind:value = '"program-change"'
-                    v-model = 'addButtonType'
-                    name = 'addButtonTypeRadioGroup'
-                    type = 'radio'
-                  )
-                  span.vui-radio--faux.vui-m-right--xxx-small
-                  span.vui-form-element__label Pgm. Change
-              .vui-size--4-of-12
-                label.vui-radio(
-                  for = 'r-mg-preempts'
-                )
-                  input#r-mg-preempts(
-                    v-bind:value = '"preempt"'
-                    v-model = 'addButtonType'
-                    name = 'addButtonTypeRadioGroup'
-                    type = 'radio'
-                  )
-                  span.vui-radio--faux.vui-m-right--xxx-small
-                  span.vui-form-element__label MG Preempts
-                label.vui-radio(
-                  for = 'r-missed-spots'
-                )
-                  input#r-missed-spots(
-                    v-bind:value = '"missed-spots"'
-                    v-model = 'addButtonType'
-                    name = 'addButtonTypeRadioGroup'
-                    type = 'radio'
-                  )
-                  span.vui-radio--faux.vui-m-right--xxx-small
-                  span.vui-form-element__label Missed Spots
-
-          // Show or Hide Spot Allocations
-          .vui-col
+                    input#r-pgm-change(
+                      v-bind:value = '"program-change"'
+                      v-model = 'addButtonType'
+                      name = 'addButtonTypeRadioGroup'
+                      type = 'radio'
+                    )
+                    span.vui-radio--faux.vui-m-right--xxx-small
+                    span.vui-form-element__label Pgm. Change
+                .vui-col.vui-grid.vui-p-around--x-small.vui-grid--vertical
+                  label.vui-radio(for = 'r-mg-preempts')
+                    input#r-mg-preempts(
+                      v-bind:value = '"preempt"'
+                      v-model = 'addButtonType'
+                      name = 'addButtonTypeRadioGroup'
+                      type = 'radio'
+                    )
+                    span.vui-radio--faux.vui-m-right--xxx-small
+                    span.vui-form-element__label MG Preempts
+                  label.vui-radio(for = 'r-missed-spots')
+                    input#r-missed-spots(
+                      v-bind:value = '"missed-spots"'
+                      v-model = 'addButtonType'
+                      name = 'addButtonTypeRadioGroup'
+                      type = 'radio'
+                    )
+                    span.vui-radio--faux.vui-m-right--xxx-small
+                    span.vui-form-element__label Missed Spots
+          .vui-col.vui-align-top.vui-p-top--small.vui-size-1-of-4.vui-m-right--medium.vui-shrink-none.vui-grow
             label.vui-checkbox
-              input.vui-input(
-                v-model = 'isShowSpotAllocations'
-                type = 'checkbox'
-              )
+              input.vui-input(v-model='isShowSpotAllocations' type='checkbox')
               span.vui-checkbox--faux
-              span.vui-form-element__label Show Spot Allocations
-            .clearfix.row-padding
-            .vui-form-element_control(
-              v-if = 'isShowSpotAllocations'
-            )
+              span.vui-form-element__label.vui-m-left--xx-small Show Spot Allocations
+            .vui-form-element_control(v-if='isShowSpotAllocations')
               label.vui-radio
                 input(
-                  v-bind:value = 'true'
-                  v-model = 'isMissedSpotsShown'
-                  name = 'spotTypeFilter'
-                  type = 'radio'
+                  v-bind:value='true'
+                  v-model='isMissedSpotsShown'
+                  name='spotTypeFilter'
+                  type='radio'
                 )
                 span.vui-radio--faux.vui-m-right--xxx-small
                 span.vui-form-element__label Order v. Missed
@@ -192,9 +174,9 @@
           items = 'orderItems'
           v-bind:order = 'order'
           v-bind:orderId = '$route.params.id'
-          is-missed-spots-shown = 'isMissedSpotsShown'
-          is-only-missed-shown = 'isOnlyMissedShown'
-          is-show-spot-allocations = 'isShowSpotAllocations'
+          v-bind:is-missed-spots-shown = 'isMissedSpotsShown'
+          v-bind:is-only-missed-shown = 'isOnlyMissedShown'
+          v-bind:is-show-spot-allocations = 'isShowSpotAllocations'
           order-buy-type = 'orderBuyType'
           selected-makegood-type = 'addButtonType'
           show-current-info = 'showCurrentLineInfoPopup'

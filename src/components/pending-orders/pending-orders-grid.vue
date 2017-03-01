@@ -35,8 +35,8 @@
               v-bind:class = 'order.status'
             ) {{ order.status }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.type }}
-          td(@click.prevent = 'showDetail(order.id)') {{ order.advertiser.toUpperCase() }}
-          td(@click.prevent = 'showDetail(order.id)') {{ order.agency.toUpperCase() }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.advertiser }}
+          td(@click.prevent = 'showDetail(order.id)') {{ order.agency }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.cpe }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.flightStartDate }}
           td(@click.prevent = 'showDetail(order.id)') {{ order.flightEndDate }}

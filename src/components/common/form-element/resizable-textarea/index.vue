@@ -11,6 +11,7 @@
       v-bind:readonly = 'isReadonly'
       v-bind:required = 'isRequired'
       v-model = 'text'
+      v-bind:title = 'text'
       name = ''
     )
     .rg-bottom

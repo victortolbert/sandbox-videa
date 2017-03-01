@@ -1,7 +1,10 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.baseURL || 'https://intense-falls-98650.herokuapp.com'
+  baseURL: process.env.baseURL || 'https://api.videa.design'
+  // baseURL: process.env.baseURL || 'http://localhost:3000'
 })
 
 // in pages... import axios from '~plugins/axios'
+
+// Stay Connected

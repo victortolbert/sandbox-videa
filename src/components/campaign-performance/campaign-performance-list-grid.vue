@@ -38,11 +38,11 @@
           td.vui-truncate(
             v-bind:title = 'campaign.advertiser'
             v-show = 'columns.advertiser.isVisible'
-          ) {{ campaign.advertiser.toUpperCase() }}
+          ) {{ campaign.advertiser }}
           td.vui-truncate(
             v-bind:title = 'campaign.agencyName'
             v-show = 'columns.agency.isVisible'
-          ) {{ campaign.agency.toUpperCase() }}
+          ) {{ campaign.agency }}
           td.vui-truncate(
             v-bind:title = 'campaign.product'
             v-show = 'columns.product.isVisible'

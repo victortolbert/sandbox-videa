@@ -6,7 +6,8 @@
     )
       i.fa.fa-refresh.fa-spin.vui-m-right--small(
         style = 'color: hsla(196, 46%, 48%, 1)'
-      ) {{ loadingMessage }}
+      )
+      | {{ loadingMessage }}
 
     h1.vui-text-heading--large.vui-m-bottom--medium Summary
 

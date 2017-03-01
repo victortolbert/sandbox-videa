@@ -139,12 +139,12 @@
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.advertiser'
             style = 'width: 280px'
-          ) {{ order.advertiser.toUpperCase() }}
+          ) {{ order.advertiser }}
           td.vui-truncate(
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.agency'
             style = 'width: 110px'
-          )  {{ order.agency.toUpperCase() }}
+          )  {{ order.agency }}
           td.vui-text-align--right.vui-truncate(
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.estimate'
@@ -179,7 +179,9 @@
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.missedValue'
             style = 'width: 100px'
-          ) {{ order.missedValue ? order.missedValue : '' | numberWithCommas | formatMoney}}
+          )
+            span(v-if='order.missedValue') {{ order.missedValue | numberWithCommas | formatMoney}}
+            span(v-else)
           td.vui-text-align--right.vui-truncate(
             @click = 'showOrder(order.id)'
             v-bind:title = 'order.trafficSpots'

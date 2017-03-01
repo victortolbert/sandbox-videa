@@ -1,0 +1,32 @@
+.vui-grid.vui-grid--align--spread.vui-m-bottom--medium.ng-scope(ng-if='ctrl.showDialogData()')
+  fieldset.vui-form-element.vui-size--1-of-2.vui-m-right--medium
+    label.vui-form-element__label.ng-binding(ng-bind='::ctrl.popUpdata.commentLabel') Offer Comment
+    textarea.vui-textarea.vui-p-around--medium.ng-binding(style='box-shadow:0 2px 2px 0 rgba(0,0,0,.16);border:1px solid #ccc;min-height:8rem;background:rgba(250,255,189,.2)', ng-bind='::ctrl.model.makegoodComment', readonly='readonly') Spots n/a due to program change.
+  fieldset.vui-form-element.vui-size--1-of-2.vui-align-middle.ng-hide(ng-show='::ctrl.totalGridIsVisible()')
+    .vui-container--small.vui-container--center
+      makegoods-total-grid.ng-isolate-scope(preempts-name='ctrl.popUpdata.totalPreemptsLabel', offers-name='ctrl.popUpdata.totalOffersLabel', makegood='ctrl.popUpdata', order-buy-type='ctrl.orderBuyType')
+        table.vui-table.vui-no-row-hover.mgs-total-grid.text-right
+          thead
+            tr
+              // ngRepeat: gridColumn in ctrl.gridColumns
+              // ngIf: gridColumn.isVisible()
+              th.ng-binding.ng-scope(ng-repeat='gridColumn in ctrl.gridColumns', ng-bind='gridColumn.title', ng-if='gridColumn.isVisible()', ng-class='gridColumn.cssClass') Totals
+              // end ngIf: gridColumn.isVisible()
+              // end ngRepeat: gridColumn in ctrl.gridColumns
+              // ngIf: gridColumn.isVisible()
+              th.ng-binding.ng-scope.vui-text-align--right(ng-repeat='gridColumn in ctrl.gridColumns', ng-bind='gridColumn.title', ng-if='gridColumn.isVisible()', ng-class='gridColumn.cssClass') Spots
+              // end ngIf: gridColumn.isVisible()
+              // end ngRepeat: gridColumn in ctrl.gridColumns
+              // ngIf: gridColumn.isVisible()
+              th.ng-binding.ng-scope.vui-text-align--right(ng-repeat='gridColumn in ctrl.gridColumns', ng-bind='gridColumn.title', ng-if='gridColumn.isVisible()', ng-class='gridColumn.cssClass') Dollars
+              // end ngIf: gridColumn.isVisible()
+              // end ngRepeat: gridColumn in ctrl.gridColumns
+              // ngIf: gridColumn.isVisible()
+              // end ngRepeat: gridColumn in ctrl.gridColumns
+              // ngIf: gridColumn.isVisible()
+              th.ng-binding.ng-scope.vui-text-align--right(ng-repeat='gridColumn in ctrl.gridColumns', ng-bind='gridColumn.title', ng-if='gridColumn.isVisible()', ng-class='gridColumn.cssClass') IMP
+              // end ngIf: gridColumn.isVisible()
+              // end ngRepeat: gridColumn in ctrl.gridColumns
+          tbody
+            // ngRepeat: item in ctrl.items
+

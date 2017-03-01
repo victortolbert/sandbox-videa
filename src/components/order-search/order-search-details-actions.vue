@@ -18,17 +18,28 @@
 
       input.vui-button.vui-button--secondary(
         v-if = '!isCancelledOrder'
-        v-on:click = 'openSpotsRunNotOrderedPopup'
+        v-on:click = 'openSpotsRunNotOrderedModal'
         type = 'button'
         value = 'Spots Run Not Ordered'
       )
 
       input.vui-button.vui-button--secondary(
         v-if = '!isCancelledOrder'
-        v-on:click = 'showEbizHistory'
+        v-on:click = 'openEbizHistoryModal'
         type = 'button'
         value = 'eBiz History'
       )
+
+    makegoods-ebiz-history-popup(
+      v-bind:context = 'context'
+      v-if='showEbizHistoryModal'
+      @close='showEbizHistoryModal = false'
+    )
+    makegoods-spots-run-not-ordered-popup(
+      v-bind:context = 'context'
+      v-if='showSpotsRunNotOrderedModal'
+      @close='showSpotsRunNotOrderedModal = false'
+    )
 </template>
 
 <script>
@@ -51,6 +62,7 @@
 
     data () {
       return {
+        context: {},
         isCancelledOrder: false,
         startDate: new Date(moment().add(14, 'days').toISOString()),
         endDate: new Date(moment().add(5, 'days').toISOString()),
@@ -58,7 +70,9 @@
         order: {},
         isImpressionsBuyType: true,
         shouldShowInfo: true,
-        isMakegoodDefined: true
+        isMakegoodDefined: true,
+        showSpotsRunNotOrderedModal: false,
+        showEbizHistoryModal: false
       }
     },
     methods: {
@@ -85,7 +99,14 @@
 
       },
 
-      openSpotsRunNotOrderedPopup () {},
+      openSpotsRunNotOrderedModal () {
+        this.showSpotsRunNotOrderedModal = true
+      },
+
+      openEbizHistoryModal () {
+        this.showEbizHistoryModal = true
+      },
+
       showEbizHistory () {},
 
       fetchOffer(id) {

@@ -90,7 +90,24 @@
 
     data () {
       return {
-        result: 'clipped text'
+        result: 'clipped text',
+        firstName: 'Foo',
+        lastName: 'Bar'
+      }
+    },
+
+    computed: {
+      fullName: {
+        // getter
+        get () {
+          return this.firstName + ' ' + this.lastName
+        },
+        // setter
+        set (newValue) {
+          var names = newValue.split(' ')
+          this.firstName = names[0]
+          this.lastName = names[names.length - 1]
+        }
       }
     },
 

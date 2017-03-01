@@ -1,5 +1,5 @@
 <template lang="pug">
-  #app.app
+  #app.app(@click='$emit("close")')
     app-header
     app-navigation
     //- https://robots.thoughtbot.com/transitions-and-transforms
@@ -180,6 +180,7 @@
     color #0177a2
     text-decoration none
 
+  .vui-text-color--error,
   .text-red
     color #c5203e
 

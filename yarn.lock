@@ -11705,6 +11705,10 @@ vue-flickity:
   dependencies:
     flickity "^2.0.5"
 
+vue-float-label:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-float-label/-/vue-float-label-1.0.0.tgz#e49546bad983e8fbb8bb7e34b6fb538c2c1baa15"
+
 vue-fraction-grid:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vue-fraction-grid/-/vue-fraction-grid-1.0.0.tgz#a6d47c876d8d460f5e57cb411982ebd43b8f664e"
@@ -11914,6 +11918,10 @@ vue-twentytwenty@^0.1.0:
   dependencies:
     node-sass "^4.3.0"
     sass-loader "^4.1.1"
+
+vue-validity:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/vue-validity/-/vue-validity-0.1.5.tgz#6db176c185faf51b0e0c04be9dab929260981d28"
 
 vue-waterfall:
   version "1.0.5"

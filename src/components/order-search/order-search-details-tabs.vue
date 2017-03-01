@@ -28,20 +28,17 @@
       role = 'tabpanel'
     )
       .vui-p-around--large.vui-tabs--scoped__content
-        .vui-m-bottom--xx-small.p-a-5.row.active-orders-details-tab-options
-          .col-md-2
+        .vui-m-bottom--x-small.active-orders-details-tab-options
+          .vui-grid.vui-grid--vertical
             label.vui-checkbox
               input.vui-input.vui-m-right--xx-small(
                 v-model = 'tab.isShowSpotAllocations'
                 type = 'checkbox'
               )
               span.vui-checkbox--faux
-              span.vui-form-element__label Show Spot Allocations
-
-            .vui-form-element_control.vui-m-right--small(
-              v-bind:class = 'tab.isShowSpotAllocations ? "vui-visible" : "vui-hidden"'
-            )
-              label.vui-radio(for='radio_1')
+              span.vui-form-element__label.vui-m-left--x-small Show Spot Allocations
+            .vui-grid.vui-form-element_control.vui-m-right--small(:class='tab.isShowSpotAllocations ? "vui-visible" : "vui-hidden"')
+              label.vui-radio.vui-m-right-x-small(for='radio_1')
                 input#radio_1(
                   v-bind:value = 'true'
                   v-model = 'tab.isMissedSpotsShown'
@@ -49,7 +46,8 @@
                   type = 'radio'
                 )
                 span.vui-radio--faux.vui-m-right--xxx-small
-                span.vui-form-element__label Order v. Missed
+                span.vui-form-element__label.vui-m-left--xx-small Order v. Missed
+
               label.vui-radio(for='radio_2')
                 input#radio_2(
                   v-bind:value = 'false'
@@ -58,7 +56,7 @@
                   type = 'radio'
                 )
                 span.vui-radio--faux.vui-m-right--xxx-small
-                span.vui-form-element__label Order v. Traffic
+                span.vui-form-element__label.vui-m-left--xx-small Order v. Traffic
 
         order-search-details-grid.flex-container(
           v-bind:is-missed-spots-shown = 'tab.isMissedSpotsShown'
