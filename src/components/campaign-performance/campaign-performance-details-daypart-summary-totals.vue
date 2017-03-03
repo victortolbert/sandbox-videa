@@ -5,12 +5,12 @@
       .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label Purchased GRPs/IMPs
         br
-        //- b.vui-form-element__helper {{ order.totalPurchased }}
+        b.vui-form-element__helper {{ total.purchasedGrpsImps }}
     .vui-m-bottom--x-small
       .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label Purchased To Date
         br
-        b.vui-form-element__helper {{ total.orderedToDate }}
+        b.vui-form-element__helper {{ total.purchasedToDate }}
     .vui-m-bottom--x-small
       .vui-theme--default.vui-box.vui-m-bottom--x-small
         label.vui-form-element__label Delivered To Date #[sup 1]

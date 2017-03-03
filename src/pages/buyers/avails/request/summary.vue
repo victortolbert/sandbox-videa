@@ -222,8 +222,8 @@
           estimate: '57',
           campaignName: "WASHI WVVV PIE-HEA-57 Q1'17",
           expirationDate: '06/07/16',
-          startDate: '02/13/17',
-          endDate: '03/26/17',
+          startDate: '05/15/17',
+          endDate: '06/25/17',
           grossMarketBudget: '140000',
           targetGrpGoal: '800',
           primaryTarget: 'A25-54'

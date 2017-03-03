@@ -225,8 +225,8 @@
         avails: [],
         expirationDate: new Date(moment().add(14, 'days').toISOString()),
         // sharedState: store.state,
-        startDate: new Date('2016-12-26T03:24:00'),
-        endDate: new Date('2017-03-26T03:24:00'),
+        startDate: new Date('2017-05-15T03:24:00'),
+        endDate: new Date('2017-06-25T03:24:00'),
         gridColumns: [
           { field: 'advertiser', title: 'Advertiser' },
           { field: 'agency', title: 'Agency' },

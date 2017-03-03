@@ -137,7 +137,7 @@
             button.vui-button.vui-button--brand.vui-m-right--medium Save
             button.vui-button.vui-button--brand(
               @click.prevent = 'setActiveTab("buyer-ratings")'
-            ) Save and Release #[sup 1]
+            ) Save and Continue #[sup 1]
         p.vui-text-body--small.vui-text-align--right(
           style = 'line-height: 1.2'
         )
@@ -213,7 +213,7 @@
             ) Save
             button.vui-button.vui-button--brand(
               @click.prevent = 'setActiveTab("rates-and-ratings")'
-            ) Save and Release #[sup 1]
+            ) Save and Continue #[sup 1]
         p.vui-text-body--small
           sup.vui-m-right--xx-small 1
           span Saving will allow your station to see the work you have completed on this page
@@ -509,18 +509,18 @@
           | Back to Buyer Ratings
         .action-buttons.vui-m-bottom--x-small
           button.vui-button.vui-button--neutral.vui-m-right--x-small(
-            @click.prevent = 'setActiveTab("buyer-ratings")'
+            @click.prevent = ''
             href = '#'
           ) Cancel
           button.vui-button.vui-button--brand.vui-m-right--x-small(
-            @click.prevent = 'setActiveTab("buyer-ratings")'
+            @click.prevent = ''
             href = '#'
           ) Save
           button.vui-button.vui-button--brand(
             @click.prevent = 'showAvail(avail.id)'
             href = '#'
             style = 'color: #fff !important'
-          ) Save and Release #[sup 1]
+          ) Save and Continue #[sup 1]
       p.vui-text-body--small
         sup.vui-m-right--xx-small 1
         span Nielsen source or data derived from Nielsen <br>
@@ -553,7 +553,8 @@
 
     props: {
       availRoute: {
-        type: String
+        type: String,
+        default: 'sellers-avails-id'
       },
 
       availsRoute: {

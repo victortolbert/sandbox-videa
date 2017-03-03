@@ -1,20 +1,9 @@
 <template lang="pug">
-  .vui-scrollable--x
-    table.vui-table.vui-no-row-hover.vui-table--fixed-layout
+    table.vui-table.vui-no-row-hover
       thead
         tr
-          th(
-            style = 'width: 180px'
-          )
-            vui-sorting-column(
-              column-name = '{"sortable":true,"isSorted":false,"sortedDesc":false,"title":"Program","columnName":"program"}'
-              current-sorting = 'sorting'
-              on-sorting = 'columnSortingChanged(gridColumns.program)'
-              title = 'Program'
-            )
-          th(
-            style = 'width: 90px'
-          )
+          th(style = 'width: 180px'): vui-sorting-column(title = 'Program')
+          th(style = 'width: 90px')
             vui-sorting-column(
               column-name = '{"sortable":true,"isSorted":false,"sortedDesc":false,"title":"Time","columnName":"time"}'
               current-sorting = 'sorting'
@@ -96,6 +85,17 @@
               title = 'Ordered vs<br>Current IMP'
             )
       tbody
+        tr
+          td
+          td
+          td
+          td
+          td
+          td
+          td
+          td
+          td
+          td
 </template>
 
 <script>

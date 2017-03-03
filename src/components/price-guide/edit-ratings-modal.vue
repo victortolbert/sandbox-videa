@@ -3,8 +3,8 @@
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
         span Edit Rating
-        a.vui-text-align--right(@click.prevent = '$emit("close")')
-          vui-icon(name='close')
+        a.vui-text-align--right(@click.prevent = '$emit("close")' style='color: white')
+          vui-icon(name='close', style='width: 2rem; height: 2rem')
     .modal-body
       .ng-scope(ng-if='ratingType.rating')
         h2.vui-text-heading--large Skew and Factor

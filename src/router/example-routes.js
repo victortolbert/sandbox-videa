@@ -10,6 +10,11 @@ module.exports = [
     component: require('pages/examples/avatar')
   },
   {
+    path: '/examples/bem',
+    name: 'bem-example',
+    component: require('pages/examples/bem')
+  },
+  {
     path: '/examples/colors',
     name: 'colors-example',
     component: require('pages/examples/colors')
@@ -28,6 +33,16 @@ module.exports = [
     path: '/examples/links',
     name: 'links-example',
     component: require('pages/examples/links')
+  },
+  {
+    path: '/examples/offcanvas-simple',
+    name: 'offcanvas-simple-example',
+    component: require('pages/examples/offcanvas-simple')
+  },
+  {
+    path: '/examples/price-guide-table',
+    name: 'price-guide-table-example',
+    component: require('pages/examples/price-guide-table')
   },
   {
     path: '/examples/quiz',
@@ -84,6 +99,11 @@ module.exports = [
     component: require('pages/examples/containers/devices')
   },
   {
+    path: '/examples/split-pane',
+    name: 'split-pane-example',
+    component: require('pages/examples/containers/split-pane')
+  },
+  {
     path: '/examples/tabs',
     name: 'tabs-example',
     component: require('pages/examples/containers/tabs')
@@ -123,6 +143,16 @@ module.exports = [
     component: require('pages/examples/forms/cleave')
   },
   {
+    path: '/examples/autocomplete',
+    name: 'autocomplete-example',
+    component: require('pages/examples/forms/autocomplete')
+  },
+  // {
+  //   path: '/examples/autocomplete2',
+  //   name: 'autocomplete2-example',
+  //   component: require('pages/examples/forms/autocomplete2')
+  // },
+  {
     path: '/examples/float-label',
     name: 'float-label-example',
     component: require('pages/examples/forms/float-label')
@@ -136,6 +166,11 @@ module.exports = [
     path: '/examples/picture-input',
     name: 'picture-input-example',
     component: require('pages/examples/forms/picture-input')
+  },
+  {
+    path: '/examples/range-slider',
+    name: 'range-slider-example',
+    component: require('pages/examples/forms/range-slider')
   },
   {
     path: '/examples/select-checkbox',
@@ -156,6 +191,11 @@ module.exports = [
     path: '/examples/vee-validate',
     name: 'vee-validate-example',
     component: require('pages/examples/forms/vee-validate')
+  },
+  {
+    path: '/examples/validity',
+    name: 'validity-example',
+    component: require('pages/examples/forms/validity')
   },
   {
     path: '/examples/vuelidate',
@@ -241,6 +281,11 @@ module.exports = [
     path: '/examples/data-tables',
     name: 'data-tables-example',
     component: require('pages/examples/tables/data-tables')
+  },
+  {
+    path: '/examples/fixed-header-table',
+    name: 'fixed-header-table-example',
+    component: require('pages/examples/tables/fixed-header-table')
   },
   {
     path: '/examples/handsontable',

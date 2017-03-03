@@ -453,7 +453,7 @@
         expirationDate: new Date(moment().add(14, 'days').toISOString()),
         dueDate: new Date(moment().add(5, 'days').toISOString()),
         showReleaseToBuyerModal: false,
-        selectedDaypart: require('~components/avails/selected.json'),
+        selectedDaypart: require('~components/avails/selected.js'),
         editing: false,
         error: false,
         'dayparts': [

@@ -3,8 +3,11 @@
 
   .modal-container.modal-container--xx-large(@click.stop='')
     .modal-header.vui-m-bottom--large
-      h3.vui-text-heading--medium(v-if='showExportProposal') Export Avail
-      h3.vui-text-heading--medium(v-else) Release To Buyer
+      h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
+        span(v-if='showExportProposal') Export Avail
+        span(v-else) Release To Buyer
+        a.vui-text-align--right(@click.prevent = '$emit("close")' style='color: white')
+          vui-icon(name='close', style='width: 2rem; height: 2rem')
     .modal-body
       #release-to-buyer(v-if='!showExportProposal')
         p.vui-text-longform.vui-m-bottom--large

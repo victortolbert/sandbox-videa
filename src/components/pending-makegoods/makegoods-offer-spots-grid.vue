@@ -11,15 +11,9 @@
           th(style='width:  60px'): vui-sorting-column(title='Len')
           th.vui-cell-wrap(style='width: 85px'): vui-sorting-column(title='Offered Spots')
           th.spot-allocation-column(style='width: 48px')
-            makegoods-spot-allocation-header(
-              v-model = 'items[0].spotAllocations'
-              navigator = 'spotAllocationNavigator'
-            )
+            makegoods-spot-allocation-header(v-model='orderLineItems[0].spotAllocations')
           th(style='width: 100px'): vui-sorting-column(title='Spot Rate')
-          th.vui-cell-wrap(
-            v-if = 'isImpressionsBuyType'
-            style = 'width: 100px'
-          )
+          th.vui-cell-wrap(v-if='isImpressionsBuyType' style='width: 100px')
             vui-sorting-column(title='Station IMP')
           th(v-if='isImpressionsBuyType' style='width: 100px')
             vui-sorting-column(title='Station CPM')
@@ -67,10 +61,30 @@
     data () {
       return {
         isImpressionsBuyType: true,
-        items: [
-          { }
-        ]
+        items: [],
+        orderLineItems: []
       }
+    },
+
+    methods: {
+      fetchOrderLineItems () {
+        axios.get('/orderLineItems')
+          .then((response) => {
+            this.orderLineItems = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
+      toggleDetail (offer) {
+        offer.isExpanded = !offer.isExpanded
+      }
+
+    },
+
+    created () {
+      this.fetchOrderLineItems()
     }
   }
 </script>

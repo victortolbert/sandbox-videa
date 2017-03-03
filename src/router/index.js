@@ -14,7 +14,7 @@ const routes = [
   ...require('./seller-routes'),
   ...require('./buyer-routes'),
   ...require('./tickets-routes'),
-  { path: '*', component: require('pages/error') }
+  { path: '*', component: require('pages') }
 ]
 
 export default new VueRouter({

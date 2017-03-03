@@ -1,6 +1,20 @@
 <template lang="pug">
   .price-guide-parent
+    ul
+      li(
+        v-bind:key = 'item.id'
+        v-for = 'item in items'
+      )
+    .example(ref='source')
+      btn(
+        type="button"
+        class="mix-any-class"
+        size="large"
+        look="primary"
+        icon="emoji"
+      ) I am BEM button!
     vui-title Price Guide
+
     p.vui-text-heading--label Videa Pricing was last updated on {{ lastUpdated }} at 08:30 AM
     p.vui-text-body--small ON THE BOOKS WAS LAST UPDATED ON FEBRUARY 13, 2017 AT  12:00 AM
     p.vui-text-longform.vui-m-bottom--medium Use the Price Guide to review your rates and to either accept the Videa rates or override the Videa rates. The price is set prior to avail in the price guide. If you accept the Videa rates, know that Videa updates the rates every Sunday.
@@ -898,6 +912,16 @@
       // AddProgramModal
     },
 
+    //- custom -- props/event pair 2.2  new behavior   `model:` component option
+    //- This makes v-model use :myCustomProp and @myCustomEvent instead of :value and @input:
+    // model: {
+    //   prop: 'myCustomProp',
+    //     event: 'myCustomEvent'
+    // },
+    // <!-- v-model version -->
+    // <child-component v-model="binding"></child-component>
+    // <!-- Translates to: -->
+    // <child-component :myCustomProp="binding" @myCustomEvent="evt => { binding = evt }"></child-component>
     props: {
       ordersRoute: {
         type: String,
@@ -990,6 +1014,16 @@
         }
       }
     },
+
+    // computed: {
+    //   ...inject({
+    //     myBus: 'bus'
+    //   })
+    // },
+
+    // computed: Object.assign(inject(['bus']), {
+    //     // My computed properties...
+    // }),
 
     methods: {
       fetchPriceGuide () {
@@ -1176,6 +1210,9 @@
       this.fetchPriceGuide()
     },
 
+    mounted () {
+      this.source = this.$refs.source.outerHTML
+    }
     // mounted () {
     //   EventBus.listen('body-clicked', () => {
     //     this.showEditRatingsModal = false

@@ -7,7 +7,7 @@
       v-bind:class = '{ "vui-main--login": $store.state.activeApp == "login" }'
     )
       //- router-view(name='header-top')
-      transition(name='slide')
+      transition(name='slide',  :duration="{ enter: 300, leave: 500 }")
         router-view
     app-footer
     app-help
@@ -439,70 +439,9 @@
     padding-left 0.5rem
 
 
-  // // TABLES
-  // .vui-table th [class^="icon-"],
-  // .vui-table th [class*=" icon-"]
-  //   color color-white
-  //   margin-left 1rem
-
-  // .vui-table tbody tr:last-child > td
-  //   background-color #cce4ea
-
-  // .vui-table .vui-table tbody tr:last-child > td,
-  // .vui-table tfoot tr:last-child > td
-  //   background-color white
-
-  // // // TABLES
-  // // .vui-table tbody tr.vui-is-selected > td
-  // //   background-color #cce4ea
-
-  // // .vui-table tbody tr.vui-is-expanded > td
-  // //   background-color #f0f8fc
-  // //   border-bottom 1px solid #51535c
-  // //   border 1px solid #51535c
-
-  // // .vui-table .vui-table thead th
-  // //   border 1px solid #e0e4e5
-  // //   border-bottom 1px solid #51535c
-
-  // // .vui-table .vui-table th,
-  // // .vui-table .vui-table th a
-  // //   background #fff
-  // //   color #555555
-
-  // // .vui-table .vui-table tbody tr:last-child > td,
-  // // .vui-table .vui-table th
-  // //   background-color transparent
-
-  // // .vui-table .vui-table th,
-  // // .vui-table .vui-table th a
-  // //   background transparent
-
-  // // .om-nested-table-container .vui-table thead th
-  // //   border 1px solid #e0e4e5
-
-  // // .vui-table .vui-table-hidden-cell
-  // //   font-size 0
-  // //   padding 0
-  // //   background none
-
-
-
-  // // // .vui-table tbody tr.vui-is-selected > td
-  // // //   background-color #cce4ea
-
-  // // // .vui-table tbody tr.vui-is-expanded > td
-  // // //   background-color #f0f8fc
-  // // //   border-bottom 1px solid #51535c
-  // // //   border 1px solid #51535c
-
-  // // // .vui-table .vui-table thead th
-  // // //   border 1px solid #e0e4e5
-  // // //   border-bottom 1px solid #51535c
-
   .vui-table .vui-table th,
   .vui-table .vui-table th a
-    background white
+    background transparent
     color #555
 
   .vui-table .vui-table th,
@@ -530,6 +469,70 @@
   // .vui-table tr > th:last-child,
   // .vui-table tr > td:last-child
   //   padding-right: 0
+
+
+  // // TABLES
+  .vui-table th [class^="icon-"],
+  .vui-table th [class*=" icon-"]
+    color color-white
+    margin-left 1rem
+
+  .vui-table tbody tr:last-child > td
+    background-color #cce4ea
+
+  .vui-table .vui-table tbody tr:last-child > td,
+  .vui-table tfoot tr:last-child > td
+    background-color white
+
+
+  // TABLES
+  .vui-table tbody tr.vui-is-selected > td
+    background-color #cce4ea
+
+  .vui-table tbody tr.vui-is-expanded > td
+    background-color #f0f8fc
+    border-bottom 1px solid #51535c
+    border 1px solid #51535c
+
+  .vui-table .vui-table thead th
+    border 1px solid #e0e4e5
+    border-bottom 1px solid #51535c
+
+  .vui-table .vui-table th,
+  .vui-table .vui-table th a
+    background #fff
+    color #555555
+
+  .vui-table .vui-table tbody tr:last-child > td,
+  .vui-table .vui-table th
+    background-color transparent
+
+  .vui-table .vui-table th,
+  .vui-table .vui-table th a
+    background transparent
+
+  .om-nested-table-container .vui-table thead th
+    border 1px solid #e0e4e5
+
+  .vui-table .vui-table-hidden-cell
+    font-size 0
+    padding 0
+    background none
+
+
+
+  // .vui-table tbody tr.vui-is-selected > td
+  //   background-color #cce4ea
+
+  // .vui-table tbody tr.vui-is-expanded > td
+  //   background-color #f0f8fc
+  //   border-bottom 1px solid #51535c
+  //   border 1px solid #51535c
+
+  // .vui-table .vui-table thead th
+  //   border 1px solid #e0e4e5
+  //   border-bottom 1px solid #51535c
+
 
 </style>
 
@@ -569,4 +572,145 @@
   .vui-site-navigation .active > a
     color #83c9bd
     border-bottom-color #83c9bd
+</style>
+
+<style lang="stylus">
+  /* Fix Vui Table */
+  .mg-offer-spots th:not(.spot-allocation-column),
+  .mg-preempts th:not(.spot-allocation-column),
+  .mg-missed-spots th:not(.spot-allocation-column),
+  .mg-program-name-change th:not(.spot-allocation-column)
+    padding: 1px 4px
+    font-size: 13px
+
+  .mg-offer-spots th,
+  .mg-preempts th,
+  .mg-missed-spots th,
+  .mg-program-name-change th
+    font-size: 13px
+
+  .mg-offer-spots td input,
+  .mg-offer-spots td select,
+  .mg-preempts td input,
+  .mg-preempts td select
+    width: 100%
+    height: 100%
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+  /* Days dropdown selector */
+  .days-dropdown-selector .input
+    position: relative
+  .days-dropdown-selector .input i
+    position: absolute
+    top: 8px
+    right: 6px
+  .dropdown-menu-timeframe
+    min-width: 8rem
+    -webkit-transform: translate(-1rem, -120%)
+    transform: translate(-1rem, -120%)
+    z-index: 10000
+  .dropdown-menu-timeframe.vui-nubbin--bottom:before
+    z-index: -1
+  .dropdown-menu-timeframe li
+    line-height: 1rem
+    padding: 0.25rem 0.5rem
+  .dropdown-menu-timeframe li .checkbox
+    display: block
+  .dropdown-menu-fall-down
+    -webkit-transform: translate(-1rem, 1%)
+    transform: translate(-1rem, 1%)
+  /* Time dropdown-selector */
+  .time-dropdown-selector .dropdown
+    padding: 0
+  .time-dropdown-selector .dropdown input
+    background: none
+  .time-dropdown-selector .dropdown div i
+    position: absolute
+    top: 4px
+    right: 0
+  .time-dropdown.vui-dropdown
+    min-width: 7rem
+    -webkit-transform: translateX(-14%)
+    transform: translateX(-14%)
+  .time-dropdown.vui-nubbin--bottom:before
+    z-index: -1
+  .time-dropdown li
+    padding: 0.25rem 0.5rem
+    line-height: 1rem
+  .time-dropdown li a
+    display: block
+    font-size: 1rem
+  /* Old Custom Checkboxes */
+  .checkbox
+    display: inline-block
+    padding-left: 0
+    margin: 0
+  .vui-checkbox label
+    display: inline
+    padding-left: 5px
+  .vui-checkbox input[type="checkbox"]
+    display: none
+  .vui-checkbox-unchecked,
+  .vui-checkbox-checked
+    display: inline-block
+    padding-left: 2px
+    padding-right: 3px
+    font-size: 12px
+    color: #ffffff
+    background-color: #ffffff
+    border: solid 1px #ccc
+    -webkit-border-radius: 2px
+    -moz-border-radius: 2px
+    -ms-border-radius: 2px
+    border-radius: 2px
+  .disabled label
+    color: rgba(82, 84, 93, 0.6)
+    cursor: not-allowed !important
+  .disabled .vui-checkbox-checked,
+  .disabled .vui-checkbox-unchecked
+    color: #51545D
+    border: solid 1px rgba(82, 84, 93, 0.14902)
+    background-color: rgba(82, 84, 93, 0.14902)
+    cursor: not-allowed !important
+  .vui-checkbox-checked
+    display: none
+    color: #000000
+    background-color: #ffffff
+  .checked .vui-checkbox-checked
+    display: inline-block
+  .checked .vui-checkbox-unchecked
+    display: none
+  .checkbox .icons .vui-checkbox-unchecked i
+    color: #fff
+  .vui-time
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: flex-start
+  .vui-time .vui-input
+    width: 80px
+  .vui-time input
+    border: none
+    width: 22px
+    padding: 0
+    margin: 0
+    text-align: center
+    height: 100%
+    line-height: 100%
+  .vui-time select
+    width: 65px
+  .vui-time input:focus
+    color: #000
+    border: none
+    animation: blinker 1s linear infinite
+  .vui-time input::selection
+    background: none
+  .vui-time > span
+    display: none
+  .on-invalid
+    border: solid 2px #C5203E !important
 </style>

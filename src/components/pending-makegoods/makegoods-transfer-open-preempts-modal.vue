@@ -1,9 +1,5 @@
 <template lang="pug">
-  modal(
-    v-bind:show = 'show'
-    v-bind:on-close = 'close'
-    size = 'large'
-  )
+  vui-modal(size='large')
     .modal-header.vui-m-bottom--large
       h3.vui-text-heading--medium Transfer Open Preempt(s)
     .modal-body

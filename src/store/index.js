@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+
 // import myRemoteService from './my-remote-service.js'
 
+// import VuexFire from 'vuexfire'
+// import Firebase from 'firebase'
+
 Vue.use(Vuex)
+// Vue.use(VuexFire)
 
 const store = new Vuex.Store({
   state: {

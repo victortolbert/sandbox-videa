@@ -1,6 +1,6 @@
 <template lang="pug">
   .campaign-performance-delivery-indicator
-    span(v-if='value') {{ value }}
+    span(v-if='value') {{ value | decimalToPercent }}
     span.vui-float--left(v-else) N/A
 </template>
 

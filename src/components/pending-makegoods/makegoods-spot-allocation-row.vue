@@ -113,7 +113,7 @@
   spot-allocation-cell-background-color = #D8E0E3
 
   .spot-allocation-cell
-    background-color spot-allocation-cell-background-color
+    background-color spot-allocation-cell-background-color !important
   .spot-allocation-cell > *, .spot-allocation-column > *
     display block
     height 100%

@@ -425,7 +425,7 @@
               th.vui-text-align--center(
                 @click = 'monthClick'
                 colspan = '7'
-              ) February 2017
+              ) May 2017
             tr
               th.vui-text-align--center.monday(
                 @click = 'dayOfWeekHeaderRowClick("monday")'
@@ -456,50 +456,50 @@
               ) Week 1
               td.vui-text-align--center.monday(
                 @click = 'dayOfWeekClick'
-              ) 13
+              ) 15
               td.vui-text-align--center.tuesday(
                 @click = 'dayOfWeekClick'
-              ) 14
+              ) 16
               td.vui-text-align--center.wednesday(
                 @click = 'dayOfWeekClick'
-              ) 15
+              ) 17
               td.vui-text-align--center.thursday(
                 @click = 'dayOfWeekClick'
-              ) 16
+              ) 18
               td.vui-text-align--center.friday(
                 @click = 'dayOfWeekClick'
-              ) 17
+              ) 19
               td.vui-text-align--center.saturday(
                 @click = 'dayOfWeekClick'
-              ) 18
+              ) 20
               td.vui-text-align--center.sunday(
                 @click = 'dayOfWeekClick'
-              ) 19
+              ) 21
             tr
               td(
                 @click='weekNumberClick'
               ) Week 2
               td.vui-text-align--center.monday(
                 @click = 'dayOfWeekClick'
-              ) 20
+              ) 22
               td.vui-text-align--center.tuesday(
                 @click = 'dayOfWeekClick'
-              ) 21
+              ) 23
               td.vui-text-align--center.wednesday(
                 @click = 'dayOfWeekClick'
-              ) 22
+              ) 24
               td.vui-text-align--center.thursday(
                 @click = 'dayOfWeekClick'
-              ) 23
+              ) 25
               td.vui-text-align--center.friday(
                 @click = 'dayOfWeekClick'
-              ) 24
+              ) 26
               td.vui-text-align--center.saturday(
                 @click = 'dayOfWeekClick'
-              ) 25
+              ) 27
               td.vui-text-align--center.sunday(
                 @click = 'dayOfWeekClick'
-              ) 26
+              ) 28
           thead
             tr
               th(
@@ -508,7 +508,7 @@
               th.vui-text-align--center(
                 @click = 'monthClick'
                 colspan = '7'
-              ) March 2017
+              ) June 2017
             tr
               th.vui-text-align--center.monday(
                 @click = 'dayOfWeekHeaderRowClick'
@@ -539,100 +539,100 @@
               ) Week 3
               td.vui-text-align--center.monday(
                 @click = 'dayOfWeekClick'
-              ) 27
+              ) 29
               td.vui-text-align--center.tuesday(
                 @click = 'dayOfWeekClick'
-              ) 28
+              ) 30
               td.vui-text-align--center.wednesday(
                 @click = 'dayOfWeekClick'
-              ) 01
+              ) 31
               td.vui-text-align--center.thursday(
                 @click = 'dayOfWeekClick'
-              ) 02
+              ) 01
               td.vui-text-align--center.friday(
                 @click = 'dayOfWeekClick'
-              ) 03
+              ) 02
               td.vui-text-align--center.saturday(
                 @click = 'dayOfWeekClick'
-              ) 04
+              ) 03
               td.vui-text-align--center.sunday(
                 @click = 'dayOfWeekClick'
-              ) 05
+              ) 04
             tr
               td(
                 @click='weekNumberClick'
               ) Week 4
               td.vui-text-align--center.monday(
                 @click = 'dayOfWeekClick'
-              ) 06
+              ) 05
               td.vui-text-align--center.tuesday(
                 @click = 'dayOfWeekClick'
-              ) 07
+              ) 06
               td.vui-text-align--center.wednesday(
                 @click = 'dayOfWeekClick'
-              ) 08
+              ) 07
               td.vui-text-align--center.thursday(
                 @click = 'dayOfWeekClick'
-              ) 09
+              ) 08
               td.vui-text-align--center.friday(
                 @click = 'dayOfWeekClick'
-              ) 10
+              ) 09
               td.vui-text-align--center.saturday(
                 @click = 'dayOfWeekClick'
-              ) 11
+              ) 10
               td.vui-text-align--center.sunday(
                 @click = 'dayOfWeekClick'
-              ) 12
+              ) 11
           tr
             td(
               @click='weekNumberClick'
             ) Week 5
             td.vui-text-align--center.monday(
               @click = 'dayOfWeekClick'
-            ) 13
+            ) 12
             td.vui-text-align--center.tuesday(
               @click = 'dayOfWeekClick'
-            ) 14
+            ) 13
             td.vui-text-align--center.wednesday(
               @click = 'dayOfWeekClick'
-            ) 15
+            ) 14
             td.vui-text-align--center.thursday(
               @click = 'dayOfWeekClick'
-            ) 16
+            ) 15
             td.vui-text-align--center.friday(
               @click = 'dayOfWeekClick'
-            ) 17
+            ) 16
             td.vui-text-align--center.saturday(
               @click = 'dayOfWeekClick'
-            ) 18
+            ) 17
             td.vui-text-align--center.sunday(
               @click = 'dayOfWeekClick'
-            ) 19
+            ) 18
           tr
             td(
               @click='weekNumberClick'
             ) Week 6
             td.vui-text-align--center.monday(
               @click = 'dayOfWeekClick'
-            ) 20
+            ) 19
             td.vui-text-align--center.tuesday(
               @click = 'dayOfWeekClick'
-            ) 21
+            ) 20
             td.vui-text-align--center.wednesday(
               @click = 'dayOfWeekClick'
-            ) 22
+            ) 21
             td.vui-text-align--center.thursday(
               @click = 'dayOfWeekClick'
-            ) 23
+            ) 22
             td.vui-text-align--center.friday(
               @click = 'dayOfWeekClick'
-            ) 24
+            ) 23
             td.vui-text-align--center.saturday(
               @click = 'dayOfWeekClick'
-            ) 25
+            ) 24
             td.vui-text-align--center.sunday(
               @click = 'dayOfWeekClick'
-            ) 26
+            ) 25
         .vui-text-align--right
           router-link.vui-m-right--xx-small.vui-button.vui-button--brand(
             v-bind:disabled = 'daypartMixTotal !== 100'
@@ -643,7 +643,7 @@
 </template>
 
 <script>
-  // import $ from 'jquery'
+  import $ from 'jquery'
   // import store from 'store'
   import noUiSlider from 'nouislider'
 
@@ -651,8 +651,8 @@
     data () {
       return {
         // sharedState: store.state,
-        startDate: new Date('2017-02-13T12:24:00'),
-        endDate: new Date('2017-03-26T12:24:00'),
+        startDate: new Date('2017-05-15T12:24:00'),
+        endDate: new Date('2017-06-25T12:24:00'),
         grossBudget: 0,
         selected: '',
         advertiser: '',
@@ -782,45 +782,45 @@
 
     methods: {
       selectOrDeselectAllWeeks () {
-        // let days = $('#flight-days').find('tbody td:not(:first-child)')
+        let days = $('#flight-days').find('tbody td:not(:first-child)')
 
         if (this.selectButtonText === 'Select') {
-          // days.addClass('vui-selected')
+          days.addClass('vui-selected')
           this.selectButtonText = 'Deselect'
         } else {
-          // days.removeClass('vui-selected')
+          days.removeClass('vui-selected')
           this.selectButtonText = 'Select'
         }
       },
 
       selectOrDeselectAllWeekends () {
         if (this.selectWeekendButtonText === 'Select') {
-          // $('#flight-days').find('tbody td.saturday').addClass('vui-selected')
-          // $('#flight-days').find('tbody td.sunday').addClass('vui-selected')
+          $('#flight-days').find('tbody td.saturday').addClass('vui-selected')
+          $('#flight-days').find('tbody td.sunday').addClass('vui-selected')
           this.selectWeekendButtonText = 'Deselect'
         } else {
-          // $('#flight-days').find('tbody td.saturday').removeClass('vui-selected')
-          // $('#flight-days').find('tbody td.sunday').removeClass('vui-selected')
+          $('#flight-days').find('tbody td.saturday').removeClass('vui-selected')
+          $('#flight-days').find('tbody td.sunday').removeClass('vui-selected')
           this.selectWeekendButtonText = 'Select'
         }
       },
 
       selectAllWeeks () {
-        // $('#flight-days').find('tbody td:not(:first-child)').addClass('vui-selected')
+        $('#flight-days').find('tbody td:not(:first-child)').addClass('vui-selected')
       },
 
       deselectAllWeeks () {
-        // $('#flight-days').find('tbody td:not(:first-child)').removeClass('vui-selected')
+        $('#flight-days').find('tbody td:not(:first-child)').removeClass('vui-selected')
       },
 
       dayOfWeekHeaderRowClick (day) {
-        // let $element = $('#flight-days').find('tbody td.' + day)
+        let $element = $('#flight-days').find('tbody td.' + day)
 
-        // if ($element.hasClass('vui-selected')) {
-        //   $element.removeClass('vui-selected')
-        // } else {
-        //   $element.addClass('vui-selected')
-        // }
+        if ($element.hasClass('vui-selected')) {
+          $element.removeClass('vui-selected')
+        } else {
+          $element.addClass('vui-selected')
+        }
       },
 
       dayOfWeekClick (event) {
@@ -828,24 +828,24 @@
       },
 
       monthClick (event) {
-        // let $element = $(event.target).closest('thead').next('tbody').find('td:not(:first-child)')
+        let $element = $(event.target).closest('thead').next('tbody').find('td:not(:first-child)')
 
-        // if ($element.hasClass('vui-selected')) {
-        //   $element.removeClass('vui-selected')
-        // } else {
-        //   $element.addClass('vui-selected')
-        // }
+        if ($element.hasClass('vui-selected')) {
+          $element.removeClass('vui-selected')
+        } else {
+          $element.addClass('vui-selected')
+        }
       },
 
       weekNumberClick (event) {
-        // let days = $(event.target.parentNode).find('td:not(:first-child)')
-        // if (this.weekClicked === true) {
-        //   days.removeClass('vui-selected')
-        //   this.weekClicked = false
-        // } else {
-        //   days.addClass('vui-selected')
-        //   this.weekClicked = true
-        // }
+        let days = $(event.target.parentNode).find('td:not(:first-child)')
+        if (this.weekClicked === true) {
+          days.removeClass('vui-selected')
+          this.weekClicked = false
+        } else {
+          days.addClass('vui-selected')
+          this.weekClicked = true
+        }
       },
 
       foundDaypart (daypart) {

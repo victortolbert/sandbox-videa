@@ -1,6 +1,6 @@
 <template lang="pug">
   .vui-scrollable--x
-    table.vui-table.vui-no-row-hover.vui-table--striped.vui-table--fixed-layout
+    table.vui-table.vui-no-row-hover.vui-table--fixed-layout
       thead
         tr
           th(style='width: 41px')
@@ -29,10 +29,10 @@
       tbody
         template(
           v-bind:class="{ 'vui-is-selected': offer.isExpanded }"
-          v-for='lineItem in orderLineItems'
+          v-for='(lineItem, index) in orderLineItems'
           v-show='!isOnlyMissedShown || lineItem.totalMissedSpots > 0'
         )
-          tr
+          tr(:class='(index % 2 === 0) ? "vui-highlight" : ""')
             td(style='width: 41px')
               a(v-on:click.prevent='toggleDetail(lineItem)')
                 vui-icon.vui-icon--small.vui-align-middle(
@@ -160,6 +160,10 @@
               makegoods-nested-order-line-makegoods-grid(
                 v-bind:makegoods='lineItem.makegoods'
               )
+    makegoods-order-line-current-info-popup(
+      v-show = 'showCurrentInfoPopup'
+      @close = 'showCurrentInfoPopup = false'
+    )
 </template>
 
 <script>
@@ -179,6 +183,7 @@
 
     data () {
       return {
+        showCurrentInfoPopup: false,
         orderLineItems: [],
         isImpressionsBuyType: true,
         isOnlyMissedShown: true,
@@ -270,7 +275,9 @@
 
       isCheckboxVisible (item) {},
       orderLineOnSelected (item) {},
-      showCurrentInfo (item) {}
+      showCurrentInfo(item) {
+        this.showCurrentInfoPopup = true
+      }
     },
 
     created () {

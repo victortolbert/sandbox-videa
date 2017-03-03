@@ -1,5 +1,6 @@
 <template lang="pug">
   .vui-scrollable--x.vui-m-bottom--large
+    //- pre {{ orderLineItems }}
     table.vui-table.vui-no-row-hover.vui-table--fixed-layout.vui-table--compact.mg-preempts
       thead
         tr
@@ -14,87 +15,91 @@
           th(style='width: 103px'): vui-sorting-column(title='Air Date')
           th(style='width: 55px'): vui-sorting-column(title='Len')
           th.spot-allocation-column(style='width: 503px')
-            //- makegoods-spot-allocation-header(v-model='lineItems[0].weeklySpotAllocations')
+            //- makegoods-spot-allocation-header(v-model='orderLineItems[0].weeklySpotAllocations')
           th(style='width: 90px'): vui-sorting-column(title='Spot<br>Rate')
           th(v-if='isImpressionsBuyType' style='width: 90px'): vui-sorting-column(title='Buyer<br>IMP')
           th(v-if='isEditMode' style='width: 90px'): vui-sorting-column(title = 'Buyer<br>CPP')
           th(style = 'width: 120px') Comment
       tbody
-        tr(v-for = 'item in order.preempts')
+        tr(v-for = 'preempt in order.preempts')
           td.align-center(v-if='isEditMode' style='width: 35px')
             .checkbox.vui-checkbox.checked(
               changed = 'orderLineOnSelected'
               ng-change-function = 'itemSelectionChanged'
-              value = 'item.isSelected'
+              value = 'preempt.isSelected'
             )
               span.icons
               input(type='checkbox')
 
-          td.vui-truncate(v-bind:title = 'item.airDay' style = 'width: 90px') {{ item.airDay }}
-          td.vui-truncate(v-bind:title = 'item.airTime' style = 'width: 90px') {{ item.airTime }}
-          td.vui-truncate(v-bind:title = 'item.programName' style = 'width: 120px') {{ item.buyerProgramOrdered }}
+          td.vui-truncate(v-bind:title = 'preempt.airDay' style = 'width: 90px') {{ preempt.airDay }}
+          td.vui-truncate(v-bind:title = 'preempt.airTime' style = 'width: 90px') {{ preempt.airTime }}
+          td.vui-truncate(v-bind:title = 'preempt.programName' style = 'width: 120px') {{ preempt.buyerProgramOrdered }}
           td.vui-truncate.vui-text-align--right(
-            v-bind:title = 'item.lineNumber'
+            v-bind:title = 'preempt.lineNumber'
             style = 'width: 65px'
-          ) {{ item.buyerLineNumber }}
+          ) {{ preempt.buyerLineNumber }}
           td.vui-truncate.vui-text-align--right(
-            v-bind:title = 'item.spotNumber'
+            v-bind:title = 'preempt.spotNumber'
             style = 'width: 70px'
           )
-            span {{ item.stationSpotNumber }}
+            span {{ preempt.stationSpotNumber }}
           td.vui-truncate(
-            v-bind:title = 'item.status'
+            v-bind:title = 'preempt.status'
             style = 'width: 122px'
-          ) {{ item.status }}
+          ) {{ preempt.status }}
           td.vui-truncate.vui-text-align--right(
-            v-bind:title = 'item.priority'
+            v-bind:title = 'preempt.priority'
             style = 'width: 67px'
-          ) {{ item.priority }}
+          ) {{ preempt.priority }}
           td.vui-truncate(
-            v-bind:title = 'item.airDate'
+            v-bind:title = 'preempt.airDate'
             style = 'width: 103px'
-          ) {{ item.airDate }}
+          ) {{ preempt.airDate }}
           td.vui-truncate.vui-text-align--center(
-            v-bind:title = 'item.spotLength'
+            v-bind:title = 'preempt.spotLength'
             style = 'width: 55px'
-          ) {{ item.length }}
+          ) {{ preempt.length }}
           td.spot-allocation-cell(
             style = 'width: 503px'
           )
             makegoods-spot-allocation-with-missed-spots(
-              v-model = 'item.spotAllocations'
+              v-model = 'preempt.spotAllocations'
             )
           td.vui-truncate.vui-text-align--right(
-            v-bind:title = 'item.spotRate'
+            v-bind:title = 'preempt.spotRate'
             style = 'width: 90px'
-          ) {{ item.spotRate }}
+          ) {{ preempt.spotRate }}
           td.vui-text-align--right(
-            v-bind:title = 'item.buyerImpressions'
+            v-bind:title = 'preempt.buyerImpressions'
             style = 'width: 90px', v-if='isImpressionsBuyType'
-          ) {{ item.buyerImpressions }}
+          ) {{ preempt.buyerImpressions }}
           td.vui-text-align--right(
-            v-bind:title = 'item.buyerCppm'
+            v-bind:title = 'preempt.buyerCppm'
             style = 'width: 90px', v-if='isEditMode'
-          ) {{ item.buyerCppm }}
+          ) {{ preempt.buyerCppm }}
           td(
             style = 'width: 120px'
           )
             input.vui-input.vui-size--1-of-1(
-              v-bind:title = 'item.comment'
+              v-bind:title = 'preempt.comment'
               v-if = 'isEditMode'
-              v-model = 'item.comment'
+              v-model = 'preempt.comment'
               type = 'text'
             )
-            | {{ item.comment }}
+            | {{ preempt.comment }}
 </template>
 
 <script>
+  import axios from '~plugins/axios'
+
   export default {
-    props: [ 'order' ],
+    props: [ 'order', 'orderLineItems' ],
+
     data () {
       return {
         isEditMode: true,
         isImpressionsBuyType: true,
+        // orderLineItems: [],
         items: [
           {
             isSelected: false,
@@ -132,6 +137,26 @@
           }
         ]
       }
+    },
+
+    methods: {
+      fetchOrderLineItems () {
+        axios.get('/orderLineItems')
+          .then((response) => {
+            this.orderLineItems = response.data
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+
+      toggleDetail (offer) {
+        offer.isExpanded = !offer.isExpanded
+      }
+    },
+
+    created () {
+      // this.fetchOrderLineItems()
     }
   }
 </script>

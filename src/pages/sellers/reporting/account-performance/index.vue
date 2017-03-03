@@ -58,7 +58,7 @@
 </script>
 
 <style lang="stylus">
-  .vui-input
-  .vui-select
-    min-width 135px !important
+  // .vui-input
+  // .vui-select
+  //   min-width 135px !important
 </style>

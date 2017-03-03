@@ -1,0 +1,191 @@
+.vui-box.vui-grid.vui-grid--align-spread.vui-theme--default
+  p.vui-text-color--weak {{lastModified}}
+  a.vui-col--bump-left(href='', ng-click='pgpt.redirectToSportsSpecials()', ng-show='!isRepUser')
+    svg.vui-icon.vui-icon--x-small.vui-align-middle
+      use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/Images/icons.svg#icon-plus-circle')
+    //
+      remove whitespaces
+    span.vui-align-middle.vui-m-left--xxx-small Add a Program
+div
+  table.vui-table.vui-no-row-hover(keyboard-navigatable='')
+    thead
+      tr
+        th(rowspan='2', style='width: 50%') Program
+        th(colspan='{{pgpt.stationColumns}}') Station
+        // <th colspan="3">Station Premium</th>
+        th(colspan='4') Videa
+        th(colspan='5') On the Books
+      tr
+        // Station Section
+        th.u-width-medium Rate
+        th {{demographic}}
+        th {{pgpt.cpDisplay}}
+        th.u-width-medium.vui-cell-wrap(ng-if='pgpt.showPreviousRate') Previously Accepted Rate
+        // Station Premium Section
+        //
+          <th>%</th>
+          <th>Rate</th>
+          <th>{{pgpt.cpDisplay}}</th>
+        // Videa Section
+        th Rate
+        th.vui-cell-wrap(style='width: 70px') Accept Rate
+        th {{demographic}}
+        th {{pgpt.cpDisplay}}
+        // OTB Section
+        th Min
+        th Max
+        th AUR
+        th LY AUR
+        th Sell Out %
+    tbody(ng-repeat='program in programs')
+      // Program Level
+      tr(style='background-color: #cee5eb', ng-click='$parent.lastClickedProgram = program')
+        // Station Section
+        td
+          span.vui-grid
+            a.vui-m-right--xx-small.vui-p-right--medium(ng-click='program.monthsExpanded = !program.monthsExpanded', style='position: relative')
+              svg.vui-icon.vui-icon--x-small(style='position: absolute; top: 2px')
+                use(ng-if='program.monthsExpanded', xlink:href='/Content/Images/icons.svg#icon-caret-down')
+                use(ng-if='!program.monthsExpanded', xlink:href='/Content/Images/icons.svg#icon-caret-right')
+            .vui-align-middle
+              div(ng-bind='program.program')
+              span(ng-bind='program.formattedTimeSlot')
+            // <i class="expandCollapseIcon" ng-class="program.monthsExpanded ? 'glyphicon glyphicon-minus-sign' : 'glyphicon glyphicon-plus-sign'"></i>
+        td.vui-text-align--right.u-width-medium {{pgpt.calculateAverageRate(program) | currency:'$':0}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating')  {{pgpt.calculateAverageRating(program) | number:1}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{pgpt.calculateAverageCpp(program) | nonZeroCppOrDashNoChange}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions')
+          | {{pgpt.calculateAverageImpressions(program) | vuiImpressionsNoCommaRoundToThree}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions')
+          | {{pgpt.calculateAverageCpm(program) | currency:'$':0 | nonZeroCppOrDashNoChange}}
+        td.vui-text-align--right.u-width-medium.vui-cell-wrap.shaded(ng-if='pgpt.showPreviousRate') {{pgpt.calculateAveragePreviouslyAcceptedRate(program) | currency:'$':0}}
+        // Station Premium Section
+        //
+          <td class="vui-text-align--right">{{program.stationPremiumPercent}}</td>
+          <td class="vui-text-align--right">{{program.stationPremiumRate | currency:'$':0}}</td>
+          <td class="vui-text-align--right">{{program.stationPremiumCpp | nonZeroCppOrDashNoChange}}</td>
+        // Videa Section
+        td.vui-text-align--right {{pgpt.calculateAverageVideaRate(program) | currency:'$':0}}
+        td.vui-text-align--center
+          // <vui-checkbox class="vui-p-left--small" text="" cbdisabled="isRepUser" data-ng-click="pgpt.acceptVideaRateProgram(program, isRepUser)" value="program.acceptedVideaRate.value"></vui-checkbox>
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{pgpt.calculateAverageVideaRating(program) | number:1}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{pgpt.calculateAverageVideaCpp(program) | nonZeroCppOrDashNoChange}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions')
+          | {{pgpt.calculateAverageVideaImpressions(program) | vuiImpressionsNoCommaRoundToThree}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions') {{pgpt.calculateAverageVideaCpm(program) | currency:'$':0}}
+        // OTB Section
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{program.otbMinRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{program.otbMaxRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{program.otbAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{program.otbLyAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{program.otbSellOutPercentString}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{program.nonZeroOtbMinRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{program.nonZeroOtbMaxRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{program.nonZeroOtbAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{program.nonZeroOtbLyAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{program.nonZeroOtbSellOutPercentString}}
+      // Monthly Level
+      tr(ng-if='program.monthsExpanded', ng-repeat-start='month in program.details', style='background-color: #ecf5f8')
+        td
+          .vui-m-left--xx-large.vui-grid.vui-grid--align-spread
+            span.vui-align-middle {{month.month}}
+            .vui-dropdown-trigger.vui-dropdown-trigger--click.vui-align-middle.dropdown-left.vui-m-right--x-small(ng-class="{'vui-is-open': month.showWeeks}", any-outer-click='month.showWeeks = false')
+              button.vui-button.vui-button--can-be-focused.vui-button--icon-container(aria-haspopup='true', ng-click='pgpt.toggleWeekSelection(month)')
+                svg.vui-icon.vui-icon--x-small.vui-align-middle(style='color: hsla(196, 99%, 32%, 1)')
+                  use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/Images/icons.svg#icon-calendar-plus-o')
+                span.vui-assistive-text Add weeks
+              .vui-dropdown.vui-nubbin--top.vui-has-blur-focus(ng-show='month.showWeeks', ng-class="{'weekPopup':month.showWeeks}")
+                .vui-p-around--large(role='menu')
+                  fieldset.vui-form-element.vui-m-bottom--small(ng-repeat='item in month.details')
+                    .vui-form-element__control
+                      label.vui-checkbox
+                        input.vui-input(type='checkbox', ng-model='item.checked', ng-change='pgpt.onWeekClicked(item)')
+                        span.vui-checkbox--faux
+                        span.vui-form-element__label(ng-bind='item.week')
+                  fieldset.vui-form-element.vui-text-align--center
+                    button.vui-button.vui-button--neutral(ng-click='month.showWeeks = false;') Close
+        // Station Section
+        td.u-width-medium
+          input.vui-input.vui-text-align--right.u-width-medium(ng-disabled='isRepUser || pgpt.allWeeksSelected(month)', type='text', number-format='', decimals='0', ng-model='month.stationRate.value', ng-change='pgpt.detailRateChanged(month)', maxlength='10', vui-select-on-focus='')
+          button.vui-button.vui-button--can-be-focused.vui-button--icon-container(title='Copy To Quarter', aria-haspopup='true', ng-click='pgpt.copyStationRate(program.details, month)', ng-show='!isRepUser && (!pgpt.allWeeksSelected(month)) && $index==0 ')
+            svg.vui-icon.vui-icon--x-small.vui-align-middle(style='color: hsla(196, 99%, 32%, 1)')
+              use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/Images/icons.svg#icon-copy')
+            span.vui-assistive-text Add weeks
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating')
+          a(href='', ng-disabled='isRepUser', data-ng-click='pgpt.ratingOnClick(month)', style='text-decoration: underline') {{month.stationRating.value | number:1}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{pgpt.calculateCpp(month) | nonZeroCppOrDashNoChange}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions')
+          a(href='', ng-disabled='isRepUser', data-ng-click='pgpt.ratingOnClick(month)', style='text-decoration: underline') {{month.stationImpressions.value | vuiImpressionsNoCommaRoundToThree}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions') {{pgpt.calculateCpm(month) | currency:'$':0}}
+        td.vui-text-align--right.u-width-medium.vui-cell-wrap.shaded(ng-if='pgpt.showPreviousRate') {{month.stationRate.originalValue}}
+        // Station Premium Section
+        //
+          <td class="vui-text-align--right">{{month.stationPremiumPercent}}</td>
+          <td class="vui-text-align--right">{{month.stationPremiumRate | currency:'$':0}}</td>
+          <td class="vui-text-align--right">{{month.stationPremiumCpp  | nonZeroCppOrDashNoChange}}</td>
+        // Videa Section
+        td.vui-text-align--right {{month.videaRate | currency:'$':0}}
+        td.vui-text-align--center
+          vui-checkbox(cbdisabled='isRepUser', data-ng-click='pgpt.acceptVideaRate(month,undefined,isRepUser);pgpt.setAcceptVideaRateValueForProgram($parent.program);', text='', value='month.acceptedVideaRate.value', tabindex='0')
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{month.videaRating | number:1}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{month.videaCpp | nonZeroCppOrDashNoChange}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions') {{month.videaImpressions | vuiImpressionsNoCommaRoundToThree}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions') {{month.videaCpm | currency:'$':0}}
+        // OTB Section
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{month.otbMinRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{month.otbMaxRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{month.otbAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{month.otbLyAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{month.otbSellOutPercentString}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{month.nonZeroOtbMinRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{month.nonZeroOtbMaxRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{month.nonZeroOtbAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{month.nonZeroOtbLyAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{month.nonZeroOtbSellOutPercentString}}
+      // Weekly Level
+      tr(ng-if='program.monthsExpanded', ng-repeat-end='', ng-repeat='week in pgpt.getWeeksToShow(month)', style='background-color: #ecf5f8')
+        td
+          .vui-grid.vui-p-left--large.vui-m-left--xx-large
+            a.vui-align-middle(href='', ng-click='week.checked = false')
+              svg.vui-icon.vui-icon--x-small.vui-align-middle.vui-m-right--x-small
+                use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/Images/icons.svg#icon-times-circle')
+            span.vui-align-middle {{week.week}}
+        // Station Section
+        td.u-width-medium
+          input.vui-input.vui-text-align--right.u-width-medium(type='text', ng-disabled='isRepUser', number-format='', decimals='0', ng-model='week.stationRate.value', ng-change='pgpt.detailRateChanged(week)', maxlength='10', vui-select-on-focus='')
+          button.vui-button.vui-button--can-be-focused.vui-button--icon-container(title='Copy to Quarter', aria-haspopup='true', ng-click='pgpt.copyStationRate(program.details, week)', ng-if='!isRepUser && $index==0 && pgpt.allWeeksSelected(month) && $parent.$parent.$index==0')
+            svg.vui-icon.vui-icon--x-small.vui-align-middle(style='color: hsla(196, 99%, 32%, 1)')
+              use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/Content/Images/icons.svg#icon-copy')
+            span.vui-assistive-text Add weeks
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating')
+          a(href='', ng-disabled='isRepUser', data-ng-click='pgpt.ratingOnClick(week)', style='text-decoration: underline')
+            | {{week.stationRating.value | number:1}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{pgpt.calculateCpp(week) | nonZeroCppOrDashNoChange}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions')
+          a(href='', ng-disabled='isRepUser', data-ng-click='pgpt.ratingOnClick(week)', style='text-decoration: underline') {{week.stationImpressions.value | vuiImpressionsNoCommaRoundToThree}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions') {{pgpt.calculateCpm(week) | currency:'$':0}}
+        td.vui-text-align--right.u-width-medium.shaded(ng-if='pgpt.showPreviousRate') {{week.stationRate.originalValue}}
+        // Station Premium Section
+        //
+          <td class="vui-text-align--right">{{week.stationPremiumPercent}}</td>
+          <td class="vui-text-align--right">{{week.stationPremiumRate | currency:'$':0}}</td>
+          <td class="vui-text-align--right">{{week.stationPremiumCpp | nonZeroCppOrDashNoChange}}</td>
+        // Videa Section
+        td.vui-text-align--right {{week.videaRate | currency:'$':0}}
+        td.vui-text-align--center
+          vui-checkbox(cbdisabled='isRepUser', data-ng-click='pgpt.acceptVideaRate(week,undefined,isRepUser);pgpt.setAcceptVideaRateValueForProgram($parent.$parent.program);', text='', value='week.acceptedVideaRate.value', tabindex='0')
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{week.videaRating | number:1}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.rating') {{week.videaCpp | nonZeroCppOrDashNoChange}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions') {{week.videaImpressions | vuiImpressionsNoCommaRoundToThree}}
+        td.vui-text-align--right(ng-if='pgpt.ratingType.impressions') {{week.videaCpm | currency:'$':0}}
+        // OTB Section
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{week.otbMinRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{week.otbMaxRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{week.otbAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{week.otbLyAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='includeZeroSpots') {{week.otbSellOutPercentString}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{week.nonZeroOtbMinRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{week.nonZeroOtbMaxRate | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{week.nonZeroOtbAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{week.nonZeroOtbLyAur | vuiCurrencyNoDecimalOrNA}}
+        td.vui-text-align--right(ng-if='!includeZeroSpots') {{week.nonZeroOtbSellOutPercentString}}

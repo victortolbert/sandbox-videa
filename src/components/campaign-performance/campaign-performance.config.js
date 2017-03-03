@@ -18,7 +18,7 @@ module.exports = {
         campaignDeliveryPercent: 0.79,
         currentGrpsImps: 24.9,
         purchasedGrpsImps: 31.5,
-        difference: -6.2,
+        difference: -6.6,
         currentHouseholdGrpsImps: 47.6,
         demoName: 'A18-49',
         orderLastUpdated: moment().subtract(2, 'weeks').format('MM/DD/YY'),
@@ -43,16 +43,16 @@ module.exports = {
           total: {
             purchasedGrpsImps: 78.8,
             purchasedToDate: 31.5,
-            deliveredToDate: 25.3,
+            deliveredToDate: 24.9,
             percentage: 0.8,
-            difference: -6.2
+            difference: -6.6
           },
           items: [
             {
               daypart: 'EM',
               purchasedToDate: 12.4,
               deliveredToDate: 9.5,
-              percentage: 0.77,
+              percentage: 0.73,
               difference: -2.9
             },
             {
@@ -125,7 +125,7 @@ module.exports = {
           total: {
             purchasedGrpsImps: 78.8,
             purchasedToDate: 31.5,
-            deliveredToDate: 25.3,
+            deliveredToDate: 24.9,
             percentage: 0.8,
             difference: -6.2
           },

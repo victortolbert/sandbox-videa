@@ -47,6 +47,7 @@ export default {
     Vue.component('vui-table', require('~components/common/table'))
     Vue.component('vui-title', require('~components/common/title'))
     Vue.component('vui-icon', require('~components/common/icon'))
+    Vue.component('vui-modal-header', require('~components/modal/modal-header'))
     Vue.component('cpm', require('~components/common/cpm'))
     Vue.component('cpp', require('~components/common/cpp'))
 

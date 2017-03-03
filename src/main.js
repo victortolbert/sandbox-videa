@@ -11,6 +11,17 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+
+
+
+Vue.config.productionTip = false
+Vue.config.performance = true
+
+// import auth from './auth'
+
+// // Check the user's auth status when the app starts
+// auth.checkAuth()
+
 // import Load from './util/load'
 // import Toast from './functions/toast'
 // Vue.prototype.$vuetify = {
@@ -33,8 +44,27 @@ Vue.use(VTooltip)
 import Carousel3d from 'vue-carousel-3d'
 Vue.use(Carousel3d)
 
+import Dropdown from 'hsy-vue-dropdown'
+Vue.use(Dropdown)
+
+import vueBemCn from 'vue-bem-cn'
+// default settings
+const bemConfig = {
+  ns: '', // namespace
+  el: '__', // element delimeter
+  mod: '--', // modifier delimeter
+  modValue: '-' // value delimeter for modifier
+}
+Vue.use(vueBemCn, bemConfig)
+
 import VueCookie from 'vue-cookie'
 Vue.use(VueCookie)
+
+import svgicon from 'vue-svgicon'
+// Default tag name is 'svgicon'
+Vue.use(svgicon, {
+  tagName: 'svgicon'
+})
 
 // chartjs package
 require('chart.js')
@@ -48,6 +78,13 @@ Vue.use(VueFloatLabel)
 
 import VeeValidate from 'vee-validate'
 Vue.use(VeeValidate)
+
+import Validity from 'vue-validity'
+Vue.use(Validity, {
+  errorMessages: {
+    required: '{field} is required'
+  }
+})
 
 import Vuelidate from 'vuelidate'
 Vue.use(Vuelidate)

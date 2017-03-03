@@ -4,8 +4,8 @@
       .modal-header.vui-m-bottom--large
         h3.vui-text-heading--medium.vui-grid.vui-grid--align-spread
           span Buy Line / Current Information
-          a.vui-text-align--right(@click.prevent = '$emit("close")')
-            vui-icon(name='close')
+          a.vui-text-align--right(@click.prevent = '$emit("close")' style='color: white')
+            vui-icon(name='close', style='width: 2rem; height: 2rem')
     .modal-body
       div
         .vui-box.vui-theme--default.vui-m-bottom--large
@@ -26,7 +26,7 @@
               label.vui-form-element__label Current Rate
               .vui-form-element__control
                 span.vui-form-element__static(
-                ) {{ orderLine.videaCurrentSpotRate }}
+                ) {{ orderLine.videaCurrentSpotRate | formatMoney }}
             fieldset.vui-form-element.vui-m-bottom--small.vui-m-right--large(
               v-if = '!isImpressionsBuyType'
             )
@@ -44,15 +44,13 @@
               //- i.glyphicon.glyphicon-warning-sign.required.vui-m-left--xxx-small.vui-m-right--xx-small
               | No results found. Please try again.
         .vui-m-bottom--large
-          .vui-grid.vui-grid--pull-padded
-            .vui-col--padded
-              .vui-scrollable--y(
-                style = 'max-height: 480px'
-              )
-                makegoods-order-line-curr-info-rate-rating-grid(
-                  items = 'ratesAndRatings'
-                  order-buy-type = 'orderBuyType'
-                )
+          .vui-scrollable--y(
+            style = 'max-height: 480px'
+          )
+            makegoods-order-line-curr-info-rate-rating-grid(
+              items = 'ratesAndRatings'
+              order-buy-type = 'orderBuyType'
+            )
       .vui-grid.vui-grid--align-end
         input.vui-button.vui-button--neutral(
           @click = '$emit("close")'
@@ -67,7 +65,7 @@
   export default {
     data () {
       return {
-        demo: '16',
+        demo: 'P25-54',
         show: false,
         canBeAccepted: true,
         canBeRejected: true,
@@ -76,8 +74,8 @@
         isRatesAndRatingsFound: true,
         orderLine: {
           lineNumber: 1,
-          currentAsOfDate: new Date(moment().add(14, 'days').toISOString()),
-          videaCurrentSpotRate: 234,
+          currentAsOfDate: moment().add(14, 'days').format('MM/DD/YY hh:MM A'),
+          videaCurrentSpotRate: 350,
           videaCurrentRating: 0.4
         }
       }

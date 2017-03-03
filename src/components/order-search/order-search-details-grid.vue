@@ -1,6 +1,6 @@
 <template lang="pug">
 .vui-scrollable--x
-  table.vui-table.vui-no-row-hover.vui-table--striped.vui-table--fixed-layout
+  table.vui-table.vui-no-row-hover.vui-table--fixed-layout
     thead
       tr
         th(style='width: 80px')
@@ -50,7 +50,7 @@
         th(style='width: 150px') Videa to Station #[br] Comment
         th(style='width: 100px') Spot #[br] Option
         th(style='width: 100px') Line #[br] Type
-    tbody(v-for = 'lineItem in orderLineItems')
+    tbody(v-for = '(lineItem, index) in orderLineItems', :class='(index % 2 === 0) ? "vui-highlight" : ""')
       tr(v-bind:class = '{ "vui-is-selected": lineItem.isExpanded }')
         td.vui-text-align--center(style='width: 80px')
           a(v-on:click = 'lineItem.isExpanded = !lineItem.isExpanded')
@@ -250,10 +250,10 @@
                     td {{ makegood.makegoodApplied }}
                     td {{ makegood.makegoodNewLines }}
 
-    makegoods-order-line-current-info-popup(
-      v-show = 'showCurrentInfoPopup'
-      @close = 'showCurrentInfoPopup = false'
-    )
+  makegoods-order-line-current-info-popup(
+    v-show = 'showCurrentInfoPopup'
+    @close = 'showCurrentInfoPopup = false'
+  )
 </template>
 
 <script>

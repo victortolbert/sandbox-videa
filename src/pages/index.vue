@@ -2,6 +2,8 @@
 <!-- http://codepen.io/VictorTolbert/pen/rjYJGO?editors=1100 -->
 <template lang="pug">
   .index
+    //- svgicon(icon='vue' width='200' height='200' color='#42b983 #35495e')
+
     //- button(v-tooltip.top-center="msg") Hover me
 
     //- grid.vui-m-bottom--medium.vui-m-top--medium
@@ -123,6 +125,15 @@
       //     // Do something after all elements were updated
       //   })
       // })
+
+      // vm.$on() now supports registering the same callback for multiple events using
+
+      // vm.$on([eventA, eventB], callback)
+
+      // v-on new mouse event modifiers: .left, .right, .middle. Example: <button @click.right="onRightClick">
+      //
+
+      // Vue.delete now also supports Arrays: Vue.delete(arr, index)
     }
   }
 </script>

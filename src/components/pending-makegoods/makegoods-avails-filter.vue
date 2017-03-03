@@ -32,7 +32,7 @@
           .vui-form-element
             .vui-form-element__control.pointer
               a.pending-makegoods-requested-dayparts-link.v-link-active(
-                @click = 'showRequestedDaypartsPopup'
+                @click.prevent = 'openRequestedDaypartsModal'
               ) DPs Availed
         fieldset.vui-form-element.vui-m-right--small
           label.vui-form-element__label(
@@ -111,6 +111,11 @@
               type = 'button'
               value = 'Clear'
             )
+    makegoods-requested-dayparts-popup(
+      v-if='showRequestedDaypartsModal'
+      @close='showRequestedDaypartsModal = false'
+    )
+
 </template>
 
 <script>
@@ -119,6 +124,7 @@
   export default {
     data () {
       return {
+        showRequestedDaypartsModal: false,
         filteringType: 0,
         startTime: '',
         endTime: '',
@@ -126,12 +132,14 @@
         daypartItems: [],
         lengthItems: [],
         startDate: new Date(moment().add(14, 'days').toISOString()),
-        endDate: new Date(moment().add(5, 'days').toISOString()),
-
+        endDate: new Date(moment().add(5, 'days').toISOString())
       }
     },
     methods: {
-      showRequestedDaypartsPopup () {},
+      openRequestedDaypartsModal () {
+        this.showRequestedDaypartsModal = true
+      },
+
       applyFilter () {},
       filterClear () {}
     }

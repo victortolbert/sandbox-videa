@@ -167,17 +167,17 @@
           ) TOTAL
           td.vui-truncate(
             v-bind:title = 'footer.rate'
-          ) ${{ footer.rate }}
-          td.vui-truncate(
+          ) ${{ footer.rate | numberWithCommas }}
+          td.vui-text-align--right.vui-truncate(
             v-bind:title = 'footer.hhRatingsIMPs'
           ) {{ footer.hhRatingsIMPs }}
-          td.vui-truncate(
+          td.vui-text-align--right.vui-truncate(
             v-bind:title = 'footer.actualRating'
           ) {{ footer.actualRating }}
-          td.vui-truncate(
+          td.vui-text-align--right.vui-truncate(
             v-bind:title = 'footer.purchasedRating'
           ) {{ footer.purchasedRating }}
-          td.vui-truncate
+          td.vui-text-align--right.vui-truncate
             span(
               v-bind:title = 'footer.plusMinus'
               difference-text-color = ''
@@ -313,7 +313,7 @@
             purchasedProgram: '7am News',
             formattedAirDate: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Thursday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 07:00 AM - 08:00 AM',
             orderedDates: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -329,7 +329,7 @@
             purchasedProgram: '7am News',
             formattedAirDate: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Monday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 07:00 AM - 08:00 AM',
             orderedDates: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -345,7 +345,7 @@
             purchasedProgram: '7am News',
             formattedAirDate: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Friday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 07:00 AM - 08:00 AM',
             orderedDates: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -361,7 +361,7 @@
             purchasedProgram: '7am News',
             formattedAirDate: moment().add(3, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Tuesday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 07:00 AM - 08:00 AM',
             orderedDates: moment().add(3, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -377,7 +377,7 @@
             purchasedProgram: '7am News',
             formattedAirDate: moment().add(3, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Wednesday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 07:00 AM - 08:00 AM',
             orderedDates: moment().add(3, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -425,7 +425,7 @@
             purchasedProgram: '8am News',
             formattedAirDate: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Tuesday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 08:00 AM - 09:00 AM',
             orderedDates: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -441,7 +441,7 @@
             purchasedProgram: '8am News',
             formattedAirDate: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Thursday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 08:00 AM - 09:00 AM',
             orderedDates: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -457,7 +457,7 @@
             purchasedProgram: '8am News',
             formattedAirDate: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Wednesday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 08:00 AM - 09:00 AM',
             orderedDates: moment().add(1, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',
@@ -473,7 +473,7 @@
             purchasedProgram: '8am News',
             formattedAirDate: moment().add(3, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedAirDay: 'Friday',
-            formattedAirTime: '7:07:39 AM',
+            formattedAirTime: 'n/a',
             orderedTimePeriod: 'M-F 08:00 AM - 09:00 AM',
             orderedDates: moment().add(3, 'weeks').weekday(1).format('MM/DD/YY'),
             formattedSpotLength: ':30',

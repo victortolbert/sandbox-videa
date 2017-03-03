@@ -27,7 +27,7 @@
             ) {{ item.deliveredToDate  }}
             td
               campaign-performance-delivery-indicator(
-                v-bind:value = 'item.percentageRatio'
+                v-bind:value = 'item.percentage'
               )
             td.vui-truncate(
               v-bind:title = 'item.difference'

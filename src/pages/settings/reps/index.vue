@@ -22,7 +22,7 @@
             )
               td {{ rep.name }}
               td {{ rep.phone }}
-              td {{ rep.email }}
+              td: a(href='mailto:you@example.com') {{ rep.email }}
               td.vui-text-align--center
                 label.vui-checkbox
                   input#checkbox-01(

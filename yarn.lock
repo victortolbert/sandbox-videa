@@ -106,6 +106,10 @@
     lodash "^4.0.0"
     nunjucks "^2.4.2"
 
+"@types/node@^6.0.46":
+  version "6.0.64"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.64.tgz#cdc901411f6301e1437dfed23bc68f54442e4dc8"
+
 abab@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
@@ -534,7 +538,7 @@ async@^2.0.1, async@^2.1.2, async@^2.1.4:
   dependencies:
     lodash "^4.14.0"
 
-async@~0.2.6, async@0.2.x:
+async@~0.2.6, async@~0.2.9, async@0.2.x:
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
 
@@ -557,6 +561,10 @@ atob@~1.1.0:
 auto-bind@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-1.1.0.tgz#93b864dc7ee01a326281775d5c75ca0a751e5961"
+
+autocomplete-vue:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/autocomplete-vue/-/autocomplete-vue-1.0.1.tgz#90836b9c97476882e153864121c2214454886c6a"
 
 autoprefixer@^6.0.0, autoprefixer@^6.3.1, autoprefixer@^6.7.0, autoprefixer@^6.7.2:
   version "6.7.2"
@@ -1361,6 +1369,10 @@ base64id@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/base64id/-/base64id-1.0.0.tgz#47688cb99bb6804f0e06d3e763b1c32e57d8e6b6"
 
+base64url@^2.0.0, base64url@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/base64url/-/base64url-2.0.0.tgz#eac16e03ea1438eff9423d69baa36262ed1f70bb"
+
 basic-auth@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-1.1.0.tgz#45221ee429f7ee1e5035be3f51533f1cdfd29884"
@@ -1382,6 +1394,16 @@ bcrypt-pbkdf@^1.0.0:
 beeper@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.1.tgz#e6d5ea8c5dad001304a70b22638447f69cb2f809"
+
+bem-cn-lite@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/bem-cn-lite/-/bem-cn-lite-3.0.0.tgz#77f0ab6f69a70da1058d8cdf97cee8b99f3f399b"
+  dependencies:
+    bem-cn "2.1.x"
+
+bem-cn@2.1.x:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/bem-cn/-/bem-cn-2.1.3.tgz#1e2145bc0f1106085de5563b6611c79644e71c2c"
 
 better-assert@~1.0.0:
   version "1.0.2"
@@ -1828,6 +1850,10 @@ bubleify@^0.5.1:
 buf-compare@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/buf-compare/-/buf-compare-1.0.1.tgz#fef28da8b8113a0a0db4430b0b6467b69730b34a"
+
+buffer-equal-constant-time@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
 
 buffer-shims@^1.0.0:
   version "1.0.0"
@@ -3386,6 +3412,10 @@ dom-serializer@~0.1.0, dom-serializer@0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
+dom-storage@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/dom-storage/-/dom-storage-2.0.2.tgz#ed17cbf68abd10e0aef8182713e297c5e4b500b0"
+
 domain-browser@^1.1.1, domain-browser@~1.1.0:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
@@ -3533,6 +3563,13 @@ ecc-jsbn@~0.1.1:
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
   dependencies:
     jsbn "~0.1.0"
+
+ecdsa-sig-formatter@1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.9.tgz#4bc926274ec3b5abb5016e7e1d60921ac262b2a1"
+  dependencies:
+    base64url "^2.0.0"
+    safe-buffer "^5.0.1"
 
 echarts@latest:
   version "3.4.0"
@@ -3729,7 +3766,7 @@ equal-length@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/equal-length/-/equal-length-1.0.1.tgz#21ca112d48ab24b4e1e7ffc0e5339d31fdfc274c"
 
-errno@^0.1.3, "errno@>=0.1.1 <0.2.0-0":
+errno@^0.1.1, errno@^0.1.3, "errno@>=0.1.1 <0.2.0-0":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.4.tgz#b896e23a9e5e8ba33871fc996abd3635fc9a1c7d"
   dependencies:
@@ -4003,6 +4040,10 @@ estraverse@~4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.1.1.tgz#f6caca728933a850ef90661d0e17982ba47111a2"
 
+estree-walker@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.3.1.tgz#e6b1a51cf7292524e7237c312e5fe6660c1ce1aa"
+
 esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
@@ -4261,6 +4302,12 @@ fastparse@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.1.tgz#d1e2643b38a94d7583b479060e6c4affc94071f8"
 
+faye-websocket@0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.9.3.tgz#482a505b0df0ae626b969866d3bd740cdb962e83"
+  dependencies:
+    websocket-driver ">=0.5.1"
+
 fb-watchman@^1.8.0, fb-watchman@^1.9.0:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/fb-watchman/-/fb-watchman-1.9.2.tgz#a24cf47827f82d38fb59a69ad70b76e3b6ae7383"
@@ -4444,6 +4491,16 @@ fined@^1.0.1:
     lodash.pick "^4.2.1"
     parse-filepath "^1.0.1"
 
+firebase:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-3.7.0.tgz#a89a2af81f61eb5294b393e2f8d17066e3cd5eac"
+  dependencies:
+    dom-storage "2.0.2"
+    faye-websocket "0.9.3"
+    jsonwebtoken "7.1.9"
+    rsvp "3.2.1"
+    xmlhttprequest "1.8.0"
+
 first-chunk-stream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/first-chunk-stream/-/first-chunk-stream-1.0.0.tgz#59bfb50cd905f60d7c394cd3d9acaab4e6ad934e"
@@ -4604,6 +4661,15 @@ fs-extra@~1.0.0, fs-extra@1.0.0:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
     klaw "^1.0.0"
+
+fs-plus@^2.9.3:
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/fs-plus/-/fs-plus-2.9.3.tgz#75e6d7c57e45364955a1cfbfc563fc5820e0cff2"
+  dependencies:
+    async "~0.2.9"
+    mkdirp "~0.3.5"
+    rimraf "~2.2.2"
+    underscore-plus "1.x"
 
 fs-write-stream-atomic@^1.0.2:
   version "1.0.8"
@@ -5343,6 +5409,10 @@ howler@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/howler/-/howler-2.0.2.tgz#74862fdc86db5130c861f7528b1b06f21b16bcbf"
 
+hsy-vue-dropdown:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/hsy-vue-dropdown/-/hsy-vue-dropdown-0.0.3.tgz#f47ce61df6e34d06f528511cb6d6df8ad76a12f0"
+
 html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
@@ -5516,6 +5586,10 @@ ignore-by-default@^1.0.0:
 ignore@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.2.tgz#1c51e1ef53bab6ddc15db4d9ac4ec139eceb3410"
+
+image-size@~0.5.0:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.1.tgz#28eea8548a4b1443480ddddc1e083ae54652439f"
 
 imagemin-gifsicle@^5.0.0:
   version "5.1.0"
@@ -6060,6 +6134,10 @@ isbinaryfile@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/isbinaryfile/-/isbinaryfile-3.0.2.tgz#4a3e974ec0cba9004d3fc6cde7209ea69368a621"
 
+isemail@1.x.x:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/isemail/-/isemail-1.2.0.tgz#be03df8cc3e29de4d2c5df6501263f1fa4595e9a"
+
 isexe@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-1.1.2.tgz#36f3e22e60750920f5e7241a476a8c6a42275ad0"
@@ -6364,6 +6442,15 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
+joi@^6.10.1:
+  version "6.10.1"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-6.10.1.tgz#4d50c318079122000fe5f16af1ff8e1917b77e06"
+  dependencies:
+    hoek "2.x.x"
+    isemail "1.x.x"
+    moment "2.x.x"
+    topo "1.x.x"
+
 jpegtran-bin@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/jpegtran-bin/-/jpegtran-bin-3.2.0.tgz#f60ecf4ae999c0bdad2e9fbcdf2b6f0981e7a29b"
@@ -6574,6 +6661,16 @@ JSONStream@^1.0.3:
     jsonparse "^1.2.0"
     through ">=2.2.7 <3"
 
+jsonwebtoken@7.1.9:
+  version "7.1.9"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-7.1.9.tgz#847804e5258bec5a9499a8dc4a5e7a3bae08d58a"
+  dependencies:
+    joi "^6.10.1"
+    jws "^3.1.3"
+    lodash.once "^4.0.0"
+    ms "^0.7.1"
+    xtend "^4.0.1"
+
 jsprim@^1.2.2:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.3.1.tgz#2a7256f70412a29ee3670aaca625994c4dcff252"
@@ -6606,6 +6703,23 @@ jump.js:
 jump.js@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/jump.js/-/jump.js-1.0.1.tgz#0de2b1631ba9a1c2c6b8572ad277d877e8503600"
+
+jwa@^1.1.4:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/jwa/-/jwa-1.1.5.tgz#a0552ce0220742cd52e153774a32905c30e756e5"
+  dependencies:
+    base64url "2.0.0"
+    buffer-equal-constant-time "1.0.1"
+    ecdsa-sig-formatter "1.0.9"
+    safe-buffer "^5.0.1"
+
+jws@^3.1.3:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/jws/-/jws-3.1.4.tgz#f9e8b9338e8a847277d6444b1464f61880e050a2"
+  dependencies:
+    base64url "^2.0.0"
+    jwa "^1.1.4"
+    safe-buffer "^5.0.1"
 
 karma-coverage@^1.1.1:
   version "1.1.1"
@@ -6767,6 +6881,25 @@ ldjson-stream@^1.2.1:
   dependencies:
     split2 "^0.2.1"
     through2 "^0.6.1"
+
+less:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/less/-/less-2.7.2.tgz#368d6cc73e1fb03981183280918743c5dcf9b3df"
+  optionalDependencies:
+    errno "^0.1.1"
+    graceful-fs "^4.1.2"
+    image-size "~0.5.0"
+    mime "^1.2.11"
+    mkdirp "^0.5.0"
+    promise "^7.1.1"
+    request "^2.72.0"
+    source-map "^0.5.3"
+
+less-loader:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-2.2.3.tgz#b6d8f8139c8493df09d992a93a00734b08f84528"
+  dependencies:
+    loader-utils "^0.2.5"
 
 levn@^0.3.0, levn@~0.3.0:
   version "0.3.0"
@@ -7099,6 +7232,10 @@ lodash.mergewith@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.0.tgz#150cf0a16791f5903b8891eab154609274bdea55"
 
+lodash.once@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+
 lodash.pick@^4.2.1:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
@@ -7294,6 +7431,12 @@ macaddress@^0.2.8:
 magic-string@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.14.0.tgz#57224aef1701caeed273b17a39a956e72b172462"
+  dependencies:
+    vlq "^0.2.1"
+
+magic-string@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.19.0.tgz#198948217254e3e0b93080e01146b7c73b2a06b2"
   dependencies:
     vlq "^0.2.1"
 
@@ -7517,7 +7660,7 @@ mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.13, mime-types@~2.1.7:
   dependencies:
     mime-db "~1.26.0"
 
-mime@^1.3.4, "mime@>= 0.0.1", mime@1.3.4:
+mime@^1.2.11, mime@^1.3.4, "mime@>= 0.0.1", mime@1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.3.4.tgz#115f9e3b6b3daf2959983cb38f149a2d40eb5d53"
 
@@ -7567,6 +7710,10 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, "mkdirp@>=0.5 0", mkdirp@~0.5.0, mkdirp@~0.5.1, mk
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+mkdirp@~0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.3.5.tgz#de3e5f8961c88c787ee1368df849ac4413eca8d7"
 
 mkdirp@0.3.0:
   version "0.3.0"
@@ -7637,7 +7784,7 @@ module-deps@^4.0.8:
     through2 "^2.0.0"
     xtend "^4.0.0"
 
-moment@^2.10.6, moment@^2.13.0, moment@^2.17.1, moment@^2.8.4, moment@>=2.5.0, moment@2.x:
+moment@^2.10.6, moment@^2.13.0, moment@^2.17.1, moment@^2.8.4, moment@>=2.5.0, moment@2.x, moment@2.x.x:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
 
@@ -8435,6 +8582,12 @@ parse5@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-1.5.1.tgz#9b7f3b0de32be78dc2401b17573ccaf0f6f59d94"
 
+parse5@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.2.tgz#05eff57f0ef4577fb144a79f8b9a967a6cc44510"
+  dependencies:
+    "@types/node" "^6.0.46"
+
 parsejson@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/parsejson/-/parsejson-0.0.3.tgz#ab7e3759f209ece99437973f7d0f1f64ae0e64ab"
@@ -9102,7 +9255,7 @@ pretty-ms@^2.0.0:
     parse-ms "^1.0.0"
     plur "^1.0.0"
 
-prismjs@latest:
+prismjs:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.6.0.tgz#118d95fb7a66dba2272e343b345f5236659db365"
   optionalDependencies:
@@ -9142,7 +9295,7 @@ promise.pipe@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/promise.pipe/-/promise.pipe-3.0.0.tgz#b8f729867f54353996e6d8e86f3bbd56882e32a6"
 
-promise@^7.0.1:
+promise@^7.0.1, promise@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.1.1.tgz#489654c692616b8aa55b0724fa809bb7db49c5bf"
   dependencies:
@@ -9889,6 +10042,10 @@ rimraf@^2.2.6, rimraf@^2.2.8, rimraf@^2.3.3, rimraf@^2.4.3, rimraf@^2.4.4, rimra
   dependencies:
     glob "^7.0.5"
 
+rimraf@~2.2.2:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
+
 rimraf@~2.5.1, rimraf@~2.5.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.5.4.tgz#96800093cbf1a0c86bd95b4625467535c29dfa04"
@@ -9898,6 +10055,31 @@ rimraf@~2.5.1, rimraf@~2.5.4:
 ripemd160@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
+
+rollup-plugin-vue:
+  version "2.2.21"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-2.2.21.tgz#2316e65c8287416b39ea4e1835f2cfc4d3079371"
+  dependencies:
+    de-indent "^1.0.2"
+    debug "^2.6.0"
+    html-minifier "^3.2.3"
+    magic-string "^0.19.0"
+    parse5 "^3.0.1"
+    rollup-pluginutils "^2.0.1"
+    vue-template-compiler "^2.1.10"
+    vue-template-es2015-compiler "^1.5.0"
+    vue-template-validator "^1.1.5"
+
+rollup-pluginutils@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.0.1.tgz#7ec95b3573f6543a46a6461bd9a7c544525d0fc0"
+  dependencies:
+    estree-walker "^0.3.0"
+    micromatch "^2.3.11"
+
+rsvp@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.2.1.tgz#07cb4a5df25add9e826ebc67dcc9fd89db27d84a"
 
 run-async@^0.1.0:
   version "0.1.0"
@@ -10809,7 +10991,7 @@ svg-tags@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
 
-svgo@^0.7.0:
+svgo@^0.7.0, svgo@^0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-0.7.2.tgz#9f5772413952135c6fefbf40afe6a4faa88b4bb5"
   dependencies:
@@ -11110,6 +11292,12 @@ token-stream@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/token-stream/-/token-stream-0.0.1.tgz#ceeefc717a76c4316f126d0b9dbaa55d7e7df01a"
 
+topo@1.x.x:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/topo/-/topo-1.1.0.tgz#e9d751615d1bb87dc865db182fa1ca0a5ef536d5"
+  dependencies:
+    hoek "2.x.x"
+
 toposort@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.3.tgz#f02cd8a74bd8be2fc0e98611c3bacb95a171869c"
@@ -11236,9 +11424,19 @@ underscore-db@^0.12.2:
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/underscore-db/-/underscore-db-0.12.2.tgz#d2f85c426ee3f9117d883f8b353b2098141093f3"
 
+underscore-plus@1.x:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/underscore-plus/-/underscore-plus-1.6.6.tgz#65ecde1bdc441a35d89e650fd70dcf13ae439a7d"
+  dependencies:
+    underscore "~1.6.0"
+
 underscore@^1.8.3, underscore@1.x.x:
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+
+underscore@~1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.6.0.tgz#8b38b10cacdef63337b8b24e4ff86d45aea529a8"
 
 underscore@1.7.x:
   version "1.7.0"
@@ -11608,6 +11806,16 @@ vue-awesome@^2.1.0:
   dependencies:
     vue "^2.0.1"
 
+vue-axios:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-1.2.2.tgz#d18bb48fa7bf469ffa86676960f52a89b7d38a9d"
+
+vue-bem-cn:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vue-bem-cn/-/vue-bem-cn-0.1.0.tgz#dbe33ab163ee4d0a88b7dc5cf68551b091727cbd"
+  dependencies:
+    bem-cn-lite "^3.0.0"
+
 vue-bulma-datepicker:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/vue-bulma-datepicker/-/vue-bulma-datepicker-1.2.6.tgz#e7c92032413b55ac0ab8bcb77737dadc70b6f3db"
@@ -11850,6 +12058,10 @@ vue-nprogress:
   dependencies:
     nprogress "0.2.0"
 
+vue-offcanvas-simple:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-offcanvas-simple/-/vue-offcanvas-simple-1.0.3.tgz#791a2baee58d33077176b19324cc500d150c85ec"
+
 vue-orderby-mixin:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vue-orderby-mixin/-/vue-orderby-mixin-1.0.0.tgz#0678b9fd215bf487e25f487f273b9a0f6eecb703"
@@ -11857,6 +12069,10 @@ vue-orderby-mixin:
 vue-picture-input:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/vue-picture-input/-/vue-picture-input-1.4.1.tgz#8f8f2e84a9b5c406571cdbef93c6774f806c4800"
+
+vue-range-slider:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/vue-range-slider/-/vue-range-slider-0.2.4.tgz#8b73e273718035d3203e5d1aa081c72d473fce61"
 
 vue-router@^2.1.3, vue-router@^2.2.0:
   version "2.2.1"
@@ -11873,12 +12089,25 @@ vue-server-renderer@^2.1.10:
     de-indent "^1.0.2"
     he "^1.1.0"
 
+vue-split-pane:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vue-split-pane/-/vue-split-pane-0.0.1.tgz#30ebef658d65b54df568fcec2a63b81d2776ce6f"
+
 vue-style-loader@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-2.0.0.tgz#1a3bb55239ac541ee3af0301d66f16fc86786543"
   dependencies:
     hash-sum "^1.0.2"
     loader-utils "^0.2.7"
+
+vue-svgicon:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/vue-svgicon/-/vue-svgicon-1.1.4.tgz#9e920203759ffec3ba29416b659d8558cc5fe233"
+  dependencies:
+    fs-plus "^2.9.3"
+    glob "^7.1.1"
+    svgo "^0.7.2"
+    yargs "^6.6.0"
 
 vue-sweetalert@^0.1.16:
   version "0.1.16"
@@ -11898,6 +12127,16 @@ vue-template-compiler@^2.1.10:
 vue-template-es2015-compiler@^1.2.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.0.tgz#e4f672ab1718a3abf9171a080daefac31be117e1"
+
+vue-template-es2015-compiler@^1.5.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.1.tgz#0c36cc57aa3a9ec13e846342cb14a72fcac8bd93"
+
+vue-template-validator@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/vue-template-validator/-/vue-template-validator-1.1.5.tgz#22d1ee77d0647c1ab14ff7eb01865942d9b3c458"
+  dependencies:
+    chalk "^1.1.1"
 
 vue-test:
   version "1.0.0"
@@ -11947,6 +12186,10 @@ vue-youtube-embed@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-youtube-embed/-/vue-youtube-embed-2.0.3.tgz#6bb887433a0c9aa6ae70a7b64ac8cc860d513fef"
 
+vue@:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.2.1.tgz#ddbfd2f0caf38f374f5a36eea2e1edf25225b68e"
+
 vue@^1.0.0, vue@^1.0.21:
   version "1.0.28"
   resolved "https://registry.yarnpkg.com/vue/-/vue-1.0.28.tgz#ed2ff07b200bde15c87a90ef8727ceea7d38567d"
@@ -11956,6 +12199,12 @@ vue@^1.0.0, vue@^1.0.21:
 vue@^2.0.0, vue@^2.0.1, vue@^2.1.0, vue@^2.1.10, vue@^2.1.8:
   version "2.1.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.10.tgz#c9235ca48c7925137be5807832ac4e3ac180427b"
+
+vue2-autocomplete-js:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vue2-autocomplete-js/-/vue2-autocomplete-js-0.0.4.tgz#c966a2a3e8346907fae9ac4d3f35a8cc41b23a27"
+  dependencies:
+    vue ""
 
 vue2-calendar:
   version "1.0.2"
@@ -11970,6 +12219,10 @@ vue2-dragula@^2.4.3:
     dragula "3.7.2"
     lodash.merge "^4.6.0"
 
+vue2-google-maps:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vue2-google-maps/-/vue2-google-maps-0.6.0.tgz#06bc0d92ae24f02702f083a468d3b2d8c8512094"
+
 vue2-selectize:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vue2-selectize/-/vue2-selectize-1.0.2.tgz#4f27add96beb9b36462c4ffd947964cdbbd96ede"
@@ -11983,6 +12236,10 @@ vuelidate@^0.2.0:
 vuex@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-2.1.2.tgz#15d2da62dd6ff59c071f0a91cd4f434eacf6ca6c"
+
+vuexfire:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/vuexfire/-/vuexfire-0.4.0.tgz#67b4bf3f34c8f6913261155e5385431460d3864d"
 
 w3counter@^3.0.1:
   version "3.0.1"
@@ -12120,6 +12377,16 @@ webpack@^2.2.0, webpack@^2.2.1:
     watchpack "^1.2.0"
     webpack-sources "^0.1.4"
     yargs "^6.0.0"
+
+websocket-driver@>=0.5.1:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/websocket-driver/-/websocket-driver-0.6.5.tgz#5cb2556ceb85f4373c6d8238aa691c8454e13a36"
+  dependencies:
+    websocket-extensions ">=0.1.1"
+
+websocket-extensions@>=0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.1.tgz#76899499c184b6ef754377c2dbb0cd6cb55d29e7"
 
 weinre@^2.0.0-pre-I0Z7U9OV:
   version "2.0.0-pre-I0Z7U9OV"
@@ -12307,11 +12574,15 @@ xmlhttprequest-ssl@1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.3.tgz#185a888c04eca46c3e4070d99f7b49de3528992d"
 
+xmlhttprequest@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz#67fe075c5c24fef39f9d65f5f7b7fe75171968fc"
+
 xregexp@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-2.0.0.tgz#52a63e56ca0b84a7f3a5f3d61872f126ad7a5943"
 
-xtend@^4.0.0, "xtend@>=4.0.0 <4.1.0-0", xtend@~4.0.0, xtend@~4.0.1:
+xtend@^4.0.0, xtend@^4.0.1, "xtend@>=4.0.0 <4.1.0-0", xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
