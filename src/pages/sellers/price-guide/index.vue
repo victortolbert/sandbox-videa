@@ -1,18 +1,5 @@
 <template lang="pug">
-  .price-guide-parent
-    ul
-      li(
-        v-bind:key = 'item.id'
-        v-for = 'item in items'
-      )
-    .example(ref='source')
-      btn(
-        type="button"
-        class="mix-any-class"
-        size="large"
-        look="primary"
-        icon="emoji"
-      ) I am BEM button!
+  #opop.price-guide-parent
     vui-title Price Guide
 
     p.vui-text-heading--label Videa Pricing was last updated on {{ lastUpdated }} at 08:30 AM
@@ -427,20 +414,17 @@
 
                 td.u-width-medium
                   input.vui-input.vui-text-align--right.u-width-medium(
-                    ng-disabled = 'isRepUser || pgpt.allWeeksSelected(month)'
                     type = 'text'
                     number-format = ''
                     decimals = '0'
-                    ng-model = 'month.stationRate.value'
-                    ng-change = 'pgpt.detailRateChanged(month)'
+                    v-model = 'month.stationRateValue'
                     maxlength = '10'
-                    vui-select-on-focus = ''
                   )
                   button.vui-button.vui-button--can-be-focused.vui-button--icon-container(
                     title = 'Copy To Quarter'
                     aria-haspopup = 'true'
-                    ng-click = 'pgpt.copyStationRate(program.details, month)'
-                    ng-show = '!isRepUser && (!pgpt.allWeeksSelected(month)) && $index==0 '
+                    v-show = 'month.month == "April" || month.month == "January"'
+                    @click = 'copyStationRate(month.stationRateValue, program)'
                   )
                     vui-icon(name='copy')
                     span.vui-assistive-text Add weeks
@@ -857,36 +841,15 @@
         v-if='showEditRatingsModal'
         @close='showEditRatingsModal = false'
       )
-
-      //- button(@click = 'showEditRatingsModal = true') show modal
-
-      //- edit-ratings-modal(
-      //-   v-bind:ratings = 'ratings'
-      //-   v-on:close = 'showEditRatingsModal = false'
-      //-   v-show = 'showEditRatingsModal'
-      //- ) Inside the Modal main slot
-
-      //- bootstrap-modal(
-      //-   v-bind:ratings = 'ratings'
-      //-   v-on:close = 'showEditRatingsModal = false'
-      //-   v-show = 'showEditRatingsModal'
-      //-   ref='theBootstrapModal'
-      //- )
-      //-   div(slot='title')
-      //-     | Your title here
-      //-   div(slot='body')
-      //-     | Your body here
-      //-   div(slot='footer')
-      //-     | Your footer here
-
-
-      //- add-program-modal(v-show = 'showAddProgramModal')
-
 </template>
 
 <script>
   import axios from '~plugins/axios'
+  import moment from 'moment'
   import { EventBus } from '~plugins/event-bus'
+  import Vue from 'vue'
+
+
 
   import PremiumPercentDropdown from '~components/price-guide/apply-premium-percent-dropdown'
   import PremiumClientsModal from '~components/price-guide/premium-clients-modal'
@@ -1193,6 +1156,12 @@
       acceptVideaRate (context) {
         context.acceptVideaRate = true
         context.station.rate = context.videa.rate
+      },
+
+      copyStationRate (value, program) {
+        for(let month of program.months){
+          Vue.set(month, 'stationRateValue', value)
+        }
       }
     },
 
@@ -1211,7 +1180,7 @@
     },
 
     mounted () {
-      this.source = this.$refs.source.outerHTML
+      // this.source = this.$refs.source.outerHTML
     }
     // mounted () {
     //   EventBus.listen('body-clicked', () => {

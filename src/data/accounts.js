@@ -72,6 +72,16 @@ module.exports = [
         marketBudget: 59432,
         demo: 'P18-49',
         share: 0.4
+      },
+      {
+        id: 131542,
+        CPE: 'MEW/GEN/18',
+        flightStartDate: '01.16.2017',
+        flightEndDate: '02.26.2017',
+        revenue: 41000,
+        marketBudget: 89148,
+        demo: 'P18-49',
+        share: 0.46
       }
     ]
   },
@@ -100,16 +110,6 @@ module.exports = [
         marketBudget: 89148,
         demo: 'P18-49',
         share: 0.46
-      },
-      {
-        id: 121003,
-        CPE: 'MEW/HOL/217',
-        flightStartDate: '01.16.2017',
-        flightEndDate: '02.26.2017',
-        revenue: 23780,
-        marketBudget: 59432,
-        demo: 'P18-49',
-        share: 0.4
       }
     ]
   },
@@ -138,16 +138,6 @@ module.exports = [
         marketBudget: 89148,
         demo: 'P18-49',
         share: 0.46
-      },
-      {
-        id: 121003,
-        CPE: 'MEW/HOL/217',
-        flightStartDate: '01.16.2017',
-        flightEndDate: '02.26.2017',
-        revenue: 23780,
-        marketBudget: 59432,
-        demo: 'P18-49',
-        share: 0.4
       }
     ]
   },
@@ -214,16 +204,6 @@ module.exports = [
         marketBudget: 89148,
         demo: 'P18-49',
         share: 0.46
-      },
-      {
-        id: 121003,
-        CPE: 'MEW/HOL/217',
-        flightStartDate: '01.16.2017',
-        flightEndDate: '02.26.2017',
-        revenue: 23780,
-        marketBudget: 59432,
-        demo: 'P18-49',
-        share: 0.4
       }
     ]
   }
