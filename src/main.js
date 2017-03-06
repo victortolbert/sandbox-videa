@@ -6,12 +6,30 @@
 // import 'script-loader!foundation-sites/dist/js/foundation.min'
 
 import Vue from 'vue'
-import App from './App'
+import axios from 'axios'
+import moment from 'moment'
 
+window.Vue = Vue
+window.axios = axios
+window.moment = moment
+
+window.axios.defaults.headers.common = {
+  'X-Requested-With': 'XMLHttpRequest'
+}
+
+
+import App from './App'
 import store from './store'
 import router from './router'
 
+// Import Helpers for filters
+import { domain, count, prettyDate, pluralize } from './filters'
 
+// Import Install and register helper items
+Vue.filter('count', count)
+Vue.filter('domain', domain)
+Vue.filter('prettyDate', prettyDate)
+Vue.filter('pluralize', pluralize)
 
 
 Vue.config.productionTip = false
@@ -73,11 +91,16 @@ require('chart.js')
 require('hchs-vue-charts')
 Vue.use(VueCharts)
 
+import VueClipboard from 'vue-clipboard2'
+Vue.use(VueClipboard)
+
+// Vue.directive('clipboard', require('./directives/clipboard'))
+
 import VueFloatLabel from 'vue-float-label'
 Vue.use(VueFloatLabel)
 
-import VeeValidate from 'vee-validate'
-Vue.use(VeeValidate)
+// import VeeValidate from 'vee-validate'
+// Vue.use(VeeValidate)
 
 import Validity from 'vue-validity'
 Vue.use(Validity, {
@@ -86,8 +109,8 @@ Vue.use(Validity, {
   }
 })
 
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
+// import Vuelidate from 'vuelidate'
+// Vue.use(Vuelidate)
 
 import VueAsyncComputed from 'vue-async-computed'
 Vue.use(VueAsyncComputed)
@@ -99,7 +122,17 @@ import VueFlexboxgrid from 'vue-flexboxgrid'
 Vue.use(VueFlexboxgrid)
 
 import VueFractionGrid from 'vue-fraction-grid'
-Vue.use(VueFractionGrid)
+Vue.use(VueFractionGrid, {
+  container: '1020px',
+  gutter: '24px',
+  approach: 'mobile-first',
+  // approach: 'desktop-first',
+  breakpoints: {
+    compact: '320px 414px'
+    // compact: '415px',
+    // tablet: '416px 1100px'
+  }
+})
 
 import VueHighcharts from 'vue-highcharts'
 Vue.use(VueHighcharts)
@@ -136,6 +169,34 @@ Components.registerAllGlobalComponents()
 // Directives.registerAllGlobalDirectives()
 Filters.registerAllGlobalFilters()
 
+// // Vue.http.interceptors.push((request, next) => {
+
+// //     Enable this when you have a backend that you authenticate against
+// //   var headers = request.headers
+// //   if (window.location.pathname !== '/login' && !headers.hasOwnProperty('Authorization')) {
+// //     headers.Authorization = this.$store.state.token
+// //   }
+
+// //   // console.log(headers)
+
+// //   // continue to next interceptor without modifying the response
+// //   next()
+// // })
+
+// Some middleware to help us ensure the user is authenticated.
+router.beforeEach((to, from, next) => {
+  // window.console.log('Transition', transition)
+  if (to.auth && (to.router.app.$store.state.token === 'null')) {
+    window.console.log('Not authenticated')
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }
+    })
+  } else {
+    next()
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   store,
@@ -144,3 +205,11 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+// // Check local storage to handle refreshes
+// if (window.localStorage) {
+//   if (store.state.user !== window.localStorage.getItem('user')) {
+//     store.commit('SET_USER', JSON.parse(window.localStorage.getItem('user')))
+//     store.commit('SET_TOKEN', window.localStorage.getItem('token'))
+//   }
+// }

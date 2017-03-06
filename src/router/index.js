@@ -18,7 +18,10 @@ const routes = [
 ]
 
 export default new VueRouter({
+  routes,
   mode: 'history',
   linkActiveClass: 'v-link-active',
-  routes
+  scrollBehavior (to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 }
+  }
 })

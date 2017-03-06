@@ -2530,13 +2530,13 @@ component-bind@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/component-bind/-/component-bind-1.0.0.tgz#00c608ab7dcd93897c0009651b1d3a8e1e73bbd1"
 
+component-emitter@^1.2.0, component-emitter@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
+
 component-emitter@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.1.2.tgz#296594f2753daa63996d2af08d15a95116c9aec3"
-
-component-emitter@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
 
 component-inherit@0.0.3:
   version "0.0.3"
@@ -2709,6 +2709,10 @@ cookie-signature@1.0.6:
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
+cookiejar@^2.0.6:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.0.tgz#86549689539b6d0e269b6637a304be508194d898"
 
 core-assert@^0.2.0:
   version "0.2.1"
@@ -3838,6 +3842,10 @@ es6-promise@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-2.3.0.tgz#96edb9f2fdb01995822b263dd8aadab6748181bc"
 
+es6-promise@^3.2.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
+
 es6-promise@^4.0.5, es6-promise@~4.0.3:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.0.5.tgz#7882f30adde5b240ccfa7f7d78c548330951ae42"
@@ -4589,7 +4597,7 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
 
-form-data@~2.1.1:
+form-data@^2.1.1, form-data@~2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.1.2.tgz#89c3534008b97eada4cbb157d58f6f5df025eae4"
   dependencies:
@@ -4602,6 +4610,10 @@ formatio@1.1.1:
   resolved "https://registry.yarnpkg.com/formatio/-/formatio-1.1.1.tgz#5ed3ccd636551097383465d996199100e86161e9"
   dependencies:
     samsam "~1.1"
+
+formidable@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.1.1.tgz#96b8886f7c3c3508b932d6bd70c4d3a88f35f1a9"
 
 formidable@1.0.x:
   version "1.0.17"
@@ -5380,6 +5392,10 @@ highlight.js@^9.5.0, highlight.js@^9.7.0:
   version "9.9.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.9.0.tgz#b9995dcfdc2773e307a34f0460d92b9a474782c0"
 
+highlightjs@^8.7.0:
+  version "8.7.0"
+  resolved "https://registry.yarnpkg.com/highlightjs/-/highlightjs-8.7.0.tgz#13397cd8dd8ad7d4cfe77adffb8088a10ee3b708"
+
 hint.css, hint.css@2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/hint.css/-/hint.css-2.4.1.tgz#cf3396c2df216974c5d9533ee30f3030d7378f9b"
@@ -6121,6 +6137,10 @@ is-windows@^0.2.0:
 is-zip@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-zip/-/is-zip-1.0.0.tgz#47b0a8ff4d38a76431ccfd99a8e15a4c86ba2325"
+
+is@^3.1.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/is/-/is-3.2.1.tgz#d0ac2ad55eb7b0bec926a5266f6c662aaa83dca5"
 
 isarray@^1.0.0, isarray@~1.0.0, isarray@1.0.0:
   version "1.0.0"
@@ -6914,6 +6934,10 @@ lexical-scope@^1.2.0:
   dependencies:
     astw "^2.0.0"
 
+li@^1.0.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/li/-/li-1.2.1.tgz#37bd3d8d6f4ad520fa5e3c118106591093c2fb2b"
+
 liftoff@^2.1.0, liftoff@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/liftoff/-/liftoff-2.3.0.tgz#a98f2ff67183d8ba7cfaca10548bd7ff0550b385"
@@ -7610,7 +7634,7 @@ method-override@^2.1.2:
     parseurl "~1.3.1"
     vary "~1.1.0"
 
-methods@~1.1.2:
+methods@^1.1.1, methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
@@ -8034,6 +8058,12 @@ node-uuid@~1.4.7:
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/node-uuid/-/node-uuid-1.4.7.tgz#6da5a17668c4b3dd59623bda11cf7fa4c1f60a6f"
 
+node.extend@^1.1.5:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/node.extend/-/node.extend-1.1.6.tgz#a7b882c82d6c93a4863a5504bd5de8ec86258b96"
+  dependencies:
+    is "^3.1.0"
+
 nopt@~3.0.1, nopt@~3.0.6, "nopt@2 || 3", nopt@3.0.x, nopt@3.x:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
@@ -8253,6 +8283,10 @@ observable-to-promise@^0.4.0:
     is-observable "^0.2.0"
     symbol-observable "^0.2.2"
 
+octicons:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/octicons/-/octicons-5.0.1.tgz#0fa0c4fd3680d251266f073736539317cb846e4f"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -8288,6 +8322,10 @@ onetime@^2.0.0:
   resolved "https://registry.yarnpkg.com/onetime/-/onetime-2.0.0.tgz#52aa8110e52fc5126ffc667bd8ec21c2ed209ce6"
   dependencies:
     mimic-fn "^1.0.0"
+
+open-color:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/open-color/-/open-color-1.4.2.tgz#e229db9db5647d1ae47cb8381665dbaabab4a625"
 
 opener@^1.4.2:
   version "1.4.3"
@@ -8565,6 +8603,12 @@ parse-json@^2.1.0, parse-json@^2.2.0:
   resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-2.2.0.tgz#f480f40434ef80741f8469099f8dea18f55a4dc9"
   dependencies:
     error-ex "^1.2.0"
+
+parse-link-header@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/parse-link-header/-/parse-link-header-0.4.1.tgz#f6bd615dc6713fd40935ce97945e4d3f522edf14"
+  dependencies:
+    xtend "~4.0.0"
 
 parse-ms@^0.1.0:
   version "0.1.2"
@@ -9255,6 +9299,198 @@ pretty-ms@^2.0.0:
     parse-ms "^1.0.0"
     plur "^1.0.0"
 
+primer-alerts@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/primer-alerts/-/primer-alerts-1.1.0.tgz#195b087661a0f9070c3daa341430993d26183e3e"
+  dependencies:
+    primer-support "*"
+
+primer-avatars@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/primer-avatars/-/primer-avatars-0.4.4.tgz#ba8d2f385fc5ff0f7ea8dae5d4f75e5855f56b37"
+  dependencies:
+    primer-support "*"
+
+primer-base@^0.4.0:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/primer-base/-/primer-base-0.4.2.tgz#10bea7bdd454c447b1ed6e801595f3888b30f01f"
+  dependencies:
+    primer-support "*"
+
+primer-blankslate@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/primer-blankslate/-/primer-blankslate-0.3.4.tgz#54385ed404141fcf3c4f6724a94125f9390e9d08"
+  dependencies:
+    primer-support "*"
+
+primer-box@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/primer-box/-/primer-box-2.1.1.tgz#71b09837e980290c5840c59972f07a68577249b0"
+  dependencies:
+    primer-support "*"
+
+primer-breadcrumb@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/primer-breadcrumb/-/primer-breadcrumb-0.1.1.tgz#d376da76d52c8f1bc65afbe2fd784b4fd6c684a2"
+  dependencies:
+    primer-marketing-support "*"
+    primer-support "*"
+
+primer-buttons@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/primer-buttons/-/primer-buttons-1.0.0.tgz#d452a75cd11f2cee1e3507a58678bc0d3b928905"
+  dependencies:
+    primer-support "*"
+
+primer-cards@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/primer-cards/-/primer-cards-0.1.1.tgz#d00ff6bf4bc15e3af3a9e4226fe92cfe75080a4b"
+  dependencies:
+    primer-marketing-support "*"
+    primer-support "*"
+
+primer-core@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/primer-core/-/primer-core-2.0.0.tgz#d53a7443f2706de53c69269ea2a6b904ebce1e53"
+  dependencies:
+    primer-base "^0.4.0"
+    primer-box "^2.1.1"
+    primer-buttons "^1.0.0"
+    primer-forms "^1.0.4"
+    primer-layout "^0.3.0"
+    primer-navigation "^0.6.0"
+    primer-support "^3.0.1"
+    primer-table-object "^1.0.0"
+    primer-tooltips "^0.5.0"
+    primer-truncate "^0.3.0"
+    primer-utilities "^4.0.1"
+
+primer-css:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/primer-css/-/primer-css-5.0.0.tgz#9bc62618a0e2d309aac3c333fb9d950c3044cb32"
+  dependencies:
+    primer-core "^2.0.0"
+    primer-marketing "^2.0.0"
+    primer-product "^2.0.0"
+
+primer-css@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/primer-css/-/primer-css-3.0.1.tgz#24df67944189b970f2035ca17a4e2c09b5b15532"
+
+primer-forms@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/primer-forms/-/primer-forms-1.0.4.tgz#4bd04fd05dbc9d416fa94da5fbfa2570cfcb9421"
+  dependencies:
+    primer-support "*"
+
+primer-layout@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/primer-layout/-/primer-layout-0.3.1.tgz#f62fa777020a9d6183f77ecef18c3174f0833756"
+  dependencies:
+    primer-support "*"
+
+primer-markdown@^3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/primer-markdown/-/primer-markdown-3.3.5.tgz#236a236c11d408407deed4f4788081add6e8845a"
+  dependencies:
+    primer-support "*"
+
+primer-marketing-support@*, primer-marketing-support@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/primer-marketing-support/-/primer-marketing-support-0.4.0.tgz#33dfcd6fe36e85424d360919bb36177c97fae340"
+
+primer-marketing-type@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/primer-marketing-type/-/primer-marketing-type-0.1.1.tgz#dc84aa0db3b74d0750a4de59beeddfdb49849b19"
+  dependencies:
+    primer-marketing-support "*"
+    primer-support "*"
+
+primer-marketing@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/primer-marketing/-/primer-marketing-2.0.0.tgz#a4c4a8ca5b16c6603cfcfa0f5b118ce089099010"
+  dependencies:
+    primer-breadcrumb "^0.1.1"
+    primer-cards "^0.1.1"
+    primer-marketing-support "^0.4.0"
+    primer-marketing-type "^0.1.1"
+    primer-page-headers "^0.1.1"
+    primer-page-sections "^0.1.1"
+    primer-support "^3.0.1"
+    primer-tables "^0.1.2"
+
+primer-navigation@^0.6.0:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/primer-navigation/-/primer-navigation-0.6.3.tgz#be3ab0fcf8c3aaf505ff063c696830f10086ae56"
+  dependencies:
+    primer-support "*"
+
+primer-page-headers@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/primer-page-headers/-/primer-page-headers-0.1.1.tgz#ed0b62348188fef6f0eee8f005fd018ccc7ac248"
+  dependencies:
+    primer-marketing-support "*"
+    primer-support "*"
+
+primer-page-sections@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/primer-page-sections/-/primer-page-sections-0.1.1.tgz#ab9b955f348afca164a559cfb1599b8f3a5ba344"
+  dependencies:
+    primer-marketing-support "*"
+    primer-support "*"
+
+primer-product@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/primer-product/-/primer-product-2.0.0.tgz#386af04cd21b624092bb16d41164b38d70cd39f0"
+  dependencies:
+    primer-alerts "^1.1.0"
+    primer-avatars "^0.4.4"
+    primer-blankslate "^0.3.4"
+    primer-markdown "^3.3.5"
+    primer-states "^0.4.3"
+    primer-support "^3.0.0"
+
+primer-states@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/primer-states/-/primer-states-0.4.3.tgz#6dfc2a7b1c004551440427734cf6b08dda82e142"
+  dependencies:
+    primer-support "*"
+
+primer-support@*, primer-support@^3.0.0, primer-support@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/primer-support/-/primer-support-3.0.1.tgz#2953a7645c04f247832b85856e5656287fb65fa9"
+
+primer-table-object@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/primer-table-object/-/primer-table-object-1.0.2.tgz#72c0dddf94469415344dc2a89cda56ea764c4c88"
+  dependencies:
+    primer-support "*"
+
+primer-tables@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/primer-tables/-/primer-tables-0.1.2.tgz#582706a9892d1b89393c798180dfd2e59f5da318"
+  dependencies:
+    primer-marketing-support "*"
+    primer-support "*"
+
+primer-tooltips@^0.5.0:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/primer-tooltips/-/primer-tooltips-0.5.2.tgz#c1f28710920345495c9351d60fefe9ef8e8dca1b"
+  dependencies:
+    primer-support "*"
+
+primer-truncate@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/primer-truncate/-/primer-truncate-0.3.1.tgz#34134e4ea99c2d8ecddf04564c25d8bcbc6e69d0"
+  dependencies:
+    primer-support "*"
+
+primer-utilities@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/primer-utilities/-/primer-utilities-4.0.1.tgz#447ccabcc257134d1e87982da1447e7db484a13e"
+  dependencies:
+    primer-support "*"
+
 prismjs:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.6.0.tgz#118d95fb7a66dba2272e343b345f5236659db365"
@@ -9485,6 +9721,10 @@ q@^1.1.2:
 qjobs@^1.1.4:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/qjobs/-/qjobs-1.1.5.tgz#659de9f2cf8dcc27a1481276f205377272382e73"
+
+qs@^6.1.0, qs@^6.2.0:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.1.tgz#918c0b3bcd36679772baf135b1acb4c1651ed79d"
 
 "qs@>= 0.4.0", qs@~6.3.0:
   version "6.3.0"
@@ -10076,6 +10316,10 @@ rollup-pluginutils@^2.0.1:
   dependencies:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
+
+route-parser@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/route-parser/-/route-parser-0.0.4.tgz#eb873c7cc460d1124220479ed909af312e86149c"
 
 rsvp@3.2.1:
   version "3.2.1"
@@ -10676,6 +10920,10 @@ steno@^0.4.1:
   dependencies:
     graceful-fs "^4.1.3"
 
+store:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/store/-/store-2.0.4.tgz#6c6819602a5497166ade85db2442cc64ebcc5761"
+
 stream-browserify@^2.0.0, stream-browserify@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.1.tgz#66266ee5f9bdb9940a4e4514cafb43bb71e5c9db"
@@ -10966,6 +11214,21 @@ sum-up@^1.0.1:
   resolved "https://registry.yarnpkg.com/sum-up/-/sum-up-1.0.3.tgz#1c661f667057f63bcb7875aa1438bc162525156e"
   dependencies:
     chalk "^1.0.0"
+
+superagent@^3.3.1:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.5.0.tgz#56872b8e1ee6de994035ada2e53266899af95a6d"
+  dependencies:
+    component-emitter "^1.2.0"
+    cookiejar "^2.0.6"
+    debug "^2.2.0"
+    extend "^3.0.0"
+    form-data "^2.1.1"
+    formidable "^1.1.1"
+    methods "^1.1.1"
+    mime "^1.3.4"
+    qs "^6.1.0"
+    readable-stream "^2.0.5"
 
 supports-color@^2.0.0:
   version "2.0.0"
@@ -11864,6 +12127,20 @@ vue-clickaway@^2.1.0:
   dependencies:
     loose-envify "^1.2.0"
 
+vue-clipboard:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vue-clipboard/-/vue-clipboard-0.0.1.tgz#7037ec8fe032f6622d46d5686124abff92eed878"
+  dependencies:
+    highlightjs "^8.7.0"
+    primer-css "^3.0.1"
+
+vue-clipboard2:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vue-clipboard2/-/vue-clipboard2-0.0.4.tgz#b52c4ca0b9388092d55e81a576ce499a18eabeb8"
+  dependencies:
+    clipboard "^1.5.16"
+    vue "2"
+
 vue-color:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/vue-color/-/vue-color-2.0.6.tgz#3a5d214dcb8cbb8c5fc2073986e01c268a8fe83c"
@@ -12066,6 +12343,16 @@ vue-orderby-mixin:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vue-orderby-mixin/-/vue-orderby-mixin-1.0.0.tgz#0678b9fd215bf487e25f487f273b9a0f6eecb703"
 
+vue-parallax-js:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vue-parallax-js/-/vue-parallax-js-0.0.4.tgz#bda8e31a99763e4b3e97a32ade4e3814a7333ef2"
+
+vue-parallaxy:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-parallaxy/-/vue-parallaxy-1.0.0.tgz#3347f82ef059a148023dfbd99295bc04212874d0"
+  dependencies:
+    vue "^2.2.1"
+
 vue-picture-input:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/vue-picture-input/-/vue-picture-input-1.4.1.tgz#8f8f2e84a9b5c406571cdbef93c6774f806c4800"
@@ -12186,7 +12473,7 @@ vue-youtube-embed@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-youtube-embed/-/vue-youtube-embed-2.0.3.tgz#6bb887433a0c9aa6ae70a7b64ac8cc860d513fef"
 
-vue@:
+vue@, vue@^2.2.1, vue@2:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.2.1.tgz#ddbfd2f0caf38f374f5a36eea2e1edf25225b68e"
 
@@ -12480,6 +12767,19 @@ worker-farm@^1.3.1:
   dependencies:
     errno ">=0.1.1 <0.2.0-0"
     xtend ">=4.0.0 <4.1.0-0"
+
+wpapi:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/wpapi/-/wpapi-1.0.2.tgz#0669a8fd7a2da8423f9aa9f7ec0b0a7755aa3fd4"
+  dependencies:
+    es6-promise "^3.2.1"
+    li "^1.0.1"
+    lodash.uniq "^4.3.0"
+    node.extend "^1.1.5"
+    parse-link-header "^0.4.1"
+    qs "^6.2.0"
+    route-parser "0.0.4"
+    superagent "^3.3.1"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"

@@ -1,6 +1,5 @@
 <template lang="pug">
-  .example.silver.vui-grid.vui-grid--frame
-    banner(:actions='exampleActions')
+  banner(:actions='exampleActions')
 </template>
 
 <script>
@@ -18,8 +17,8 @@
     data () {
       return {
         exampleActions: [
-          { label: 'Getting Started', url: 'http://videa.design', primary: true },
-          { label: 'Components', url: 'http://videa.design/components/' }
+          { label: 'Components', url: 'http://videa.design/components/' },
+          { label: 'Getting Started  →', url: 'http://videa.design', primary: true }
         ]
       }
     },

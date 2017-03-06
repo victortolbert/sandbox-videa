@@ -335,17 +335,6 @@
 
               // Videa -- Accept Videa Rate (Program)
               td.videa.accept-rate.vui-text-align--center.vui-highlight
-                .vui-form-element
-                  .vui-form-element__control
-                    label.vui-checkbox
-                      input.vui-input(
-                        @change = 'acceptVideaRate(program)'
-                        v-bind:disabled = '$store.state.user.name == "Rep User"'
-                        v-bind:value = 'program.acceptRate'
-                        v-model = 'program.acceptRate'
-                        type = 'checkbox'
-                      )
-                      span.vui-checkbox--faux
 
               // Videa -- Rating (Program)
               td.videa.rating.vui-text-align--right.vui-highlight(
@@ -389,7 +378,7 @@
 
             // Months
             template(
-              v-for = 'month in program.months'
+              v-for = '(month, index) in program.months'
               v-if = 'program.months'
             )
 
@@ -412,19 +401,29 @@
 
                 // Station -- Rate (month)
 
-                td.u-width-medium
+                td.u-width-medium.station.rate(
+                  v-bind:style = '$store.state.user.name == "Rep User" ? "" : ""'
+                )
+                  span(
+                    v-show = '$store.state.user.name == "Rep User"'
+                  ) {{ month.station.rate | numberWithCommas | formatMoney }}
+
                   input.vui-input.vui-text-align--right.u-width-medium(
-                    type = 'text'
-                    number-format = ''
+                    @click.prevent = 'selectContents'
+                    @keypress = 'onKeypress'
+                    v-model.number = 'month.station.rate'
+                    v-show = '$store.state.activeApp == "sellers"'
                     decimals = '0'
-                    v-model = 'month.stationRateValue'
                     maxlength = '10'
+                    number-format = ''
+                    type = 'text'
                   )
                   button.vui-button.vui-button--can-be-focused.vui-button--icon-container(
-                    title = 'Copy To Quarter'
+                    @click = 'copyStationRate(program, month.station.rate, $event)'
+                    v-if = 'index == 0'
+                    v-show = '$store.state.user.name !== "Rep User"'
                     aria-haspopup = 'true'
-                    v-show = 'month.month == "April" || month.month == "January"'
-                    @click = 'copyStationRate(month.stationRateValue, program)'
+                    title = 'Copy To Quarter'
                   )
                     vui-icon(name='copy')
                     span.vui-assistive-text Add weeks
@@ -458,7 +457,7 @@
                   input.vui-text-align--right.vui-input(
                     @click.prevent = 'selectContents'
                     @keypress = 'onKeypress'
-                    v-model = 'month.station.rating'
+                    v-model.number = 'month.station.rating'
                     v-show = 'false'
                     type = 'text'
                   )
@@ -500,9 +499,8 @@
                         @input = 'month.station.premium.rate = setPremiumRate(month.station.rate, month.station.premium.percent)'
                         @keypress = 'onKeypress'
                         v-bind:value = 'month.station.premium.percent'
-                        v-model = 'month.station.premium.percent'
+                        v-model.number = 'month.station.premium.percent'
                         v-show = '$store.state.activeApp == "sellers"'
-                        number
                       )
                   span(
                     v-show = '$store.state.activeApp !== "sellers"'
@@ -516,7 +514,7 @@
                     @input = 'month.station.premium.percent = setPremiumPercent(month.station.premium.rate, month.station.rate)'
                     v-show = '$store.state.activeApp == "sellers"'
                     v-bind:value = 'month.station.premium.rate'
-                    v-model = 'month.station.premium.rate'
+                    v-model.number = 'month.station.premium.rate'
                   )
                   span(
                     v-show = '$store.state.user.name == "Rep User"'
@@ -551,10 +549,10 @@
                       label.vui-checkbox
                         input.vui-input(
                           @change = 'acceptVideaRate(month)'
+                          @input = "month.acceptRate = $event.target.value"
                           v-bind:checked = 'month.station.rate == month.videa.rate'
                           v-bind:disabled = '$store.state.user.name == "Rep User"'
                           v-bind:value = 'month.acceptRate'
-                          v-model = 'month.acceptRate'
                           type = 'checkbox'
                         )
                         span.vui-checkbox--faux
@@ -635,7 +633,7 @@
                       @keypress = 'onKeypress'
                       v-show = '$store.state.activeApp == "sellers"'
                       type = 'text'
-                      v-model = 'week.station.rate'
+                      v-model.number = 'week.station.rate'
                     )
                     span(
                       v-show = '$store.state.user.name == "Rep User"'
@@ -648,7 +646,7 @@
                     input.vui-input.vui-text-align--right(
                       @click.prevent = 'selectContents'
                       @keypress = 'onKeypress'
-                      v-model = 'week.station.rating'
+                      v-model.number = 'week.station.rating'
                       v-show = 'false'
                       type = 'text'
                     )
@@ -688,9 +686,8 @@
                       @input = 'week.station.premium.rate = setPremiumRate(week.station.rate, week.station.premium.percent)'
                       @keypress = 'onKeypress'
                       v-bind:value = 'week.station.premium.percent'
-                      v-model = 'week.station.premium.percent'
+                      v-model.number = 'week.station.premium.percent'
                       v-show = '$store.state.activeApp == "sellers"'
-                      number
                     )
                     span(
                       v-show = '$store.state.activeApp !== "sellers"'
@@ -705,7 +702,7 @@
                       @input = 'week.station.premium.percent = week.station.premium.rate / week.station.rate'
                       @keypress = 'onKeypress'
                       v-bind:value = 'Math.round(week.station.premium.rate)'
-                      v-model = 'week.station.premium.rate'
+                      v-model.number = 'week.station.premium.rate'
                       v-show = '$store.state.activeApp == "sellers"'
                     )
                     span(
@@ -740,11 +737,10 @@
                       .vui-form-element__control
                         label.vui-checkbox
                           input.vui-input(
-                            @change = 'acceptVideaRate(week)'
+                            @input = 'acceptVideaRate(week)'
                             v-bind:checked ='week.station.rate == week.videa.rate'
                             v-bind:disabled = '$store.state.user.name == "Rep User"'
                             v-bind:value = 'week.acceptRate'
-                            v-model = 'week.acceptRate'
                             type = 'checkbox'
                           )
                           span.vui-checkbox--faux
@@ -847,9 +843,6 @@
   import axios from '~plugins/axios'
   import moment from 'moment'
   import { EventBus } from '~plugins/event-bus'
-  import Vue from 'vue'
-
-
 
   import PremiumPercentDropdown from '~components/price-guide/apply-premium-percent-dropdown'
   import PremiumClientsModal from '~components/price-guide/premium-clients-modal'
@@ -1156,11 +1149,12 @@
       acceptVideaRate (context) {
         context.acceptVideaRate = true
         context.station.rate = context.videa.rate
+        this.$emit('acceptVideaRate', context)
       },
 
-      copyStationRate (value, program) {
+      copyStationRate (program, value, event) {
         for(let month of program.months){
-          Vue.set(month, 'stationRateValue', value)
+          month.station.rate = value
         }
       }
     },

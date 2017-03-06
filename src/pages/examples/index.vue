@@ -90,7 +90,8 @@
         examples: require('~models/examples'),
         // orders: orders,
         selected: 'appBlack',
-        labelColor: '#000000'
+        labelColor: '#000000',
+        orders: []
       }
     },
 
@@ -101,6 +102,17 @@
 
     beforeCreate () {
       this.$store.state.activeApp = null
+    },
+    created () {
+      // axios.get('https://wp.videa.design/wp-json')
+      // https://wp.videa.design/wp-json/wp/v2/posts
+      //
+      var statuses = ['foo', 'bar']
+      console.log(statuses.includes('bars'))
+
+      axios.get('/orders')
+        .then(({data}) => this.orders = data)
+
     }
   }
 </script>

@@ -48,24 +48,14 @@
       }
     },
 
-    methods: {
-      fetchAvails () {
-        axios.get('/avails')
-          .then((response) => {
-            this.avails = response.data
-          })
-          .catch((error) => {
-            console.log(error)
-          })
-      }
-    },
-
     beforeCreate () {
       this.$store.state.activeApp = 'sellers'
     },
 
     created () {
-      this.fetchAvails()
+      axios.get('/avails')
+        .then(response => this.avails = response.data)
+        .catch(error => console.log(error))
     }
   }
 </script>

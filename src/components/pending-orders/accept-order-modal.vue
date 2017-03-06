@@ -26,7 +26,7 @@
     methods: {
       showOrders () {
         this.$router.push({
-          name: 'sellers-order-management-pending-orders'
+          name: 'sellers-reporting-order-reporting'
         })
       }
     }

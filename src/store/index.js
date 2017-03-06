@@ -20,6 +20,13 @@ const store = new Vuex.Store({
     marketCpp: 200,
     orderManagementRoute: false,
     reportingRoute: false,
+    user: null,
+    // token: null,
+    // userInfo: {
+    //   messages: [{1: 'test', 2: 'test'}],
+    //   notifications: [],
+    //   tasks: []
+    // },
     user: {
       name: 'Seller User',
       email: 'seller@videa.tv'
@@ -54,6 +61,18 @@ const store = new Vuex.Store({
   mutations: {
     UPDATE_USER (state, payload) {
       state.user = payload
+    },
+    TOGGLE_LOADING (state) {
+      state.callingAPI = !state.callingAPI
+    },
+    TOGGLE_SEARCHING (state) {
+      state.searching = (state.searching === '') ? 'loading' : ''
+    },
+    SET_USER (state, user) {
+      state.user = user
+    },
+    SET_TOKEN (state, token) {
+      state.token = token
     },
 
     increment (state) {

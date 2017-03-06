@@ -2,6 +2,8 @@
 <!-- http://codepen.io/VictorTolbert/pen/rjYJGO?editors=1100 -->
 <template lang="pug">
   .index
+    //- div(v-bind:class="[activeClass, errorClass]")
+    //- div(v-bind:class="[{ active: isActive }, errorClass]")
     //- svgicon(icon='vue' width='200' height='200' color='#42b983 #35495e')
 
     //- button(v-tooltip.top-center="msg") Hover me
@@ -94,7 +96,9 @@
       return {
         result: 'clipped text',
         firstName: 'Foo',
-        lastName: 'Bar'
+        lastName: 'Bar',
+        activeClass: 'active',
+        errorClass: 'text-danger'
       }
     },
 

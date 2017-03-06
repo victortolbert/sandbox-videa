@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   $slider-height: 20px
   $slider-width: 130px
   $rail-height: 4px

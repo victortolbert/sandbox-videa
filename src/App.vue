@@ -37,11 +37,56 @@
       AppHelp
     },
 
+    data: () => ({
+      version: '0.10.0',
+      callingAPI: false,
+      serverURI: 'http://10.110.1.10:8080',
+      caller: this.$http
+    }),
+
+    methods: {
+      // callAPI (method, url, data) {
+      //   this.callingAPI = true
+      //   url = url || this.serverURI // if no url is passed then inheret local server URI
+      //   return this.caller({
+      //     url: url,
+      //     method: method,
+      //     data: data
+      //   })
+      // },
+
+      // logout () {
+      //   this.$store.commit('SET_USER', null)
+      //   this.$store.commit('SET_TOKEN', null)
+      //   if (window.localStorage) {
+      //     window.localStorage.setItem('user', null)
+      //     window.localStorage.setItem('token', null)
+      //   }
+      //   this.$router.push('/login')
+      // }
+    },
+
     mounted () {
       document.body.addEventListener('click', event => EventBus.fire('body-clicked', event))
     }
   }
 </script>
+
+<style lang="stylus">
+  @import '~assets/variables'
+
+  .app
+    display flex
+    flex-direction column
+    min-height 100vh
+    height 100%  // Avoid the IE 10-11 `min-height` bug.
+    background-color #f4f6f9
+    color #000000
+    position relative
+
+  a
+    transition 1s color
+</style>
 
 <style lang="sass">
   @import '~vue-flexboxgrid/dist/vue-flexboxgrid'
@@ -67,76 +112,84 @@
 </style>
 
 <style lang="sass">
-  .box
-    width: calc(100% - 50px)
+  // .box
+  //   width: calc(100% - 50px)
 
-  /// TODO Find that article, and test the code below.
-  /// also delete or move to an appropriate location
-  //
-  #slider:after
-    content: attr(value) '%'
-    // custom styling
+  // /// TODO Find that article, and test the code below.
+  // /// also delete or move to an appropriate location
+  // //
+  // #slider:after
+  //   content: attr(value) '%'
+  //   // custom styling
 
-  //
-  #inbox:after
-    content: attr(data-new-items)
-    // custom styling
+  // //
+  // #inbox:after
+  //   content: attr(data-new-items)
+  //   // custom styling
 </style>
 
 
 <style lang="stylus">
+  @import '~assets/variables'
+
   #loadingWidget
     position: fixed
     z-index: 9999
+
   .shaded
     background-color: #eeeeee
-  .vui-table tr.with-row-span,.vui-table tr.with-row-span td
+
+  // Table
+  .vui-table tr.with-row-span,
+  .vui-table tr.with-row-span td
     height: 41px
+
+  // Fieldset
   .vui-fieldset
     padding: 5px
     border: 1px solid #a9aeb9
     position: relative
-  .vui-fieldset>.vui-fieldset-header
-    position: absolute
-    z-index: 100
-    top: -15px
-    left: 0
-    right: 0
-  .vui-fieldset>.vui-fieldset-header label
-    font-size: .85rem
-    background: white
+
+    > .vui-fieldset-header
+      position: absolute
+      z-index: 100
+      top: -15px
+      left: 0
+      right: 0
+
+    > .vui-fieldset-header label
+      font-size: .85rem
+      background: white
+
+
+  // vui-display-block
   .vui-display--block
     display: block
+
   .vui-display--inline-block
     display: inline-block
-  .vui-text-grey,.vui-text-grey:hover
+
+  .vui-text-grey,
+  .vui-text-grey:hover
     color: #cccccc
+
   .vui-no-border-right
     border-right: 0 !important
+
   .vui-no-border-left
     border-left: 0 !important
+
+  // resizable textarea
   .resizable
     min-width: 25px
     min-height: 25px
     padding-right: 3px
     padding-bottom: 3px
-  .resizable textarea
-    width: 100%
-    height: 100%
-    resize: none
-</style>
 
-<style lang="stylus">
-  @import '~assets/variables'
-
-  .app
-    display flex
-    flex-direction column
-    min-height 100vh
-    height 100%  // Avoid the IE 10-11 `min-height` bug.
-    background-color #f4f6f9
-    color #000000
-    position relative
+    textarea
+      width: 100%
+      height: 100%
+      resize: none
 </style>
 
 <style>
@@ -240,13 +293,6 @@
     -webkit-justify-content center
     -ms-flex-pack center
     justify-content center
-
-  // BUG 48773: no th border in FF and IE
-  .vui-table th,
-  .vui-table td,
-  .vui-table tr,
-  .vui-table tbody
-    background-clip padding-box
 
   // BUG 48779: Global Table zebra stripping color is incorrect
   .vui-highlight
@@ -434,6 +480,13 @@
 <style lang="stylus">
   @import '~assets/variables'
 
+  // BUG 48773: no th border in FF and IE
+  .vui-table th,
+  .vui-table td,
+  .vui-table tr,
+  .vui-table tbody
+    background-clip padding-box
+
   .vui-table tr > th:first-child,
   .vui-table tr > td:first-child
     padding-left 0.5rem
@@ -471,18 +524,18 @@
   //   padding-right: 0
 
 
-  // // TABLES
+  // TABLES
   .vui-table th [class^="icon-"],
   .vui-table th [class*=" icon-"]
     color color-white
     margin-left 1rem
 
-  .vui-table tbody tr:last-child > td
-    background-color #cce4ea
+  // .vui-table tbody tr:last-child > td
+  //   background-color #cce4ea
 
-  .vui-table .vui-table tbody tr:last-child > td,
-  .vui-table tfoot tr:last-child > td
-    background-color white
+  // .vui-table .vui-table tbody tr:last-child > td,
+  // .vui-table tfoot tr:last-child > td
+  //   background-color white
 
 
   // TABLES
@@ -494,6 +547,7 @@
     border-bottom 1px solid #51535c
     border 1px solid #51535c
 
+  // TABLES -- Nested
   .vui-table .vui-table thead th
     border 1px solid #e0e4e5
     border-bottom 1px solid #51535c
@@ -511,29 +565,47 @@
   .vui-table .vui-table th a
     background transparent
 
+  // TABLES -- Order Management Context
   .om-nested-table-container .vui-table thead th
     border 1px solid #e0e4e5
+
+  // TABLES -- Makegood Context
+  .mg-offer-spots th:not(.spot-allocation-column),
+  .mg-preempts th:not(.spot-allocation-column),
+  .mg-missed-spots th:not(.spot-allocation-column),
+  .mg-program-name-change th:not(.spot-allocation-column)
+    padding 1px 4px
+    font-size 13px
+
+  .mg-offer-spots th,
+  .mg-preempts th,
+  .mg-missed-spots th,
+  .mg-program-name-change th
+    font-size 13px
+
+  .mg-offer-spots td input,
+  .mg-offer-spots td select,
+  .mg-preempts td input,
+  .mg-preempts td select
+    width 100%
+    height 100%
 
   .vui-table .vui-table-hidden-cell
     font-size 0
     padding 0
     background none
 
+  .vui-table tbody tr.vui-is-selected > td
+    background-color #cce4ea
 
+  .vui-table tbody tr.vui-is-expanded > td
+    background-color #f0f8fc
+    border-bottom 1px solid #51535c
+    border 1px solid #51535c
 
-  // .vui-table tbody tr.vui-is-selected > td
-  //   background-color #cce4ea
-
-  // .vui-table tbody tr.vui-is-expanded > td
-  //   background-color #f0f8fc
-  //   border-bottom 1px solid #51535c
-  //   border 1px solid #51535c
-
-  // .vui-table .vui-table thead th
-  //   border 1px solid #e0e4e5
-  //   border-bottom 1px solid #51535c
-
-
+  .vui-table .vui-table thead th
+    border 1px solid #e0e4e5
+    border-bottom 1px solid #51535c
 </style>
 
 <!-- Site Navigation -->
@@ -544,6 +616,7 @@
   .vui-site-navigation
     a:hover
       border-color transparent
+
     .active > a
       color #83c9bd
       border-bottom-color #83c9bd
@@ -556,8 +629,10 @@
     min-width 12.5rem
     border-radius 0
     font-size 1rem
+
     .active a
       border-color transparent
+
     a
       width 100%
       &:hover
@@ -575,27 +650,6 @@
 </style>
 
 <style lang="stylus">
-  /* Fix Vui Table */
-  .mg-offer-spots th:not(.spot-allocation-column),
-  .mg-preempts th:not(.spot-allocation-column),
-  .mg-missed-spots th:not(.spot-allocation-column),
-  .mg-program-name-change th:not(.spot-allocation-column)
-    padding: 1px 4px
-    font-size: 13px
-
-  .mg-offer-spots th,
-  .mg-preempts th,
-  .mg-missed-spots th,
-  .mg-program-name-change th
-    font-size: 13px
-
-  .mg-offer-spots td input,
-  .mg-offer-spots td select,
-  .mg-preempts td input,
-  .mg-preempts td select
-    width: 100%
-    height: 100%
-
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button
     -webkit-appearance: none
@@ -604,56 +658,73 @@
   /* Days dropdown selector */
   .days-dropdown-selector .input
     position: relative
+
   .days-dropdown-selector .input i
     position: absolute
     top: 8px
     right: 6px
+
   .dropdown-menu-timeframe
     min-width: 8rem
     -webkit-transform: translate(-1rem, -120%)
     transform: translate(-1rem, -120%)
     z-index: 10000
+
   .dropdown-menu-timeframe.vui-nubbin--bottom:before
     z-index: -1
+
   .dropdown-menu-timeframe li
     line-height: 1rem
     padding: 0.25rem 0.5rem
+
   .dropdown-menu-timeframe li .checkbox
     display: block
+
   .dropdown-menu-fall-down
     -webkit-transform: translate(-1rem, 1%)
     transform: translate(-1rem, 1%)
+
   /* Time dropdown-selector */
   .time-dropdown-selector .dropdown
     padding: 0
+
   .time-dropdown-selector .dropdown input
     background: none
+
   .time-dropdown-selector .dropdown div i
     position: absolute
     top: 4px
     right: 0
+
   .time-dropdown.vui-dropdown
     min-width: 7rem
     -webkit-transform: translateX(-14%)
     transform: translateX(-14%)
+
   .time-dropdown.vui-nubbin--bottom:before
     z-index: -1
+
   .time-dropdown li
     padding: 0.25rem 0.5rem
     line-height: 1rem
+
   .time-dropdown li a
     display: block
     font-size: 1rem
+
   /* Old Custom Checkboxes */
   .checkbox
     display: inline-block
     padding-left: 0
     margin: 0
+
   .vui-checkbox label
     display: inline
     padding-left: 5px
+
   .vui-checkbox input[type="checkbox"]
     display: none
+
   .vui-checkbox-unchecked,
   .vui-checkbox-checked
     display: inline-block
@@ -667,32 +738,41 @@
     -moz-border-radius: 2px
     -ms-border-radius: 2px
     border-radius: 2px
+
   .disabled label
     color: rgba(82, 84, 93, 0.6)
     cursor: not-allowed !important
+
   .disabled .vui-checkbox-checked,
   .disabled .vui-checkbox-unchecked
     color: #51545D
     border: solid 1px rgba(82, 84, 93, 0.14902)
     background-color: rgba(82, 84, 93, 0.14902)
     cursor: not-allowed !important
+
   .vui-checkbox-checked
     display: none
     color: #000000
     background-color: #ffffff
+
   .checked .vui-checkbox-checked
     display: inline-block
+
   .checked .vui-checkbox-unchecked
     display: none
+
   .checkbox .icons .vui-checkbox-unchecked i
     color: #fff
+
   .vui-time
     display: flex
     flex-direction: row
     align-items: center
     justify-content: flex-start
+
   .vui-time .vui-input
     width: 80px
+
   .vui-time input
     border: none
     width: 22px
@@ -701,16 +781,198 @@
     text-align: center
     height: 100%
     line-height: 100%
+
   .vui-time select
     width: 65px
+
   .vui-time input:focus
     color: #000
     border: none
     animation: blinker 1s linear infinite
+
   .vui-time input::selection
     background: none
+
   .vui-time > span
     display: none
-  .on-invalid
-    border: solid 2px #C5203E !important
+</style>
+
+<!-- TODO: De-dupe -->
+<!-- Spot Allocations -- from videa-ui-components -->
+<style lang="stylus">
+  @import '~assets/variables'
+
+  spot-allocation-width = 35px
+  spot-allocation-height = 30px
+  spotallocation-editable-height = 40px
+  hiatus-color = #add8e6
+  navigation-section-background-color = #51545D
+  spot-item-color = white
+  spot-item-border-color = #999
+  spot-item-disabled = rgb(235, 235, 228)
+  spot-allocation-cell-background-color = #D8E0E3
+
+  .spot-allocation-cell
+    background-color spot-allocation-cell-background-color
+
+  .spot-allocation-cell > *, .spot-allocation-column > *
+    display block
+    height 100%
+    .spot-allocation-row
+      height 100%
+      display flex
+      flex-direction row
+      justify-content flex-start
+      align-items center
+      & > div
+        float left
+      & > div:last-child
+        right 2px
+      .spot-allocation-nav-section
+        width 24px
+        height 100%
+        position relative
+        background-color navigation-section-background-color
+        display inherit
+        flex-direction inherit
+        align-items inherit
+
+      .spot-allocation-container
+        overflow hidden
+
+      .spot-allocation
+        width 100%
+        list-style none
+        display flex
+        padding 0
+        margin 0
+        position relative
+        transition left 0.5s
+
+        &.spot-allocation-headers
+          & > li:last-child
+            div
+              border-right none
+        & > li
+          width auto
+        li > div
+          width spot-allocation-width
+          text-align center
+          border-right 2px solid spot-item-color
+        li.hiatus-spot > div, li.hiatus-spot > div.spot-item-disabled
+          background-color hiatus-color
+          input
+            background-color hiatus-color
+        li > div.spot-item-disabled
+          background-color spot-item-disabled
+        li > div.editable-spot-value
+          input
+            border none
+            height 100%
+            text-align center
+      .spot-allocation-data
+        margin-left 24px
+        li > div
+          height spot-allocation-height
+          border 1px solid spot-item-border-color
+          margin-right 2px
+          width 33px
+          background-color spot-item-color
+          overflow hidden
+          white-space nowrap
+          text-overflow ellipsis
+          & > span
+            line-height spot-allocation-height
+            letter-spacing -0.03em
+      &.has-quantity .table-row
+        &.value
+          height 0.625*spotallocation-editable-height
+        &.quantity
+          height 0.375*spotallocation-editable-height
+          line-height 1.2
+          text-decoration underline
+          border none
+          background spot-allocation-cell-background-color
+
+  .spot-allocation-cell.editable-spot-allocation-cell
+    .spot-allocation-data
+      li > div
+        height spotallocation-editable-height
+        background-color transparent
+        input
+          text-align center
+      li > div > span.text-underline
+        line-height spotallocation-editable-height
+        letter-spacing 0em
+      li div.table-row span
+        line-height 0
+</style>
+
+<!-- Spot Allocation -- from sellers -->
+<style lang="stylus">
+  @import '~assets/variables'
+  /* Spot Allocation Column */
+  .spot-allocation-column
+    white-space normal !important
+  .edit-spot-allocation input, .editable-spot-value input
+    text-align center
+    height 100%
+    width 100%
+  div.spot-item-disabled
+    background-color rgb(235, 235, 228) !important
+  th.spot-allocation-column,
+  td.spot-allocation-cell
+    padding 1px
+  .spot-allocation-cell
+    background-color #D8E0E3
+  .spot-allocation-row > div
+    float left
+  .spot-allocation-row .spot-allocation-nav-section
+    width 22px
+    margin-top 7px
+  .spot-allocation-row .spot-allocation-container
+    overflow hidden
+  .spot-allocation-row .spot-allocation
+    display flex
+    position relative
+    width 100%
+    padding 0
+    margin 0
+    list-style none
+    transition left 0.5s
+  .spot-allocation-row .spot-allocation > li
+    width auto
+  .spot-allocation-row .spot-allocation li > div
+    width 35px
+    text-align center
+  .spot-allocation-row .spot-allocation li:not(:only-of-type) > div
+    border-right 2px solid white
+  .spot-allocation-row .spot-allocation-data
+    margin-left 23px
+  .spot-allocation-row .spot-allocation-data li > div
+    width 33px
+    height 30px
+    border 1px solid silver
+    margin-right 2px
+    background-color #FFF
+    font-size 0.7rem
+  .spot-allocation-row .spot-allocation-data li > div span
+    line-height 30px
+  .spot-allocation-row .spot-allocation-data li > div span .highlight
+    color #c5203e
+  .left-icon
+    background-image url('/static/shared/img/left-arrow.png')
+  .button-icon
+    display block
+    width 100%
+    height 21px
+    padding 0
+    margin 0
+    background-repeat no-repeat
+    background-position center
+    cursor pointer
+  .right-icon
+    background-image url('/static/shared/img/right-arrow.png')
+  .button-icon[disabled]
+    opacity 0.5
 </style>

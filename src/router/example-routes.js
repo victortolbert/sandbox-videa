@@ -30,6 +30,11 @@ module.exports = [
   //   component: require('pages/examples/fullcalendar')
   // },
   {
+    path: '/examples/json-tree',
+    name: 'json-tree-example',
+    component: require('pages/examples/json-tree')
+  },
+  {
     path: '/examples/links',
     name: 'links-example',
     component: require('pages/examples/links')
@@ -58,6 +63,11 @@ module.exports = [
     path: '/examples/scratch',
     name: 'scratch-example',
     component: require('pages/examples/scratch')
+  },
+  {
+    path: '/examples/storejs',
+    name: 'storejs-example',
+    component: require('pages/examples/storejs')
   },
   {
     path: '/examples/tooltip',
@@ -146,6 +156,11 @@ module.exports = [
     path: '/examples/autocomplete',
     name: 'autocomplete-example',
     component: require('pages/examples/forms/autocomplete')
+  },
+  {
+    path: '/examples/clipboard',
+    name: 'clipboard-example',
+    component: require('pages/examples/forms/clipboard')
   },
   // {
   //   path: '/examples/autocomplete2',
@@ -314,6 +329,11 @@ module.exports = [
     path: '/examples/fetch-data',
     name: 'fetch-data-example',
     component: require('pages/examples/technique/fetch-data')
+  },
+  {
+    path: '/examples/localstorage',
+    name: 'localstorage-example',
+    component: require('pages/examples/technique/localstorage')
   },
   {
     path: '/examples/order-by',

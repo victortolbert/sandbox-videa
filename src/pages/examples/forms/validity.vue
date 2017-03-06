@@ -1,25 +1,22 @@
-<template>
-  <div id="app" class="validity-example">
-    <div id="playground">
-      <h2>Playground</h2>
-      <p>Experiment with <code>vue-validity</code> here!</p>
-      <form @submit.prevent="submitForm">
-        <h3>Example form</h3>
-        <input type="text" v-model="match.firstName" placeholder="First name" v-validity>
-        <error-messages :model="$v.match.firstName"></error-messages>
-        <input type="text" v-model="match.lastName" placeholder="Last name" v-validity>
-        <error-messages :model="$v.match.lastName"></error-messages>
-        <hello v-model="match.message"></hello>
-        <button type="submit">Submit</button>
-        <h5>Validation state:</h5>
-        <pre class="text-left">$v: {{ $v }}</prism-code>
-      </form>
-    </div>
-  </div>
+<template lang="pug">
+  .example
+    vui-title Form Validation
+    grid
+      grid-item(size='1/2')
+        form(@submit.prevent='submitForm')
+          vui-subtitle Example form
+          input.vui-input(type='text', v-model='match.firstName', placeholder='First name', v-validity='')
+          error-messages(:model='$v.match.firstName')
+          input.vui-input(type='text', v-model='match.lastName', placeholder='Last name', v-validity='')
+          error-messages(:model='$v.match.lastName')
+          button.vui-button.vui-button--brand(type='submit') Submit
+      grid-item(size='1/2')
+        .vui-box.vui-theme--default
+          h5 Validation state:
+          pre.text-left $v: {{ $v }}
 </template>
 
 <script>
-import Hello from './hello'
 import ErrorMessages from './error-messages'
 import PrismCode from '~components/prism-code'
 
@@ -95,7 +92,6 @@ export default {
 
   components: {
     ErrorMessages,
-    Hello,
     PrismCode
   }
 }
@@ -104,16 +100,6 @@ export default {
 <style lang="less" scoped>
   @import "~assets/less/prism";
 
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    font-size: 16px;
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
-  }
   .error {
     color: red;
   }
@@ -124,13 +110,7 @@ export default {
     border: 1px solid #bbb;
     padding: 10px;
   }
-  input {
-    border-radius: 4px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    outline: 0;
-    font-size: inherit;
-  }
+
   input.touched.invalid {
     border: 1px solid red;
   }

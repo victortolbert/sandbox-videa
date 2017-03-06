@@ -1,3 +1,144 @@
+# Buyer Application
+---
+## Avails Request
+
+- [x] Select all weeks broken
+- [ ] Select All did not select week 5 or
+- [ ] Start/End Dates = last 2 wks of 2nd mo in the QTR thru the end of the quarter
+- [ ] Station  `Save`  ->  Toast
+
+## Avails Request Summary
+
+```js
+// Pokémon Exception Handling
+try {
+}
+catch (Exception ex) {
+// Gotcha!
+}
+```
+
+# Seller and Rep Application
+---
+
+## Order Management
+- [ ] Change Missed Spots label to Open Preempts
+- [ ] Show total spots ordered on all screens
+- [ ] Add Export to Excel to all ACTIVE ORDERS page
+- [ ] Update columns on the MediaOps Open preempt screen
+
+
+### Pending Orders
+- [ ] Add Share link -- Competitive Share Pop-up
+- [ ] Add Sorting indicators
+
+### Pending Makegoods
+- [ ] Station Avails
+- [ ] Details page: What exactly does the `Save` and `Close' button do?
+- [ ] Should the `Save Button` be more specific?  (i.e `Save Order`)
+- [x] Fix Start and End times
+* [ ] Add Pagination
+* [ ] Add Back To Top link
+* [x] Add Offer Link
+* [x] Add Order Link
+* [x] Update columns and the display order
+
+### Open Pre-Empts
+- [x] Update columns and the display order
+
+### Order Search
+- [x] Update data for Happy path content
+- [ ] Current Info Link: When building the Makegood, the Current info is there.
+
+## Reporting
+
+### Account Performance
+- [ ] Add Nested Data-grid
+- [ ] Populate data to match numbers
+- [ ] Zebra striping
+- [ ] Add Pagination
+- [ ] Add Back To Top
+- [ ] Add Export to Excel
+- [x] Add missing fields
+- [x] Add Sorting icons
+- [x] Add Datepickers
+
+### Program Revenue
+- [ ] Create better presentation for Stat Highlights
+- [x] Add Nested Datagrid
+- [x] Add Quarter Selector
+- [x] Fix date-picker errors
+- [x] Add Sorting icons
+
+### Order Reporting
+* [x] Add Search Text Field
+* [x] Add Quarter Selector
+* [x] Add Start Date / End Date
+
+
+## Price Guide
+- [ ] Edit Ratings Pop-up
+- [ ] Roll-up
+- [ ] Uncheck when overriding rate
+- [ ] Remove Search Button
+- [ ] Populate and uncheck
+- [x] Copy to Quarter / Duplicate (only need one on the first line)
+- [x] Refresh Demo data
+
+
+## Avails
+- [ ] Find the mock for CPP on revise rate screen column header
+- [ ] Add Break period `modal` (Start / End Date / Save and Close )
+- [ ] Update to async avail data retrieval
+- [ ] Add `Clear` Button
+- [ ] Improve `avail-details-info` layout component
+- [ ] Consider a common `details-info` layout component (Avails, Orders, etc..)
+- [ ] Split the `edit` pages into nested routes
+- [x] Remove Status drop-down
+- [x] Update `Save` and `Continue` buttons
+- [x] Refresh Demo data
+
+
+## Campaign Performance
+- [ ] Add Daypart legend labels to details Summary Grid
+- [ ] Should this component be generalized?
+- [x] Add `quarter-selector` component
+- [x] Add Details Page
+- [x] Add Table `column-selector` to `table-tools` component (does not function)
+- [x] Add Chart View
+
+
+## Settings
+
+### User
+### Display
+### Add A Program
+### Reps
+
+
+
+
+# Buyer
+
+
+
+# Station Avails
+- [ ] Add Toasts Messages for save
+- [ ] Daypart goals match what was entered on Buyer Request.
+- [ ] Accept should go to Order Reporting instead of Pending
+Move the order vs traffic
+
+3/3 everywhere except for preempt line...   2/0
+
+### Pending Makegoods
+- [ ] Dates on Pending Makegoods details is screwy
+- [ ] Add Select boxes to the Happy path line and
+
+## Pending Makdegood -- Offer
+- [ ] Select something, then Transfer to Media..
+- [ ] Then redirect, to Pending Makegoods
+
+
 # Global and shared components / pages  ⇧  ⌥ ⌫ ⌦ ⌘
 ---
 ## Single Sign On
@@ -152,108 +293,3 @@
 
 
 
-# Buyer Application
----
-## Avails Request
-
-- [x] Select all weeks broken
-
-## Avails Request Summary
-
-
-
-# Seller and Rep Application
----
-
-## Order Management
-- [ ] Change Missed Spots label to Open Preempts
-- [ ] Show total spots ordered on all screens
-- [ ] Add Export to Excel to all ACTIVE ORDERS page
-- [ ] Update columns on the MediaOps Open preempt screen
-
-
-### Pending Orders
-- [ ] Add Share link -- Competitive Share Pop-up
-- [ ] Add Sorting indicators
-
-### Pending Makegoods
-- [ ] Station Avails
-- [ ] Details page: What exactly does the `Save` and `Close' button do?
-- [ ] Should the `Save Button` be more specific?  (i.e `Save Order`)
-- [x] Fix Start and End times
-* [ ] Add Pagination
-* [ ] Add Back To Top link
-* [x] Add Offer Link
-* [x] Add Order Link
-* [x] Update columns and the display order
-
-### Open Pre-Empts
-- [x] Update columns and the display order
-
-### Order Search
-- [x] Update data for Happy path content
-
-
-## Reporting
-
-### Account Performance
-- [ ] Add Nested Data-grid
-- [ ] Populate data to match numbers
-- [ ] Zebra striping
-- [ ] Add Pagination
-- [ ] Add Back To Top
-- [ ] Add Export to Excel
-- [x] Add missing fields
-- [x] Add Sorting icons
-- [x] Add Datepickers
-
-### Program Revenue
-- [ ] Create better presentation for Stat Highlights
-- [x] Add Nested Datagrid
-- [x] Add Quarter Selector
-- [x] Fix date-picker errors
-- [x] Add Sorting icons
-
-### Order Reporting
-* [x] Add Search Text Field
-* [x] Add Quarter Selector
-* [x] Add Start Date / End Date
-
-
-## Price Guide
-- [ ] Edit Ratings Pop-up
-- [ ] Roll-up
-- [ ] Uncheck when overriding rate
-- [ ] Remove Search Button
-- [ ] Populate and uncheck
-- [x] Copy to Quarter / Duplicate (only need one on the first line)
-- [x] Refresh Demo data
-
-
-## Avails
-- [ ] Find the mock for CPP on revise rate screen column header
-- [ ] Add Break period `modal` (Start / End Date / Save and Close )
-- [ ] Update to async avail data retrieval
-- [ ] Add `Clear` Button
-- [ ] Improve `avail-details-info` layout component
-- [ ] Consider a common `details-info` layout component (Avails, Orders, etc..)
-- [ ] Split the `edit` pages into nested routes
-- [x] Remove Status drop-down
-- [x] Update `Save` and `Continue` buttons
-- [x] Refresh Demo data
-
-
-## Campaign Performance
-- [ ] Should this component be generalized?
-- [x] Add `quarter-selector` component
-- [x] Add Details Page
-- [x] Add Table `column-selector` to `table-tools` component (does not function)
-- [x] Add Chart View
-
-
-## Settings
-
-### User
-### Display
-### Add A Program
-### Reps

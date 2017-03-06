@@ -1,100 +1,46 @@
 <!-- https://blog.codeminer42.com/building-scalable-client-side-components-615e472e7106 -->
 <template lang="pug">
-  //- button.vui-button(
-  //-   v-bind:class='[classes]'
-  //-   disabled='disabled'
-  //- )
-  //-   svg.vui-button__icon.vui-button__icon--left(aria-hidden='true')
-  //-     use(
-  //-       xlink:href="/static/shared/icons/utility-sprite/svg/symbols.svg#download"
-  //-     )
-  //-   slot
-  //-   svg.vui-button__icon.vui-button__icon--right(aria-hidden='true')
-  //-     use(
-  //-       xlink:href="/static/shared/icons/utility-sprite/svg/symbols.svg#download"
-  //-     )
-
-  //- button.vui-button(
-  //-   @click = 'buttonClick'
-  //-   v-bind:class = '"vui-button--" + type'
-  //- )
-  button.vui-button(
-    @click = 'buttonClick'
-    v-bind:class = '[ primary ? "vui-button--brand" : "vui-button--neutral" ]'
+  button(
+    @click='this.$emit("click")',
+    :class='[classObj]',
+    :disabled='disabled'
   )
+    icon(
+      v-if='iconName',
+      :class='[iconClassObj]',
+      :name='iconName'
+    )
     slot Submit
+    icon(
+      v-if='iconName && iconRight',
+      :name='iconName'
+    )
 </template>
 
 <script>
   export default {
-    props: {
-      buttonType: {
-        type: String,
-        default: 'button',
-        validator (value) {
-          return ['button', 'submit', 'reset'].includes(value)
-        }
-      },
+    props: require('./props'),
 
-      // primary: {
-      //   type: Boolean,
-      //   default: false
-      // },
-
-      type: {
-        type: String,
-        default: 'default',
-        validator (value) {
-          return ['default', 'primary', 'link'].includes(value)
-        }
-      },
-      shape: {
-        type: String,
-        validator (value) {
-          return ['full', 'circle'].includes(value)
-        }
-      },
-      size: {
-        type: String,
-        default: 'medium',
-        validator (value) {
-          return ['small', 'medium', 'large'].includes(value)
-        }
-      },
-      icon: String,
-      disabled: Boolean,
-      loading: Boolean,
-      autofocus: Boolean,
-      action: {
-        default: () => {},
-        type: Function
-      }
-    },
-
-    methods: {
-      buttonClick () {
-        this.$emit('buttonClick')
-      }
-    },
+    data: () => ({
+      isActive: true,
+      error: null
+    }),
 
     computed: {
-      // classes () {
-      //   return 'vui-button--brand'
-      // },
-
-      // inputSize () {
-      //   return !this.size || this.size === `default` ? `` : `form-control-${this.size}`
-      // },
-
-      classes () {
+      classObject () {
         return {
-          btn: true,
-          [`btn-${this.type}`]: this.type,
-          [`btn-${this.shape}`]: this.shape,
-          [`btn-${this.size}`]: this.size,
-          'btn-disabled': this.isDisabled,
-          'btn-loading': this.loading
+          [`${this.prefix}button`]: this.prefix,
+          [`${this.prefix}button--${this.type}`]: this.type,
+          [`${this.prefix}button--${this.size}`]: this.size,
+          'text-danger': this.error && this.error.type === 'fatal',
+          'active': this.isActive && !this.error
         }
+      },
+
+      inputSize () {
+        return !this.size || this.size === `default`
+          ? ``
+          : `form-control-${this.size}`
       },
 
       isDisabled () {
@@ -104,6 +50,12 @@
       iconClass () {
         return `icon icon-${this.icon}`
       }
-    }
+    },
+
+    methods: {
+      onButtonClick () {
+        this.$emit('onButtonClick')
+      }
+    },
   }
 </script>
